@@ -23,7 +23,7 @@ import { PlatformModulesShowcase } from '@/components/foundry/PlatformModulesSho
 import { SCHEDULE_URL } from '@/lib/links';
 
 export const metadata = buildMetadata({
-  title: 'Foundry — Managed Data & AI Platform',
+  title: 'Foundry',
   description:
     'The only fully managed data and AI platform for mid-market. Dashboards, AI agents, automated workflows — starting at $2,500/month.',
   path: '/foundry/',

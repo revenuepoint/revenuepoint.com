@@ -5,7 +5,7 @@ export const professionalServices: IndustryPageContent = {
   id: 'professionalServices',
   slug: 'professional-services',
   navLabel: 'Professional Services',
-  metaTitle: 'Salesforce for Professional Services — RevenuePoint',
+  metaTitle: 'Salesforce for Professional Services',
   metaDescription:
     'Clean Salesforce + PSA for consulting, legal, and engineering firms — engagement financials, utilization heatmap, pipeline-to-staffing, and time & expense on one record page.',
   hero: {

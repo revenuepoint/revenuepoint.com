@@ -7,6 +7,7 @@ import {
   useState,
   type ReactNode,
 } from 'react';
+import { track, events } from '@/lib/analytics';
 
 export type IndustryId =
   | 'manufacturing'
@@ -34,7 +35,17 @@ const IndustryContext = createContext<IndustryContextValue>({
 
 export function IndustryProvider({ children }: { children: ReactNode }) {
   const [industryId, setIndustryIdState] = useState<IndustryId>(DEFAULT_INDUSTRY);
-  const setIndustryId = useCallback((id: IndustryId) => setIndustryIdState(id), []);
+  const setIndustryId = useCallback(
+    (id: IndustryId) => {
+      setIndustryIdState((prev) => {
+        if (prev !== id) {
+          track(events.industry_switched, { from: prev, to: id });
+        }
+        return id;
+      });
+    },
+    [],
+  );
   return (
     <IndustryContext.Provider value={{ industryId, setIndustryId }}>
       {children}

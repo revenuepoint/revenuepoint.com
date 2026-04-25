@@ -10,7 +10,7 @@ import { industryPageList } from '@/data/industries';
 import { SCHEDULE_URL } from '@/lib/links';
 
 export const metadata = buildMetadata({
-  title: 'Certified Salesforce Consulting',
+  title: 'Salesforce',
   description:
     '60+ Salesforce certifications across Sales Cloud, Service Cloud, Marketing Cloud, CPQ, Experience Cloud, and NPSP. Implementations, integrations, custom development, and managed administration.',
   path: '/salesforce/',

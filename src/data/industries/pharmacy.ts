@@ -5,7 +5,7 @@ export const pharmacy: IndustryPageContent = {
   id: 'pharmacy',
   slug: 'pharmacy',
   navLabel: 'Specialty Pharmacy & Compounding',
-  metaTitle: 'Salesforce for Specialty Pharmacy & Compounding — RevenuePoint',
+  metaTitle: 'Salesforce for Specialty Pharmacy & Compounding',
   metaDescription:
     'Clean Salesforce Health Cloud for specialty pharmacy and compounding — prior authorization queue, refill heatmap, compound formula, and adherence outreach on one patient record.',
   hero: {

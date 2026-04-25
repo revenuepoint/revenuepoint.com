@@ -9,7 +9,7 @@ import { ScreenshotPlaceholder } from '@/components/ui/ScreenshotPlaceholder';
 import { PlaybookWalkthrough } from '@/components/training/PlaybookWalkthrough';
 
 export const metadata = buildMetadata({
-  title: 'Salesforce Training & Custom Playbook',
+  title: 'Salesforce Training',
   description:
     'Instructor-led Salesforce training, in-person or virtual, that produces a custom Playbook embedded inside your Salesforce — so the knowledge persists for every user.',
   path: '/salesforce/training/',

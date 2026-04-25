@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
+import { identifyUserFromForm } from '@/lib/observability';
 
 type EmailSignupProps = {
   heading?: string;
@@ -20,6 +21,8 @@ export function EmailSignup({
   source = 'Insights Email Signup',
   id,
 }: EmailSignupProps) {
+  const formRef = useRef<HTMLFormElement>(null);
+
   useEffect(() => {
     const pageUrlField = document.getElementById(
       'sf_email_signup_page_url',
@@ -28,6 +31,14 @@ export function EmailSignup({
       pageUrlField.value = window.location.href;
     }
   }, []);
+
+  const handleFieldBlur = () => {
+    if (!formRef.current) return;
+    const fd = new FormData(formRef.current);
+    identifyUserFromForm({
+      email: fd.get('email')?.toString(),
+    });
+  };
 
   return (
     <div className="border border-rule bg-cream px-6 py-8 lg:px-10 lg:py-10">
@@ -40,9 +51,11 @@ export function EmailSignup({
       </div>
 
       <form
+        ref={formRef}
         id={id}
         action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8"
         method="POST"
+        onBlurCapture={handleFieldBlur}
         className="mt-6 flex flex-col sm:flex-row gap-3 max-w-xl"
       >
         <input type="hidden" name="oid" value={process.env.NEXT_PUBLIC_SF_OID} />

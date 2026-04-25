@@ -1,8 +1,9 @@
 import { buildMetadata } from '@/lib/metadata';
 import { Button } from '@/components/ui/Button';
+import { events } from '@/lib/analytics';
 
 export const metadata = buildMetadata({
-  title: 'Security & vulnerability disclosure',
+  title: 'Security',
   description:
     'How to report a security vulnerability to RevenuePoint. Email security@revenuepoint.com — PGP-encrypted reports preferred. Public key available here and on GitHub.',
   path: '/security/',
@@ -61,10 +62,16 @@ export default function SecurityPage() {
             <Button
               variant="primary"
               href="mailto:security@revenuepoint.com?subject=Security%20vulnerability%20report"
+              trackingEvent={events.security_email_clicked}
             >
               Email security@revenuepoint.com
             </Button>
-            <Button variant="secondary" href={KEY_FILE_URL}>
+            <Button
+              variant="secondary"
+              href={KEY_FILE_URL}
+              trackingEvent={events.pgp_key_clicked}
+              trackingProps={{ destination: 'github' }}
+            >
               <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z" />
               </svg>

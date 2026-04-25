@@ -1,9 +1,10 @@
 import { buildMetadata } from '@/lib/metadata';
 import { Button } from '@/components/ui/Button';
 import { SCHEDULE_URL } from '@/lib/links';
+import { ThankYouTracker } from './ThankYouTracker';
 
 export const metadata = buildMetadata({
-  title: 'Thank You — RevenuePoint',
+  title: 'Thank You',
   description: 'Thanks for reaching out. We will be in touch within one business day.',
   path: '/thank-you/',
 });
@@ -11,6 +12,7 @@ export const metadata = buildMetadata({
 export default function ThankYouPage() {
   return (
     <section className="bg-paper py-24 lg:py-32">
+      <ThankYouTracker />
       <div className="max-w-2xl mx-auto px-6 lg:px-8 text-center">
         <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-mute justify-center inline-flex items-center gap-2">
           <span className="h-px w-8 bg-crimson" /> Received · in queue

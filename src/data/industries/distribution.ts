@@ -5,7 +5,7 @@ export const distribution: IndustryPageContent = {
   id: 'distribution',
   slug: 'distribution',
   navLabel: 'Distribution & 3PL',
-  metaTitle: 'Salesforce for Distribution & 3PL — RevenuePoint',
+  metaTitle: 'Salesforce for Distribution & 3PL',
   metaDescription:
     'Clean Salesforce for mid-market distributors and 3PLs — ERP-synced inventory, shipment tracking, margin-by-account, and claims console on one Lightning record page.',
   hero: {

@@ -5,7 +5,7 @@ export const financialServices: IndustryPageContent = {
   id: 'financialServices',
   slug: 'financial-services',
   navLabel: 'Financial Services',
-  metaTitle: 'Salesforce for Financial Services — RevenuePoint',
+  metaTitle: 'Salesforce for Financial Services',
   metaDescription:
     'Clean Salesforce Financial Services Cloud for RIAs, insurance agencies, and accounting firms — household 360, portfolio rollup, next-best-action, and compliance on one record page.',
   hero: {

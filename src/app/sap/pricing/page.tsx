@@ -4,7 +4,7 @@ import { LeadForm } from '@/components/ui/LeadForm';
 import { Button } from '@/components/ui/Button';
 
 export const metadata = buildMetadata({
-  title: 'SAP Pricing — Managed Services',
+  title: 'SAP Pricing',
   description:
     'SAP Business One and S/4HANA managed services pricing. Contact us for a custom quote based on your specific requirements.',
   path: '/sap/pricing/',

@@ -5,7 +5,7 @@ export const foodBeverage: IndustryPageContent = {
   id: 'foodBeverage',
   slug: 'food-beverage',
   navLabel: 'Food & Beverage',
-  metaTitle: 'Salesforce for Food & Beverage — RevenuePoint',
+  metaTitle: 'Salesforce for Food & Beverage',
   metaDescription:
     'Clean Salesforce Consumer Goods Cloud for food and beverage — depletion vs plan, trade promotion ROI, field-rep visit planning, and lot traceability on one record page.',
   hero: {

@@ -6,7 +6,7 @@ import { CTABanner } from '@/components/ui/CTABanner';
 import { SCHEDULE_URL } from '@/lib/links';
 
 export const metadata = buildMetadata({
-  title: 'Foundry Pricing — Flat Monthly Plans',
+  title: 'Foundry Pricing',
   description:
     'Foundry managed data platform pricing from $2,500/month. No usage fees, no per-seat charges. Core, Intelligence, and Enterprise plans.',
   path: '/foundry/pricing/',

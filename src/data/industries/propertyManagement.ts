@@ -5,7 +5,7 @@ export const propertyManagement: IndustryPageContent = {
   id: 'propertyManagement',
   slug: 'property-management',
   navLabel: 'Property Management & Real Estate',
-  metaTitle: 'Salesforce for Property Management & Real Estate — RevenuePoint',
+  metaTitle: 'Salesforce for Property Management & Real Estate',
   metaDescription:
     'Clean Salesforce for property managers and real estate operators — occupancy heatmap, lease renewal pipeline, maintenance console, and resident ledger on one record page.',
   hero: {

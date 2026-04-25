@@ -8,6 +8,7 @@ import { DashboardPreview } from '@/components/foundry/lens/DashboardPreview';
 import { ReportPreview } from '@/components/foundry/lens/ReportPreview';
 import { MetricTreePreview } from '@/components/foundry/lens/MetricTreePreview';
 import { MapPreview } from '@/components/foundry/lens/MapPreview';
+import { track, events } from '@/lib/analytics';
 
 function PreviewForView({ view }: { view: LensView }) {
   if (view === 'dashboard') return <DashboardPreview />;
@@ -17,7 +18,13 @@ function PreviewForView({ view }: { view: LensView }) {
 }
 
 export function LensExplorer() {
-  const [selectedId, setSelectedId] = useState<LensView>('dashboard');
+  const [selectedId, setSelectedIdState] = useState<LensView>('dashboard');
+  const setSelectedId = (id: LensView) => {
+    setSelectedIdState((prev) => {
+      if (prev !== id) track(events.lens_view_changed, { from: prev, to: id });
+      return id;
+    });
+  };
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-6">

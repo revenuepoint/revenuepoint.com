@@ -6,6 +6,7 @@ import { useState, useEffect, useRef } from 'react';
 import { navItems } from '@/lib/navigation';
 import type { NavItem } from '@/lib/navigation';
 import { SCHEDULE_URL } from '@/lib/links';
+import { track, events } from '@/lib/analytics';
 import { Wordmark } from '@/components/brand/Wordmark';
 
 export function Navbar() {
@@ -105,6 +106,13 @@ export function Navbar() {
                   ) : (
                     <Link
                       href={item.href}
+                      onClick={() =>
+                        track(events.nav_link_clicked, {
+                          label: item.label,
+                          href: item.href,
+                          position: 'desktop',
+                        })
+                      }
                       className={`font-mono text-[11px] uppercase tracking-[0.16em] px-4 py-2 transition-colors ${
                         isActive(item) ? 'text-crimson' : 'text-mute hover:text-crimson'
                       }`}
@@ -123,6 +131,14 @@ export function Navbar() {
               href={SCHEDULE_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                track(events.schedule_clicked, {
+                  cta_label: 'Schedule a call',
+                  target_url: SCHEDULE_URL,
+                  position: 'navbar-desktop',
+                  page: typeof window !== 'undefined' ? window.location.pathname : undefined,
+                })
+              }
               className="border border-crimson text-crimson font-serif italic text-[14px] px-5 py-1.5 hover:bg-crimsonTint transition-colors"
             >
               Schedule a call
@@ -167,6 +183,15 @@ export function Navbar() {
                           <Link
                             key={link.href}
                             href={link.href}
+                            onClick={() =>
+                              track(events.nav_link_clicked, {
+                                label: link.label,
+                                href: link.href,
+                                position: 'desktop-megamenu',
+                                parent: activeMenu?.label,
+                                group: group.heading,
+                              })
+                            }
                             className={`group flex items-center py-2 transition-colors ${
                               pathname === link.href ? 'text-crimson' : 'text-ink hover:text-crimson'
                             }`}
@@ -200,6 +225,14 @@ export function Navbar() {
                       <Link
                         key={child.href}
                         href={child.href}
+                        onClick={() =>
+                          track(events.nav_link_clicked, {
+                            label: child.label,
+                            href: child.href,
+                            position: 'desktop-megamenu',
+                            parent: activeMenu?.label,
+                          })
+                        }
                         className={`group flex items-center py-2 transition-colors ${
                           pathname === child.href ? 'text-crimson' : 'text-ink hover:text-crimson'
                         }`}
@@ -276,6 +309,15 @@ export function Navbar() {
                                   <Link
                                     key={link.href}
                                     href={link.href}
+                                    onClick={() =>
+                                      track(events.nav_link_clicked, {
+                                        label: link.label,
+                                        href: link.href,
+                                        position: 'mobile-megamenu',
+                                        parent: item.label,
+                                        group: group.heading,
+                                      })
+                                    }
                                     className={`flex items-center gap-2 text-sm ${
                                       pathname === link.href ? 'text-crimson' : 'text-ink hover:text-crimson'
                                     }`}
@@ -296,6 +338,14 @@ export function Navbar() {
                             <Link
                               key={child.href}
                               href={child.href}
+                              onClick={() =>
+                                track(events.nav_link_clicked, {
+                                  label: child.label,
+                                  href: child.href,
+                                  position: 'mobile-megamenu',
+                                  parent: item.label,
+                                })
+                              }
                               className={`block text-sm ${
                                 pathname === child.href ? 'text-crimson' : 'text-ink hover:text-crimson'
                               }`}
@@ -310,6 +360,13 @@ export function Navbar() {
                 ) : (
                   <Link
                     href={item.href}
+                    onClick={() =>
+                      track(events.nav_link_clicked, {
+                        label: item.label,
+                        href: item.href,
+                        position: 'mobile',
+                      })
+                    }
                     className={`block font-mono text-[12px] uppercase tracking-[0.16em] ${
                       isActive(item) ? 'text-crimson' : 'text-ink'
                     }`}
@@ -324,6 +381,14 @@ export function Navbar() {
               href={SCHEDULE_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                track(events.schedule_clicked, {
+                  cta_label: 'Schedule a call',
+                  target_url: SCHEDULE_URL,
+                  position: 'navbar-mobile',
+                  page: typeof window !== 'undefined' ? window.location.pathname : undefined,
+                })
+              }
               className="block text-center border border-crimson text-crimson font-serif italic text-[15px] px-6 py-3 hover:bg-crimsonTint transition-colors mt-8"
             >
               Schedule a call

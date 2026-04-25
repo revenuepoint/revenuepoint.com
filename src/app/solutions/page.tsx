@@ -4,7 +4,7 @@ import { industryPageList } from '@/data/industries';
 import { buildMetadata } from '@/lib/metadata';
 
 export const metadata = buildMetadata({
-  title: 'Industries — RevenuePoint',
+  title: 'Industries',
   description:
     'Clean Salesforce environments for ten industries. A clean Lightning record page, named integrations, and fully managed by RevenuePoint.',
   path: '/solutions/',

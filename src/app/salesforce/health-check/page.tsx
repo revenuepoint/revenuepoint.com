@@ -14,7 +14,7 @@ import { CrmProvider } from '@/context/CrmContext';
 import { buildMetadata } from '@/lib/metadata';
 
 export const metadata = buildMetadata({
-  title: 'CRM Health Check — $1,500 Audit',
+  title: 'CRM Health Check',
   description:
     'A structured audit and prioritized action plan in two weeks. Twelve domains, a scored scorecard, a risk register, and a business case — for Salesforce, HubSpot, Dynamics, or custom.',
   path: '/salesforce/health-check/',

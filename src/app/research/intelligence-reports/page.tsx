@@ -17,7 +17,7 @@ import {
 } from '@/data/research/intelligenceReports';
 
 export const metadata = buildMetadata({
-  title: 'Intelligence Reports — Custom AI research, fully managed',
+  title: 'Intelligence Reports',
   description:
     'Bespoke intelligence reports built from public records, enrichment APIs, and your own systems. Citation-backed, named-analyst reviewed, fully managed by RevenuePoint. Starting at $6,800.',
   path: '/research/intelligence-reports/',

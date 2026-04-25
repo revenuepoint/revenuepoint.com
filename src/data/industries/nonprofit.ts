@@ -5,7 +5,7 @@ export const nonprofit: IndustryPageContent = {
   id: 'nonprofit',
   slug: 'nonprofit',
   navLabel: 'Nonprofit & Social Services',
-  metaTitle: 'Salesforce for Nonprofit & Social Services — RevenuePoint',
+  metaTitle: 'Salesforce for Nonprofit & Social Services',
   metaDescription:
     'Clean Salesforce Nonprofit Cloud / NPSP — donor 360, program engagement, grant pipeline, and case-managed services on one household record.',
   hero: {

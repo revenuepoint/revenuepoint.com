@@ -14,7 +14,7 @@ import {
 } from '@/data/salesforceManagedServices';
 
 export const metadata = buildMetadata({
-  title: 'Salesforce Managed Services — Outsourced Admin Team',
+  title: 'Salesforce Managed Services',
   description:
     'A named Salesforce administrator and project manager. 25 hours per month on two-week sprints. Configurations, bug fixes, reports, end-user support — everything an in-house admin would do, fully managed by RevenuePoint.',
   path: '/salesforce/managed-services/',

@@ -10,7 +10,7 @@ import { ScreenshotPlaceholder } from '@/components/ui/ScreenshotPlaceholder';
 import { industryPageList } from '@/data/industries';
 
 export const metadata = buildMetadata({
-  title: 'Salesforce Implementations — Fixed-Fee Sales Cloud Builds & Migrations',
+  title: 'Salesforce Implementations',
   description:
     'Typical Salesforce implementations from $15,000 in 6–8 weeks. Greenfield Sales Cloud builds and migrations off HubSpot, Dynamics, or spreadsheets — delivered by RevenuePoint, then fully managed.',
   path: '/salesforce/implementations/',

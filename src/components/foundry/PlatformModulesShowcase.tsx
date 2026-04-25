@@ -21,6 +21,7 @@ import {
   type FoundryModule,
   type ModuleId,
 } from '@/data/foundryModules';
+import { track, events } from '@/lib/analytics';
 
 function ModuleIntro({ module: m }: { module: FoundryModule }) {
   const layer = moduleLayerMeta[m.layer];
@@ -51,7 +52,13 @@ function ModuleIntro({ module: m }: { module: FoundryModule }) {
 }
 
 export function PlatformModulesShowcase() {
-  const [selectedId, setSelectedId] = useState<ModuleId>(foundryModules[0].id);
+  const [selectedId, setSelectedIdState] = useState<ModuleId>(foundryModules[0].id);
+  const setSelectedId = (id: ModuleId) => {
+    setSelectedIdState((prev) => {
+      if (prev !== id) track(events.foundry_module_selected, { from: prev, to: id });
+      return id;
+    });
+  };
   const selected =
     foundryModules.find((m) => m.id === selectedId) ?? foundryModules[0];
   const { flags: directorFlags } = useModuleDemoDirector(selectedId);

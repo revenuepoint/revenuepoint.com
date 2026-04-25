@@ -1,4 +1,9 @@
+'use client';
+
 import Link from 'next/link';
+import { SCHEDULE_URL } from '@/lib/links';
+import { track, events } from '@/lib/analytics';
+import type { EventName } from '@/lib/analytics';
 
 type ButtonProps = {
   variant?: 'primary' | 'secondary' | 'ghost' | 'plain';
@@ -6,6 +11,8 @@ type ButtonProps = {
   children: React.ReactNode;
   className?: string;
   type?: 'button' | 'submit';
+  trackingEvent?: EventName;
+  trackingProps?: Record<string, unknown>;
 };
 
 const variants = {
@@ -23,7 +30,15 @@ const padding = {
   plain: '',
 };
 
-export function Button({ variant = 'primary', href, children, className = '', type }: ButtonProps) {
+export function Button({
+  variant = 'primary',
+  href,
+  children,
+  className = '',
+  type,
+  trackingEvent,
+  trackingProps,
+}: ButtonProps) {
   const classes = `inline-flex items-center gap-2 text-center transition-colors ${variants[variant]} ${padding[variant]} ${className}`;
   const inner = (
     <>
@@ -35,15 +50,34 @@ export function Button({ variant = 'primary', href, children, className = '', ty
 
   if (href) {
     const isExternal = href.startsWith('http');
+    const isScheduleLink = href === SCHEDULE_URL;
+    const resolvedEvent = trackingEvent ?? (isScheduleLink ? events.schedule_clicked : undefined);
+    const handleClick = resolvedEvent
+      ? () => {
+          track(resolvedEvent, {
+            ...(typeof children === 'string' ? { cta_label: children } : {}),
+            target_url: href,
+            page: typeof window !== 'undefined' ? window.location.pathname : undefined,
+            ...(trackingProps ?? {}),
+          });
+        }
+      : undefined;
+
     if (isExternal) {
       return (
-        <a href={href} className={classes} target="_blank" rel="noopener noreferrer">
+        <a
+          href={href}
+          className={classes}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={handleClick}
+        >
           {inner}
         </a>
       );
     }
     return (
-      <Link href={href} className={classes}>
+      <Link href={href} className={classes} onClick={handleClick}>
         {inner}
       </Link>
     );

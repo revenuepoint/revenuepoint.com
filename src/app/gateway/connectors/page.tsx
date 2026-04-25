@@ -7,7 +7,7 @@ import type { GatewayConnector } from '@/types/gateway';
 import { SCHEDULE_URL } from '@/lib/links';
 
 export const metadata = buildMetadata({
-  title: 'Gateway Connectors — Salesforce, SAP, and Anything Else',
+  title: 'Gateway Connectors',
   description:
     'Pluggable connectors for Salesforce, SAP, and a custom REST/GraphQL adapter for anything else. Field-level permissions, code-defined data ops, audit log on every read and write.',
   path: '/gateway/connectors/',

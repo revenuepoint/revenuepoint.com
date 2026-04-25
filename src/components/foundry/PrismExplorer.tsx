@@ -6,11 +6,18 @@ import { PrismSidebar } from '@/components/foundry/PrismSidebar';
 import { PrismReportPanel } from '@/components/foundry/PrismReportPanel';
 import { prismReportsByIndustry } from '@/data/foundryPrismReports';
 import { useIndustry } from '@/context/IndustryContext';
+import { track, events } from '@/lib/analytics';
 
 export function PrismExplorer() {
   const { industryId } = useIndustry();
   const reports = prismReportsByIndustry[industryId];
-  const [selectedId, setSelectedId] = useState<string>(reports[0].id);
+  const [selectedId, setSelectedIdState] = useState<string>(reports[0].id);
+  const setSelectedId = (id: string) => {
+    setSelectedIdState((prev) => {
+      if (prev !== id) track(events.prism_report_opened, { report_id: id, industry: industryId });
+      return id;
+    });
+  };
 
   // Reset selection on industry change — stale id belongs to previous industry.
   useEffect(() => {

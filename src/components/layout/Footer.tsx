@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import { Wordmark } from '@/components/brand/Wordmark';
+import { track, events } from '@/lib/analytics';
 
 const sfLinks = [
   { label: 'Consulting', href: '/salesforce/' },
@@ -101,6 +104,13 @@ export function Footer() {
                     <li key={link.href}>
                       <Link
                         href={link.href}
+                        onClick={() =>
+                          track(events.footer_link_clicked, {
+                            label: link.label,
+                            href: link.href,
+                            group: group.heading,
+                          })
+                        }
                         className="text-sm text-inkSoft hover:text-crimson transition-colors"
                       >
                         {link.label}

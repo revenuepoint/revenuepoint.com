@@ -4,7 +4,11 @@ import { Fraunces, JetBrains_Mono } from 'next/font/google';
 import { GeistSans } from 'geist/font/sans';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
+import { Telemetry } from '@/components/system/Telemetry';
+import { GA_ID } from '@/lib/gtag';
 import './globals.css';
+
+const GA_ENABLED = !!GA_ID && process.env.NODE_ENV === 'production';
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -29,7 +33,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: DEFAULT_TITLE,
-    template: '%s | RevenuePoint',
+    template: '%s — RevenuePoint',
   },
   description: DEFAULT_DESCRIPTION,
   openGraph: {
@@ -69,6 +73,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${fraunces.variable} ${GeistSans.variable} ${jetbrainsMono.variable}`}
     >
       <body className="bg-paper text-ink antialiased font-sans">
+        <Telemetry />
         <Navbar />
         <main className="pt-[63px] lg:pt-[75px]">{children}</main>
         <Footer />
@@ -76,6 +81,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           src="https://www.google.com/recaptcha/api.js"
           strategy="lazyOnload"
         />
+        {GA_ENABLED && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="gtag-init" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_ID}', { send_page_view: false });`}
+            </Script>
+          </>
+        )}
       </body>
     </html>
   );

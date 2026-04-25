@@ -5,7 +5,7 @@ export const healthcare: IndustryPageContent = {
   id: 'healthcare',
   slug: 'healthcare',
   navLabel: 'Healthcare & Ambulatory Care',
-  metaTitle: 'Salesforce for Healthcare & Ambulatory Care — RevenuePoint',
+  metaTitle: 'Salesforce for Healthcare & Ambulatory Care',
   metaDescription:
     'Clean Salesforce Health Cloud for ambulatory groups — patient 360, referral pipeline, care-gap scoring, and denial analytics on one record page.',
   hero: {

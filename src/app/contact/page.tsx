@@ -6,7 +6,7 @@ import { LeadForm } from '@/components/ui/LeadForm';
 import { SCHEDULE_URL } from '@/lib/links';
 
 export const metadata = buildMetadata({
-  title: 'Contact RevenuePoint | Salesforce, SAP & Foundry Partner',
+  title: 'Contact',
   description:
     'Get in touch. We respond within one business day and only take engagements where we can deliver measurable ROI.',
   path: '/contact/',

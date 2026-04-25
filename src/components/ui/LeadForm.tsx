@@ -1,6 +1,8 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
+import { track, events } from '@/lib/analytics';
+import { identifyUserFromForm } from '@/lib/observability';
 
 type LeadFormProps = {
   interest: string;
@@ -11,6 +13,9 @@ const inputClass =
   'w-full bg-paper border border-rule px-4 py-3 text-sm text-ink placeholder:text-muteSoft focus:outline-none focus:border-crimson focus:ring-1 focus:ring-crimson transition-colors';
 
 export function LeadForm({ interest, id }: LeadFormProps) {
+  const startedRef = useRef(false);
+  const formRef = useRef<HTMLFormElement>(null);
+
   useEffect(() => {
     const pageUrlField = document.getElementById('sf_page_url') as HTMLInputElement | null;
     if (pageUrlField) {
@@ -18,11 +23,43 @@ export function LeadForm({ interest, id }: LeadFormProps) {
     }
   }, []);
 
+  const handleFirstFocus = () => {
+    if (startedRef.current) return;
+    startedRef.current = true;
+    track(events.lead_form_started, {
+      interest,
+      page: typeof window !== 'undefined' ? window.location.pathname : undefined,
+    });
+  };
+
+  const handleFieldBlur = () => {
+    if (!formRef.current) return;
+    const fd = new FormData(formRef.current);
+    identifyUserFromForm({
+      firstName: fd.get('first_name')?.toString(),
+      lastName: fd.get('last_name')?.toString(),
+      email: fd.get('email')?.toString(),
+      phone: fd.get('phone')?.toString(),
+      company: fd.get('company')?.toString(),
+    });
+  };
+
+  const handleSubmit = () => {
+    track(events.lead_form_submitted, {
+      interest,
+      page: typeof window !== 'undefined' ? window.location.pathname : undefined,
+    });
+  };
+
   return (
     <form
+      ref={formRef}
       id={id}
       action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8"
       method="POST"
+      onFocusCapture={handleFirstFocus}
+      onBlurCapture={handleFieldBlur}
+      onSubmit={handleSubmit}
       className="grid grid-cols-1 md:grid-cols-2 gap-4"
     >
       {/* Salesforce hidden fields */}

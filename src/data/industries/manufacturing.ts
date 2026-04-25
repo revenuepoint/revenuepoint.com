@@ -5,7 +5,7 @@ export const manufacturing: IndustryPageContent = {
   id: 'manufacturing',
   slug: 'manufacturing',
   navLabel: 'Manufacturing',
-  metaTitle: 'Salesforce for Manufacturing — RevenuePoint',
+  metaTitle: 'Salesforce for Manufacturing',
   metaDescription:
     'Clean Salesforce for discrete and process manufacturers — ERP-synced inventory, Sales Agreement actuals, production status, and quality hotlists on one Lightning record page.',
   hero: {

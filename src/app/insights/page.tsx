@@ -4,7 +4,7 @@ import { PostCard } from '@/components/insights/PostCard';
 import { EmailSignup } from '@/components/ui/EmailSignup';
 
 export const metadata = buildMetadata({
-  title: 'Insights — RevenuePoint',
+  title: 'Insights',
   description:
     'Notes on orchestration, mid-market operations, and the work we do inside our customers\' systems.',
   path: '/insights/',

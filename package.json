@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@dagrejs/dagre": "^3.0.0",
+    "@datadog/browser-logs": "^6.33.0",
+    "@datadog/browser-rum": "^6.33.0",
     "@xyflow/react": "^12.10.2",
     "framer-motion": "^11.18.2",
     "geist": "^1.7.0",

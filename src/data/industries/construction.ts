@@ -5,7 +5,7 @@ export const construction: IndustryPageContent = {
   id: 'construction',
   slug: 'construction',
   navLabel: 'Construction & Contracting',
-  metaTitle: 'Salesforce for Construction & Contracting — RevenuePoint',
+  metaTitle: 'Salesforce for Construction & Contracting',
   metaDescription:
     'Clean Salesforce for general contractors and specialty trades — bid pipeline, project margin, change order tracker, and sub compliance on one record page.',
   hero: {

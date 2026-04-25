@@ -8,7 +8,7 @@ import { FAQAccordion } from '@/components/ui/FAQAccordion';
 import { LeadForm } from '@/components/ui/LeadForm';
 
 export const metadata = buildMetadata({
-  title: 'SAP Managed Services — Business One & S/4HANA',
+  title: 'SAP Managed Services',
   description:
     'A named SAP consultant and project manager. Two-week sprints. Inventory, financial close, end-user support, workflow tuning — fully managed by RevenuePoint, across SAP Business One and S/4HANA.',
   path: '/sap/',

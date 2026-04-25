@@ -13,13 +13,13 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   const post = getPostBySlug(params.slug);
   if (!post) {
     return buildMetadata({
-      title: 'Not found — RevenuePoint',
+      title: 'Not Found',
       description: '',
       path: `/insights/${params.slug}/`,
     });
   }
   return buildMetadata({
-    title: `${post.meta.title} — RevenuePoint`,
+    title: post.meta.title,
     description: post.meta.excerpt,
     path: `/insights/${post.meta.slug}/`,
   });

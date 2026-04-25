@@ -5,7 +5,7 @@ import { HairlineRule } from '@/components/ui/HairlineRule';
 import { Button } from '@/components/ui/Button';
 
 export const metadata = buildMetadata({
-  title: 'Brand guide — RevenuePoint',
+  title: 'Brand Guide',
   description:
     'How to use the RevenuePoint mark, palette, and type. For partners, agencies, press, and anyone shipping co-branded work.',
   path: '/brand/',

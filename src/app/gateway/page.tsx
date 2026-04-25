@@ -16,7 +16,7 @@ import { gatewayProblemCards, gatewayProblemStats } from '@/data/gatewayProblem'
 import { SCHEDULE_URL } from '@/lib/links';
 
 export const metadata = buildMetadata({
-  title: 'Gateway — Multi-tenant portals, fully managed',
+  title: 'Gateway',
   description:
     'Gateway is a multi-tenant portal framework on Next.js. Branded portals for every customer, partner, dealer, or location — wired into your CRM and ERP, with magic-link auth, tenant isolation, and code-defined access rules. Fully managed by RevenuePoint.',
   path: '/gateway/',

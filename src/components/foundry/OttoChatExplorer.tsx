@@ -6,11 +6,18 @@ import { OttoChatSidebar } from '@/components/foundry/OttoChatSidebar';
 import { OttoChatPanel } from '@/components/foundry/OttoChatPanel';
 import { ottoConversationsByIndustry } from '@/data/foundryOttoChats';
 import { useIndustry } from '@/context/IndustryContext';
+import { track, events } from '@/lib/analytics';
 
 export function OttoChatExplorer() {
   const { industryId } = useIndustry();
   const conversations = ottoConversationsByIndustry[industryId];
-  const [selectedId, setSelectedId] = useState<string>(conversations[0].id);
+  const [selectedId, setSelectedIdState] = useState<string>(conversations[0].id);
+  const setSelectedId = (id: string) => {
+    setSelectedIdState((prev) => {
+      if (prev !== id) track(events.otto_prompt_clicked, { prompt_id: id, industry: industryId });
+      return id;
+    });
+  };
 
   // Reset selection when industry changes — prior selectedId belongs to a different industry.
   useEffect(() => {

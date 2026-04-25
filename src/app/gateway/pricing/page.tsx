@@ -14,7 +14,7 @@ import {
 import { SCHEDULE_URL } from '@/lib/links';
 
 export const metadata = buildMetadata({
-  title: 'Gateway Pricing — Fully Managed, Per-Tenant',
+  title: 'Gateway Pricing',
   description:
     'Gateway is priced per active tenant per month. Hosting, magic-link auth, connector, theming, audit log, and a named administrator are all included. Fully managed by RevenuePoint.',
   path: '/gateway/pricing/',

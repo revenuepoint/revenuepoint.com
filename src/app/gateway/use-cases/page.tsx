@@ -6,7 +6,7 @@ import { gatewayUseCases } from '@/data/gatewayUseCases';
 import { SCHEDULE_URL } from '@/lib/links';
 
 export const metadata = buildMetadata({
-  title: 'Gateway Use Cases — Customer, Partner, Dealer, Member, Patient Portals',
+  title: 'Gateway Use Cases',
   description:
     'Six portal archetypes built on Gateway: customer portals, partner portals, dealer portals, dispatch/field portals, member portals, and patient portals. One framework, every use case.',
   path: '/gateway/use-cases/',

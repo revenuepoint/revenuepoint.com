@@ -20,7 +20,7 @@ import {
 import { SCHEDULE_URL } from '@/lib/links';
 
 export const metadata = buildMetadata({
-  title: 'NPSP Middleware — Open-source donor stack for Salesforce NPSP',
+  title: 'NPSP Middleware',
   description:
     'A donate form, member portal, and events platform that syncs into Salesforce NPSP. Open source (AGPL-3.0) or fully managed by RevenuePoint at $6,000 per newsroom / year.',
   path: '/npsp-middleware/',
