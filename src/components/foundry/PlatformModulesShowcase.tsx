@@ -65,12 +65,12 @@ export function PlatformModulesShowcase() {
       return;
     }
     const SEQUENCE: Array<{ idx: number | null; ms: number }> = [
-      { idx: 0, ms: 1700 },
-      { idx: null, ms: 500 },
-      { idx: 4, ms: 1700 },
-      { idx: null, ms: 500 },
-      { idx: 8, ms: 1700 },
-      { idx: null, ms: 1000 },
+      { idx: 0, ms: 3000 },
+      { idx: null, ms: 800 },
+      { idx: 4, ms: 3000 },
+      { idx: null, ms: 800 },
+      { idx: 8, ms: 3000 },
+      { idx: null, ms: 1500 },
     ];
     let step = 0;
     let timerId = 0;

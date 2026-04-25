@@ -4,10 +4,10 @@ import { PricingCard } from '@/components/ui/PricingCard';
 import { LeadForm } from '@/components/ui/LeadForm';
 
 export const metadata = buildMetadata({
-  title: 'Salesforce Pricing — Managed Administration Plans',
+  title: 'Salesforce Managed Services Pricing',
   description:
     'White-glove Salesforce administration from $2,400/month. Dedicated administrator and project manager. No long-term contracts.',
-  path: '/salesforce/pricing/',
+  path: '/salesforce/managed-services/pricing/',
 });
 
 const salesCloudFeatures = [
@@ -39,7 +39,7 @@ const additionalServices = [
   { service: 'Supplemental Services (consulting, training, vendor comms)', price: '$125/hour' },
 ];
 
-export default function SalesforcePricingPage() {
+export default function SalesforceManagedServicesPricingPage() {
   return (
     <>
       {/* Header */}

@@ -1,52 +1,15 @@
 'use client';
 
-type Kpi = {
-  label: string;
-  value: string;
-  trend: string;
-  trendGood: boolean;
-  goal: string;
-  status: 'on-track' | 'at-risk' | 'off-track';
-  spark: number[];
-};
+import { useIndustry } from '@/context/IndustryContext';
+import { lensContentByIndustry, type DashboardKpi } from '@/data/foundryLensContent';
 
-const KPIS: Kpi[] = [
-  {
-    label: 'Scripts This Week',
-    value: '2,847',
-    trend: '+3.2%',
-    trendGood: true,
-    goal: '3,000',
-    status: 'at-risk',
-    spark: [2550, 2620, 2590, 2710, 2680, 2760, 2730, 2790, 2820, 2800, 2830, 2847],
-  },
-  {
-    label: 'Backlog > 48h',
-    value: '47',
-    trend: '+12',
-    trendGood: false,
-    goal: '≤ 20',
-    status: 'off-track',
-    spark: [22, 24, 28, 25, 30, 32, 35, 38, 40, 42, 45, 47],
-  },
-  {
-    label: 'On-Time Fill Rate',
-    value: '91.4%',
-    trend: '-2.1%',
-    trendGood: false,
-    goal: '≥ 95%',
-    status: 'off-track',
-    spark: [95.1, 94.8, 94.3, 94.1, 93.7, 93.2, 92.9, 92.5, 92.1, 91.8, 91.6, 91.4],
-  },
-];
-
-const STATUS_DOT: Record<Kpi['status'], string> = {
+const STATUS_DOT: Record<DashboardKpi['status'], string> = {
   'on-track': 'bg-emerald-500',
   'at-risk': 'bg-amber-500',
   'off-track': 'bg-red-500',
 };
 
-const STATUS_STROKE: Record<Kpi['status'], string> = {
+const STATUS_STROKE: Record<DashboardKpi['status'], string> = {
   'on-track': '#10b981',
   'at-risk': '#f59e0b',
   'off-track': '#ef4444',
@@ -67,7 +30,7 @@ function Sparkline({ values, color, width = 160, height = 34 }: { values: number
   );
 }
 
-function KpiCard({ kpi }: { kpi: Kpi }) {
+function KpiCard({ kpi }: { kpi: DashboardKpi }) {
   return (
     <div className="border border-border rounded-lg bg-white p-4 flex flex-col gap-2">
       <div className="flex items-center gap-1.5">
@@ -86,34 +49,26 @@ function KpiCard({ kpi }: { kpi: Kpi }) {
   );
 }
 
-// Line chart: Daily Script Volume — 3 series
-const SERIES = [
-  { name: 'Downtown', color: '#2563eb', values: [108, 112, 105, 118, 120, 115, 122, 128, 125, 130, 135, 138] },
-  { name: 'Westside', color: '#059669', values: [92, 95, 98, 96, 100, 102, 99, 104, 108, 106, 110, 112] },
-  { name: 'Northgate', color: '#d97706', values: [84, 86, 82, 88, 85, 90, 88, 92, 95, 93, 97, 98] },
-];
-
-function LineChart() {
+function LineChart({ series, goalPct }: { series: { name: string; color: string; values: number[] }[]; goalPct: number }) {
   const W = 640;
   const H = 160;
   const padL = 28;
   const padR = 12;
   const padT = 10;
   const padB = 22;
-  const allValues = SERIES.flatMap((s) => s.values);
+  const allValues = series.flatMap((s) => s.values);
   const min = Math.min(...allValues);
   const max = Math.max(...allValues);
   const range = max - min || 1;
-  const len = SERIES[0].values.length;
+  const len = series[0].values.length;
   const step = (W - padL - padR) / (len - 1);
-  const goalY = padT + (H - padT - padB) * 0.18; // visual reference
+  const goalY = padT + (H - padT - padB) * goalPct;
 
   return (
     <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-40" aria-hidden="true">
-      {/* Y axis grid */}
       {[0, 0.25, 0.5, 0.75, 1].map((t, i) => {
         const y = padT + (H - padT - padB) * t;
-        const label = Math.round(max - range * t);
+        const label = Math.round((max - range * t) * 100) / 100;
         return (
           <g key={i}>
             <line x1={padL} x2={W - padR} y1={y} y2={y} stroke="#e5e7eb" strokeWidth={0.5} />
@@ -121,15 +76,12 @@ function LineChart() {
           </g>
         );
       })}
-      {/* Goal reference */}
       <line x1={padL} x2={W - padR} y1={goalY} y2={goalY} stroke="#8B0A39" strokeDasharray="3 3" strokeWidth={1} opacity={0.6} />
       <text x={W - padR - 4} y={goalY - 3} fontSize={8} fill="#8B0A39" textAnchor="end">goal</text>
-      {/* Series lines */}
-      {SERIES.map((s) => {
+      {series.map((s) => {
         const points = s.values.map((v, i) => `${padL + i * step},${padT + (H - padT - padB) * (1 - (v - min) / range)}`).join(' ');
         return <polyline key={s.name} points={points} fill="none" stroke={s.color} strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" />;
       })}
-      {/* X axis labels (sparse) */}
       {['Day 1', 'Day 8', 'Day 15', 'Day 22', 'Day 30'].map((lbl, i, arr) => {
         const t = i / (arr.length - 1);
         const x = padL + t * (W - padL - padR);
@@ -139,22 +91,17 @@ function LineChart() {
   );
 }
 
-// Donut: Scripts by Compound Type
-const SLICES = [
-  { label: 'Hormone', value: 34, color: '#2563eb' },
-  { label: 'Pain Mgmt', value: 22, color: '#059669' },
-  { label: 'Veterinary', value: 18, color: '#d97706' },
-  { label: 'Dermatology', value: 14, color: '#7c3aed' },
-  { label: 'Other', value: 12, color: '#64748b' },
-];
-
-function Donut() {
+function Donut({ slices, centerValue, centerSublabel }: {
+  slices: { label: string; value: number; color: string }[];
+  centerValue: string;
+  centerSublabel: string;
+}) {
   const cx = 80, cy = 80, rOuter = 68, rInner = 42;
   let startAngle = -Math.PI / 2;
-  const total = SLICES.reduce((s, x) => s + x.value, 0);
+  const total = slices.reduce((s, x) => s + x.value, 0);
   return (
     <svg viewBox="0 0 160 160" className="h-40 w-40" aria-hidden="true">
-      {SLICES.map((s, i) => {
+      {slices.map((s, i) => {
         const angle = (s.value / total) * Math.PI * 2;
         const endAngle = startAngle + angle;
         const x1 = cx + rOuter * Math.cos(startAngle);
@@ -170,32 +117,27 @@ function Donut() {
         startAngle = endAngle;
         return <path key={i} d={d} fill={s.color} opacity={0.9} />;
       })}
-      <text x={cx} y={cy - 2} textAnchor="middle" fontSize="14" fontWeight="700" fill="#0F2B4D">2,847</text>
-      <text x={cx} y={cy + 12} textAnchor="middle" fontSize="8" fill="#6B8299">scripts / week</text>
+      <text x={cx} y={cy - 2} textAnchor="middle" fontSize="14" fontWeight="700" fill="#0F2B4D">{centerValue}</text>
+      <text x={cx} y={cy + 12} textAnchor="middle" fontSize="8" fill="#6B8299">{centerSublabel}</text>
     </svg>
   );
 }
 
-// Horizontal bars: Avg Turnaround by Location
-const BARS = [
-  { label: 'Downtown', value: 44 },
-  { label: 'Westside', value: 38 },
-  { label: 'Northgate', value: 61 },
-  { label: 'Lakeside', value: 52 },
-  { label: 'Eastport', value: 41 },
-];
-
-function HorizontalBars() {
-  const max = 72;
-  const goal = 48;
+function HorizontalBars({ bars, max, goal, unit, goalLabel }: {
+  bars: { label: string; value: number }[];
+  max: number;
+  goal: number;
+  unit: string;
+  goalLabel: string;
+}) {
   return (
     <div className="flex flex-col gap-2">
-      {BARS.map((b) => {
+      {bars.map((b) => {
         const pct = (b.value / max) * 100;
         const over = b.value > goal;
         return (
           <div key={b.label} className="flex items-center gap-2">
-            <span className="text-[10px] text-mutedText w-16 shrink-0">{b.label}</span>
+            <span className="text-[10px] text-mutedText w-20 shrink-0 truncate">{b.label}</span>
             <div className="relative flex-1 h-5 bg-offWhite rounded-sm overflow-hidden border border-border">
               <div
                 className={`absolute left-0 top-0 bottom-0 ${over ? 'bg-red-400' : 'bg-emerald-500'}`}
@@ -206,25 +148,27 @@ function HorizontalBars() {
                 style={{ left: `${(goal / max) * 100}%` }}
               />
             </div>
-            <span className="text-[10px] font-mono text-navy w-10 text-right">{b.value}h</span>
+            <span className="text-[10px] font-mono text-navy w-12 text-right">{b.value}{unit}</span>
           </div>
         );
       })}
       <p className="text-[10px] text-mutedText mt-1">
-        <span className="inline-block h-2 w-0.5 bg-crimson mr-1 align-middle" /> goal 48h
+        <span className="inline-block h-2 w-0.5 bg-crimson mr-1 align-middle" /> {goalLabel}
       </p>
     </div>
   );
 }
 
 export function DashboardPreview() {
+  const { industryId } = useIndustry();
+  const spec = lensContentByIndustry[industryId].dashboard;
+
   return (
     <div className="flex flex-col gap-5">
-      {/* Header */}
       <div className="flex items-center justify-between flex-wrap gap-3 pb-4 border-b border-border">
         <div>
-          <p className="text-[10px] uppercase tracking-widest text-mutedText">Harborline · Lens</p>
-          <h4 className="text-base font-semibold text-navy">Pharmacy Operations · Last 30 Days</h4>
+          <p className="text-[10px] uppercase tracking-widest text-mutedText">{spec.eyebrow}</p>
+          <h4 className="text-base font-semibold text-navy">{spec.title}</h4>
         </div>
         <div className="flex items-center gap-1.5">
           <span className="text-[10px] px-2 py-1 rounded border border-border text-mutedText">7d</span>
@@ -234,17 +178,15 @@ export function DashboardPreview() {
         </div>
       </div>
 
-      {/* KPI row */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-        {KPIS.map((k) => <KpiCard key={k.label} kpi={k} />)}
+        {spec.kpis.map((k) => <KpiCard key={k.label} kpi={k} />)}
       </div>
 
-      {/* Line chart full width */}
       <div className="border border-border rounded-lg bg-white p-4">
         <div className="flex items-center justify-between mb-2">
-          <p className="text-xs font-semibold text-navy">Daily Script Volume · Last 30 Days</p>
+          <p className="text-xs font-semibold text-navy">{spec.line.title}</p>
           <div className="flex items-center gap-3 text-[10px]">
-            {SERIES.map((s) => (
+            {spec.line.series.map((s) => (
               <span key={s.name} className="flex items-center gap-1 text-mutedText">
                 <span className="inline-block h-2 w-2 rounded-full" style={{ backgroundColor: s.color }} />
                 {s.name}
@@ -252,16 +194,15 @@ export function DashboardPreview() {
             ))}
           </div>
         </div>
-        <LineChart />
+        <LineChart series={spec.line.series} goalPct={spec.line.goalReferencePct} />
       </div>
 
-      {/* Donut + Horizontal bars */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         <div className="border border-border rounded-lg bg-white p-4 flex items-center gap-4">
-          <Donut />
+          <Donut slices={spec.donut.slices} centerValue={spec.donut.centerValue} centerSublabel={spec.donut.centerSublabel} />
           <div className="flex flex-col gap-1.5 flex-1 min-w-0">
-            <p className="text-xs font-semibold text-navy mb-1">Scripts by Compound Type</p>
-            {SLICES.map((s) => (
+            <p className="text-xs font-semibold text-navy mb-1">{spec.donut.title}</p>
+            {spec.donut.slices.map((s) => (
               <div key={s.label} className="flex items-center gap-2 text-[11px]">
                 <span className="h-2 w-2 rounded-full shrink-0" style={{ backgroundColor: s.color }} />
                 <span className="text-bodyText flex-1 truncate">{s.label}</span>
@@ -271,8 +212,14 @@ export function DashboardPreview() {
           </div>
         </div>
         <div className="border border-border rounded-lg bg-white p-4">
-          <p className="text-xs font-semibold text-navy mb-3">Avg Turnaround by Location</p>
-          <HorizontalBars />
+          <p className="text-xs font-semibold text-navy mb-3">{spec.horizontalBars.title}</p>
+          <HorizontalBars
+            bars={spec.horizontalBars.bars}
+            max={spec.horizontalBars.max}
+            goal={spec.horizontalBars.goal}
+            unit={spec.horizontalBars.unit}
+            goalLabel={spec.horizontalBars.goalLabel}
+          />
         </div>
       </div>
     </div>

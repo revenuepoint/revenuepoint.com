@@ -1,44 +1,35 @@
+import Link from 'next/link';
 import { buildMetadata } from '@/lib/metadata';
 import { HeroSection } from '@/components/ui/HeroSection';
-import { SectionHeader } from '@/components/ui/SectionHeader';
+import { ServiceCard } from '@/components/ui/ServiceCard';
 import { LeadForm } from '@/components/ui/LeadForm';
-import { ScreenshotPlaceholder } from '@/components/ui/ScreenshotPlaceholder';
+import { SectionHeader } from '@/components/ui/SectionHeader';
+import { SalesforceProductPicker } from '@/components/salesforce/SalesforceProductPicker';
+import { consultingActivities, consultingProducts } from '@/data/salesforceConsulting';
+import { industryPageList } from '@/data/industries';
 
 export const metadata = buildMetadata({
-  title: 'Salesforce Managed Services & Consulting',
+  title: 'Certified Salesforce Consulting',
   description:
-    '60+ certified Salesforce consultants. Sales Cloud, Service Cloud, CPQ, Pardot, and NPSP — implemented and managed for growing businesses.',
+    '60+ Salesforce certifications across Sales Cloud, Service Cloud, Marketing Cloud, CPQ, Experience Cloud, and NPSP. Implementations, integrations, custom development, and managed administration.',
   path: '/salesforce/',
 });
 
-const products = [
+const foundryPillars = [
   {
-    title: 'Sales Cloud — Pipeline, Forecasting & Revenue Operations',
-    body: 'Most Sales Cloud implementations are configured for Salesforce\'s demo, not your actual sales process. We map your pipeline stages, custom fields, and opportunity flows to the way your team sells — then maintain it as your business evolves. Includes lead and opportunity management, forecast reporting, Einstein activity capture, and third-party integrations.',
+    eyebrow: '01 · Connect',
+    headline: 'Every system you run, on one warehouse.',
+    body: 'Salesforce, ERP, accounting, marketing, and telephony wired into a managed pipeline so every record matches on every side.',
   },
   {
-    title: 'Service Cloud — Case Management & Customer Support',
-    body: 'We implement Service Cloud around your actual support workflows — email, phone, chat, and social — with SLAs, escalation rules, and reporting configured to your team\'s structure. Your agents work the queue; we keep the platform running.',
+    eyebrow: '02 · Illuminate',
+    headline: 'Live dashboards. Overnight AI analysis.',
+    body: 'Lens dashboards for every role and Prism reports written overnight so leadership has answers by 8 AM.',
   },
   {
-    title: 'Marketing Cloud & Pardot — Demand Generation & Nurture',
-    body: 'Pardot for companies that need aligned marketing and sales pipelines — lead scoring, nurture sequences, Salesforce CRM sync, and campaign attribution reporting. We implement and manage it so your marketers can market.',
-  },
-  {
-    title: 'CPQ & Billing — Quote Automation & Revenue Operations',
-    body: 'Manual quoting is a revenue leak. CPQ replaces the spreadsheet and the approval bottleneck with a configured quoting engine that enforces pricing rules and generates contracts. We implement and maintain it.',
-  },
-  {
-    title: 'Experience Cloud — Partner & Customer Portals',
-    body: 'Branded portals for partners and customers to submit cases, log deals, and access resources — without internal Salesforce licenses. We build and manage Experience Cloud communities around your use case.',
-  },
-  {
-    title: 'Nonprofit Success Pack — CRM for Nonprofits',
-    body: 'NPSP turns Salesforce into the world\'s leading nonprofit CRM. We implement it for fundraising teams and program managers — configured to your campaigns, donor segments, and reporting requirements.',
-  },
-  {
-    title: 'Salesforce Administration — Ongoing Managed Services',
-    body: 'Most organizations implement Salesforce correctly and then let it drift. A dedicated RevenuePoint administrator prevents that. We audit, optimize, and evolve your instance month-to-month.',
+    eyebrow: '03 · Act',
+    headline: 'Agents watch, decide, and execute.',
+    body: 'Agents and Otto take action across Salesforce and the rest of your stack — fully auditable, fully managed.',
   },
 ];
 
@@ -46,55 +37,144 @@ export default function SalesforcePage() {
   return (
     <>
       <HeroSection
-        eyebrow="SALESFORCE MANAGED SERVICES & CONSULTING"
-        heading="The world's #1 CRM, implemented and managed the right way."
-        body="RevenuePoint holds over 60 Salesforce certifications across the full product suite. We've implemented Salesforce for teams of 10 and global rollouts of hundreds of users — and we manage them ongoing so your team can focus on the business, not the platform."
-        variant="navy"
+        eyebrow="SALESFORCE CONSULTING"
+        heading="Certified Salesforce consulting. Across every cloud, across every industry."
+        body="Our consultants hold over 60 Salesforce certifications and have implemented Salesforce for teams of 10 to global rollouts of hundreds of users. We specialize in implementations that stick — configured to your process, trained to your team, supported beyond go-live."
+        variant="light"
       />
 
-      {/* Products */}
+      {/* What we do — activity groupings */}
       <section className="bg-white py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 space-y-16">
-          {products.map((product, i) => (
-            <div
-              key={product.title}
-              className={`lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center ${
-                i % 2 === 1 ? 'lg:direction-rtl' : ''
-              }`}
-            >
-              <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
-                <h3 className="text-xl font-semibold text-navy mb-4">{product.title}</h3>
-                <p className="text-base text-bodyText leading-relaxed">{product.body}</p>
-              </div>
-              <div className={i % 2 === 1 ? 'lg:order-1 mt-6 lg:mt-0' : 'mt-6 lg:mt-0'}>
-                <ScreenshotPlaceholder label={product.title.split(' — ')[0]} height={320} />
-              </div>
-            </div>
-          ))}
+        <div className="max-w-7xl mx-auto px-4">
+          <SectionHeader
+            eyebrow="What we do"
+            heading="Six ways we work with Salesforce"
+            body="From greenfield implementations to ongoing managed administration — one team, one contract, across the full Salesforce suite."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {consultingActivities.map((activity) => (
+              <ServiceCard
+                key={activity.title}
+                title={activity.title}
+                body={activity.body}
+                cta={activity.cta ?? { label: 'Get started', href: '#lead-form' }}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Consulting Credentials */}
+      {/* Salesforce products — interactive picker */}
       <section className="bg-offWhite py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+        <div className="max-w-7xl mx-auto px-4">
           <SectionHeader
-            heading="60+ certifications across the full Salesforce suite"
-            body="Our consultants are certified across Sales Cloud, Service Cloud, Marketing Cloud, CPQ, Experience Cloud, and NPSP. We've implemented Salesforce for startups and global enterprises — and we bring those lessons to every engagement."
+            eyebrow="Salesforce products"
+            heading="Every Salesforce product. One team."
+            body="60+ certifications across the full Salesforce suite. Pick a product to see how we implement, integrate, and manage it."
           />
-          <ScreenshotPlaceholder
-            label="Salesforce certification badge strip"
-            width={1200}
-            height={120}
-            className="max-w-4xl mx-auto"
+          <SalesforceProductPicker products={consultingProducts} />
+        </div>
+      </section>
+
+      {/* Industries */}
+      <section className="bg-white py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4">
+          <SectionHeader
+            eyebrow="Industries we know"
+            heading="Ten industries. Ten clean record pages."
+            body="Salesforce looks different in a specialty pharmacy than it does in a distributor or a nonprofit. We build Lightning record pages that work the way your industry actually runs."
           />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {industryPageList.map((industry) => (
+              <Link
+                key={industry.id}
+                href={`/solutions/${industry.slug}/`}
+                className="group border border-border rounded-lg bg-white p-6 hover:border-crimson transition-colors block"
+              >
+                <div className="text-[10px] uppercase tracking-widest text-crimson font-semibold">
+                  Industry
+                </div>
+                <h3 className="mt-2 text-xl font-bold text-navy tracking-tight">
+                  {industry.navLabel}
+                </h3>
+                <p className="mt-3 text-sm text-bodyText leading-relaxed">
+                  {industry.hero.sub}
+                </p>
+                <div className="mt-5 pt-4 border-t border-border text-[10px] uppercase tracking-widest text-mutedText font-semibold">
+                  Record page + {industry.lexComponents.length} components +{' '}
+                  {industry.integrations.systems.length} integrations
+                </div>
+                <div className="mt-3 text-sm text-crimson font-semibold group-hover:underline">
+                  See the record page &rarr;
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link
+              href="/solutions/"
+              className="text-sm font-semibold text-crimson hover:text-crimsonDark transition-colors inline-flex items-center gap-1"
+            >
+              See all industries <span aria-hidden="true">&rarr;</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Foundry teaser */}
+      <section className="bg-navy text-white">
+        <div className="max-w-7xl mx-auto px-4 py-16 lg:py-20">
+          <div className="max-w-3xl mb-10">
+            <p className="text-xs font-bold uppercase tracking-widest text-crimson mb-4">
+              Foundry &middot; Orchestrated intelligence
+            </p>
+            <h2 className="text-3xl font-bold tracking-tight text-white">
+              Foundry sits on top of a clean Salesforce.
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-gray-300">
+              Once your Salesforce is clean, Foundry connects the rest of your stack — ERP,
+              accounting, telephony, marketing — and delivers live dashboards, AI reports, and
+              agents that take action. Fully managed by RevenuePoint.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {foundryPillars.map((pillar) => (
+              <div
+                key={pillar.eyebrow}
+                className="border border-white/10 rounded-lg bg-white/[0.03] p-5"
+              >
+                <div className="text-[10px] uppercase tracking-widest text-crimson font-semibold">
+                  {pillar.eyebrow}
+                </div>
+                <div className="mt-2 text-base font-bold text-white">{pillar.headline}</div>
+                <p className="mt-3 text-sm text-gray-300 leading-relaxed">{pillar.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3">
+            <Link
+              href="/foundry/"
+              className="inline-flex items-center justify-center px-5 py-2.5 rounded-sm bg-crimson text-white text-sm font-semibold hover:bg-crimsonDark transition-colors"
+            >
+              See Foundry in full &rarr;
+            </Link>
+            <Link
+              href="/contact/?interest=Foundry"
+              className="text-sm text-gray-300 hover:text-white underline underline-offset-4"
+            >
+              Request a Foundry demo &rarr;
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* Lead Form */}
       <section className="bg-white py-16 lg:py-24">
         <div className="max-w-3xl mx-auto px-4">
-          <SectionHeader heading="Ready to get started with Salesforce?" />
-          <LeadForm interest="Salesforce" />
+          <SectionHeader heading="Tell us about your Salesforce project" />
+          <LeadForm interest="Salesforce Consulting" id="lead-form" />
         </div>
       </section>
     </>

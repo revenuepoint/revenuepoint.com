@@ -20,6 +20,8 @@ import {
 } from '@xyflow/react';
 import dagre from '@dagrejs/dagre';
 import '@xyflow/react/dist/style.css';
+import { useIndustry } from '@/context/IndustryContext';
+import { lensContentByIndustry } from '@/data/foundryLensContent';
 
 type Level = 'L1' | 'L2' | 'L3' | 'L4';
 type Status = 'on-track' | 'at-risk' | 'off-track';
@@ -697,11 +699,18 @@ function MetricTreeFlow() {
 }
 
 export function MetricTreePreview() {
+  const { industryId } = useIndustry();
+  const spec = lensContentByIndustry[industryId].metricTree;
   return (
     <div
       className="metric-tree-demo relative rounded-lg border border-border bg-offWhite overflow-hidden"
       style={{ height: 560 }}
     >
+      <div className="absolute top-3 left-3 z-10 pointer-events-none bg-white/95 backdrop-blur-sm border border-border rounded-md px-3 py-2 shadow-sm">
+        <p className="text-[10px] uppercase tracking-widest text-mutedText">{spec.eyebrow}</p>
+        <p className="text-xs font-semibold text-navy leading-tight">{spec.title}</p>
+        <p className="text-[10px] text-mutedText mt-0.5 max-w-[280px]">{spec.subtitle}</p>
+      </div>
       <style jsx global>{`
         .metric-tree-demo .react-flow__node {
           border: none !important;

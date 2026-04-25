@@ -1,13 +1,15 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   type ActionCardData,
   type Card,
   MAX_DONE_VISIBLE,
   MAX_PENDING,
-  actionPool,
+  actionPool as legacyActionPool,
+  actionPoolByIndustry,
 } from '@/data/foundryActions';
+import { useIndustry } from '@/context/IndustryContext';
 
 export const TIMING = {
   approveFlashMs: 1200,
@@ -19,36 +21,18 @@ export const TIMING = {
 };
 
 const APPROVERS = ['Sarah Kim', 'Michael Torres', 'Priya Patel', 'James Chen', 'Dana Rivera'];
-let approverIdx = 0;
-function nextApprover(): string {
-  const a = APPROVERS[approverIdx % APPROVERS.length];
-  approverIdx += 1;
-  return a;
-}
-
-let instanceCounter = 0;
-function instantiate(base: ActionCardData): Pick<Card, 'id' | 'name' | 'agent' | 'risk' | 'systems' | 'summary' | 'totalSteps' | 'autoApproved' | 'instanceId'> {
-  instanceCounter += 1;
-  return { ...base, instanceId: `${base.id}-${instanceCounter}` };
-}
-
-// Monotonic ordering keys. Separate counters for pending-entry and done-entry
-// so each column has an unambiguous, strictly-increasing sort key.
-let pendingSeqCounter = 0;
-let doneSeqCounter = 0;
-function nextPendingSeq(): number {
-  pendingSeqCounter += 1;
-  return pendingSeqCounter;
-}
-function nextDoneSeq(): number {
-  doneSeqCounter += 1;
-  return doneSeqCounter;
-}
 
 function formatDuration(ms: number) {
   const s = Math.max(1, Math.round(ms / 1000));
   return s < 60 ? `${s}s` : `${Math.floor(s / 60)}m ${s % 60}s`;
 }
+
+type Counters = {
+  instance: number;
+  pendingSeq: number;
+  doneSeq: number;
+  approverIdx: number;
+};
 
 type State = {
   cards: Card[];
@@ -56,52 +40,68 @@ type State = {
   lastSpawnAt: number;
 };
 
-function pickGated(cursor: number): [ActionCardData, number] {
+function makeCounters(): Counters {
+  return { instance: 0, pendingSeq: 0, doneSeq: 0, approverIdx: 0 };
+}
+
+function instantiate(
+  base: ActionCardData,
+  counters: Counters,
+): Pick<Card, 'id' | 'name' | 'agent' | 'risk' | 'systems' | 'summary' | 'totalSteps' | 'autoApproved' | 'instanceId'> {
+  counters.instance += 1;
+  return { ...base, instanceId: `${base.id}-${counters.instance}` };
+}
+
+function pickGated(pool: ActionCardData[], cursor: number): [ActionCardData, number] {
   let c = cursor;
-  while (actionPool[c % actionPool.length].autoApproved) c++;
-  return [actionPool[c % actionPool.length], (c + 1) % actionPool.length];
+  let safety = 0;
+  while (pool[c % pool.length].autoApproved) {
+    c++;
+    safety++;
+    if (safety > pool.length) break; // no gated cards — fall back to whatever is at cursor
+  }
+  return [pool[c % pool.length], (c + 1) % pool.length];
 }
 
-function pickAny(cursor: number): [ActionCardData, number] {
-  return [actionPool[cursor % actionPool.length], (cursor + 1) % actionPool.length];
+function pickAny(pool: ActionCardData[], cursor: number): [ActionCardData, number] {
+  return [pool[cursor % pool.length], (cursor + 1) % pool.length];
 }
 
-function initialState(): State {
+function initialState(pool: ActionCardData[], counters: Counters): State {
   let cursor = 0;
   const pending: Card[] = [];
   for (let i = 0; i < 3; i++) {
-    const [base, next] = pickGated(cursor);
+    const [base, next] = pickGated(pool, cursor);
     cursor = next;
-    // i=0 is first-pushed = oldest. Sort is ASC → smallest pendingSeq at TOP.
-    // Counter increments as we push, so i=0 gets the smallest seq (= oldest).
     const offset = -(2 - i) * 400;
+    counters.pendingSeq += 1;
     pending.push({
-      ...instantiate(base),
+      ...instantiate(base, counters),
       phase: 'pending',
       phaseStartedAt: offset, // rebased on mount
       createdAt: offset,
-      pendingSeq: nextPendingSeq(),
+      pendingSeq: counters.pendingSeq,
       doneSeq: 0,
     });
   }
 
   const done: Card[] = [];
   const durations = ['2.1s', '850ms', '48s', '3.2s'];
-  // Assign doneSeq in REVERSE order so i=0 (newest, "1 min ago") has the
-  // LARGEST seq → appears at top when sorted DESC. i=3 (oldest, "4 min ago")
-  // gets the smallest seq → appears at bottom.
   const doneSeqs: number[] = [];
-  for (let i = 0; i < 4; i++) doneSeqs.unshift(nextDoneSeq()); // [lowest ... highest] mapped to i=3..i=0
   for (let i = 0; i < 4; i++) {
-    const [base, next] = pickAny(cursor);
+    counters.doneSeq += 1;
+    doneSeqs.unshift(counters.doneSeq);
+  }
+  for (let i = 0; i < 4; i++) {
+    const [base, next] = pickAny(pool, cursor);
     cursor = next;
     const completedOffset = -((i + 1) * 60_000);
     done.push({
-      ...instantiate(base),
+      ...instantiate(base, counters),
       phase: 'done',
       phaseStartedAt: 0,
       createdAt: completedOffset,
-      completedAt: completedOffset, // faked "Xm ago" feel, rebased on mount
+      completedAt: completedOffset,
       duration: durations[i] ?? '2s',
       pendingSeq: 0,
       doneSeq: doneSeqs[i],
@@ -111,12 +111,19 @@ function initialState(): State {
   return { cards: [...pending, ...done], poolCursor: cursor, lastSpawnAt: 0 };
 }
 
-function tick(state: State, now: number): State {
+function tick(
+  state: State,
+  pool: ActionCardData[],
+  counters: Counters,
+  now: number,
+): State {
   // A. Advance phases by age
   let cards = state.cards.map((c): Card => {
     const age = now - c.phaseStartedAt;
     if (c.phase === 'approving' && age >= TIMING.approveFlashMs) {
-      return { ...c, phase: 'queued', phaseStartedAt: now, approver: nextApprover() };
+      const approver = APPROVERS[counters.approverIdx % APPROVERS.length];
+      counters.approverIdx += 1;
+      return { ...c, phase: 'queued', phaseStartedAt: now, approver };
     }
     if (c.phase === 'queued' && age >= TIMING.queuedDwellMs) {
       return { ...c, phase: 'running', phaseStartedAt: now };
@@ -124,13 +131,14 @@ function tick(state: State, now: number): State {
     if (c.phase === 'running') {
       const totalRunMs = c.totalSteps * TIMING.runningStepMs + TIMING.runningTailMs;
       if (age >= totalRunMs) {
+        counters.doneSeq += 1;
         return {
           ...c,
           phase: 'done',
           phaseStartedAt: now,
           completedAt: now,
           duration: formatDuration(c.totalSteps * TIMING.runningStepMs),
-          doneSeq: nextDoneSeq(), // monotonic — newest gets largest seq → TOP of Done
+          doneSeq: counters.doneSeq,
         };
       }
     }
@@ -168,17 +176,18 @@ function tick(state: State, now: number): State {
   let poolCursor = state.poolCursor;
   const pendingCount = cards.filter((c) => c.phase === 'pending').length;
   if (now - lastSpawnAt >= TIMING.spawnIntervalMs && pendingCount < MAX_PENDING) {
-    const [candidate, next] = pickAny(poolCursor);
+    const [candidate, next] = pickAny(pool, poolCursor);
     poolCursor = next;
+    counters.pendingSeq += 1;
     const fresh: Card = {
-      ...instantiate(candidate),
+      ...instantiate(candidate, counters),
       phase: 'pending',
       phaseStartedAt: now,
       createdAt: now,
-      pendingSeq: nextPendingSeq(), // monotonic — newest gets largest seq → BOTTOM of Human Review
+      pendingSeq: counters.pendingSeq,
       doneSeq: 0,
     };
-    cards = [...cards, fresh]; // push to end for clarity; sort is authoritative
+    cards = [...cards, fresh];
     lastSpawnAt = now;
   }
 
@@ -190,36 +199,45 @@ export type ActionsEngineReturn = {
 };
 
 export function useActionsEngine(): ActionsEngineReturn {
-  const [state, setState] = useState<State>(() => initialState());
+  const { industryId } = useIndustry();
+  const pool = actionPoolByIndustry[industryId] ?? legacyActionPool;
+  const countersRef = useRef<Counters>(makeCounters());
 
-  // Rebase timestamps on mount so timing is relative to client clock (SSR-safe).
+  const [state, setState] = useState<State>(() => initialState(pool, countersRef.current));
+
+  // Re-seed on industry change — fresh counters, fresh cards, no cross-contamination.
   useEffect(() => {
+    const freshCounters = makeCounters();
+    countersRef.current = freshCounters;
     const now = Date.now();
-    setState((prev) => ({
-      ...prev,
+    const seeded = initialState(pool, freshCounters);
+    setState({
+      ...seeded,
       lastSpawnAt: now,
-      cards: prev.cards.map((c) => {
+      cards: seeded.cards.map((c) => {
         if (c.phase === 'pending') {
-          // createdAt already carries the stagger (negative offsets from 0). Rebase relative to `now`.
           const offset = c.createdAt; // negative
           return { ...c, phaseStartedAt: now + offset, createdAt: now + offset };
         }
         if (c.phase === 'done') {
-          // Preserve the faked "Xm ago" offset by rebasing around `now`
-          const offset = c.completedAt ?? 0; // was negative
+          const offset = c.completedAt ?? 0;
           return { ...c, phaseStartedAt: now + offset, createdAt: now + offset, completedAt: now + offset };
         }
         return c;
       }),
-    }));
-  }, []);
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [industryId]);
 
   useEffect(() => {
     const id = window.setInterval(() => {
-      setState((prev) => tick(prev, Date.now()));
+      setState((prev) => tick(prev, pool, countersRef.current, Date.now()));
     }, TIMING.tickMs);
     return () => window.clearInterval(id);
-  }, []);
+    // Pool is closed over in the tick callback; because we reset state on industryId change,
+    // the interval always runs against the current pool consistent with current state.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [industryId]);
 
   return { cards: state.cards };
 }

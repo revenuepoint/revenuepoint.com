@@ -24,14 +24,10 @@ export default function ContactPage() {
               align="left"
             />
             <div className="space-y-4 text-sm text-bodyText">
-              <div>
-                <p className="font-semibold text-navy">Thomas Jones</p>
-                <p className="text-mutedText">Managing Director</p>
-              </div>
               <div className="space-y-1">
                 <p>
-                  <a href="mailto:hello@revenuepoint.com" className="hover:text-crimson transition-colors">
-                    hello@revenuepoint.com
+                  <a href="mailto:team@revenuepoint.com" className="hover:text-crimson transition-colors">
+                    team@revenuepoint.com
                   </a>
                 </p>
                 <p>

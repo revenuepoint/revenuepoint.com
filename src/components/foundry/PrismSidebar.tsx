@@ -10,6 +10,12 @@ const CATEGORY_STYLE: Record<PrismCategory, { bar: string; badge: string }> = {
   Production: { bar: 'bg-orange-500', badge: 'bg-orange-50 text-orange-700 border-orange-200' },
   'Inventory & Supply Chain': { bar: 'bg-cyan-500', badge: 'bg-cyan-50 text-cyan-700 border-cyan-200' },
   Pharmacy: { bar: 'bg-pink-500', badge: 'bg-pink-50 text-pink-700 border-pink-200' },
+  Compliance: { bar: 'bg-rose-500', badge: 'bg-rose-50 text-rose-700 border-rose-200' },
+  'Revenue Cycle': { bar: 'bg-sky-500', badge: 'bg-sky-50 text-sky-700 border-sky-200' },
+  Fundraising: { bar: 'bg-lime-500', badge: 'bg-lime-50 text-lime-700 border-lime-200' },
+  Portfolio: { bar: 'bg-teal-500', badge: 'bg-teal-50 text-teal-700 border-teal-200' },
+  Advisory: { bar: 'bg-indigo-500', badge: 'bg-indigo-50 text-indigo-700 border-indigo-200' },
+  'Project Controls': { bar: 'bg-slate-500', badge: 'bg-slate-100 text-slate-700 border-slate-300' },
 };
 
 type Props = {

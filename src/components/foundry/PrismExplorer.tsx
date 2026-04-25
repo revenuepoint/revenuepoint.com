@@ -1,24 +1,33 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { PrismSidebar } from '@/components/foundry/PrismSidebar';
 import { PrismReportPanel } from '@/components/foundry/PrismReportPanel';
-import { prismReports } from '@/data/foundryPrismReports';
+import { prismReportsByIndustry } from '@/data/foundryPrismReports';
+import { useIndustry } from '@/context/IndustryContext';
 
 export function PrismExplorer() {
-  const [selectedId, setSelectedId] = useState<string>(prismReports[0].id);
-  const selected = prismReports.find((r) => r.id === selectedId) ?? prismReports[0];
+  const { industryId } = useIndustry();
+  const reports = prismReportsByIndustry[industryId];
+  const [selectedId, setSelectedId] = useState<string>(reports[0].id);
+
+  // Reset selection on industry change — stale id belongs to previous industry.
+  useEffect(() => {
+    setSelectedId(reports[0].id);
+  }, [industryId, reports]);
+
+  const selected = reports.find((r) => r.id === selectedId) ?? reports[0];
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-6">
       <div>
-        <PrismSidebar items={prismReports} selectedId={selectedId} onSelect={setSelectedId} />
+        <PrismSidebar items={reports} selectedId={selected.id} onSelect={setSelectedId} />
       </div>
       <div className="rounded-lg border border-border bg-white shadow-sm p-5 lg:p-6 h-[720px]">
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
-            key={selected.id}
+            key={`${industryId}-${selected.id}`}
             initial={{ opacity: 0, y: 4 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -4 }}

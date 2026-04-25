@@ -452,7 +452,7 @@ export default function FoundryPage() {
         </div>
       </section>
 
-      {/* INDUSTRY-AWARE WRAPPER — sticky industry tabs stay pinned through Embedded */}
+      {/* INDUSTRY-AWARE WRAPPER — sticky industry tabs stay pinned from here through Prism */}
       <IndustryProvider>
         <div className="relative">
           <IndustrySwitcher />
@@ -535,7 +535,7 @@ export default function FoundryPage() {
         </div>
       </section>
 
-      {/* Prism Explorer */}
+      {/* Prism Explorer — last industry-aware section; sticky picker unsticks after this */}
       <section className="bg-offWhite py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4">
           <SectionHeader
@@ -549,8 +549,10 @@ export default function FoundryPage() {
           </div>
         </div>
       </section>
+        </div>
+      </IndustryProvider>
 
-      {/* Embedded in your tools */}
+      {/* Embedded in your tools — universal capability, not industry-specific */}
       <section className="bg-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4">
           <SectionHeader
@@ -564,8 +566,6 @@ export default function FoundryPage() {
           </div>
         </div>
       </section>
-        </div>
-      </IndustryProvider>
 
       {/* Security & Compliance */}
       <SecuritySection />

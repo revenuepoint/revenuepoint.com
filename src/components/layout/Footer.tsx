@@ -1,11 +1,11 @@
 import Link from 'next/link';
 
 const sfLinks = [
-  { label: 'Overview', href: '/salesforce/' },
-  { label: 'Consulting', href: '/salesforce/consulting/' },
+  { label: 'Consulting', href: '/salesforce/' },
+  { label: 'Managed Services', href: '/salesforce/managed-services/' },
+  { label: 'Pricing', href: '/salesforce/managed-services/pricing/' },
   { label: 'Health Check', href: '/salesforce/health-check/' },
   { label: 'Training', href: '/salesforce/training/' },
-  { label: 'Pricing', href: '/salesforce/pricing/' },
 ];
 
 const sapLinks = [
@@ -17,13 +17,22 @@ const foundryLinks = [
   { label: 'Platform Overview', href: '/foundry/' },
   { label: 'Pricing', href: '/foundry/pricing/' },
   { label: 'Request a Demo', href: '/contact/?interest=Foundry' },
+  { label: 'Insights', href: '/insights/' },
+];
+
+const gatewayLinks = [
+  { label: 'Platform Overview', href: '/gateway/' },
+  { label: 'Use Cases', href: '/gateway/use-cases/' },
+  { label: 'Connectors', href: '/gateway/connectors/' },
+  { label: 'Pricing', href: '/gateway/pricing/' },
+  { label: 'Request a Demo', href: '/contact/?interest=Gateway' },
 ];
 
 export function Footer() {
   return (
     <footer className="bg-navy text-white">
       <div className="max-w-7xl mx-auto px-4 py-16 lg:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           {/* Company Info */}
           <div>
             <div className="text-white font-bold text-xl tracking-tight mb-4">RevenuePoint</div>
@@ -39,8 +48,8 @@ export function Footer() {
                 </a>
               </p>
               <p>
-                <a href="mailto:hello@revenuepoint.com" className="hover:text-white transition-colors">
-                  hello@revenuepoint.com
+                <a href="mailto:team@revenuepoint.com" className="hover:text-white transition-colors">
+                  team@revenuepoint.com
                 </a>
               </p>
             </address>
@@ -79,6 +88,20 @@ export function Footer() {
             <h3 className="font-semibold text-sm uppercase tracking-wider mb-4">Foundry</h3>
             <ul className="space-y-2.5">
               {foundryLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm text-gray-400 hover:text-white transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Gateway */}
+          <div>
+            <h3 className="font-semibold text-sm uppercase tracking-wider mb-4">Gateway</h3>
+            <ul className="space-y-2.5">
+              {gatewayLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-gray-400 hover:text-white transition-colors">
                     {link.label}

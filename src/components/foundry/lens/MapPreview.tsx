@@ -1,6 +1,8 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import { useIndustry } from '@/context/IndustryContext';
+import { lensContentByIndustry } from '@/data/foundryLensContent';
 
 // Lazy-load the MapLibre canvas so the ~210KB maplibre-gl runtime only ships
 // when the Map tab is actually viewed. SSR is disabled because maplibre-gl
@@ -28,6 +30,8 @@ function MapSkeleton() {
 }
 
 export function MapPreview() {
+  const { industryId } = useIndustry();
+  const spec = lensContentByIndustry[industryId].map;
   return (
     <div
       className="map-preview relative rounded-lg overflow-hidden border border-border shadow-inner"
@@ -84,33 +88,26 @@ export function MapPreview() {
               strokeLinejoin="round"
             />
           </svg>
-          <span>Customer Map · 15 locations</span>
+          <span>{spec.title}</span>
           <span className="text-white/40 ml-1">▾</span>
         </div>
         <span className="px-2 py-1 rounded border border-white/10 bg-black/60 backdrop-blur-sm text-[10px] text-white/70">
-          Last 30 Days
+          {spec.windowLabel}
         </span>
       </div>
 
       {/* Legend (bottom-left, opposite corner from attribution) */}
       <div className="absolute bottom-3 left-3 rounded-md border border-white/10 bg-black/60 backdrop-blur-sm px-3 py-2 text-[10px] text-white/80 flex flex-col gap-1 z-10 pointer-events-none">
-        <p className="text-[9px] uppercase tracking-wider text-white/50 mb-0.5">AR status</p>
-        <span className="flex items-center gap-1.5">
-          <span className="h-2 w-2 rounded-full bg-emerald-500" />
-          Current
-        </span>
-        <span className="flex items-center gap-1.5">
-          <span className="h-2 w-2 rounded-full bg-amber-500" />
-          30–60d overdue
-        </span>
-        <span className="flex items-center gap-1.5">
-          <span className="h-2 w-2 rounded-full bg-red-500" />
-          60+d / On Hold
-        </span>
-        <span className="flex items-center gap-1.5 mt-1 pt-1 border-t border-white/10">
-          <span className="h-2 w-2 rounded-full bg-blue-500" />
-          RevenuePoint HQ
-        </span>
+        <p className="text-[9px] uppercase tracking-wider text-white/50 mb-0.5">{spec.legendTitle}</p>
+        {spec.legendItems.map((item, i) => (
+          <span
+            key={item.label}
+            className={`flex items-center gap-1.5 ${i === spec.legendItems.length - 1 ? 'mt-1 pt-1 border-t border-white/10' : ''}`}
+          >
+            <span className="h-2 w-2 rounded-full" style={{ backgroundColor: item.color }} />
+            {item.label}
+          </span>
+        ))}
       </div>
     </div>
   );

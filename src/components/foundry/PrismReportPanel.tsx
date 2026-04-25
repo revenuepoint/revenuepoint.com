@@ -26,6 +26,12 @@ const CATEGORY_STYLE: Record<PrismCategory, string> = {
   Production: 'bg-orange-50 text-orange-700 border-orange-200',
   'Inventory & Supply Chain': 'bg-cyan-50 text-cyan-700 border-cyan-200',
   Pharmacy: 'bg-pink-50 text-pink-700 border-pink-200',
+  Compliance: 'bg-rose-50 text-rose-700 border-rose-200',
+  'Revenue Cycle': 'bg-sky-50 text-sky-700 border-sky-200',
+  Fundraising: 'bg-lime-50 text-lime-700 border-lime-200',
+  Portfolio: 'bg-teal-50 text-teal-700 border-teal-200',
+  Advisory: 'bg-indigo-50 text-indigo-700 border-indigo-200',
+  'Project Controls': 'bg-slate-100 text-slate-700 border-slate-300',
 };
 
 function SparklesIcon({ className = 'h-4 w-4' }: { className?: string }) {

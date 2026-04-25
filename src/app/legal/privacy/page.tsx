@@ -10,9 +10,22 @@ export default function PrivacyPolicyPage() {
   return (
     <section className="bg-white py-16 lg:py-24">
       <div className="max-w-3xl mx-auto px-4">
-        <h1 className="text-4xl font-bold tracking-tight text-navy mb-8">Privacy Policy</h1>
+        <h1 className="text-4xl font-bold tracking-tight text-navy mb-8">RevenuePoint Privacy Policy</h1>
         <div className="prose prose-sm max-w-none text-bodyText space-y-6 leading-relaxed">
-          <p className="text-sm text-mutedText">Effective Date: January 1, 2024</p>
+          <p>
+            This privacy notice discloses the privacy practices for RevenuePoint. This privacy
+            notice applies solely to information collected by this website. It will notify you of
+            the following:
+          </p>
+          <ul className="list-disc pl-6 space-y-1">
+            <li>
+              What personally identifiable information is collected from you through the website,
+              how it is used and with whom it may be shared.
+            </li>
+            <li>What choices are available to you regarding the use of your data.</li>
+            <li>The security procedures in place to protect the misuse of your information.</li>
+            <li>How you can correct any inaccuracies in the information.</li>
+          </ul>
 
           <h2 className="text-xl font-semibold text-navy mt-8">Information Collection, Use, and Sharing</h2>
           <p>
@@ -23,7 +36,7 @@ export default function PrivacyPolicyPage() {
           <p>
             We will use your information to respond to you, regarding the reason you contacted us.
             We will not share your information with any third party outside of our organization,
-            other than as necessary to fulfill your request, e.g. to process a service engagement.
+            other than as necessary to fulfill your request, e.g. to ship an order.
           </p>
           <p>
             Unless you ask us not to, we may contact you via email in the future to tell you about
@@ -31,12 +44,15 @@ export default function PrivacyPolicyPage() {
           </p>
 
           <h2 className="text-xl font-semibold text-navy mt-8">Your Access to and Control Over Information</h2>
-          <p>You may opt out of any future contacts from us at any time. You can do the following at any time by contacting us via the email address given on our website:</p>
+          <p>
+            You may opt out of any future contacts from us at any time. You can do the following at
+            any time by contacting us via the email address or phone number given on our website:
+          </p>
           <ul className="list-disc pl-6 space-y-1">
-            <li>See what data we have about you, if any</li>
-            <li>Change/correct any data we have about you</li>
-            <li>Have us delete any data we have about you</li>
-            <li>Express any concern you have about our use of your data</li>
+            <li>See what data we have about you, if any.</li>
+            <li>Change/correct any data we have about you.</li>
+            <li>Have us delete any data we have about you.</li>
+            <li>Express any concern you have about our use of your data.</li>
           </ul>
 
           <h2 className="text-xl font-semibold text-navy mt-8">Security</h2>
@@ -57,13 +73,11 @@ export default function PrivacyPolicyPage() {
             personally identifiable information. The computers/servers in which we store personally
             identifiable information are kept in a secure environment.
           </p>
-
-          <h2 className="text-xl font-semibold text-navy mt-8">Contact</h2>
           <p>
             If you feel that we are not abiding by this privacy policy, you should contact us
             immediately via email at{' '}
-            <a href="mailto:hello@revenuepoint.com" className="text-crimson hover:text-crimsonDark transition-colors">
-              hello@revenuepoint.com
+            <a href="mailto:team@revenuepoint.com" className="text-crimson hover:text-crimsonDark transition-colors">
+              team@revenuepoint.com
             </a>.
           </p>
         </div>
