@@ -15,11 +15,33 @@ const inputClass =
 export function LeadForm({ interest, id }: LeadFormProps) {
   const startedRef = useRef(false);
   const formRef = useRef<HTMLFormElement>(null);
+  const captchaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const pageUrlField = document.getElementById('sf_page_url') as HTMLInputElement | null;
     if (pageUrlField) {
       pageUrlField.value = window.location.href;
+    }
+    let widgetId: number | null = null;
+    const renderCaptcha = () => {
+      const el = captchaRef.current;
+      const grecaptcha = (window as unknown as { grecaptcha?: { render?: (e: HTMLElement, o: object) => number } }).grecaptcha;
+      if (!el || el.childElementCount > 0 || !grecaptcha?.render) return false;
+      try {
+        widgetId = grecaptcha.render(el, {
+          sitekey: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
+          theme: 'light',
+        });
+        return true;
+      } catch {
+        return false;
+      }
+    };
+    let pollId: number | undefined;
+    if (!renderCaptcha()) {
+      pollId = window.setInterval(() => {
+        if (renderCaptcha()) window.clearInterval(pollId);
+      }, 200);
     }
     const tick = () => {
       const form = formRef.current;
@@ -34,8 +56,12 @@ export function LeadForm({ interest, id }: LeadFormProps) {
         settings.value = JSON.stringify(obj);
       } catch {}
     };
-    const id = window.setInterval(tick, 500);
-    return () => window.clearInterval(id);
+    const tickId = window.setInterval(tick, 500);
+    return () => {
+      window.clearInterval(tickId);
+      if (pollId !== undefined) window.clearInterval(pollId);
+      void widgetId;
+    };
   }, []);
 
   const handleFirstFocus = () => {
@@ -160,11 +186,7 @@ export function LeadForm({ interest, id }: LeadFormProps) {
       />
 
       <div className="md:col-span-2 pt-2">
-        <div
-          className="g-recaptcha"
-          data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-          data-theme="light"
-        />
+        <div ref={captchaRef} />
       </div>
 
       <button

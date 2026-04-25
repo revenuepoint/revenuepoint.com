@@ -1,0 +1,14 @@
+{
+  "id": "rum.action.lead_form_started.count",
+  "type": "rum_metrics",
+  "attributes": {
+    "compute": { "aggregation_type": "count" },
+    "event_type": "action",
+    "filter": { "query": "@action.name:lead_form_started" },
+    "group_by": [
+      { "path": "service", "tag_name": "service" },
+      { "path": "env", "tag_name": "env" },
+      { "path": "version", "tag_name": "version" }
+    ]
+  }
+}

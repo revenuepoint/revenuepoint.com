@@ -22,6 +22,7 @@ export function EmailSignup({
   id,
 }: EmailSignupProps) {
   const formRef = useRef<HTMLFormElement>(null);
+  const captchaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const pageUrlField = document.getElementById(
@@ -29,6 +30,26 @@ export function EmailSignup({
     ) as HTMLInputElement | null;
     if (pageUrlField) {
       pageUrlField.value = window.location.href;
+    }
+    const renderCaptcha = () => {
+      const el = captchaRef.current;
+      const grecaptcha = (window as unknown as { grecaptcha?: { render?: (e: HTMLElement, o: object) => number } }).grecaptcha;
+      if (!el || el.childElementCount > 0 || !grecaptcha?.render) return false;
+      try {
+        grecaptcha.render(el, {
+          sitekey: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
+          theme: 'light',
+        });
+        return true;
+      } catch {
+        return false;
+      }
+    };
+    let pollId: number | undefined;
+    if (!renderCaptcha()) {
+      pollId = window.setInterval(() => {
+        if (renderCaptcha()) window.clearInterval(pollId);
+      }, 200);
     }
     const tick = () => {
       const form = formRef.current;
@@ -43,8 +64,11 @@ export function EmailSignup({
         settings.value = JSON.stringify(obj);
       } catch {}
     };
-    const id = window.setInterval(tick, 500);
-    return () => window.clearInterval(id);
+    const tickId = window.setInterval(tick, 500);
+    return () => {
+      window.clearInterval(tickId);
+      if (pollId !== undefined) window.clearInterval(pollId);
+    };
   }, []);
 
   const handleFieldBlur = () => {
@@ -115,11 +139,7 @@ export function EmailSignup({
       </form>
 
       <div className="mt-4 max-w-xl">
-        <div
-          className="g-recaptcha"
-          data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-          data-theme="light"
-        />
+        <div ref={captchaRef} />
       </div>
     </div>
   );

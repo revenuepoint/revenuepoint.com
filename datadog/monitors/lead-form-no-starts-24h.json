@@ -1,0 +1,14 @@
+{
+  "name": "[revenuepoint-com] No lead_form_started events in 24h",
+  "type": "rum alert",
+  "query": "rum(\"@action.name:lead_form_started service:revenuepoint-com\").rollup(\"count\").last(\"1d\") < 1",
+  "message": "No `lead_form_started` RUM action in the last 24 hours. Either no visitor focused a lead-form field, or the form is broken.\n\nCheck: https://revenuepoint.com/contact — focus the first field; this should fire `lead_form_started` immediately. If it doesn't, the form mount or RUM init is broken.\n\n@thomas@revenuepoint.com",
+  "tags": ["service:revenuepoint-com", "team:revenuepoint", "managed-by:datadog-as-code", "signal:lead-form"],
+  "priority": 3,
+  "options": {
+    "notify_no_data": false,
+    "include_tags": true,
+    "renotify_interval": 1440,
+    "thresholds": { "critical": 1 }
+  }
+}

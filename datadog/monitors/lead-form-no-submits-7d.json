@@ -1,0 +1,14 @@
+{
+  "name": "[revenuepoint-com] No lead_form_submitted events in 7 days",
+  "type": "query alert",
+  "query": "sum(last_1w):sum:rum.action.lead_form_submitted.count{service:revenuepoint-com}.as_count() < 1",
+  "message": "No `lead_form_submitted` RUM action in the last 7 days. The submit handler isn't firing — either no real submissions are happening, or `track(events.lead_form_submitted, …)` in `src/components/ui/LeadForm.tsx` is no longer being reached.\n\nCheck end-to-end: visit https://revenuepoint.com/contact, fill the form, submit. Confirm a Lead lands in revenuepoint--prod within seconds. If the action fires but no Lead lands, the Web-to-Lead config has drifted (OID, field IDs, or reCAPTCHA keyname).\n\n@thomas@revenuepoint.com",
+  "tags": ["service:revenuepoint-com", "team:revenuepoint", "managed-by:datadog-as-code", "signal:lead-form"],
+  "priority": 2,
+  "options": {
+    "notify_no_data": false,
+    "include_tags": true,
+    "renotify_interval": 1440,
+    "thresholds": { "critical": 1 }
+  }
+}
