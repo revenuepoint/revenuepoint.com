@@ -137,6 +137,14 @@ export function Footer() {
             <Link href="/security/" className="text-mute hover:text-crimson transition-colors">
               Security
             </Link>
+            <a
+              href="https://revenuepoint.statuspage.datadoghq.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-mute hover:text-crimson transition-colors"
+            >
+              Status
+            </a>
             <Link href="/legal/privacy/" className="text-mute hover:text-crimson transition-colors">
               Privacy
             </Link>
