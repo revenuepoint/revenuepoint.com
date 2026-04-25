@@ -284,7 +284,7 @@ h2 em, h3 em, h4 em {
 .rp-marquee-track {
   display: flex !important;
   align-items: center;
-  gap: 1.75rem; /* matches desktop gap-x-7 (28px) for cross-breakpoint feel */
+  gap: 37px; /* matches desktop gap-x-[37px] for cross-breakpoint feel */
   width: max-content !important;
   min-width: max-content;
   animation: rp-marquee 25s linear infinite !important;

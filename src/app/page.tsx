@@ -90,7 +90,7 @@ export default function Home() {
           { name: 'Melio', src: '/img/clients/logo-melio.png', height: 28 },
           { name: 'Chemistry Rx', src: '/img/clients/logo-chemistry-rx.png', height: 28 },
           { name: 'Prive Therapeutics', src: '/img/clients/logo-prive-therapeutics.svg', height: 30 },
-          { name: 'Studio Green', src: '/img/clients/logo-studio-green.svg', height: 32 },
+          { name: 'Studio Green', src: '/img/clients/logo-studio-green.svg', height: 32, breakBefore: true },
           { name: 'Green Line Ingredients', src: '/img/clients/logo-green-line-ingredients.png', height: 28 },
           { name: 'inewsource', src: '/img/clients/logo-inewsource.png', height: 28 },
           { name: 'VTDigger', src: '/img/clients/logo-vtdigger.png', height: 28 },
