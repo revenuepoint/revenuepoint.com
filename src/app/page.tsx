@@ -80,7 +80,7 @@ export default function Home() {
       <LogoStrip
         heading="Trusted by leading organizations and nonprofits"
         logos={[
-          { name: 'WeWork', src: '/img/clients/logo-wework.jpg', height: 26 },
+          { name: 'WeWork', src: '/img/clients/logo-wework.svg', height: 22 },
           { name: 'Kinetik', src: '/img/clients/logo-kinetik.png', height: 30 },
           { name: 'Luster', src: '/img/clients/logo-luster.png', height: 32 },
           { name: 'Omya', src: '/img/clients/logo-omya.png', height: 32 },
