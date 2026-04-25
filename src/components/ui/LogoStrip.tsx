@@ -23,7 +23,7 @@ export function LogoStrip({ heading, logos }: LogoStripProps) {
                 <img
                   src={logo.src}
                   alt={logo.name}
-                  className="w-auto object-contain max-w-[150px] lg:max-w-[170px] [filter:grayscale(1)_sepia(0.4)_brightness(0.55)_opacity(0.85)] hover:[filter:none] transition-[filter] duration-300"
+                  className="w-auto object-contain max-w-[150px] lg:max-w-[170px]"
                   style={{ height: logo.height ?? 32 }}
                 />
               ) : (

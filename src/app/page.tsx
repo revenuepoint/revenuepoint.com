@@ -59,7 +59,7 @@ export default function Home() {
               {[
                 { value: '$950M+', label: 'Revenue managed per year' },
                 { value: '300+', label: 'Engagements delivered' },
-                { value: '2012', label: 'Founded' },
+                { value: '99.9%', label: 'Platform Uptime SLA' },
               ].map((stat) => (
                 <li
                   key={stat.label}
@@ -78,7 +78,7 @@ export default function Home() {
 
       {/* Trust bar */}
       <LogoStrip
-        heading="Trusted by operators across North America"
+        heading="Trusted by leading organizations"
         logos={[
           { name: 'Kinetik', src: '/img/clients/logo-kinetik.png', height: 32 },
           { name: 'Luster', src: '/img/clients/logo-luster.png', height: 36 },

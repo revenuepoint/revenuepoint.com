@@ -13,7 +13,7 @@ const sfLinks = [
 ];
 
 const sapLinks = [
-  { label: 'Overview', href: '/sap/' },
+  { label: 'Managed Services', href: '/sap/' },
   { label: 'Pricing', href: '/sap/pricing/' },
 ];
 
@@ -22,14 +22,14 @@ const researchLinks = [
 ];
 
 const foundryLinks = [
-  { label: 'Platform Overview', href: '/foundry/' },
+  { label: 'Foundry Overview', href: '/foundry/' },
   { label: 'Pricing', href: '/foundry/pricing/' },
   { label: 'Request a Demo', href: '/contact/?interest=Foundry' },
   { label: 'Insights', href: '/insights/' },
 ];
 
 const gatewayLinks = [
-  { label: 'Platform Overview', href: '/gateway/' },
+  { label: 'Gateway Overview', href: '/gateway/' },
   { label: 'Use Cases', href: '/gateway/use-cases/' },
   { label: 'Connectors', href: '/gateway/connectors/' },
   { label: 'Pricing', href: '/gateway/pricing/' },
