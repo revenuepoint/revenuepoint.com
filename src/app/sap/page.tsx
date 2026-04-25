@@ -148,7 +148,6 @@ export default function SAPPage() {
           { label: 'Start a managed services engagement', href: '#lead-form', variant: 'primary' },
           { label: 'See pricing', href: '/sap/pricing/', variant: 'secondary' },
         ]}
-        issue="P"
         sidenote="Business One + S/4HANA · Two-week sprints · Month-to-month · Named consultant + PM."
       />
 

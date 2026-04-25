@@ -81,7 +81,6 @@ export default function SalesforceTrainingPage() {
           </>
         }
         body="Generic Salesforce training fades the week after the workshop because it teaches the platform, not your configuration. Ours doesn't — every engagement produces a custom Playbook authored to your fields, processes, and reports, then embedded inside Salesforce where the work happens. Live training delivers it. The Playbook keeps it."
-        issue="T"
         sidenote="Custom Playbook · embedded in Salesforce · authored to your config."
         ctas={[
           { label: 'Schedule a training scoping call', href: '#lead-form', variant: 'primary' },

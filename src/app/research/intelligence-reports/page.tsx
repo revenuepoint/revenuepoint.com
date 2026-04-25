@@ -158,7 +158,7 @@ export default function IntelligenceReportsPage() {
           <div className="border border-ruleSoft bg-paper p-8 lg:p-12 relative">
             <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-rule" />
             <span aria-hidden="true" className="absolute left-0 top-0 h-px w-12 bg-crimson" />
-            <p className="eyebrow mt-3 mb-4">Already on Foundry?</p>
+            <p className="eyebrow mt-3 mb-4">Included in Foundry</p>
             <h2 className="text-d2 font-serif font-medium text-ink leading-tight mb-6">
               Prism reports the <em>inside</em>. Intelligence Reports research the <em>outside</em>.
             </h2>

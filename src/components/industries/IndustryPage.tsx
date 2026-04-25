@@ -18,7 +18,7 @@ export function IndustryPage({ content }: { content: IndustryPageContent }) {
     <>
       <IndustryHero content={content} />
       <IndustryKpiPainStrip kpis={content.painKpis} />
-      <RecordPageMock spec={content.recordPage} />
+      <RecordPageMock spec={content.recordPage} industryId={content.id} />
       <DataModelDiagram
         description={content.dataModel.description}
         objects={content.dataModel.objects}

@@ -163,7 +163,6 @@ export default function SalesforceImplementationsPage() {
           </>
         }
         body="Every Salesforce implementation we run is fixed-fee, time-boxed, and delivered against a documented scope — whether it is a greenfield Sales Cloud build, a migration off HubSpot or Dynamics, or a re-implementation of an org that never got configured right. Discovery, build, UAT, training, go-live, hypercare. Then fully managed by RevenuePoint."
-        issue="I"
         sidenote="Fixed-fee · time-boxed · documented scope · then fully managed."
         ctas={[
           { label: 'Scope an implementation', href: '#lead-form', variant: 'primary' },

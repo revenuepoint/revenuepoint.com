@@ -169,6 +169,11 @@ export function Navbar() {
                             }`}
                           >
                             <span className="text-[15px]">{link.label}</span>
+                            {link.badge && (
+                              <span className="ml-2 font-mono text-[8px] font-semibold bg-crimson text-paper px-1.5 py-[2px] tracking-[0.12em] leading-none">
+                                {link.badge}
+                              </span>
+                            )}
                             <svg
                               className="w-4 h-4 ml-2 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200"
                               fill="none"
@@ -268,11 +273,16 @@ export function Navbar() {
                                   <Link
                                     key={link.href}
                                     href={link.href}
-                                    className={`block text-sm ${
+                                    className={`flex items-center gap-2 text-sm ${
                                       pathname === link.href ? 'text-crimson' : 'text-ink hover:text-crimson'
                                     }`}
                                   >
-                                    {link.label}
+                                    <span>{link.label}</span>
+                                    {link.badge && (
+                                      <span className="font-mono text-[8px] font-semibold bg-crimson text-paper px-1.5 py-[2px] tracking-[0.12em] leading-none">
+                                        {link.badge}
+                                      </span>
+                                    )}
                                   </Link>
                                 ))}
                               </div>

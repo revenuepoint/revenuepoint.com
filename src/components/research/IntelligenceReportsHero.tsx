@@ -5,13 +5,6 @@ import { HERO_BODY, HERO_HEADING } from '@/data/research/intelligenceReports';
 export function IntelligenceReportsHero() {
   return (
     <section className="relative bg-paper overflow-hidden">
-      <span
-        aria-hidden="true"
-        className="pointer-events-none select-none absolute right-[-0.05em] top-[-0.15em] font-serif italic font-light text-ink leading-[0.86] whitespace-nowrap"
-        style={{ fontSize: 'clamp(14rem, 32vw, 32rem)', opacity: 0.05 }}
-      >
-        R
-      </span>
       <div className="relative max-w-editorial mx-auto px-6 lg:px-8 pt-16 lg:pt-28 pb-16 lg:pb-24">
         <div className="lg:grid lg:grid-cols-12 lg:gap-12 lg:items-start">
           <div className="lg:col-span-7">
@@ -32,7 +25,7 @@ export function IntelligenceReportsHero() {
               From $6,800 · Citation-backed · Named-analyst reviewed.
             </p>
           </div>
-          <div className="mt-12 lg:mt-0 lg:col-span-5">
+          <div className="mt-12 lg:mt-20 lg:col-span-5">
             <ReportCoverMock />
           </div>
         </div>
@@ -41,108 +34,144 @@ export function IntelligenceReportsHero() {
   );
 }
 
+function RedactBar({
+  width,
+  className = '',
+  tone = 'ink',
+}: {
+  width: string;
+  className?: string;
+  tone?: 'ink' | 'mute';
+}) {
+  const bg = tone === 'mute' ? 'bg-mute/20' : 'bg-ink/15';
+  return (
+    <span
+      aria-hidden="true"
+      className={`block h-[7px] ${bg} ${className}`}
+      style={{ width }}
+    />
+  );
+}
+
 function ReportCoverMock() {
   return (
-    <figure className="border-l-2 border-navy pl-5 lg:pl-6">
-      <figcaption className="serif-italic text-base text-ink mb-3">
-        Fig. 01 · Intelligence Report — sample property snapshot
-      </figcaption>
-      <div className="border-t border-rule pt-4">
-        <div className="bg-paper border border-rule p-8 lg:p-10 product-surface">
-          <div className="flex items-baseline gap-4 mb-3">
-            <Wordmark size="md" tone="crimson" asLink={false} />
-            <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-mute">
-              Intelligence Report
-            </span>
-          </div>
-          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-mute mb-3">
-            Property snapshot · ownership, valuation, risk
-          </p>
-          <div className="border-t-2 border-ink mb-6" />
-
-          <div className="bg-cream border border-rule p-4 mb-6 grid grid-cols-3 gap-3 text-[10px]">
-            <div>
-              <p className="font-mono uppercase tracking-[0.14em] text-mute mb-1">Generated</p>
-              <p className="text-ink font-medium">Apr 25, 2026</p>
-            </div>
-            <div>
-              <p className="font-mono uppercase tracking-[0.14em] text-mute mb-1">Analyst</p>
-              <p className="text-ink font-medium">Named at scoping</p>
-            </div>
-            <div>
-              <p className="font-mono uppercase tracking-[0.14em] text-mute mb-1">Scope</p>
-              <p className="text-ink font-medium">12 entities</p>
-            </div>
-          </div>
-
-          <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-mute mb-3">
-            By severity
-          </p>
-          <div className="grid grid-cols-4 gap-2 mb-6">
-            <StatTile n={2} label="Critical" tone="rust" />
-            <StatTile n={5} label="High" tone="amber" />
-            <StatTile n={8} label="Medium" tone="navy" />
-            <StatTile n={11} label="Low" tone="navy" />
-          </div>
-
-          <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-mute mb-2">
-            Findings preview
-          </p>
-          <div className="space-y-1.5">
-            <FindingRow severity="High" text="Code violation outstanding · 2024" />
-            <FindingRow severity="Medium" text="Tax delinquency cleared · Q4 2025" />
-            <FindingRow severity="Low" text="Comparable sales within 5% of valuation" />
-          </div>
-
-          <p className="mt-6 font-mono text-[10px] text-mute italic">
-            Confidential — sample mock. Final reports are branded, citation-backed, and delivered as PDF + structured data.
-          </p>
-        </div>
+    <div className="bg-paper border border-rule shadow-editorial p-7 lg:p-9 product-surface">
+      {/* Header — wordmark + report type */}
+      <div className="flex items-baseline gap-3 mb-4">
+        <Wordmark size="sm" tone="crimson" asLink={false} />
+        <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-mute">
+          Intelligence Report
+        </span>
       </div>
-    </figure>
+      <div className="space-y-1.5 mb-5">
+        <RedactBar width="62%" />
+        <RedactBar width="40%" tone="mute" />
+      </div>
+      <div className="border-t-2 border-ink mb-6" />
+
+      {/* Meta strip */}
+      <div className="bg-cream border border-rule px-4 py-3 mb-6 grid grid-cols-3 gap-3">
+        {[
+          { label: 'Generated', value: 'Apr 2026' },
+          { label: 'Analyst', value: null },
+          { label: 'Scope', value: null },
+        ].map((m) => (
+          <div key={m.label}>
+            <p className="font-mono text-[9px] uppercase tracking-[0.14em] text-mute mb-1.5">
+              {m.label}
+            </p>
+            {m.value ? (
+              <p className="text-ink text-[11px] font-medium">{m.value}</p>
+            ) : (
+              <RedactBar width="80%" />
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* Executive summary */}
+      <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-mute mb-3">
+        Executive summary
+      </p>
+      <div className="space-y-1.5 mb-7">
+        <RedactBar width="100%" />
+        <RedactBar width="94%" />
+        <RedactBar width="88%" />
+        <RedactBar width="68%" tone="mute" />
+      </div>
+
+      {/* Severity tiles */}
+      <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-mute mb-3">
+        By severity
+      </p>
+      <div className="grid grid-cols-4 gap-2 mb-7">
+        <StatTile n={2} tone="rust" />
+        <StatTile n={5} tone="amber" />
+        <StatTile n={8} tone="navy" />
+        <StatTile n={11} tone="navy-soft" />
+      </div>
+
+      {/* Findings */}
+      <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-mute mb-3">
+        Key findings
+      </p>
+      <div className="space-y-2.5">
+        <FindingRow severity="HI" widths={['90%', '60%']} />
+        <FindingRow severity="ME" widths={['85%', '70%']} />
+        <FindingRow severity="LO" widths={['75%', '50%']} />
+      </div>
+
+      <p className="mt-7 font-mono text-[9px] text-mute italic leading-snug">
+        Confidential — illustrative mock. Final reports are branded, citation-backed, and delivered as PDF + structured data.
+      </p>
+    </div>
   );
 }
 
 function StatTile({
   n,
-  label,
   tone,
 }: {
   n: number;
-  label: string;
-  tone: 'rust' | 'amber' | 'navy';
+  tone: 'rust' | 'amber' | 'navy' | 'navy-soft';
 }) {
   const tones = {
     rust: 'border-rust/40 text-rust',
     amber: 'border-amber/40 text-amber',
     navy: 'border-navy/30 text-navy',
+    'navy-soft': 'border-navy/20 text-navy/60',
   };
   return (
-    <div className={`border ${tones[tone]} bg-paper px-2 py-3 text-center`}>
-      <p className="font-mono text-2xl font-semibold leading-none tabular-nums">{n}</p>
-      <p className="font-mono text-[9px] uppercase tracking-[0.14em] mt-1.5 opacity-80">{label}</p>
+    <div className={`border ${tones[tone]} bg-paper px-2 py-3 flex flex-col items-center gap-1.5`}>
+      <p className="font-mono text-[1.5rem] font-semibold leading-none tabular-nums">{n}</p>
+      <RedactBar width="60%" tone="mute" />
     </div>
   );
 }
 
 function FindingRow({
   severity,
-  text,
+  widths,
 }: {
-  severity: 'High' | 'Medium' | 'Low';
-  text: string;
+  severity: 'HI' | 'ME' | 'LO';
+  widths: [string, string];
 }) {
-  const tone = {
-    High: 'border-amber text-amber',
-    Medium: 'border-navy text-navy',
-    Low: 'border-navy text-navy',
-  }[severity];
+  const tones = {
+    HI: 'border-amber text-amber',
+    ME: 'border-navy text-navy',
+    LO: 'border-navy/50 text-navy/60',
+  };
   return (
-    <div className="flex items-center gap-2 text-[11px] text-ink">
-      <span className={`font-mono border ${tone} px-1.5 py-0.5 uppercase tracking-[0.14em] text-[9px]`}>
+    <div className="flex items-start gap-3">
+      <span
+        className={`font-mono text-[9px] uppercase tracking-[0.14em] border ${tones[severity]} px-1.5 py-0.5 shrink-0 leading-none mt-1`}
+      >
         {severity}
       </span>
-      <span className="truncate">{text}</span>
+      <div className="flex-1 space-y-1.5 pt-1">
+        <RedactBar width={widths[0]} />
+        <RedactBar width={widths[1]} tone="mute" />
+      </div>
     </div>
   );
 }

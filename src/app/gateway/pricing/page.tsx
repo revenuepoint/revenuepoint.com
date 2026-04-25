@@ -30,7 +30,6 @@ export default function GatewayPricingPage() {
           </>
         }
         body="Per-tenant, per-month pricing. Hosting, magic-link auth, the connector to your CRM or ERP, per-tenant theming, audit log, and a named RevenuePoint administrator are all included. No surprise consumption bills. No per-seat add-ons."
-        issue="$"
         sidenote="No surprise consumption bills · no per-seat add-ons."
         ctas={[
           { label: 'Schedule a walkthrough', href: GATEWAY_CONTACT_HREF, variant: 'primary' },

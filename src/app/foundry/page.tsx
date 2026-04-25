@@ -209,7 +209,7 @@ export default function FoundryPage() {
     <>
       {/* Hero */}
       <HeroSection
-        byline="RevenuePoint Foundry · Issue F"
+        byline="RevenuePoint Foundry"
         heading={
           <>
             Your data, connected. Agents that <em>take action</em>. Fully managed.
@@ -220,9 +220,8 @@ export default function FoundryPage() {
           { label: 'Schedule a demo', href: '/contact/?interest=Foundry', variant: 'primary' },
           { label: 'View pricing', href: '/foundry/pricing/', variant: 'secondary' },
         ]}
-        issue="F"
         sidenote="Live in 6 weeks · Named admin and PM · No data engineers required."
-        rightSlot={<PortalMockup />}
+        rightSlot={<div className="lg:mt-16"><PortalMockup /></div>}
       />
 
       {/* The Problem */}

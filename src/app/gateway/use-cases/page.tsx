@@ -28,7 +28,6 @@ export default function GatewayUseCasesPage() {
           </>
         }
         body="The portals our customers run on Gateway today. Each archetype is a different audience and a different access rule — but all built on the same Gateway deployment, the same connector model, the same managed stack."
-        issue="VI"
         ctas={[
           { label: 'Schedule a walkthrough', href: '/contact/?interest=Gateway', variant: 'primary' },
           { label: 'Back to Gateway', href: '/gateway/', variant: 'secondary' },

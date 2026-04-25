@@ -48,13 +48,6 @@ export default function SecurityPage() {
     <>
       {/* Hero */}
       <section className="relative bg-paper overflow-hidden border-b border-rule">
-        <span
-          aria-hidden="true"
-          className="pointer-events-none select-none absolute right-[-0.05em] top-[-0.15em] font-serif italic font-light text-ink leading-[0.86] whitespace-nowrap"
-          style={{ fontSize: 'clamp(14rem, 32vw, 32rem)', opacity: 0.04 }}
-        >
-          S
-        </span>
         <div className="relative max-w-editorial mx-auto px-6 lg:px-8 pt-20 lg:pt-32 pb-16 lg:pb-20">
           <p className="byline mb-5">Security · Responsible disclosure</p>
           <h1 className="text-d0 font-serif font-semibold text-ink leading-tight">

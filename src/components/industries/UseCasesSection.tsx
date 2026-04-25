@@ -38,7 +38,7 @@ export function UseCasesSection({ useCases }: { useCases: UseCase[] }) {
                   ))}
                 </ol>
               </div>
-              <div className="mt-5 pt-4 border-t border-ruleSoft border-l-2 border-l-navy pl-3 -ml-3 bg-navyTint/40">
+              <div className="mt-5 pt-4 pb-4 border-t border-ruleSoft border-l-2 border-l-navy pl-3 pr-3 -ml-3 -mr-3 bg-navyTint/40">
                 <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-navy">Outcome</p>
                 <p className="mt-1 serif-italic text-sm text-ink leading-snug">{uc.outcome}</p>
               </div>

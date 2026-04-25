@@ -92,14 +92,13 @@ export default function GatewayPage() {
     <TenantProvider>
       {/* 1 — Hero */}
       <HeroSection
-        byline="RevenuePoint Gateway · Issue G"
+        byline="RevenuePoint Gateway"
         heading={
           <>
             Multi-tenant portals. Connected to your CRM and ERP. <em>Fully managed</em>.
           </>
         }
         body="Gateway gives every customer, partner, dealer, or location their own branded portal — wired into your CRM, ERP, and accounting. Magic-link login, code-defined access rules, tenant-level data isolation. Fully managed by RevenuePoint."
-        issue="G"
         sidenote="Magic-link auth · code-defined rules · tenant-level isolation."
         ctas={[
           { label: 'Schedule a walkthrough', href: '/contact/?interest=Gateway', variant: 'primary' },

@@ -48,7 +48,6 @@ export default function SalesforcePage() {
           { label: 'Schedule a call', href: '/contact/?interest=Salesforce', variant: 'primary' },
           { label: 'See pricing', href: '/salesforce/managed-services/pricing/', variant: 'secondary' },
         ]}
-        issue="S"
         sidenote="60+ Salesforce certifications · Sales · Service · CPQ · Marketing · Experience · NPSP."
       />
 

@@ -64,7 +64,6 @@ export default function NpspMiddlewarePage() {
           </>
         }
         body="A modern donate form, member portal, and events platform — syncing into NPSP. Host it yourself under AGPL-3.0. Or let RevenuePoint run it end-to-end with observability, dunning, and a managed premium stack."
-        issue="N"
         sidenote="AGPL-3.0 · self-host or fully managed."
         ctas={[
           { label: 'View on GitHub', href: NPSP_GITHUB_URL, variant: 'primary' },

@@ -182,7 +182,7 @@ const PILLARS: Pillar[] = [
 const STATS = [
   { value: '99.99%', label: 'Measured uptime · trailing 12 months' },
   { value: '<1h', label: 'P1 incident response commitment' },
-  { value: '0', label: 'Customer data breaches since founding' },
+  { value: 'SOC 2', label: 'Type II controls audited annually' },
   { value: '47', label: 'Security controls continuously monitored' },
 ];
 

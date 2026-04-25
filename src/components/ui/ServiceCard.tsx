@@ -2,21 +2,22 @@ import Link from 'next/link';
 
 type ServiceCardProps = {
   title: string;
-  body: string;
+  body: React.ReactNode;
   cta?: {
     label: string;
     href: string;
   };
   badge?: string;
   elevated?: boolean;
+  className?: string;
 };
 
-export function ServiceCard({ title, body, cta, badge, elevated }: ServiceCardProps) {
+export function ServiceCard({ title, body, cta, badge, elevated, className = '' }: ServiceCardProps) {
   return (
     <article
-      className={`relative bg-cream border flex flex-col p-6 lg:p-8 transition-shadow hover:shadow-hairline ${
+      className={`relative h-full bg-cream border flex flex-col p-6 lg:p-8 transition-shadow hover:shadow-hairline ${
         elevated ? 'border-crimson' : 'border-ruleSoft'
-      }`}
+      } ${className}`}
     >
       {/* Crimson accent bar — top, 32px */}
       <span aria-hidden="true" className="absolute left-6 top-0 h-px w-8 bg-crimson" />

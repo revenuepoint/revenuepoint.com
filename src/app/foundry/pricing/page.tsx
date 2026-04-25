@@ -57,13 +57,6 @@ export default function FoundryPricingPage() {
     <>
       {/* Header */}
       <section className="relative bg-paper py-section overflow-hidden">
-        <span
-          aria-hidden="true"
-          className="pointer-events-none select-none absolute right-[-0.05em] top-[-0.15em] font-serif italic font-light text-ink leading-[0.86] whitespace-nowrap"
-          style={{ fontSize: 'clamp(14rem, 32vw, 32rem)', opacity: 0.05 }}
-        >
-          $
-        </span>
         <div className="relative max-w-editorial mx-auto px-6 lg:px-8">
           <SectionHeader
             eyebrow="Foundry · Pricing"

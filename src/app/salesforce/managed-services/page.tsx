@@ -53,7 +53,6 @@ export default function SalesforceManagedServicesPage() {
           { label: 'Start a managed services engagement', href: '#lead-form', variant: 'primary' },
           { label: 'See pricing', href: '/salesforce/managed-services/pricing/', variant: 'secondary' },
         ]}
-        issue="M"
         sidenote="Named admin + PM · 25 hours/month · Two-week sprints · Month-to-month."
       />
 

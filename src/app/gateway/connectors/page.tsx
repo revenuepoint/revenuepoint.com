@@ -114,7 +114,6 @@ export default function GatewayConnectorsPage() {
           </>
         }
         body="Salesforce and SAP ship today. NetSuite, Microsoft Dynamics, and QuickBooks are on the roadmap. The Custom REST/GraphQL adapter covers everything else with an API. Each connector is a typed adapter; auth, retries, and per-tenant secrets are handled in one place."
-        issue="C"
         ctas={[
           { label: 'Schedule a walkthrough', href: '/contact/?interest=Gateway', variant: 'primary' },
           { label: 'Back to Gateway', href: '/gateway/', variant: 'secondary' },

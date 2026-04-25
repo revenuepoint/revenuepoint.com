@@ -1,6 +1,7 @@
 export type NavLink = {
   label: string;
   href: string;
+  badge?: string;
 };
 
 export type NavGroup = {
@@ -40,7 +41,7 @@ export const navItems: NavItem[] = [
       {
         heading: 'Research',
         links: [
-          { label: 'Intelligence Reports', href: '/research/intelligence-reports/' },
+          { label: 'Intelligence Reports', href: '/research/intelligence-reports/', badge: 'NEW' },
         ],
       },
     ],
