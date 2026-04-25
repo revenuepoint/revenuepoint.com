@@ -273,18 +273,26 @@ h2 em, h3 em, h4 em {
 
 /* Logo marquee — mobile-only horizontal auto-scroll for the trust bar.
    The track renders the logo list twice; translating by -50% yields a
-   seamless loop. Pauses on hover; the global prefers-reduced-motion
-   rule below already strips the animation. */
+   seamless loop. All layout lives in this rule (no Tailwind utility
+   classes on the track div) so width: max-content isn't fighting
+   anything. The global prefers-reduced-motion rule below strips the
+   animation. */
 @keyframes rp-marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
 }
 .rp-marquee-track {
-  animation: rp-marquee 40s linear infinite;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
   width: max-content;
+  animation: rp-marquee 40s linear infinite;
+  will-change: transform;
 }
-.rp-marquee-track:hover {
-  animation-play-state: paused;
+@media (hover: hover) {
+  .rp-marquee-track:hover {
+    animation-play-state: paused;
+  }
 }
 
 /* Live indicator — pulsing navy dot, used in product viewport captions

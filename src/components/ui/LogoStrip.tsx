@@ -19,7 +19,7 @@ export function LogoStrip({ heading, logos }: LogoStripProps) {
         {/* Mobile: smooth horizontal marquee. Logos render twice so the
             -50% translation loops seamlessly. */}
         <div className="sm:hidden overflow-hidden -mx-6">
-          <div className="rp-marquee-track flex items-center gap-x-10">
+          <div className="rp-marquee-track">
             {[...logos, ...logos].map((logo, i) => (
               <div
                 key={`${logo.name}-${i}`}
