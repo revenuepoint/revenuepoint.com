@@ -20,6 +20,12 @@ const meta = {
   },
   tags: ['Data Pipelines', 'Infrastructure', 'POV'],
   readingTime: '10 min read',
+  cover: {
+    src: '/img/insights/how-data-gets-into-your-warehouse.svg',
+    alt: 'Sources flow through three pattern lanes — batch, CDC, webhooks — into a DAG, then to dev, staging, and prod warehouses with promotion arrows',
+    width: 1600,
+    height: 900,
+  },
 };
 
 function Body() {

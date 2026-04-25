@@ -20,6 +20,12 @@ const meta = {
   },
   tags: ['Anomaly Detection', 'Monitoring', 'POV'],
   readingTime: '10 min read',
+  cover: {
+    src: '/img/insights/how-anomaly-detection-actually-works.svg',
+    alt: 'A time series with a noise band; one point lifted above the band and labeled as the anomaly',
+    width: 1600,
+    height: 900,
+  },
 };
 
 function Body() {

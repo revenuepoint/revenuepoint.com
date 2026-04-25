@@ -20,6 +20,12 @@ const meta = {
   },
   tags: ['Data Warehouse', 'Infrastructure', 'POV'],
   readingTime: '9 min read',
+  cover: {
+    src: '/img/insights/the-data-warehouse-foundation.svg',
+    alt: 'Five source systems converge into a central warehouse, then radiate out to dashboards, reports, and agents',
+    width: 1600,
+    height: 900,
+  },
 };
 
 function Body() {

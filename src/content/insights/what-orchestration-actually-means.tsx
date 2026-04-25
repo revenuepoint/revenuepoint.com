@@ -20,6 +20,12 @@ const meta = {
   },
   tags: ['Orchestration', 'AI', 'POV'],
   readingTime: '8 min read',
+  cover: {
+    src: '/img/insights/what-orchestration-actually-means.svg',
+    alt: 'Three labeled stages: agent proposes, human approves, system executes',
+    width: 1600,
+    height: 900,
+  },
 };
 
 function Body() {

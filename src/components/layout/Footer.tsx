@@ -58,7 +58,7 @@ export function Footer() {
           <div className="md:col-span-4">
             <Wordmark size="md" tone="crimson" />
             <p className="mt-5 text-[0.9375rem] leading-relaxed text-inkSoft max-w-prose">
-              Your operating systems, fully managed. Five platforms, one partner — implementation, management, and intelligence end-to-end.
+              Fully managed pipelines that turn data into action — across CRM, ERP, accounting, data infrastructure, and AI.
             </p>
             <address className="mt-8 not-italic font-mono text-xs text-mute leading-relaxed space-y-1">
               <p className="text-ink">200 Vesey Street, 24th Floor</p>

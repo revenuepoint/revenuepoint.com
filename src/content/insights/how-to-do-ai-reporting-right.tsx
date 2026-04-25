@@ -20,6 +20,12 @@ const meta = {
   },
   tags: ['AI', 'Reporting', 'POV'],
   readingTime: '9 min read',
+  cover: {
+    src: '/img/insights/how-to-do-ai-reporting-right.svg',
+    alt: 'Five-stage AI reporting pipeline — question, plan, query, QC, result — with a provenance badge attached to the result',
+    width: 1600,
+    height: 900,
+  },
 };
 
 function Body() {

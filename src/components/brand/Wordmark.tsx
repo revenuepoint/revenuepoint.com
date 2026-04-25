@@ -5,7 +5,7 @@ type Tone = 'crimson' | 'ink' | 'paper';
 
 const SIZE_CLASS: Record<Size, string> = {
   sm: 'text-[18px]',
-  md: 'text-[28px]',
+  md: 'text-[24px]',
   lg: 'text-[40px]',
 };
 

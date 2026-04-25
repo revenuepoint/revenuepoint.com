@@ -20,6 +20,12 @@ const meta = {
   },
   tags: ['Entity Resolution', 'Data Quality', 'POV'],
   readingTime: '8 min read',
+  cover: {
+    src: '/img/insights/entity-resolution.svg',
+    alt: 'Three slightly different records — Acme, Inc., ACME Inc, acme inc. — converging into one resolved entity',
+    width: 1600,
+    height: 900,
+  },
 };
 
 function Body() {

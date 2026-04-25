@@ -12,33 +12,47 @@ export default function Home() {
     <>
       {/* Hero */}
       <HeroSection
-        byline="Implementation · management · intelligence"
+        byline="CRM + ERP + Agentic Orchestration"
         heading={
           <>
-            Your operating systems, <em>fully managed</em>.
+            Fully managed pipelines that turn <em>data into actions</em>.
           </>
         }
-        body="CRM, ERP, data and AI, multi-tenant portals, AI research — five platforms, one partner. Implemented, configured, and run by a named team end-to-end."
+        body="Report on, analyze, measure, audit, and act on data points from every system you run on — consolidated into one single source of truth."
         ctas={[
           { label: 'Explore Foundry', href: '/foundry/', variant: 'primary' },
           { label: 'Explore Customer Relationship Management', href: '/salesforce/', variant: 'secondary' },
           { label: 'Explore Enterprise Resource Management', href: '/sap/', variant: 'secondary' },
         ]}
         sidenote={
-          <>
-            A named administrator and project manager on every engagement.
-          </>
+          <a
+            href="https://github.com/revenuepoint"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 hover:text-crimson transition-colors"
+          >
+            <svg
+              className="h-3.5 w-3.5 shrink-0"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z" />
+            </svg>
+            github.com/revenuepoint
+          </a>
         }
         rightSlot={
-          <div className="border border-rule bg-cream p-8 lg:p-10 lg:mt-24">
+          <div className="border border-rule bg-cream p-8 lg:p-10 lg:mt-12">
             <p className="eyebrow mb-4">The track record</p>
             <div className="mb-8 max-w-[40ch] space-y-3">
               <p className="serif-italic text-[1.0625rem] text-ink leading-snug">
                 Built on a decade of running operating systems end-to-end.
               </p>
               <p className="text-[0.875rem] text-inkSoft leading-relaxed">
-                Implementation, management, and intelligence under one engagement — one partner,
-                every step.
+                Our broad range of experience across CRM, ERP, accounting, data infrastructure,
+                and AI allows us to connect systems to drive faster decisions and reduce manual
+                reconciliation and busywork.
               </p>
             </div>
             <ul className="divide-y divide-rule">
@@ -103,11 +117,11 @@ export default function Home() {
             eyebrow="What we do"
             heading={
               <>
-                Five ways we help your business <em>grow</em>.
+                Implementation, operations, intelligence — across <em>five lines</em>.
               </>
             }
             align="left"
-            body="The same operating model — named accountability, fully managed, no surprises — across every platform we run."
+            body="Implementation in weeks. Operations under a single engagement. No long-term contract. The same model on every line."
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:auto-rows-fr">
             <ServiceCard
@@ -219,7 +233,7 @@ export default function Home() {
                 {
                   num: 'iv',
                   title: 'Full-stack coverage',
-                  desc: 'Salesforce, SAP, and Foundry — one partner who understands how it all fits together.',
+                  desc: 'A vast understanding of business systems — CRM, ERP, accounting, data warehouses, and AI agents — and how every layer fits together.',
                 },
               ].map((item) => (
                 <div key={item.title}>
@@ -294,11 +308,11 @@ export default function Home() {
             eyebrow="How we work"
             heading={
               <>
-                From signed contract to live platform in <em>weeks</em>.
+                From execution to production in <em>weeks, not months</em>.
               </>
             }
             align="left"
-            body="A four-step engagement model. The same path every time, so nothing surprises anyone."
+            body="A repeatable four-step engagement model, our wide range of experience across enterprise platforms, and an agentic-assisted delivery process allow us to deliver results in as little as half the typical implementation timeline."
           />
           <StepList
             steps={[

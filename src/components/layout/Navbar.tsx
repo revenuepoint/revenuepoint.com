@@ -61,7 +61,9 @@ export function Navbar() {
       >
         {/* Primary nav */}
         <nav className="max-w-editorial mx-auto px-6 lg:px-8 flex items-center justify-between h-[60px] lg:h-[72px]">
-          <Wordmark size="md" tone="crimson" />
+          <span className="relative -top-[2px] inline-block">
+            <Wordmark size="md" tone="crimson" />
+          </span>
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center">
