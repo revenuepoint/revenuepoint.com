@@ -80,16 +80,19 @@ export default function Home() {
       <LogoStrip
         heading="Trusted by leading organizations and nonprofits"
         logos={[
-          { name: 'WeWork', src: '/img/clients/logo-wework.svg', height: 22 },
+          // Heights tuned per logo for visual weight balance: square
+          // logos a touch taller; wide wordmarks slightly shorter
+          // (their rendered width compensates for visual presence).
+          { name: 'WeWork', src: '/img/clients/logo-wework.svg', height: 24 },
           { name: 'Kinetik', src: '/img/clients/logo-kinetik.png', height: 30 },
           { name: 'Luster', src: '/img/clients/logo-luster.png', height: 32 },
-          { name: 'Omya', src: '/img/clients/logo-omya.png', height: 32 },
-          { name: 'Melio', src: '/img/clients/logo-melio.png', height: 26 },
-          { name: 'Chemistry Rx', src: '/img/clients/logo-chemistry-rx.png', height: 32, wide: true },
-          { name: 'Prive Therapeutics', src: '/img/clients/logo-prive-therapeutics.svg', height: 28 },
-          { name: 'Studio Green', src: '/img/clients/logo-studio-green.svg', height: 34 },
-          { name: 'Green Line Ingredients', src: '/img/clients/logo-green-line-ingredients.png', height: 32, wide: true },
-          { name: 'inewsource', src: '/img/clients/logo-inewsource.png', height: 32, wide: true },
+          { name: 'Omya', src: '/img/clients/logo-omya.png', height: 36 },
+          { name: 'Melio', src: '/img/clients/logo-melio.png', height: 28 },
+          { name: 'Chemistry Rx', src: '/img/clients/logo-chemistry-rx.png', height: 28 },
+          { name: 'Prive Therapeutics', src: '/img/clients/logo-prive-therapeutics.svg', height: 30 },
+          { name: 'Studio Green', src: '/img/clients/logo-studio-green.svg', height: 32 },
+          { name: 'Green Line Ingredients', src: '/img/clients/logo-green-line-ingredients.png', height: 28 },
+          { name: 'inewsource', src: '/img/clients/logo-inewsource.png', height: 28 },
           { name: 'VTDigger', src: '/img/clients/logo-vtdigger.png', height: 28 },
           { name: 'The Current', src: '/img/clients/logo-the-current.png', height: 26 },
           { name: 'Mississippi Today', src: '/img/clients/logo-mississippi-today.png', height: 26 },
