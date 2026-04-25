@@ -21,6 +21,21 @@ export function LeadForm({ interest, id }: LeadFormProps) {
     if (pageUrlField) {
       pageUrlField.value = window.location.href;
     }
+    const tick = () => {
+      const form = formRef.current;
+      if (!form) return;
+      const response = form.querySelector<HTMLTextAreaElement>('textarea[name="g-recaptcha-response"]');
+      if (response && response.value.trim() !== '') return;
+      const settings = form.querySelector<HTMLInputElement>('input[name="captcha_settings"]');
+      if (!settings) return;
+      try {
+        const obj = JSON.parse(settings.value);
+        obj.ts = JSON.stringify(Date.now());
+        settings.value = JSON.stringify(obj);
+      } catch {}
+    };
+    const id = window.setInterval(tick, 500);
+    return () => window.clearInterval(id);
   }, []);
 
   const handleFirstFocus = () => {
@@ -69,7 +84,7 @@ export function LeadForm({ interest, id }: LeadFormProps) {
       <input
         type="hidden"
         name="captcha_settings"
-        value={`{"keyname":"reCAPTCHA_2","fallback":"true","orgId":"${process.env.NEXT_PUBLIC_SF_OID}","ts":""}`}
+        value={`{"keyname":"RevenuePoint_v2_Checkbox","fallback":"true","orgId":"${process.env.NEXT_PUBLIC_SF_OID}","ts":""}`}
       />
       <input
         type="hidden"
