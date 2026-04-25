@@ -271,6 +271,22 @@ h2 em, h3 em, h4 em {
   font-feature-settings: 'tnum' 1, 'zero' 1;
 }
 
+/* Logo marquee — mobile-only horizontal auto-scroll for the trust bar.
+   The track renders the logo list twice; translating by -50% yields a
+   seamless loop. Pauses on hover; the global prefers-reduced-motion
+   rule below already strips the animation. */
+@keyframes rp-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.rp-marquee-track {
+  animation: rp-marquee 40s linear infinite;
+  width: max-content;
+}
+.rp-marquee-track:hover {
+  animation-play-state: paused;
+}
+
 /* Live indicator — pulsing navy dot, used in product viewport captions
    and "live" tags. Honors prefers-reduced-motion. */
 .live-dot {
