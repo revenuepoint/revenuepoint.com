@@ -37,6 +37,12 @@ export const navItems: NavItem[] = [
           { label: 'SAP Managed', href: '/sap/' },
         ],
       },
+      {
+        heading: 'Research',
+        links: [
+          { label: 'Intelligence Reports', href: '/research/intelligence-reports/' },
+        ],
+      },
     ],
   },
   {
