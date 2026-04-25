@@ -59,7 +59,7 @@ export default function Home() {
               {[
                 { value: '$950M+', label: 'Revenue managed per year' },
                 { value: '300+', label: 'Engagements delivered' },
-                { value: '12+', label: 'Years of experience' },
+                { value: '2012', label: 'Founded' },
               ].map((stat) => (
                 <li
                   key={stat.label}
