@@ -284,7 +284,7 @@ h2 em, h3 em, h4 em {
 .rp-marquee-track {
   display: flex !important;
   align-items: center;
-  gap: 2.5rem;
+  gap: 1.75rem;
   width: max-content !important;
   min-width: max-content;
   animation: rp-marquee 25s linear infinite !important;
