@@ -80,10 +80,14 @@ export default function Home() {
       <LogoStrip
         heading="Trusted by leading organizations and nonprofits"
         logos={[
+          { name: 'WeWork', src: '/img/clients/logo-wework.jpg', height: 26 },
           { name: 'Kinetik', src: '/img/clients/logo-kinetik.png', height: 30 },
           { name: 'Luster', src: '/img/clients/logo-luster.png', height: 32 },
           { name: 'Omya', src: '/img/clients/logo-omya.png', height: 32 },
           { name: 'Melio', src: '/img/clients/logo-melio.png', height: 26 },
+          { name: 'Chemistry Rx', src: '/img/clients/logo-chemistry-rx.jpg', height: 32 },
+          { name: 'Prive Therapeutics', src: '/img/clients/logo-prive-therapeutics.svg', height: 28 },
+          { name: 'Studio Green', src: '/img/clients/logo-studio-green.svg', height: 30 },
           { name: 'Green Line Ingredients', src: '/img/clients/logo-green-line-ingredients.png', height: 28 },
           { name: 'inewsource', src: '/img/clients/logo-inewsource.png', height: 26 },
           { name: 'VTDigger', src: '/img/clients/logo-vtdigger.png', height: 28 },
