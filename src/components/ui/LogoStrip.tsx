@@ -16,14 +16,14 @@ export function LogoStrip({ heading, logos }: LogoStripProps) {
         {heading && (
           <p className="serif-italic text-center text-base text-mute mb-10">{heading}</p>
         )}
-        <ul className="mx-auto max-w-3xl grid grid-cols-3 place-items-center gap-x-6 gap-y-8 lg:gap-x-10 lg:gap-y-10">
+        <ul className="mx-auto grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 place-items-center gap-x-6 gap-y-10 lg:gap-x-6">
           {logos.map((logo) => (
             <li key={logo.name} className="flex items-center justify-center">
               {logo.src ? (
                 <img
                   src={logo.src}
                   alt={logo.name}
-                  className="w-auto object-contain max-w-[120px] lg:max-w-[150px]"
+                  className="w-auto object-contain max-w-[120px] lg:max-w-[110px] xl:max-w-[120px]"
                   style={{ height: logo.height ?? 32 }}
                 />
               ) : (
