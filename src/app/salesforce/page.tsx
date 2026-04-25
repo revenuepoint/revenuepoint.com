@@ -7,6 +7,7 @@ import { SectionHeader } from '@/components/ui/SectionHeader';
 import { SalesforceProductPicker } from '@/components/salesforce/SalesforceProductPicker';
 import { consultingActivities, consultingProducts } from '@/data/salesforceConsulting';
 import { industryPageList } from '@/data/industries';
+import { SCHEDULE_URL } from '@/lib/links';
 
 export const metadata = buildMetadata({
   title: 'Certified Salesforce Consulting',
@@ -45,7 +46,7 @@ export default function SalesforcePage() {
         }
         body="Our consultants hold over 60 Salesforce certifications and have implemented Salesforce for teams of 10 to global rollouts of hundreds of users. We specialize in implementations that stick — configured to your process, trained to your team, supported beyond go-live."
         ctas={[
-          { label: 'Schedule a call', href: '/contact/?interest=Salesforce', variant: 'primary' },
+          { label: 'Schedule a call', href: SCHEDULE_URL, variant: 'primary' },
           { label: 'See pricing', href: '/salesforce/managed-services/pricing/', variant: 'secondary' },
         ]}
         sidenote="60+ Salesforce certifications · Sales · Service · CPQ · Marketing · Experience · NPSP."

@@ -47,7 +47,7 @@ export default function Home() {
             <p className="eyebrow mb-4">The track record</p>
             <div className="mb-8 max-w-[40ch] space-y-3">
               <p className="serif-italic text-[1.0625rem] text-ink leading-snug">
-                Built on a decade of running operating systems end-to-end.
+                Built on a decade of implementing and managing enterprise systems end-to-end.
               </p>
               <p className="text-[0.875rem] text-inkSoft leading-relaxed">
                 Our broad range of experience across CRM, ERP, accounting, data infrastructure,
@@ -94,13 +94,11 @@ export default function Home() {
       {/* The work — context for the pillars below */}
       <section className="bg-paper border-b border-rule">
         <div className="max-w-editorial mx-auto px-6 lg:px-8 py-16 lg:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-baseline">
-            <div className="lg:col-span-5">
-              <Eyebrow>The work</Eyebrow>
-              <h2 className="mt-3 font-serif text-d2 font-medium text-ink leading-tight">
-                Implementation. Management. <em>Intelligence</em>.
-              </h2>
-            </div>
+          <Eyebrow>The work</Eyebrow>
+          <div className="mt-3 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-baseline">
+            <h2 className="lg:col-span-5 font-serif text-d2 font-medium text-ink leading-tight">
+              Implementation. Management. <em>Intelligence</em>.
+            </h2>
             <p className="lg:col-span-7 text-lede leading-[1.65] text-inkSoft max-w-prose">
               We don&rsquo;t just stand software up. We implement to your processes, manage the
               system as it evolves, and put your data to work across the business — five platforms,

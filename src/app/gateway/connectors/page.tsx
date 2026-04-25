@@ -4,6 +4,7 @@ import { SectionHeader } from '@/components/ui/SectionHeader';
 import { CTABanner } from '@/components/ui/CTABanner';
 import { shippedConnectors, roadmapConnectors } from '@/data/gatewayConnectors';
 import type { GatewayConnector } from '@/types/gateway';
+import { SCHEDULE_URL } from '@/lib/links';
 
 export const metadata = buildMetadata({
   title: 'Gateway Connectors — Salesforce, SAP, and Anything Else',
@@ -115,7 +116,7 @@ export default function GatewayConnectorsPage() {
         }
         body="Salesforce and SAP ship today. NetSuite, Microsoft Dynamics, and QuickBooks are on the roadmap. The Custom REST/GraphQL adapter covers everything else with an API. Each connector is a typed adapter; auth, retries, and per-tenant secrets are handled in one place."
         ctas={[
-          { label: 'Schedule a walkthrough', href: '/contact/?interest=Gateway', variant: 'primary' },
+          { label: 'Schedule a walkthrough', href: SCHEDULE_URL, variant: 'primary' },
           { label: 'Back to Gateway', href: '/gateway/', variant: 'secondary' },
         ]}
       />

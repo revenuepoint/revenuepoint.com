@@ -1,5 +1,6 @@
 import { buildMetadata } from '@/lib/metadata';
 import { Button } from '@/components/ui/Button';
+import { SCHEDULE_URL } from '@/lib/links';
 
 export const metadata = buildMetadata({
   title: 'Thank You — RevenuePoint',
@@ -21,7 +22,7 @@ export default function ThankYouPage() {
           We review every submission personally. If your engagement looks like a good fit, we&rsquo;ll reach out to schedule an intro call.
         </p>
         <div className="mt-10 flex justify-center">
-          <Button variant="primary" href={process.env.NEXT_PUBLIC_CALENDLY_URL || '#'}>
+          <Button variant="primary" href={SCHEDULE_URL}>
             Schedule a 30-minute intro
           </Button>
         </div>

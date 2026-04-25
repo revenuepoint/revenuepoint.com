@@ -17,6 +17,7 @@ import {
   npspMatrix,
   npspPremiumStack,
 } from '@/data/npspMiddleware';
+import { SCHEDULE_URL } from '@/lib/links';
 
 export const metadata = buildMetadata({
   title: 'NPSP Middleware — Open-source donor stack for Salesforce NPSP',
@@ -272,7 +273,7 @@ export default function NpspMiddlewarePage() {
       <CTABanner
         heading="Ready to see it running?"
         body="Thirty minutes with a RevenuePoint architect. We walk the donate form, the member portal, the Salesforce sync — and scope a managed rollout if it fits."
-        cta={{ label: 'Schedule a walkthrough →', href: NPSP_CONTACT_HREF }}
+        cta={{ label: 'Schedule a walkthrough →', href: SCHEDULE_URL }}
       />
 
       {/* Lead form */}

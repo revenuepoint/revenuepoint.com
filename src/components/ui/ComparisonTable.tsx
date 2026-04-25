@@ -44,7 +44,7 @@ export function ComparisonTable({ headers, rows, highlightCol = 0 }: ComparisonT
                 <td
                   key={i}
                   className={`py-3 px-4 text-center ${
-                    i === highlightCol ? 'bg-crimsonTint border-x border-crimson' : ''
+                    i + 1 === highlightCol ? 'bg-crimsonTint border-x border-crimson' : ''
                   }`}
                 >
                   {cell === 'check' ? (

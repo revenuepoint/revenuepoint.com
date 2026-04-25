@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
 import { navItems } from '@/lib/navigation';
 import type { NavItem } from '@/lib/navigation';
+import { SCHEDULE_URL } from '@/lib/links';
 import { Wordmark } from '@/components/brand/Wordmark';
 
 export function Navbar() {
@@ -61,7 +62,7 @@ export function Navbar() {
       >
         {/* Primary nav */}
         <nav className="max-w-editorial mx-auto px-6 lg:px-8 flex items-center justify-between h-[60px] lg:h-[72px]">
-          <span className="relative -top-[2px] inline-block">
+          <span className="inline-block">
             <Wordmark size="md" tone="crimson" />
           </span>
 
@@ -119,7 +120,7 @@ export function Navbar() {
             <div className="w-px h-5 bg-rule mx-4" />
 
             <a
-              href={process.env.NEXT_PUBLIC_CALENDLY_URL}
+              href={SCHEDULE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="border border-crimson text-crimson font-serif italic text-[14px] px-5 py-1.5 hover:bg-crimsonTint transition-colors"
@@ -193,7 +194,7 @@ export function Navbar() {
                 </div>
               ) : activeMenu && activeMenu.children ? (
                 <div>
-                  <p className="eyebrow mb-5">{activeMenu.label}</p>
+                  <p className="eyebrow mb-5">{activeMenu.menuHeading ?? activeMenu.label}</p>
                   <div className="grid grid-cols-3 gap-x-12 gap-y-1">
                     {activeMenu.children.map((child) => (
                       <Link
@@ -320,7 +321,7 @@ export function Navbar() {
             ))}
 
             <a
-              href={process.env.NEXT_PUBLIC_CALENDLY_URL}
+              href={SCHEDULE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="block text-center border border-crimson text-crimson font-serif italic text-[15px] px-6 py-3 hover:bg-crimsonTint transition-colors mt-8"

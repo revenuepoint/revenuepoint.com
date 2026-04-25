@@ -11,6 +11,7 @@ import {
   GATEWAY_INCLUSIONS,
   GATEWAY_FAQ,
 } from '@/data/gatewayPricing';
+import { SCHEDULE_URL } from '@/lib/links';
 
 export const metadata = buildMetadata({
   title: 'Gateway Pricing — Fully Managed, Per-Tenant',
@@ -32,7 +33,7 @@ export default function GatewayPricingPage() {
         body="Per-tenant, per-month pricing. Hosting, magic-link auth, the connector to your CRM or ERP, per-tenant theming, audit log, and a named RevenuePoint administrator are all included. No surprise consumption bills. No per-seat add-ons."
         sidenote="No surprise consumption bills · no per-seat add-ons."
         ctas={[
-          { label: 'Schedule a walkthrough', href: GATEWAY_CONTACT_HREF, variant: 'primary' },
+          { label: 'Schedule a walkthrough', href: SCHEDULE_URL, variant: 'primary' },
           { label: 'Back to Gateway', href: '/gateway/', variant: 'secondary' },
         ]}
       />
@@ -56,12 +57,14 @@ export default function GatewayPricingPage() {
               Hosting, magic-link auth via SendGrid, the connector to your CRM or ERP, tenant configuration in code, per-tenant theming, audit log, observability, upgrades, and a named RevenuePoint administrator. Billed monthly. Volume pricing kicks in past five active tenants.
             </p>
             <div className="mt-8 flex flex-wrap gap-3 justify-center">
-              <Link
-                href={GATEWAY_CONTACT_HREF}
+              <a
+                href={SCHEDULE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 border border-crimson text-crimson font-serif italic text-[15px] px-5 py-2 hover:bg-paper transition-colors"
               >
                 Schedule a walkthrough <span aria-hidden="true">→</span>
-              </Link>
+              </a>
               <Link
                 href="/gateway/"
                 className="inline-flex items-center gap-2 border border-ink text-ink font-serif italic text-[15px] px-5 py-2 hover:bg-bone transition-colors"
@@ -131,7 +134,7 @@ export default function GatewayPricingPage() {
       <CTABanner
         heading="Want to see Gateway with your data?"
         body="Bring an example tenant: a customer segment, a partner network, a dealer footprint. We mock it in front of you and quote a path to live."
-        cta={{ label: 'Schedule a walkthrough →', href: GATEWAY_CONTACT_HREF }}
+        cta={{ label: 'Schedule a walkthrough →', href: SCHEDULE_URL }}
       />
     </>
   );

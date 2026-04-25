@@ -18,8 +18,9 @@ import { IndustryProvider } from '@/context/IndustryContext';
 import { IndustrySwitcher } from '@/components/foundry/IndustrySwitcher';
 import { AgentsSection } from '@/components/foundry/AgentsSection';
 import { SecuritySection } from '@/components/foundry/SecuritySection';
-import { PortalMockup } from '@/components/foundry/portal/PortalMockup';
+import { HeroAgentMockup } from '@/components/foundry/HeroAgentMockup';
 import { PlatformModulesShowcase } from '@/components/foundry/PlatformModulesShowcase';
+import { SCHEDULE_URL } from '@/lib/links';
 
 export const metadata = buildMetadata({
   title: 'Foundry — Managed Data & AI Platform',
@@ -217,11 +218,11 @@ export default function FoundryPage() {
         }
         body="Foundry connects your CRM, ERP, accounting — and every other system your business already runs on — into one orchestrated platform. Live dashboards for every role. AI reports written overnight. Agents that watch, decide, and act across your systems. Otto, your AI analyst, answers in plain English. Fully managed by RevenuePoint."
         ctas={[
-          { label: 'Schedule a demo', href: '/contact/?interest=Foundry', variant: 'primary' },
+          { label: 'Schedule a demo', href: SCHEDULE_URL, variant: 'primary' },
           { label: 'View pricing', href: '/foundry/pricing/', variant: 'secondary' },
         ]}
         sidenote="Live in 6 weeks · Named admin and PM · No data engineers required."
-        rightSlot={<div className="lg:mt-16"><PortalMockup /></div>}
+        rightSlot={<div className="lg:mt-16"><HeroAgentMockup /></div>}
       />
 
       {/* The Problem */}
@@ -654,7 +655,7 @@ export default function FoundryPage() {
           </>
         }
         body="Schedule a personalized demo. We'll show you what Foundry looks like connected to systems just like yours."
-        cta={{ label: 'Schedule a demo', href: '/contact/?interest=Foundry' }}
+        cta={{ label: 'Schedule a demo', href: SCHEDULE_URL }}
       />
     </>
   );

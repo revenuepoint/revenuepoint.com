@@ -14,6 +14,10 @@ const sapLinks = [
   { label: 'Pricing', href: '/sap/pricing/' },
 ];
 
+const researchLinks = [
+  { label: 'Intelligence Reports', href: '/research/intelligence-reports/' },
+];
+
 const foundryLinks = [
   { label: 'Platform Overview', href: '/foundry/' },
   { label: 'Pricing', href: '/foundry/pricing/' },
@@ -31,16 +35,14 @@ const gatewayLinks = [
 
 const resourceLinks = [
   { label: 'Insights', href: '/insights/' },
-  { label: 'Intelligence Reports', href: '/research/intelligence-reports/' },
-  { label: 'Brand Guide', href: '/brand/' },
-  { label: 'Security', href: '/security/' },
   { label: 'Contact', href: '/contact/' },
 ];
 
 type Group = { heading: string; links: { label: string; href: string }[] };
 const groups: Group[] = [
   { heading: 'Salesforce', links: sfLinks },
-  { heading: 'SAP', links: sapLinks },
+  { heading: 'SAP S/4HANA + B1', links: sapLinks },
+  { heading: 'Research', links: researchLinks },
   { heading: 'Foundry', links: foundryLinks },
   { heading: 'Gateway', links: gatewayLinks },
   { heading: 'Resources', links: resourceLinks },
@@ -90,10 +92,10 @@ export function Footer() {
           </div>
 
           {/* Link columns */}
-          <div className="md:col-span-8 grid grid-cols-2 lg:grid-cols-5 gap-x-6 gap-y-10">
+          <div className="md:col-span-8 md:pt-3 grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
             {groups.map((group) => (
               <div key={group.heading}>
-                <h3 className="serif-italic text-[0.95rem] mb-4 text-ink">{group.heading}</h3>
+                <p className="eyebrow mb-5">{group.heading}</p>
                 <ul className="space-y-2.5">
                   {group.links.map((link) => (
                     <li key={link.href}>
@@ -116,7 +118,7 @@ export function Footer() {
       <div className="border-t border-rule">
         <div className="max-w-editorial mx-auto px-6 lg:px-8 py-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
           <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-mute">
-            &copy; {new Date().getFullYear()} RevenuePoint Inc.
+            &copy; {new Date().getFullYear()} RevenuePoint Inc., all rights reserved.
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-[0.16em]">
             <Link href="/brand/" className="text-mute hover:text-crimson transition-colors">

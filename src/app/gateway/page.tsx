@@ -13,6 +13,7 @@ import { MagicLinkFlow } from '@/components/gateway/MagicLinkFlow';
 import { ConfigViewer } from '@/components/gateway/ConfigViewer';
 import { GatewaySecurity } from '@/components/gateway/GatewaySecurity';
 import { gatewayProblemCards, gatewayProblemStats } from '@/data/gatewayProblem';
+import { SCHEDULE_URL } from '@/lib/links';
 
 export const metadata = buildMetadata({
   title: 'Gateway — Multi-tenant portals, fully managed',
@@ -101,7 +102,7 @@ export default function GatewayPage() {
         body="Gateway gives every customer, partner, dealer, or location their own branded portal — wired into your CRM, ERP, and accounting. Magic-link login, code-defined access rules, tenant-level data isolation. Fully managed by RevenuePoint."
         sidenote="Magic-link auth · code-defined rules · tenant-level isolation."
         ctas={[
-          { label: 'Schedule a walkthrough', href: '/contact/?interest=Gateway', variant: 'primary' },
+          { label: 'Schedule a walkthrough', href: SCHEDULE_URL, variant: 'primary' },
           { label: 'View pricing', href: '/gateway/pricing/', variant: 'secondary' },
         ]}
         rightSlot={<TenantSwitcherHero />}
@@ -405,7 +406,7 @@ export default function GatewayPage() {
       <CTABanner
         heading="Ready to see Gateway running?"
         body="Thirty minutes with a RevenuePoint architect. We walk through a working tenant, scope your tenant model, and quote a path to live."
-        cta={{ label: 'Schedule a walkthrough →', href: '/contact/?interest=Gateway' }}
+        cta={{ label: 'Schedule a walkthrough →', href: SCHEDULE_URL }}
       />
     </TenantProvider>
   );

@@ -13,6 +13,7 @@ export type NavItem = {
   label: string;
   href: string;
   badge?: string;
+  menuHeading?: string;
   children?: NavLink[];
   groups?: NavGroup[];
 };
@@ -49,6 +50,7 @@ export const navItems: NavItem[] = [
   {
     label: 'Solutions',
     href: '/solutions/',
+    menuHeading: 'Industries',
     children: [
       { label: 'Manufacturing', href: '/solutions/manufacturing/' },
       { label: 'Specialty Pharmacy & Compounding', href: '/solutions/pharmacy/' },

@@ -64,7 +64,10 @@ export default function SecurityPage() {
             >
               Email security@revenuepoint.com
             </Button>
-            <Button variant="secondary" href="#pgp">
+            <Button variant="secondary" href={KEY_FILE_URL}>
+              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z" />
+              </svg>
               Get our PGP key
             </Button>
           </div>
@@ -95,6 +98,47 @@ export default function SecurityPage() {
               <span className="font-mono text-ink">team@revenuepoint.com</span> for security reports; that
               inbox isn&rsquo;t monitored for vulnerabilities.
             </p>
+          </div>
+
+          {/* PGP key */}
+          <div id="pgp" className="scroll-mt-24">
+            <h2 className="text-d2 font-serif font-medium text-ink mb-4">PGP public key.</h2>
+            <p>
+              Use this key to encrypt sensitive details. The same key is published at{' '}
+              <a
+                href={KEY_FILE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-crimson hover:text-crimsonDeep underline underline-offset-2"
+              >
+                {KEY_REPO}
+              </a>
+              . Verify the fingerprint matches before you trust this copy.
+            </p>
+
+            <dl className="mt-6 grid grid-cols-1 sm:grid-cols-[140px_1fr] gap-x-6 gap-y-3 text-sm border-y border-rule py-5">
+              <dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-mute">Fingerprint</dt>
+              <dd className="font-mono text-[12.5px] tabular-nums text-ink break-all">{FINGERPRINT}</dd>
+              <dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-mute">Identity</dt>
+              <dd className="text-ink">
+                Thomas Jones &lt;<span className="font-mono">thomas@revenuepoint.com</span>&gt;
+              </dd>
+              <dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-mute">Mirror</dt>
+              <dd>
+                <a
+                  href={KEY_FILE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-mono text-[12.5px] text-crimson hover:text-crimsonDeep underline underline-offset-2"
+                >
+                  {KEY_REPO}/pgp-key.asc
+                </a>
+              </dd>
+            </dl>
+
+            <pre className="mt-6 border border-rule bg-cream p-5 font-mono text-[11.5px] leading-[1.55] text-ink overflow-x-auto whitespace-pre">
+              <code>{PGP_KEY}</code>
+            </pre>
           </div>
 
           {/* What to include */}
@@ -158,8 +202,8 @@ export default function SecurityPage() {
             <h2 className="text-d2 font-serif font-medium text-ink mb-4">Scope.</h2>
             <p className="mb-4">
               <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-navy mr-2">In scope</span>
-              revenuepoint.com and subdomains; Foundry Portal and tenant surfaces; Gateway and shipped
-              connectors (Salesforce, SAP, custom REST); NPSP Middleware on our supplied images; public APIs at
+              revenuepoint.com and subdomains; Foundry surfaces; Gateway and shipped
+              connectors (Salesforce, SAP, custom REST); <span className="font-mono text-ink">npsp-middleware</span> on our supplied images; public APIs at
               api.revenuepoint.com; authentication, authorisation, tenant isolation, and audit-log integrity;
               anything that affects customer data confidentiality, integrity, or availability.
             </p>
@@ -211,46 +255,6 @@ export default function SecurityPage() {
             </p>
           </div>
 
-          {/* PGP key */}
-          <div id="pgp" className="scroll-mt-24">
-            <h2 className="text-d2 font-serif font-medium text-ink mb-4">PGP public key.</h2>
-            <p>
-              Use this key to encrypt sensitive details. The same key is published at{' '}
-              <a
-                href={KEY_FILE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-crimson hover:text-crimsonDeep underline underline-offset-2"
-              >
-                {KEY_REPO}
-              </a>
-              . Verify the fingerprint matches before you trust this copy.
-            </p>
-
-            <dl className="mt-6 grid grid-cols-1 sm:grid-cols-[140px_1fr] gap-x-6 gap-y-3 text-sm border-y border-rule py-5">
-              <dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-mute">Fingerprint</dt>
-              <dd className="font-mono text-[12.5px] tabular-nums text-ink break-all">{FINGERPRINT}</dd>
-              <dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-mute">Identity</dt>
-              <dd className="text-ink">
-                Thomas Jones &lt;<span className="font-mono">thomas@revenuepoint.com</span>&gt;
-              </dd>
-              <dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-mute">Mirror</dt>
-              <dd>
-                <a
-                  href={KEY_FILE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-mono text-[12.5px] text-crimson hover:text-crimsonDeep underline underline-offset-2"
-                >
-                  {KEY_REPO}/pgp-key.asc
-                </a>
-              </dd>
-            </dl>
-
-            <pre className="mt-6 border border-rule bg-cream p-5 font-mono text-[11.5px] leading-[1.55] text-ink overflow-x-auto whitespace-pre">
-              <code>{PGP_KEY}</code>
-            </pre>
-          </div>
         </div>
       </section>
     </>

@@ -3,6 +3,7 @@ import { HeroSection } from '@/components/ui/HeroSection';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { CTABanner } from '@/components/ui/CTABanner';
 import { gatewayUseCases } from '@/data/gatewayUseCases';
+import { SCHEDULE_URL } from '@/lib/links';
 
 export const metadata = buildMetadata({
   title: 'Gateway Use Cases — Customer, Partner, Dealer, Member, Patient Portals',
@@ -29,7 +30,7 @@ export default function GatewayUseCasesPage() {
         }
         body="The portals our customers run on Gateway today. Each archetype is a different audience and a different access rule — but all built on the same Gateway deployment, the same connector model, the same managed stack."
         ctas={[
-          { label: 'Schedule a walkthrough', href: '/contact/?interest=Gateway', variant: 'primary' },
+          { label: 'Schedule a walkthrough', href: SCHEDULE_URL, variant: 'primary' },
           { label: 'Back to Gateway', href: '/gateway/', variant: 'secondary' },
         ]}
       />
@@ -115,7 +116,7 @@ export default function GatewayUseCasesPage() {
       <CTABanner
         heading="Talk through your tenant model with an architect."
         body="Thirty minutes. We sketch the access rule, name the connectors, list the views, and quote a path to live."
-        cta={{ label: 'Schedule a walkthrough →', href: '/contact/?interest=Gateway' }}
+        cta={{ label: 'Schedule a walkthrough →', href: SCHEDULE_URL }}
       />
     </>
   );

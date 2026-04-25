@@ -3,6 +3,7 @@ import { buildMetadata } from '@/lib/metadata';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { ContactFormSection } from './ContactFormSection';
 import { LeadForm } from '@/components/ui/LeadForm';
+import { SCHEDULE_URL } from '@/lib/links';
 
 export const metadata = buildMetadata({
   title: 'Contact RevenuePoint | Salesforce, SAP & Foundry Partner',
@@ -48,7 +49,7 @@ export default function ContactPage() {
               <p className="pt-4 border-t border-ruleSoft mt-4">
                 <span className="text-mute">Prefer to schedule directly? </span>
                 <a
-                  href={process.env.NEXT_PUBLIC_CALENDLY_URL}
+                  href={SCHEDULE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="serif-italic text-crimson hover:text-crimsonDeep transition-colors"
