@@ -227,7 +227,7 @@ function BigBarChart({ accent }: { accent: string }) {
             className="w-full rounded-t-sm"
             style={{ backgroundColor: accent, opacity: 0.85 + i * 0.04 }}
           />
-          <p className="text-[8px] text-mutedText">{b.label}</p>
+          <p className="text-[8px] text-mute">{b.label}</p>
         </div>
       ))}
     </div>
@@ -248,15 +248,15 @@ function KpiPreview({ report }: { report: ReportConfig }) {
             initial={{ opacity: 0, y: 4 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: 0.15 }}
-            className="rounded border border-border bg-white px-2 py-1.5"
+            className="rounded border border-rule bg-white px-2 py-1.5"
           >
-            <p className="text-[8px] uppercase tracking-wider text-mutedText">
+            <p className="text-[8px] uppercase tracking-wider text-mute">
               {k.label}
             </p>
             <p className="text-xs font-mono font-bold text-navy mt-0.5">{k.value}</p>
             <p
               className={`text-[9px] font-mono mt-0.5 ${
-                k.tone === 'up' ? 'text-emerald-600' : k.tone === 'down' ? 'text-red-600' : 'text-mutedText'
+                k.tone === 'up' ? 'text-emerald-600' : k.tone === 'down' ? 'text-red-600' : 'text-mute'
               }`}
             >
               {k.delta}
@@ -264,10 +264,10 @@ function KpiPreview({ report }: { report: ReportConfig }) {
           </motion.div>
         ))}
       </div>
-      <div className="rounded border border-border bg-white px-2.5 py-2">
+      <div className="rounded border border-rule bg-white px-2.5 py-2">
         <div className="flex items-center justify-between mb-1">
           <p className="text-[9px] font-semibold text-navy">Revenue trend</p>
-          <p className="text-[8px] text-mutedText">30d</p>
+          <p className="text-[8px] text-mute">30d</p>
         </div>
         <MiniSparkline accent={report.accent} points={spark} className="w-full h-8" />
       </div>
@@ -278,17 +278,17 @@ function KpiPreview({ report }: { report: ReportConfig }) {
 function ChartPreview({ report }: { report: ReportConfig }) {
   return (
     <div className="flex flex-col gap-2">
-      <div className="rounded border border-border bg-white px-2.5 py-2">
+      <div className="rounded border border-rule bg-white px-2.5 py-2">
         <div className="flex items-center justify-between mb-1.5">
           <p className="text-[9px] font-semibold text-navy">Pipeline by stage</p>
-          <p className="text-[8px] text-mutedText">Q2 · $1.84M total</p>
+          <p className="text-[8px] text-mute">Q2 · $1.84M total</p>
         </div>
         <BigBarChart accent={report.accent} />
       </div>
       <div className="grid grid-cols-2 gap-1.5">
         {report.kpis.slice(0, 2).map((k) => (
-          <div key={k.label} className="rounded border border-border bg-white px-2 py-1.5">
-            <p className="text-[8px] uppercase tracking-wider text-mutedText">{k.label}</p>
+          <div key={k.label} className="rounded border border-rule bg-white px-2 py-1.5">
+            <p className="text-[8px] uppercase tracking-wider text-mute">{k.label}</p>
             <p className="text-xs font-mono font-bold text-navy">{k.value}</p>
             <p
               className={`text-[9px] font-mono ${
@@ -319,20 +319,20 @@ function DashboardPreview({ report }: { report: ReportConfig }) {
           initial={{ opacity: 0, y: 4 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.15 + i * 0.05 }}
-          className="rounded border border-border bg-white px-2 py-1.5 flex flex-col gap-1"
+          className="rounded border border-rule bg-white px-2 py-1.5 flex flex-col gap-1"
         >
           <div className="flex items-center justify-between">
-            <p className="text-[8px] uppercase tracking-wider text-mutedText">{k.label}</p>
+            <p className="text-[8px] uppercase tracking-wider text-mute">{k.label}</p>
             <span
               className={`h-1.5 w-1.5 rounded-full ${
-                k.tone === 'up' ? 'bg-emerald-500' : k.tone === 'down' ? 'bg-red-500' : 'bg-mutedText/50'
+                k.tone === 'up' ? 'bg-emerald-500' : k.tone === 'down' ? 'bg-red-500' : 'bg-mute/50'
               }`}
             />
           </div>
           <p className="text-xs font-mono font-bold text-navy">{k.value}</p>
           <p
             className={`text-[9px] font-mono ${
-              k.tone === 'up' ? 'text-emerald-600' : k.tone === 'down' ? 'text-red-600' : 'text-mutedText'
+              k.tone === 'up' ? 'text-emerald-600' : k.tone === 'down' ? 'text-red-600' : 'text-mute'
             }`}
           >
             {k.delta}
@@ -380,11 +380,11 @@ export function PrismReportModal({ index }: Props) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 12, scale: 0.98 }}
             transition={{ duration: 0.26, ease: [0.2, 0.8, 0.2, 1] }}
-            className="absolute left-4 right-4 top-4 bottom-4 rounded-lg bg-white shadow-2xl border border-border overflow-hidden flex flex-col"
+            className="absolute left-4 right-4 top-4 bottom-4 rounded-lg bg-white shadow-2xl border border-rule overflow-hidden flex flex-col"
           >
             {/* Header */}
             <div
-              className="flex items-center gap-2 px-3 py-2 border-b border-border shrink-0"
+              className="flex items-center gap-2 px-3 py-2 border-b border-rule shrink-0"
               style={{ backgroundColor: report.accentTint }}
             >
               <span
@@ -416,24 +416,24 @@ export function PrismReportModal({ index }: Props) {
               {/* Left — narrative */}
               <div className="w-[42%] shrink-0 flex flex-col gap-2 overflow-hidden">
                 <section>
-                  <p className="text-[8px] font-bold uppercase tracking-widest text-mutedText mb-1">
+                  <p className="text-[8px] font-bold uppercase tracking-widest text-mute mb-1">
                     Summary
                   </p>
                   <div className="flex flex-col gap-1.5">
                     {report.summary.map((p, i) => (
-                      <p key={i} className="text-[10px] leading-snug text-bodyText">
+                      <p key={i} className="text-[10px] leading-snug text-ink">
                         {p}
                       </p>
                     ))}
                   </div>
                 </section>
                 <section>
-                  <p className="text-[8px] font-bold uppercase tracking-widest text-mutedText mb-1">
+                  <p className="text-[8px] font-bold uppercase tracking-widest text-mute mb-1">
                     Key findings
                   </p>
                   <ul className="flex flex-col gap-1">
                     {report.findings.map((f, i) => (
-                      <li key={i} className="flex items-start gap-1.5 text-[10px] leading-snug text-bodyText">
+                      <li key={i} className="flex items-start gap-1.5 text-[10px] leading-snug text-ink">
                         <span
                           className="h-1.5 w-1.5 rounded-full mt-[5px] shrink-0"
                           style={{ backgroundColor: report.accent }}
@@ -444,22 +444,22 @@ export function PrismReportModal({ index }: Props) {
                   </ul>
                 </section>
                 <section>
-                  <p className="text-[8px] font-bold uppercase tracking-widest text-mutedText mb-1">
+                  <p className="text-[8px] font-bold uppercase tracking-widest text-mute mb-1">
                     Recommended actions
                   </p>
                   <ol className="flex flex-col gap-1 list-decimal list-inside marker:text-crimson">
                     {report.actions.map((a, i) => (
-                      <li key={i} className="text-[10px] leading-snug text-bodyText">
+                      <li key={i} className="text-[10px] leading-snug text-ink">
                         {a}
                       </li>
                     ))}
                   </ol>
                 </section>
                 <section>
-                  <p className="text-[8px] font-bold uppercase tracking-widest text-mutedText mb-1">
+                  <p className="text-[8px] font-bold uppercase tracking-widest text-mute mb-1">
                     Methodology
                   </p>
-                  <p className="text-[10px] leading-snug text-bodyText">{report.methodology}</p>
+                  <p className="text-[10px] leading-snug text-ink">{report.methodology}</p>
                 </section>
               </div>
 
@@ -470,8 +470,8 @@ export function PrismReportModal({ index }: Props) {
                 {report.previewKind === 'dashboard' && <DashboardPreview report={report} />}
 
                 {/* Segment / breakdown table */}
-                <div className="rounded border border-border bg-white overflow-hidden">
-                  <div className="grid grid-cols-[1fr_auto_auto] gap-3 px-2 py-1 bg-offWhite border-b border-border text-[8px] font-bold uppercase tracking-wider text-mutedText">
+                <div className="rounded border border-rule bg-white overflow-hidden">
+                  <div className="grid grid-cols-[1fr_auto_auto] gap-3 px-2 py-1 bg-cream border-b border-rule text-[8px] font-bold uppercase tracking-wider text-mute">
                     <span>Breakdown</span>
                     <span className="text-right">Value</span>
                     <span className="text-right">Δ</span>
@@ -482,7 +482,7 @@ export function PrismReportModal({ index }: Props) {
                       initial={{ opacity: 0, y: 2 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.3 + i * 0.05, duration: 0.25 }}
-                      className="grid grid-cols-[1fr_auto_auto] gap-3 items-center px-2 py-1 border-b last:border-0 border-border text-[10px]"
+                      className="grid grid-cols-[1fr_auto_auto] gap-3 items-center px-2 py-1 border-b last:border-0 border-rule text-[10px]"
                     >
                       <span className="text-navy truncate">{s.label}</span>
                       <span className="text-right font-mono font-semibold text-navy">{s.value}</span>
@@ -498,18 +498,18 @@ export function PrismReportModal({ index }: Props) {
                 </div>
 
                 {/* Appendix — runs past the fade */}
-                <div className="rounded border border-border bg-white overflow-hidden">
-                  <div className="px-2 py-1 bg-offWhite border-b border-border">
-                    <p className="text-[8px] font-bold uppercase tracking-wider text-mutedText">
+                <div className="rounded border border-rule bg-white overflow-hidden">
+                  <div className="px-2 py-1 bg-cream border-b border-rule">
+                    <p className="text-[8px] font-bold uppercase tracking-wider text-mute">
                       {report.appendixTitle}
                     </p>
                   </div>
                   {report.appendixRows.map((row, i) => (
                     <div
                       key={i}
-                      className="grid grid-cols-[1fr_auto] gap-3 items-center px-2 py-1 border-b last:border-0 border-border text-[10px]"
+                      className="grid grid-cols-[1fr_auto] gap-3 items-center px-2 py-1 border-b last:border-0 border-rule text-[10px]"
                     >
-                      <span className="text-bodyText truncate">{row.label}</span>
+                      <span className="text-ink truncate">{row.label}</span>
                       <span className="text-right font-mono text-navy whitespace-nowrap">
                         {row.value}
                       </span>
@@ -518,7 +518,7 @@ export function PrismReportModal({ index }: Props) {
                 </div>
 
                 {/* Continuation stub — totally faded by the mask */}
-                <p className="text-[10px] text-bodyText leading-snug">
+                <p className="text-[10px] text-ink leading-snug">
                   Additional detail follows in the full report, including per-account timelines,
                   variance decomposition, cohort retention curves, and the data-lineage trail for
                   every figure surfaced above.

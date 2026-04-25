@@ -54,7 +54,7 @@ export function SalesforceProductPicker({ products }: SalesforceProductPickerPro
               className={`group flex items-stretch text-left rounded-sm shadow-sm border transition-colors ${
                 isActive
                   ? 'bg-navy text-white border-navy'
-                  : 'bg-white text-navy border-border hover:border-crimson'
+                  : 'bg-white text-navy border-rule hover:border-crimson'
               }`}
             >
               <span
@@ -75,10 +75,10 @@ export function SalesforceProductPicker({ products }: SalesforceProductPickerPro
         role="tabpanel"
         id={`product-panel-${active.id}`}
         aria-labelledby={`product-tab-${active.id}`}
-        className="mt-6 lg:mt-0 bg-white border border-border rounded-sm shadow-sm p-6 lg:p-8 flex flex-col"
+        className="mt-6 lg:mt-0 bg-white border border-rule rounded-sm shadow-sm p-6 lg:p-8 flex flex-col"
       >
         <h3 className="text-2xl font-semibold text-navy">{active.name}</h3>
-        <p className="mt-4 text-base text-bodyText leading-relaxed">{active.overview}</p>
+        <p className="mt-4 text-base text-ink leading-relaxed">{active.overview}</p>
 
         <div className="mt-6">
           <p className="text-[10px] font-bold uppercase tracking-widest text-crimson mb-3">
@@ -86,7 +86,7 @@ export function SalesforceProductPicker({ products }: SalesforceProductPickerPro
           </p>
           <ul className="space-y-2.5">
             {active.whatWeDo.map((item) => (
-              <li key={item} className="text-sm text-bodyText leading-relaxed flex gap-2">
+              <li key={item} className="text-sm text-ink leading-relaxed flex gap-2">
                 <span className="text-crimson mt-0.5 shrink-0" aria-hidden="true">
                   &bull;
                 </span>
@@ -98,7 +98,7 @@ export function SalesforceProductPicker({ products }: SalesforceProductPickerPro
 
         <Link
           href="#lead-form"
-          className="mt-8 text-sm font-semibold text-crimson hover:text-crimsonDark transition-colors inline-flex items-center gap-1 self-start"
+          className="mt-8 text-sm font-semibold text-crimson hover:text-crimsonDeep transition-colors inline-flex items-center gap-1 self-start"
         >
           Get started <span aria-hidden="true">&rarr;</span>
         </Link>

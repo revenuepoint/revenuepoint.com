@@ -8,12 +8,15 @@ export const metadata = buildMetadata({
 
 export default function TermsPage() {
   return (
-    <section className="bg-white py-16 lg:py-24">
-      <div className="max-w-3xl mx-auto px-4">
-        <h1 className="text-4xl font-bold tracking-tight text-navy mb-8">
-          Master Services Agreement for Consulting Services
+    <section className="bg-paper py-section">
+      <div className="max-w-narrow mx-auto px-6 lg:px-8">
+        <p className="eyebrow mb-5">Legal · Master services agreement</p>
+        <h1 className="text-d1 font-serif font-medium text-ink mb-8">
+          Master services agreement <em>for consulting services</em>.
         </h1>
-        <div className="prose prose-sm max-w-none text-bodyText space-y-6 leading-relaxed">
+        <div className="text-base max-w-prose text-inkSoft space-y-5 leading-[1.75]
+          [&_h2]:text-d3 [&_h2]:font-serif [&_h2]:font-medium [&_h2]:text-ink [&_h2]:mt-10 [&_h2]:mb-3
+          [&_h3]:text-base [&_h3]:font-serif [&_h3]:font-medium [&_h3]:text-ink [&_h3]:mt-6 [&_h3]:mb-2">
           <p>
             THIS MASTER SERVICES AGREEMENT (&quot;Agreement&quot;) is made by and between RevenuePoint Inc.,
             a Corporation organized and existing under the laws of the State of Delaware and having
@@ -22,7 +25,7 @@ export default function TermsPage() {
             and conditions stated below.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">RECITALS</h2>
+          <h2>RECITALS</h2>
           <p>A. Provider is a consulting firm;</p>
           <p>
             B. Customer desires to engage Provider to implement solutions for use in its business
@@ -34,13 +37,13 @@ export default function TermsPage() {
             service Consultant provides to Customer.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">AGREEMENT</h2>
+          <h2>AGREEMENT</h2>
           <p>
             NOW, THEREFORE, in consideration of the mutual promises herein and other valuable
             consideration, the parties agree as follows:
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">1. SERVICES</h2>
+          <h2>1. SERVICES</h2>
           <p>
             Provider agrees to perform services for Customer as described in one or more
             Statements of Work. Any conflict or inconsistency between the provisions of this
@@ -49,7 +52,7 @@ export default function TermsPage() {
             to this Agreement.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">2. COMPENSATION FOR SERVICES</h2>
+          <h2>2. COMPENSATION FOR SERVICES</h2>
           <p>
             In consideration for Provider&apos;s Services, Customer shall pay Provider as set forth in
             any applicable Services Order Form, Provider Quotation, Statement of Work or Services
@@ -65,14 +68,14 @@ export default function TermsPage() {
             cause for termination of this Agreement.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">3. RETAINER</h2>
+          <h2>3. RETAINER</h2>
           <p>
             Customer agrees to deposit the sum of the amount specified on the Services Order Form,
             Provider Quotation, Statement of Work or Services Order Confirmation prior to
             commencement of any Services rendered to Customer by Provider.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">4. TERM</h2>
+          <h2>4. TERM</h2>
           <p>
             This Agreement shall be effective as of the date hereof, and shall terminate on the
             completion of all Services to the mutual satisfaction of the parties; Customer&apos;s
@@ -83,7 +86,7 @@ export default function TermsPage() {
             terminates this Agreement before the completion of Services hereunder.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">5. CONTACT PERSONS</h2>
+          <h2>5. CONTACT PERSONS</h2>
           <p>
             The parties hereby designate the individuals listed on the applicable Statement of
             Work as their respective Contact Persons. To the fullest extent possible, communication
@@ -94,7 +97,7 @@ export default function TermsPage() {
             at any time.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">6. COOPERATION OF CUSTOMER</h2>
+          <h2>6. COOPERATION OF CUSTOMER</h2>
           <p>
             The Services described in the Agreement are based on information provided by the
             Customer. Customer undertakes that all documents, information and data necessary for
@@ -114,7 +117,7 @@ export default function TermsPage() {
             Customer.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">7. PROVIDER&apos;S PERSONNEL</h2>
+          <h2>7. PROVIDER&apos;S PERSONNEL</h2>
           <p>
             Unless otherwise stated in the applicable Statement of Work, Provider shall have sole
             discretion over the identity of its personnel used to provide the services; provided,
@@ -126,7 +129,7 @@ export default function TermsPage() {
             personnel with personnel of equivalent qualification and experience at any time.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">8. SOLICITATION OF PERSONNEL</h2>
+          <h2>8. SOLICITATION OF PERSONNEL</h2>
           <p>
             Neither Customer nor Provider shall solicit, approach, or hire any of the other&apos;s
             employees, agents or subcontractors for the purpose of employment or any form of
@@ -135,7 +138,7 @@ export default function TermsPage() {
             other party.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">9. NON-EXCLUSIVITY</h2>
+          <h2>9. NON-EXCLUSIVITY</h2>
           <p>
             Customer agrees that Provider&apos;s personnel providing Services to Customer under this
             Agreement may perform similar services from time to time for other persons, firms or
@@ -146,13 +149,13 @@ export default function TermsPage() {
             such consultants.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">10. PROGRESS REPORTS</h2>
+          <h2>10. PROGRESS REPORTS</h2>
           <p>
             Provider will submit interim progress reports at such times and in such reasonable
             detail as Customer may reasonably request.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">11. CONFIDENTIAL INFORMATION</h2>
+          <h2>11. CONFIDENTIAL INFORMATION</h2>
           <p>
             Each of Customer and Provider (the &quot;Receiving Party&quot;) shall hold in trust for the
             other party hereto (the &quot;Disclosing Party&quot;), and shall not disclose to any person,
@@ -172,7 +175,7 @@ export default function TermsPage() {
             termination of the Agreement for a period of two (2) years.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">12. INDEPENDENT CONTRACTOR</h2>
+          <h2>12. INDEPENDENT CONTRACTOR</h2>
           <p>
             Nothing in this Agreement shall be construed to create an employment relationship,
             partnership or joint venture between Customer and Provider or its employees, agents or
@@ -186,7 +189,7 @@ export default function TermsPage() {
             with any payments made to Provider pursuant to the terms of this Agreement.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">13. OWNERSHIP OF WORK PRODUCT</h2>
+          <h2>13. OWNERSHIP OF WORK PRODUCT</h2>
           <p>
             All software code, plans, diagrams, models and other work product created or developed
             by Provider in the course of performing Services hereunder (&quot;Work Product&quot;), and all
@@ -197,9 +200,9 @@ export default function TermsPage() {
             Customer.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">14. REPRESENTATIONS AND WARRANTIES</h2>
+          <h2>14. REPRESENTATIONS AND WARRANTIES</h2>
 
-          <h3 className="text-base font-semibold text-navy mt-6">1. IN GENERAL</h3>
+          <h3>1. IN GENERAL</h3>
           <p>
             THE WARRANTIES SET FORTH IN THIS AGREEMENT ARE EXCLUSIVE AND ARE IN LIEU OF ALL OTHER
             WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
@@ -219,20 +222,20 @@ export default function TermsPage() {
             PROVIDED BY THIRD PARTY VENDORS.
           </p>
 
-          <h3 className="text-base font-semibold text-navy mt-6">2. AUTHORITY; NO CONFLICT</h3>
+          <h3>2. AUTHORITY; NO CONFLICT</h3>
           <p>
             Each party warrants that it is authorized to enter into this Agreement and to perform
             its obligations hereunder, and that its performance hereunder shall not conflict with,
             limit or be contrary to any other agreement.
           </p>
 
-          <h3 className="text-base font-semibold text-navy mt-6">3. PROFESSIONAL SERVICE</h3>
+          <h3>3. PROFESSIONAL SERVICE</h3>
           <p>
             Provider warrants that it will perform all Services under this Agreement with the
             degree of care and skill ordinarily exercised by members of Provider&apos;s profession.
           </p>
 
-          <h3 className="text-base font-semibold text-navy mt-6">4. NO INFRINGEMENT</h3>
+          <h3>4. NO INFRINGEMENT</h3>
           <p>
             The parties represent and warrant that their disclosure and delivery of any code,
             information, documents, software or any other materials, and use thereof, as
@@ -241,7 +244,7 @@ export default function TermsPage() {
             secret.
           </p>
 
-          <h3 className="text-base font-semibold text-navy mt-6">5. NON-INTERFERENCE WITH BUSINESS</h3>
+          <h3>5. NON-INTERFERENCE WITH BUSINESS</h3>
           <p>
             The parties represent and warrant that during the term of this Agreement and for
             one-year immediately following termination of this Agreement, the parties agree not to
@@ -266,7 +269,7 @@ export default function TermsPage() {
             hereafter established intellectual or other property or proprietary rights.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">15. LIMITATION OF LIABILITY</h2>
+          <h2>15. LIMITATION OF LIABILITY</h2>
           <p>
             THE PARTIES AGREE THAT NEITHER PARTY&apos;S LIABILITY FOR DAMAGES FROM ANY CAUSE OF ACTION
             WHATSOEVER, REGARDLESS OF THE FORM OF ACTION, WILL EXCEED THE FEES PAID OR TO BE PAID
@@ -279,7 +282,7 @@ export default function TermsPage() {
             AGREEMENT OR THE PERFORMANCE OR BREACH THEREOF, EVEN IF ADVISED OF THIS POSSIBILITY.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">16. NOTICES</h2>
+          <h2>16. NOTICES</h2>
           <p>
             Except as otherwise stated in this Agreement, any notice or communication required or
             permitted to be given under this Agreement must be in writing, and shall be deemed
@@ -290,7 +293,7 @@ export default function TermsPage() {
             party.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">17. ENTIRE AGREEMENT; MODIFICATION</h2>
+          <h2>17. ENTIRE AGREEMENT; MODIFICATION</h2>
           <p>
             This Agreement, the exhibits and schedules attached hereto, together contain the
             entire agreement between Provider and Customer. No other agreements, representations,
@@ -302,7 +305,7 @@ export default function TermsPage() {
             and Customer.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">18. FORCE MAJEURE</h2>
+          <h2>18. FORCE MAJEURE</h2>
           <p>
             In the event of &quot;force majeure&quot; (as defined below), Provider may terminate this
             Agreement without liability to Customer, provided Provider refunds all amounts which
@@ -317,7 +320,7 @@ export default function TermsPage() {
             authorizations required by governmental authority.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">19. GOVERNING LAW</h2>
+          <h2>19. GOVERNING LAW</h2>
           <p>
             This Agreement shall be governed by and construed in accordance with the laws of the
             State of New Jersey without regard to conflicts of law principles. Provider and
@@ -336,7 +339,7 @@ export default function TermsPage() {
             as permitted by applicable law.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">20. PARTIAL INVALIDITY</h2>
+          <h2>20. PARTIAL INVALIDITY</h2>
           <p>
             If any provision of this Agreement is held to be unenforceable or contrary to public
             policy by any court of competent jurisdiction, then such provision shall be enforced
@@ -346,7 +349,7 @@ export default function TermsPage() {
             be curtailed only to the extent necessary to conform to applicable law.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">21. WAIVER</h2>
+          <h2>21. WAIVER</h2>
           <p>
             No delay or omission by Provider or Customer in exercising any right under this
             Agreement shall operate as a waiver of that or any other right. A waiver or consent
@@ -355,7 +358,7 @@ export default function TermsPage() {
             occasion.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">22. ASSIGNMENT; SUCCESSORS</h2>
+          <h2>22. ASSIGNMENT; SUCCESSORS</h2>
           <p>
             The Agreement may not be assigned by either party without the prior written consent of
             the other party. This Agreement shall be binding upon and shall inure to the benefit
@@ -366,13 +369,13 @@ export default function TermsPage() {
             of the assets or business of Provider or Customer.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">23. HEADINGS</h2>
+          <h2>23. HEADINGS</h2>
           <p>
             Sections and other headings contained in this Agreement are for reference purposes
             only and shall not affect in any way the meaning or interpretations of this Agreement.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">24. CONSTRUCTION</h2>
+          <h2>24. CONSTRUCTION</h2>
           <p>
             The language in all parts of this Agreement will be construed, in all cases, according
             to its fair meaning, and not for or against either party hereto. The parties
@@ -382,7 +385,7 @@ export default function TermsPage() {
             interpretation of this Agreement.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">25. COUNTERPARTS</h2>
+          <h2>25. COUNTERPARTS</h2>
           <p>
             This Agreement may be executed in two or more counterparts, each of which shall be
             deemed an original but all of which together shall constitute one and the same
@@ -394,7 +397,7 @@ export default function TermsPage() {
             Agreement.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">26. CONFIDENTIALITY OF AGREEMENT</h2>
+          <h2>26. CONFIDENTIALITY OF AGREEMENT</h2>
           <p>
             Without Provider&apos;s prior written permission, Customer shall not disclose payment
             rates, structure, arrangement details, any of the terms of this Agreement or any
@@ -402,7 +405,7 @@ export default function TermsPage() {
             entities and government agencies.
           </p>
 
-          <h2 className="text-xl font-semibold text-navy mt-8">27. CANCELLATION OR RESCHEDULING</h2>
+          <h2>27. CANCELLATION OR RESCHEDULING</h2>
           <p>
             Unless stated otherwise in the Services Order Form, Provider Quotation, Statement of
             Work or Services Order Confirmation, if Customer cancels or reschedules Services less

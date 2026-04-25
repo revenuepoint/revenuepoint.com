@@ -9,7 +9,7 @@ export function DimensionRadarLite() {
   const bars = healthCheckContent[crmId].dimensionBars;
   return (
     <div>
-      <div className="text-[10px] uppercase tracking-widest text-mutedText font-semibold">
+      <div className="text-[10px] uppercase tracking-widest text-mute font-semibold">
         Dimension scores (current vs target)
       </div>
       <div className="mt-3 space-y-2.5">
@@ -17,13 +17,13 @@ export function DimensionRadarLite() {
           <div key={b.label} className="text-xs">
             <div className="flex justify-between mb-1">
               <span className="text-navy font-medium">{b.label}</span>
-              <span className="text-mutedText">
+              <span className="text-mute">
                 <span className="text-navy font-semibold">{b.current}</span>
                 <span className="mx-1">/</span>
                 <span>{b.target}</span>
               </span>
             </div>
-            <div className="relative h-2 bg-lightGray rounded-full overflow-hidden">
+            <div className="relative h-2 bg-bone rounded-full overflow-hidden">
               {/* target marker */}
               <div
                 className="absolute top-0 bottom-0 w-0.5 bg-navy/40"

@@ -27,7 +27,7 @@ export function ActionDetailExplorer() {
           onSelect={setSelectedId}
         />
       </div>
-      <div className="rounded-lg border border-border bg-white shadow-sm p-5 lg:p-6 min-h-[720px]">
+      <div className="rounded-lg border border-rule bg-white shadow-sm p-5 lg:p-6 min-h-[720px]">
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={`${industryId}-${selected.id}`}

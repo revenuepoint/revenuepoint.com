@@ -1,11 +1,10 @@
 import { buildMetadata } from '@/lib/metadata';
 import { HeroSection } from '@/components/ui/HeroSection';
 import { SectionHeader } from '@/components/ui/SectionHeader';
-import { IndustryCard } from '@/components/ui/IndustryCard';
 import { StepList } from '@/components/ui/StepList';
 import { ComparisonTable } from '@/components/ui/ComparisonTable';
 import { CTABanner } from '@/components/ui/CTABanner';
-import { ScreenshotPlaceholder } from '@/components/ui/ScreenshotPlaceholder';
+import { ProductViewport } from '@/components/ui/ProductViewport';
 import { BlueprintDemo } from '@/components/foundry/BlueprintDemo';
 import { AgentTypeStrip } from '@/components/foundry/AgentTypeStrip';
 import { OrchestrationFlow } from '@/components/foundry/OrchestrationFlow';
@@ -71,7 +70,7 @@ function FragmentationIcon() {
         height="24"
         rx="3"
         fill="#ffffff"
-        stroke="#0F2B4D"
+        stroke="#0F1A2B"
         strokeWidth="1.4"
       />
       <circle
@@ -79,7 +78,7 @@ function FragmentationIcon() {
         cy="24"
         r="11"
         fill="#ffffff"
-        stroke="#0F2B4D"
+        stroke="#0F1A2B"
         strokeWidth="1.4"
       />
       <rect
@@ -89,7 +88,7 @@ function FragmentationIcon() {
         height="24"
         rx="9"
         fill="#ffffff"
-        stroke="#0F2B4D"
+        stroke="#0F1A2B"
         strokeWidth="1.4"
       />
     </svg>
@@ -111,12 +110,12 @@ function LatencyIcon() {
         height="40"
         rx="3"
         fill="#ffffff"
-        stroke="#0F2B4D"
+        stroke="#0F1A2B"
         strokeWidth="1.5"
       />
-      <rect x="8" y="10" width="40" height="8" rx="3" fill="#0F2B4D" />
-      <line x1="18" y1="6" x2="18" y2="14" stroke="#0F2B4D" strokeWidth="1.8" strokeLinecap="round" />
-      <line x1="38" y1="6" x2="38" y2="14" stroke="#0F2B4D" strokeWidth="1.8" strokeLinecap="round" />
+      <rect x="8" y="10" width="40" height="8" rx="3" fill="#0F1A2B" />
+      <line x1="18" y1="6" x2="18" y2="14" stroke="#0F1A2B" strokeWidth="1.8" strokeLinecap="round" />
+      <line x1="38" y1="6" x2="38" y2="14" stroke="#0F1A2B" strokeWidth="1.8" strokeLinecap="round" />
       {/* Grid dots */}
       <g fill="#C3CED9">
         <circle cx="18" cy="28" r="1.3" />
@@ -171,13 +170,13 @@ function NoHandoffIcon() {
         height="32"
         rx="3"
         fill="#ffffff"
-        stroke="#0F2B4D"
+        stroke="#0F1A2B"
         strokeWidth="1.4"
       />
       <polyline
         points="10,30 16,26 22,28 28,22 34,24 40,16 46,20"
         fill="none"
-        stroke="#0F2B4D"
+        stroke="#0F1A2B"
         strokeWidth="1.4"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -210,21 +209,35 @@ export default function FoundryPage() {
     <>
       {/* Hero */}
       <HeroSection
-        eyebrow="REVENUEPOINT FOUNDRY"
-        heading="Your data, connected. Agents that take action. Fully managed."
+        byline="RevenuePoint Foundry · Issue F"
+        heading={
+          <>
+            Your data, connected. Agents that <em>take action</em>. Fully managed.
+          </>
+        }
         body="Foundry connects your CRM, ERP, accounting — and every other system your business already runs on — into one orchestrated platform. Live dashboards for every role. AI reports written overnight. Agents that watch, decide, and act across your systems. Otto, your AI analyst, answers in plain English. Fully managed by RevenuePoint."
         ctas={[
-          { label: 'Schedule a Demo →', href: '/contact/?interest=Foundry', variant: 'primary' },
-          { label: 'View Pricing →', href: '/foundry/pricing/', variant: 'ghost' },
+          { label: 'Schedule a demo', href: '/contact/?interest=Foundry', variant: 'primary' },
+          { label: 'View pricing', href: '/foundry/pricing/', variant: 'secondary' },
         ]}
+        issue="F"
+        sidenote="Live in 6 weeks · Named admin and PM · No data engineers required."
         rightSlot={<PortalMockup />}
       />
 
       {/* The Problem */}
-      <section className="bg-offWhite py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4">
-          <SectionHeader heading="Every system generates data. Nothing orchestrates it." />
-          <p className="text-center text-mutedText -mt-6 mb-10 text-base">
+      <section className="bg-cream border-y border-ruleSoft py-section">
+        <div className="max-w-editorial mx-auto px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="The pain"
+            heading={
+              <>
+                Every system generates data. <em>Nothing orchestrates it</em>.
+              </>
+            }
+            align="left"
+          />
+          <p className="serif-italic text-center text-base text-mute -mt-6 mb-12">
             Three problems. One missing layer.
           </p>
 
@@ -246,52 +259,61 @@ export default function FoundryPage() {
                 Icon: NoHandoffIcon,
               },
             ].map(({ title, body, Icon }) => (
-              <div
+              <article
                 key={title}
-                className="bg-white border border-border rounded-sm shadow-sm p-6 flex flex-col"
+                className="relative bg-paper border border-ruleSoft p-6 flex flex-col"
               >
-                <Icon />
-                <h3 className="text-base font-semibold text-navy mb-3 leading-snug">
+                <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-rule" />
+                <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-crimson" />
+                <div className="mt-3"><Icon /></div>
+                <h3 className="font-serif text-[1.125rem] font-medium text-ink mb-3 leading-snug">
                   {title}
                 </h3>
-                <p className="text-sm text-bodyText leading-relaxed">{body}</p>
-              </div>
+                <p className="text-sm text-inkSoft leading-relaxed">{body}</p>
+              </article>
             ))}
           </div>
 
-          {/* Proof strip — specific numbers instead of adjectives */}
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 border-t border-border pt-6 divide-y md:divide-y-0 md:divide-x divide-border">
+          {/* Proof strip */}
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 border-t-2 border-ink pt-8 gap-8">
             {[
-              { value: '2 days/week', label: 'lost reconciling numbers across systems' },
+              { value: '2 days/wk', label: 'lost reconciling numbers across systems' },
               { value: '2+ weeks', label: 'typical lag from event to monthly report' },
               { value: '0', label: 'BI tools that take the next action for you' },
             ].map((s) => (
-              <div key={s.label} className="px-6 py-4 text-center">
-                <p className="text-3xl font-bold font-mono text-navy">{s.value}</p>
-                <p className="text-sm text-mutedText mt-1 leading-snug">{s.label}</p>
+              <div key={s.label} className="text-center">
+                <p className="font-mono text-[2rem] font-semibold tabular-nums text-crimson leading-none">{s.value}</p>
+                <p className="serif-italic text-base text-ink mt-3 leading-snug max-w-[28ch] mx-auto">{s.label}</p>
               </div>
             ))}
           </div>
 
-          {/* Bridge line into the next section */}
-          <p className="text-center italic text-mutedText mt-8 text-base">
+          {/* Bridge line */}
+          <p className="serif-italic text-center text-base text-mute mt-12">
             This is the absence of orchestration. Foundry is the layer that fixes it.
           </p>
         </div>
       </section>
 
       {/* How Foundry Works */}
-      <section className="bg-white py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4">
-          <SectionHeader heading="Connect. Illuminate. Act." />
-          <p className="text-center text-mutedText -mt-6 mb-10 text-base">
-            The three layers of orchestration.
-          </p>
+      <section className="bg-paper py-section">
+        <div className="max-w-editorial mx-auto px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="Three layers"
+            heading={
+              <>
+                Connect. Illuminate. <em>Act</em>.
+              </>
+            }
+            align="left"
+            body="The three layers of orchestration. The whole platform is one service, fully managed."
+          />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {[
               {
                 title: 'Connect',
+                roman: 'I',
                 promise: 'Every system you run, into one connected warehouse.',
                 bullets: [
                   'CRM, ERP, accounting, fulfillment, support, telephony — 30+ integrations',
@@ -301,6 +323,7 @@ export default function FoundryPage() {
               },
               {
                 title: 'Illuminate',
+                roman: 'II',
                 promise: 'Analyze and visualize across every system at once.',
                 bullets: [
                   'Live dashboards and metric trees for every role',
@@ -310,6 +333,7 @@ export default function FoundryPage() {
               },
               {
                 title: 'Act',
+                roman: 'III',
                 promise: 'Orchestrate the repetitive work across your systems — automatically.',
                 bullets: [
                   'Agents watch thresholds, process inbound work, and route cases around the clock',
@@ -317,63 +341,73 @@ export default function FoundryPage() {
                   'Every action logged; every change reversible and auditable',
                 ],
               },
-            ].map((step, i) => (
-              <div
-                key={step.title}
-                className="bg-white border border-border rounded-sm p-6 lg:p-7 flex flex-col"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-xs font-mono font-bold text-crimson tracking-widest">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <div className="h-px flex-1 bg-border" />
-                </div>
-                <h3 className="text-xl font-bold text-navy mb-2">{step.title}</h3>
-                <p className="text-sm font-semibold text-navy mb-4 leading-snug">
-                  {step.promise}
+            ].map((step) => (
+              <article key={step.title} className="bg-cream border border-ruleSoft p-6 lg:p-7 flex flex-col relative">
+                <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-rule" />
+                <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-crimson" />
+                <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-mute mt-3">
+                  Layer {step.roman}
                 </p>
-                <ul className="space-y-2 mt-auto">
+                <h3 className="font-serif text-[1.5rem] text-ink mt-2 font-medium leading-tight">
+                  {step.title}
+                </h3>
+                <p className="serif-italic text-base text-ink mt-3 leading-snug">{step.promise}</p>
+                <ul className="space-y-2 mt-5 mt-auto">
                   {step.bullets.map((b) => (
-                    <li
-                      key={b}
-                      className="flex gap-2 text-sm text-bodyText leading-snug"
-                    >
-                      <span className="text-crimson shrink-0 font-semibold">→</span>
+                    <li key={b} className="flex gap-3 text-sm text-inkSoft leading-snug">
+                      <span className="text-crimson font-mono shrink-0" aria-hidden="true">→</span>
                       <span>{b}</span>
                     </li>
                   ))}
                 </ul>
-              </div>
+              </article>
             ))}
           </div>
 
-          <p className="text-center italic text-mutedText mt-10 text-base">
+          <p className="text-center italic text-mute mt-10 text-base">
             Below: each layer of the platform, up close.
           </p>
         </div>
       </section>
 
       {/* Product Suite */}
-      <section className="bg-offWhite py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold tracking-tight text-navy text-center mb-10">
-            Foundry Platform
-          </h2>
-          <PlatformModulesShowcase />
+      <section className="bg-cream py-section border-y border-ruleSoft">
+        <div className="max-w-editorial mx-auto px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="The platform"
+            heading={
+              <>
+                Foundry, in <em>five</em> modules.
+              </>
+            }
+            align="left"
+            body="Each module solves one piece of the orchestration problem. The whole platform is one service, fully managed."
+          />
+          <ProductViewport
+            figureNumber="Fig. 02"
+            caption="Foundry Platform — module showcase"
+            attribution="Interactive · pick a module to explore"
+          >
+            <PlatformModulesShowcase />
+          </ProductViewport>
         </div>
       </section>
 
       {/* Blueprint */}
-      <section className="bg-navy py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
+      <section className="bg-ink py-section text-paper">
+        <div className="max-w-editorial mx-auto px-6 lg:px-8">
+          <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
             <div>
-              <SectionHeader
-                heading="Foundry knows your business."
-                body="Foundry knows your business — not just your data. Blueprint maps how your objects connect across every system you run on: Customers, Orders, Invoices, Production Orders, Prescriptions, Donors. That's what makes Otto accurate, dashboards reliable, and agents precise. When a source system changes, Blueprint absorbs it. Everything downstream stays right."
-                align="left"
-                light
-              />
+              <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-paper/70 inline-flex items-center gap-3 mb-4">
+                <span className="h-px w-8 bg-crimson" />
+                Blueprint · the business map
+              </p>
+              <h2 className="text-d1 font-serif font-medium text-paper leading-tight">
+                Foundry knows your <em className="text-crimson">business</em>.
+              </h2>
+              <p className="mt-5 text-lede leading-[1.65] text-paper/80 max-w-prose">
+                Foundry knows your business — not just your data. Blueprint maps how your objects connect across every system you run on: Customers, Orders, Invoices, Production Orders, Prescriptions, Donors. That&rsquo;s what makes Otto accurate, dashboards reliable, and agents precise. When a source system changes, Blueprint absorbs it. Everything downstream stays right.
+              </p>
               <ul className="space-y-3 mt-6">
                 {[
                   'One consistent definition of your business — across every connected system',
@@ -381,71 +415,43 @@ export default function FoundryPage() {
                   'Every metric and report draws from the same business definitions',
                   'An interactive map shows exactly how Foundry understands your business',
                 ].map((item) => (
-                  <li key={item} className="flex gap-3 text-sm text-gray-300">
-                    <svg
-                      className="w-4 h-4 text-crimson shrink-0 mt-0.5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2.5}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    {item}
+                  <li key={item} className="flex gap-3 text-sm text-paper/80 leading-relaxed">
+                    <span className="text-crimson font-mono shrink-0" aria-hidden="true">→</span>
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="mt-10 lg:mt-0">
+            <div className="mt-12 lg:mt-0">
               <BlueprintDemo />
             </div>
           </div>
 
           {/* Integrations strip */}
-          <div className="mt-12 lg:mt-16 pt-10 border-t border-white/10">
-            <p className="text-xs uppercase tracking-widest text-gray-400 text-center mb-6">
+          <div className="mt-16 lg:mt-20 pt-10 border-t border-paper/15">
+            <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-paper/60 text-center mb-8">
               Connects to the systems you already use
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-3 lg:gap-4">
+            <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
               {[
-                // CRM
-                'Salesforce',
-                'HubSpot',
-                'Microsoft Dynamics',
-                // ERP
-                'SAP',
-                'SAP Business One',
-                'NetSuite',
-                // Accounting
-                'QuickBooks',
-                'Xero',
-                // E-commerce + payments
-                'Shopify',
-                'Stripe',
-                // Telephony / communication
-                '8x8',
-                'RingCentral',
-                'Microsoft Teams',
-                'Zoom',
-                'Slack',
-                // Marketing
-                'Mailchimp',
-                // Support
-                'Zendesk',
-                // HR / payroll
-                'ADP',
-                // Healthcare
-                'PioneerRx',
-              ].map((name) => (
-                <div
-                  key={name}
-                  className="h-10 px-5 flex items-center justify-center rounded-sm border border-white/10 bg-white/[0.04]"
-                >
-                  <span className="text-sm font-medium text-gray-300">{name}</span>
-                </div>
+                'Salesforce', 'HubSpot', 'Microsoft Dynamics',
+                'SAP', 'SAP Business One', 'NetSuite',
+                'QuickBooks', 'Xero',
+                'Shopify', 'Stripe',
+                '8x8', 'RingCentral', 'Microsoft Teams', 'Zoom', 'Slack',
+                'Mailchimp', 'Zendesk', 'ADP', 'PioneerRx',
+              ].map((name, i, arr) => (
+                <li key={name} className="flex items-center gap-x-8">
+                  <span className="font-mono text-[12px] uppercase tracking-[0.16em] text-paper/85">
+                    {name}
+                  </span>
+                  {i < arr.length - 1 && (
+                    <span aria-hidden="true" className="hidden lg:block w-px h-4 bg-paper/20 -ml-4" />
+                  )}
+                </li>
               ))}
-            </div>
-            <p className="text-[11px] text-gray-500 text-center mt-4">
+            </ul>
+            <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-paper/40 text-center mt-6">
               + REST, GraphQL, SFTP, webhooks, and custom connectors for anything else.
             </p>
           </div>
@@ -472,7 +478,7 @@ export default function FoundryPage() {
       </section>
 
       {/* Actions Explorer */}
-      <section className="bg-offWhite py-16 lg:py-24">
+      <section className="bg-cream py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4">
           <SectionHeader
             eyebrow="ACTIONS"
@@ -480,9 +486,13 @@ export default function FoundryPage() {
             body="Click through a few examples. Rationale, steps, data changes, and timeline — visible to approvers and to the audit log. Nothing happens off-book."
             align="center"
           />
-          <div className="mt-10">
+          <ProductViewport
+            figureNumber="Fig. 04"
+            caption="Actions Explorer — every step recorded"
+            attribution="Interactive · pick an example to walk through"
+          >
             <ActionDetailExplorer />
-          </div>
+          </ProductViewport>
         </div>
       </section>
 
@@ -499,14 +509,14 @@ export default function FoundryPage() {
           <div className="mt-10">
             <ActionsKanban />
           </div>
-          <p className="mt-6 text-center text-xs text-mutedText">
+          <p className="mt-6 text-center text-xs text-mute">
             Every card is an auditable change in a system of record. Nothing happens off-book.
           </p>
         </div>
       </section>
 
       {/* Lens Explorer */}
-      <section className="bg-offWhite py-16 lg:py-24">
+      <section className="bg-cream py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4">
           <SectionHeader
             eyebrow="LENS"
@@ -514,9 +524,13 @@ export default function FoundryPage() {
             body="Agents produce work; Lens makes it visible. Dashboards, reports, metric trees, maps — the same warehouse data, rendered for the role that needs it."
             align="center"
           />
-          <div className="mt-10">
+          <ProductViewport
+            figureNumber="Fig. 06"
+            caption="Lens — dashboards, reports, metric trees"
+            attribution="Interactive · sample data shown"
+          >
             <LensExplorer />
-          </div>
+          </ProductViewport>
         </div>
       </section>
 
@@ -529,14 +543,18 @@ export default function FoundryPage() {
             body="Otto is your AI analyst, plugged into every business object in Blueprint. It reasons, cites, renders — and proposes the next action. Pick a prompt to see it run."
             align="center"
           />
-          <div className="mt-10">
+          <ProductViewport
+            figureNumber="Fig. 07"
+            caption="Otto — AI analyst, plugged into Blueprint"
+            attribution="Interactive · pick a prompt to run"
+          >
             <OttoChatExplorer />
-          </div>
+          </ProductViewport>
         </div>
       </section>
 
       {/* Prism Explorer — last industry-aware section; sticky picker unsticks after this */}
-      <section className="bg-offWhite py-16 lg:py-24">
+      <section className="bg-cream py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4">
           <SectionHeader
             eyebrow="PRISM"
@@ -544,9 +562,13 @@ export default function FoundryPage() {
             body="Pick a report template. Prism pulls the data, analyzes, writes the narrative, and renders the charts — delivered to your inbox as PDF. 30+ templates spanning Finance, Sales, Operations, Production, Supply Chain, and more."
             align="center"
           />
-          <div className="mt-10">
+          <ProductViewport
+            figureNumber="Fig. 08"
+            caption="Prism — overnight AI reports, by template"
+            attribution="30+ templates · Finance · Sales · Ops · Production · Supply Chain"
+          >
             <PrismExplorer />
-          </div>
+          </ProductViewport>
         </div>
       </section>
         </div>
@@ -571,11 +593,17 @@ export default function FoundryPage() {
       <SecuritySection />
 
       {/* Competitive Comparison */}
-      <section className="bg-offWhite py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="bg-cream border-y border-ruleSoft py-section">
+        <div className="max-w-editorial mx-auto px-6 lg:px-8">
           <SectionHeader
-            heading="The only platform that orchestrates the full loop."
+            eyebrow="Category gap"
+            heading={
+              <>
+                The only platform that orchestrates the <em>full loop</em>.
+              </>
+            }
             body="No other platform in this category manages pipeline, warehouse, intelligence, agents, and action execution as a single service. ThoughtSpot costs $140,000/year and still requires a data engineering team to run it. Foundry starts at $2,500/month — fully managed by RevenuePoint."
+            align="left"
           />
           <ComparisonTable
             headers={['Capability', 'Foundry', 'Domo', 'ThoughtSpot', 'DataSelf', 'BI Consultant']}
@@ -596,9 +624,17 @@ export default function FoundryPage() {
       </section>
 
       {/* How It Works */}
-      <section className="bg-white py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4">
-          <SectionHeader heading="Live in 6 weeks. Here's how." />
+      <section className="bg-paper py-section">
+        <div className="max-w-editorial mx-auto px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="Engagement"
+            heading={
+              <>
+                Live in <em>6 weeks</em>. Here&rsquo;s how.
+              </>
+            }
+            align="left"
+          />
           <StepList
             steps={[
               { number: 1, title: 'Discover', description: 'Before the contract, we learn your systems, goals, and data sources. No scope surprises — we quote based on what\'s actually there.' },
@@ -612,9 +648,14 @@ export default function FoundryPage() {
 
       {/* Demo CTA */}
       <CTABanner
-        heading="Ready to see Foundry in action?"
+        eyebrow="Schedule a working session"
+        heading={
+          <>
+            Ready to see Foundry <em>in action</em>?
+          </>
+        }
         body="Schedule a personalized demo. We'll show you what Foundry looks like connected to systems just like yours."
-        cta={{ label: 'Schedule a Demo →', href: '/contact/?interest=Foundry' }}
+        cta={{ label: 'Schedule a demo', href: '/contact/?interest=Foundry' }}
       />
     </>
   );

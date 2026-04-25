@@ -19,7 +19,7 @@ function GithubIcon({ className = 'h-4 w-4' }: { className?: string }) {
 
 export function NpspMiddlewareSection() {
   return (
-    <section className="bg-offWhite border-y border-border">
+    <section className="bg-cream border-y border-rule">
       <div className="max-w-7xl mx-auto px-4 py-16 lg:py-20">
         {/* Header */}
         <div className="max-w-3xl mb-10">
@@ -29,7 +29,7 @@ export function NpspMiddlewareSection() {
           <h2 className="text-3xl font-bold tracking-tight text-navy">
             A modern donor experience on top of NPSP.
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-bodyText">
+          <p className="mt-4 text-base leading-relaxed text-ink">
             <span className="font-semibold text-navy">NPSP Middleware</span> is our open-source
             donate form, member portal, and events platform — syncing directly into Salesforce
             NPSP. Self-host it for free, or let us run it end-to-end.
@@ -38,14 +38,14 @@ export function NpspMiddlewareSection() {
 
         {/* Baked-in features */}
         <div className="mb-10">
-          <p className="text-[10px] uppercase tracking-widest font-semibold text-mutedText mb-4">
+          <p className="text-[10px] uppercase tracking-widest font-semibold text-mute mb-4">
             What&apos;s baked in (both tiers)
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {npspFeatures.map((f) => (
-              <div key={f.title} className="border border-border rounded-lg bg-white p-5">
+              <div key={f.title} className="border border-rule rounded-lg bg-white p-5">
                 <div className="text-sm font-bold text-navy">{f.title}</div>
-                <p className="mt-2 text-xs text-bodyText leading-relaxed">{f.body}</p>
+                <p className="mt-2 text-xs text-ink leading-relaxed">{f.body}</p>
               </div>
             ))}
           </div>
@@ -53,14 +53,14 @@ export function NpspMiddlewareSection() {
 
         {/* Integrations chip strip */}
         <div className="mb-12">
-          <p className="text-[10px] uppercase tracking-widest font-semibold text-mutedText mb-3">
+          <p className="text-[10px] uppercase tracking-widest font-semibold text-mute mb-3">
             Integrations, wired in
           </p>
           <div className="flex flex-wrap gap-2">
             {npspIntegrations.map((i) => (
               <span
                 key={i.name}
-                className="text-xs font-semibold text-navy bg-white border border-border rounded-full px-3 py-1.5"
+                className="text-xs font-semibold text-navy bg-white border border-rule rounded-full px-3 py-1.5"
                 title={i.purpose}
               >
                 {i.name}
@@ -72,10 +72,10 @@ export function NpspMiddlewareSection() {
         {/* Two delivery options */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           {/* Open source */}
-          <div className="border border-border rounded-lg bg-white p-6 flex flex-col">
+          <div className="border border-rule rounded-lg bg-white p-6 flex flex-col">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-[10px] uppercase tracking-widest text-mutedText font-semibold">
+                <div className="text-[10px] uppercase tracking-widest text-mute font-semibold">
                   Option 1
                 </div>
                 <div className="mt-1 text-xl font-bold text-navy">Open source</div>
@@ -84,12 +84,12 @@ export function NpspMiddlewareSection() {
                 Free · AGPL-3.0
               </span>
             </div>
-            <p className="mt-4 text-sm text-bodyText leading-relaxed">
+            <p className="mt-4 text-sm text-ink leading-relaxed">
               Clone the repo, deploy to your own Heroku / Render / bare-metal. You get the full
               donate form, member portal, events, and Salesforce sync. No license fees. No
               vendor lock-in.
             </p>
-            <ul className="mt-5 space-y-2 text-sm text-bodyText flex-1">
+            <ul className="mt-5 space-y-2 text-sm text-ink flex-1">
               <li className="flex gap-2"><span className="text-crimson font-bold shrink-0">—</span>Full source under AGPL-3.0</li>
               <li className="flex gap-2"><span className="text-crimson font-bold shrink-0">—</span>Docs + self-hosting guide</li>
               <li className="flex gap-2"><span className="text-crimson font-bold shrink-0">—</span>Plugin API for your own integrations</li>
@@ -106,7 +106,7 @@ export function NpspMiddlewareSection() {
           </div>
 
           {/* Managed tier */}
-          <div className="border-2 border-crimson rounded-lg bg-crimsonLight p-6 flex flex-col">
+          <div className="border-2 border-crimson rounded-lg bg-crimsonTint p-6 flex flex-col">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-[10px] uppercase tracking-widest text-crimson font-semibold">
@@ -116,21 +116,21 @@ export function NpspMiddlewareSection() {
               </div>
               <div className="text-right">
                 <div className="text-xl font-bold text-navy">{NPSP_MANAGED_PRICE}</div>
-                <div className="text-[11px] text-mutedText">{NPSP_MANAGED_PERIOD}</div>
+                <div className="text-[11px] text-mute">{NPSP_MANAGED_PERIOD}</div>
               </div>
             </div>
-            <p className="mt-4 text-sm text-bodyText leading-relaxed">
+            <p className="mt-4 text-sm text-ink leading-relaxed">
               We host it, monitor it, upgrade it, and bolt on a premium integration stack the
               open-source version does not ship. Built for newsrooms who need their donate form
               to stay up and keep getting better.
             </p>
-            <ul className="mt-5 space-y-2 text-sm text-bodyText flex-1">
+            <ul className="mt-5 space-y-2 text-sm text-ink flex-1">
               {npspPremiumStack.map((p) => (
                 <li key={p.name} className="flex gap-2">
                   <span className="text-crimson font-bold shrink-0">—</span>
                   <span>
                     <span className="font-semibold text-navy">{p.name}.</span>{' '}
-                    <span className="text-bodyText">{p.body}</span>
+                    <span className="text-ink">{p.body}</span>
                   </span>
                 </li>
               ))}
@@ -138,7 +138,7 @@ export function NpspMiddlewareSection() {
             <div className="mt-6 flex flex-wrap gap-4">
               <Link
                 href={NPSP_CONTACT_HREF}
-                className="inline-flex items-center px-5 py-2.5 rounded-sm bg-crimson text-white text-sm font-semibold hover:bg-crimsonDark transition-colors"
+                className="inline-flex items-center px-5 py-2.5 rounded-sm bg-crimson text-white text-sm font-semibold hover:bg-crimsonDeep transition-colors"
               >
                 Schedule a walkthrough →
               </Link>

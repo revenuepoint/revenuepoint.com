@@ -201,12 +201,12 @@ export default function MapCanvas() {
           <div className="text-xs">
             <p className="font-semibold text-navy">{hoverMarker.name}</p>
             {hoverMarker.metricLabel && (
-              <p className="text-mutedText mt-0.5">
-                {hoverMarker.metricLabel}: <span className="font-mono text-bodyText">{hoverMarker.metricValue}</span>
+              <p className="text-mute mt-0.5">
+                {hoverMarker.metricLabel}: <span className="font-mono text-ink">{hoverMarker.metricValue}</span>
               </p>
             )}
             {!hoverMarker.metricLabel && hoverMarker.metricValue && (
-              <p className="text-mutedText mt-0.5">{hoverMarker.metricValue}</p>
+              <p className="text-mute mt-0.5">{hoverMarker.metricValue}</p>
             )}
           </div>
         </Popup>

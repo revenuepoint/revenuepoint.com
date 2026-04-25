@@ -23,24 +23,24 @@ export function HealthCheckPricingCard() {
           <h2 className="text-3xl font-bold tracking-tight text-navy">
             A CRM Health Check costs $1,500.
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-bodyText">
+          <p className="mt-4 text-base leading-relaxed text-ink">
             One price, regardless of CRM. One named auditor. The deliverable is yours — you can
             execute it with us, with another partner, or internally.
           </p>
         </div>
-        <div className="border border-border rounded-lg bg-offWhite p-8">
+        <div className="border border-rule rounded-lg bg-cream p-8">
           <div className="flex items-baseline justify-between mb-6">
             <div>
               <h3 className="text-xl font-bold text-navy">CRM Health Check</h3>
-              <div className="text-xs text-mutedText mt-1">Two-week engagement</div>
+              <div className="text-xs text-mute mt-1">Two-week engagement</div>
             </div>
             <div className="text-3xl font-bold text-navy">$1,500</div>
           </div>
           <ul className="space-y-3">
             {included.map((item) => (
-              <li key={item} className="flex gap-3 text-sm text-bodyText">
+              <li key={item} className="flex gap-3 text-sm text-ink">
                 <svg
-                  className="w-4 h-4 text-green shrink-0 mt-0.5"
+                  className="w-4 h-4 text-navy shrink-0 mt-0.5"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -52,7 +52,7 @@ export function HealthCheckPricingCard() {
               </li>
             ))}
           </ul>
-          <p className="mt-6 text-xs text-mutedText leading-relaxed italic">
+          <p className="mt-6 text-xs text-mute leading-relaxed italic">
             We decline engagements where we don&apos;t see a clear path to value. We&apos;ll
             confirm fit on a 30-minute scoping call before accepting payment. If the Health Check
             is not the right format for your situation, we&apos;ll say so.

@@ -7,18 +7,18 @@ const annotations = [
 export function ReportGuideMini() {
   return (
     <div>
-      <div className="text-[10px] uppercase tracking-widest text-mutedText font-semibold">
+      <div className="text-[10px] uppercase tracking-widest text-mute font-semibold">
         Saved reports · what each one means
       </div>
       <div className="mt-3 space-y-3">
         {annotations.map((a) => (
           <div key={a.label} className="border-l-2 border-crimson pl-3">
             <div className="text-xs font-semibold text-navy">{a.label}</div>
-            <div className="mt-1 text-[11px] text-bodyText leading-relaxed">{a.body}</div>
+            <div className="mt-1 text-[11px] text-ink leading-relaxed">{a.body}</div>
           </div>
         ))}
       </div>
-      <div className="mt-4 pt-3 border-t border-border text-[10px] uppercase tracking-widest text-mutedText font-semibold">
+      <div className="mt-4 pt-3 border-t border-rule text-[10px] uppercase tracking-widest text-mute font-semibold">
         Indexed by folder · linked from the Playbook
       </div>
     </div>

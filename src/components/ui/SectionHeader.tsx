@@ -1,6 +1,6 @@
 type SectionHeaderProps = {
   eyebrow?: string;
-  heading: string;
+  heading: React.ReactNode;
   body?: string;
   align?: 'center' | 'left';
   light?: boolean;
@@ -10,33 +10,19 @@ export function SectionHeader({
   eyebrow,
   heading,
   body,
-  align = 'center',
+  align = 'left',
   light = false,
 }: SectionHeaderProps) {
   const alignClass = align === 'center' ? 'text-center mx-auto' : '';
+  const headingTone = light ? 'text-paper' : 'text-ink';
+  const bodyTone = light ? 'text-paper/80' : 'text-inkSoft';
 
   return (
     <div className={`max-w-3xl mb-12 ${alignClass}`}>
-      {eyebrow && (
-        <p className="text-xs font-bold uppercase tracking-widest text-crimson mb-4">
-          {eyebrow}
-        </p>
-      )}
-      <h2
-        className={`text-3xl font-bold tracking-tight ${
-          light ? 'text-white' : 'text-navy'
-        }`}
-      >
-        {heading}
-      </h2>
+      {eyebrow && <p className={`eyebrow mb-4 ${align === 'center' ? 'justify-center' : ''}`}>{eyebrow}</p>}
+      <h2 className={`text-d1 font-serif font-medium ${headingTone}`}>{heading}</h2>
       {body && (
-        <p
-          className={`mt-4 text-base leading-relaxed ${
-            light ? 'text-gray-300' : 'text-bodyText'
-          }`}
-        >
-          {body}
-        </p>
+        <p className={`mt-4 text-lede leading-[1.65] max-w-prose ${bodyTone}`}>{body}</p>
       )}
     </div>
   );

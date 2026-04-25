@@ -16,31 +16,35 @@ export default function InsightsIndex() {
 
   return (
     <>
-      <section className="bg-offWhite border-b border-border pt-16 pb-10 lg:pt-20 lg:pb-14">
-        <div className="max-w-3xl mx-auto px-4">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-crimson mb-3">
-            Insights
-          </p>
-          <h1 className="text-4xl lg:text-5xl font-bold tracking-tight text-navy leading-tight">
-            Notes on orchestration.
+      <section className="relative bg-paper border-b border-rule overflow-hidden">
+        <span
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute right-[-0.05em] top-[-0.15em] font-serif italic font-light text-ink leading-[0.86] whitespace-nowrap"
+          style={{ fontSize: 'clamp(14rem, 32vw, 32rem)', opacity: 0.05 }}
+        >
+          I
+        </span>
+        <div className="relative max-w-narrow mx-auto px-6 lg:px-8 pt-20 lg:pt-28 pb-12 lg:pb-16">
+          <p className="byline mb-5">Insights · The RevenuePoint quarterly</p>
+          <h1 className="text-d0 font-serif font-semibold text-ink leading-tight">
+            Notes on <em>orchestration</em>.
           </h1>
-          <p className="mt-4 text-lg text-bodyText leading-relaxed">
-            Essays on mid-market operations, the systems gap, and how we&apos;re
-            closing it at RevenuePoint — from the people doing the work.
+          <p className="mt-6 text-lede text-inkSoft leading-[1.65] max-w-prose">
+            Essays on mid-market operations, the systems gap, and how we&rsquo;re closing it at RevenuePoint — from the people doing the work.
           </p>
         </div>
       </section>
 
-      <section className="bg-white py-12 lg:py-16">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="bg-paper py-12 lg:py-16">
+        <div className="max-w-editorial mx-auto px-6 lg:px-8">
           {featured && (
-            <div className="mb-10">
+            <div className="mb-12">
               <PostCard meta={featured.meta} featured />
             </div>
           )}
 
           {rest.length > 0 && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {rest.map((p) => (
                 <PostCard key={p.meta.slug} meta={p.meta} />
               ))}
@@ -48,15 +52,15 @@ export default function InsightsIndex() {
           )}
 
           {posts.length === 0 && (
-            <p className="text-center text-mutedText py-20">
+            <p className="text-center text-mute py-20 serif-italic text-lg">
               No posts yet. Check back soon.
             </p>
           )}
         </div>
       </section>
 
-      <section className="bg-white pb-16 lg:pb-24">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="bg-cream border-t border-ruleSoft py-section">
+        <div className="max-w-editorial mx-auto px-6 lg:px-8">
           <EmailSignup />
         </div>
       </section>

@@ -62,7 +62,7 @@ const CATEGORY_STYLES: Record<
 > = {
   agent: { top: '#0D9488', badge: 'bg-teal-50 text-teal-700 border-teal-200', label: 'Agent' },
   lens: { top: '#2563EB', badge: 'bg-sky-50 text-sky-700 border-sky-200', label: 'Dashboard' },
-  metric: { top: '#8B0A39', badge: 'bg-crimsonLight text-crimson border-crimson/20', label: 'Metric' },
+  metric: { top: '#8B0A39', badge: 'bg-crimsonTint text-crimson border-crimson/20', label: 'Metric' },
 };
 
 const METRIC_STATUS_COLOR: Record<MetricStatus, string> = {
@@ -127,7 +127,7 @@ function ObjectNode({ data, selected }: NodeProps<Node<BlueprintNodeData>>) {
   // Category badge text + tone.
   const badge =
     isConnection
-      ? { label: 'Connection', cls: source ? SOURCE_STYLES[source].badge : 'bg-mutedText/10 text-mutedText border-border' }
+      ? { label: 'Connection', cls: source ? SOURCE_STYLES[source].badge : 'bg-mute/10 text-mute border-rule' }
       : isData && source
         ? { label: SOURCE_STYLES[source].label, cls: SOURCE_STYLES[source].badge }
         : {
@@ -140,13 +140,13 @@ function ObjectNode({ data, selected }: NodeProps<Node<BlueprintNodeData>>) {
   return (
     <>
       {!isConnection && (
-        <Handle type="target" position={Position.Top} className="!bg-border !w-1.5 !h-1.5 !border-0" />
+        <Handle type="target" position={Position.Top} className="!bg-rule !w-1.5 !h-1.5 !border-0" />
       )}
       <div
         className={`bg-white rounded-lg overflow-hidden shadow-sm transition-all ${
           selected
             ? 'border border-crimson ring-2 ring-crimson/30 shadow-md'
-            : 'border border-border'
+            : 'border border-rule'
         }`}
         style={{
           borderTopWidth: 2,
@@ -162,7 +162,7 @@ function ObjectNode({ data, selected }: NodeProps<Node<BlueprintNodeData>>) {
                 className="inline-block w-2 h-2 rounded-full shrink-0"
                 style={{ backgroundColor: statusColor }}
               />
-              <h3 className="text-xs font-semibold text-bodyText truncate">{name}</h3>
+              <h3 className="text-xs font-semibold text-ink truncate">{name}</h3>
             </div>
             {metricSparkline && (
               <div className="h-5 my-0.5">
@@ -170,7 +170,7 @@ function ObjectNode({ data, selected }: NodeProps<Node<BlueprintNodeData>>) {
               </div>
             )}
             <div className="flex items-baseline justify-between mt-0.5">
-              <span className="text-sm font-bold font-mono text-bodyText">{metricValue}</span>
+              <span className="text-sm font-bold font-mono text-ink">{metricValue}</span>
               {metricTrend && (
                 <span
                   className="text-[10px] font-mono font-semibold"
@@ -181,7 +181,7 @@ function ObjectNode({ data, selected }: NodeProps<Node<BlueprintNodeData>>) {
               )}
             </div>
             {metricGoal && (
-              <p className="text-[9px] text-mutedText mt-0.5">Goal: {metricGoal}</p>
+              <p className="text-[9px] text-mute mt-0.5">Goal: {metricGoal}</p>
             )}
           </div>
         ) : isConnection ? (
@@ -193,20 +193,20 @@ function ObjectNode({ data, selected }: NodeProps<Node<BlueprintNodeData>>) {
               >
                 {name.charAt(0).toUpperCase()}
               </span>
-              <h3 className="text-sm font-semibold text-bodyText truncate">{name}</h3>
+              <h3 className="text-sm font-semibold text-ink truncate">{name}</h3>
             </div>
             <div className="flex items-center gap-1 flex-wrap">
               <span className={`inline-block text-[9px] px-1.5 py-0.5 rounded border ${badge.cls}`}>
                 {badge.label}
               </span>
               {connectionLabel && (
-                <span className="text-[9px] text-mutedText italic">· {connectionLabel}</span>
+                <span className="text-[9px] text-mute italic">· {connectionLabel}</span>
               )}
             </div>
           </div>
         ) : (
           <div className="px-3 py-2.5">
-            <h3 className={`font-semibold text-bodyText truncate ${isData ? 'text-sm' : 'text-xs'} mb-1`}>
+            <h3 className={`font-semibold text-ink truncate ${isData ? 'text-sm' : 'text-xs'} mb-1`}>
               {name}
             </h3>
             <div className="flex items-center gap-1 flex-wrap">
@@ -215,19 +215,19 @@ function ObjectNode({ data, selected }: NodeProps<Node<BlueprintNodeData>>) {
               </span>
             </div>
             {isData && recordCount != null && (
-              <div className="mt-1.5 text-[10px] text-mutedText font-mono">
+              <div className="mt-1.5 text-[10px] text-mute font-mono">
                 {recordCount.toLocaleString()} records
               </div>
             )}
             {!isData && description && (
-              <p className="mt-1.5 text-[10px] text-mutedText leading-snug line-clamp-2">
+              <p className="mt-1.5 text-[10px] text-mute leading-snug line-clamp-2">
                 {description}
               </p>
             )}
           </div>
         )}
       </div>
-      <Handle type="source" position={Position.Bottom} className="!bg-border !w-1.5 !h-1.5 !border-0" />
+      <Handle type="source" position={Position.Bottom} className="!bg-rule !w-1.5 !h-1.5 !border-0" />
     </>
   );
 }
@@ -593,7 +593,7 @@ function BlueprintFlow() {
 export function BlueprintDemo() {
   return (
     <div
-      className="blueprint-demo rounded-lg border border-border bg-offWhite shadow-xl overflow-hidden"
+      className="blueprint-demo rounded-lg border border-rule bg-cream shadow-xl overflow-hidden"
       style={{ height: 560 }}
     >
       <style jsx global>{`

@@ -74,9 +74,9 @@ function GeneratingStrip({ onComplete }: { onComplete: () => void }) {
 
   return (
     <div className="h-full flex items-center justify-center">
-      <div className="max-w-md w-full bg-white border border-border rounded-lg px-5 py-4 shadow-sm">
+      <div className="max-w-md w-full bg-white border border-rule rounded-lg px-5 py-4 shadow-sm">
         <div className="flex items-center gap-2 mb-3">
-          <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-crimsonLight text-crimson">
+          <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-crimsonTint text-crimson">
             <SparklesIcon className="h-3.5 w-3.5" />
           </span>
           <p className="text-xs font-semibold text-navy">Prism is generating your report…</p>
@@ -93,7 +93,7 @@ function GeneratingStrip({ onComplete }: { onComplete: () => void }) {
                       ? 'bg-emerald-500 text-white'
                       : active
                         ? 'bg-blue-500/15 border border-blue-500 text-blue-600'
-                        : 'bg-offWhite border border-border'
+                        : 'bg-cream border border-rule'
                   }`}
                 >
                   {done ? (
@@ -102,7 +102,7 @@ function GeneratingStrip({ onComplete }: { onComplete: () => void }) {
                     <span className="h-1.5 w-1.5 rounded-full bg-blue-500 animate-pulse" />
                   ) : null}
                 </span>
-                <span className={done ? 'text-mutedText' : active ? 'text-navy font-medium' : 'text-mutedText'}>
+                <span className={done ? 'text-mute' : active ? 'text-navy font-medium' : 'text-mute'}>
                   {s}
                 </span>
               </li>
@@ -120,13 +120,13 @@ function KpiRow({ kpis }: { kpis: PrismKpi[] }) {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
       {kpis.map((m) => (
-        <div key={m.label} className="bg-offWhite border border-border rounded-md px-3 py-2.5">
-          <p className="text-[9px] uppercase tracking-wider text-mutedText">{m.label}</p>
+        <div key={m.label} className="bg-cream border border-rule rounded-md px-3 py-2.5">
+          <p className="text-[9px] uppercase tracking-wider text-mute">{m.label}</p>
           <p className="text-sm font-bold font-mono text-navy mt-0.5">{m.value}</p>
           {m.change && (
             <p
               className={`text-[10px] font-mono mt-0.5 ${
-                m.changeTone === 'good' ? 'text-emerald-600' : m.changeTone === 'bad' ? 'text-red-600' : 'text-mutedText'
+                m.changeTone === 'good' ? 'text-emerald-600' : m.changeTone === 'bad' ? 'text-red-600' : 'text-mute'
               }`}
             >
               {m.change}
@@ -144,7 +144,7 @@ function StackedBarView({ spec }: { spec: StackedBarChart }) {
   const total = spec.segments.reduce((s, x) => s + x.value, 0);
   return (
     <div className="flex flex-col gap-2">
-      <div className="flex h-7 w-full rounded-md overflow-hidden border border-border">
+      <div className="flex h-7 w-full rounded-md overflow-hidden border border-rule">
         {spec.segments.map((seg) => {
           const pct = (seg.value / total) * 100;
           return (
@@ -159,11 +159,11 @@ function StackedBarView({ spec }: { spec: StackedBarChart }) {
           );
         })}
       </div>
-      <div className="flex flex-wrap gap-3 text-[10px] text-mutedText">
+      <div className="flex flex-wrap gap-3 text-[10px] text-mute">
         {spec.segments.map((seg) => (
           <span key={seg.label} className="flex items-center gap-1">
             <span className="h-2 w-2 rounded-full" style={{ backgroundColor: seg.color }} />
-            {seg.label} · <span className="font-mono text-bodyText">{seg.display}</span>
+            {seg.label} · <span className="font-mono text-ink">{seg.display}</span>
           </span>
         ))}
       </div>
@@ -179,8 +179,8 @@ function HorizontalBarView({ spec }: { spec: HorizontalBarChart }) {
         const pct = (b.value / max) * 100;
         return (
           <div key={b.label} className="flex items-center gap-2">
-            <span className="text-[11px] text-bodyText w-32 shrink-0 truncate">{b.label}</span>
-            <div className="relative flex-1 h-5 bg-offWhite rounded-sm overflow-hidden border border-border">
+            <span className="text-[11px] text-ink w-32 shrink-0 truncate">{b.label}</span>
+            <div className="relative flex-1 h-5 bg-cream rounded-sm overflow-hidden border border-rule">
               <div className="absolute left-0 top-0 bottom-0" style={{ width: `${pct}%`, backgroundColor: b.color, opacity: 0.85 }} />
             </div>
             <span className="text-[11px] font-mono text-navy w-16 text-right">{b.display}</span>
@@ -228,7 +228,7 @@ function GroupedBarView({ spec }: { spec: GroupedBarChart }) {
           );
         })}
       </svg>
-      <div className="flex flex-wrap gap-3 text-[10px] text-mutedText mt-2">
+      <div className="flex flex-wrap gap-3 text-[10px] text-mute mt-2">
         {spec.series.map((s) => (
           <span key={s.name} className="flex items-center gap-1">
             <span className="h-2 w-2 rounded-sm" style={{ backgroundColor: s.color }} />
@@ -263,7 +263,7 @@ function DonutView({ spec }: { spec: DonutChart }) {
           startAngle = endAngle;
           return <path key={i} d={d} fill={s.color} opacity={0.9} />;
         })}
-        <text x={cx} y={cy - 2} textAnchor="middle" fontSize="13" fontWeight="700" fill="#0F2B4D">
+        <text x={cx} y={cy - 2} textAnchor="middle" fontSize="13" fontWeight="700" fill="#0F1A2B">
           {spec.centerLabel}
         </text>
         <text x={cx} y={cy + 12} textAnchor="middle" fontSize="8" fill="#6B8299">
@@ -274,8 +274,8 @@ function DonutView({ spec }: { spec: DonutChart }) {
         {spec.slices.map((s) => (
           <div key={s.label} className="flex items-center gap-2 text-[11px]">
             <span className="h-2 w-2 rounded-full shrink-0" style={{ backgroundColor: s.color }} />
-            <span className="text-bodyText flex-1 truncate">{s.label}</span>
-            <span className="font-mono text-mutedText">{s.value}%</span>
+            <span className="text-ink flex-1 truncate">{s.label}</span>
+            <span className="font-mono text-mute">{s.value}%</span>
           </div>
         ))}
       </div>
@@ -303,13 +303,13 @@ function WaterfallView({ spec }: { spec: WaterfallChart }) {
             <p className={`text-[10px] font-mono ${positive ? 'text-emerald-600' : 'text-red-600'}`}>
               {s.display}
             </p>
-            <div className="relative w-full bg-offWhite border border-border rounded-sm overflow-hidden" style={{ height: '80%' }}>
+            <div className="relative w-full bg-cream border border-rule rounded-sm overflow-hidden" style={{ height: '80%' }}>
               <div
                 className="absolute bottom-0 left-0 right-0"
                 style={{ height: `${pct}%`, backgroundColor: colorFor(s.kind), opacity: 0.88 }}
               />
             </div>
-            <p className="text-[10px] text-mutedText text-center truncate w-full">{s.label}</p>
+            <p className="text-[10px] text-mute text-center truncate w-full">{s.label}</p>
           </div>
         );
       })}
@@ -319,8 +319,8 @@ function WaterfallView({ spec }: { spec: WaterfallChart }) {
 
 function ChartView({ chart }: { chart: PrismChart }) {
   return (
-    <div className="border border-border rounded-md bg-white">
-      <div className="px-3 py-2 border-b border-border bg-offWhite">
+    <div className="border border-rule rounded-md bg-white">
+      <div className="px-3 py-2 border-b border-rule bg-cream">
         <p className="text-[11px] font-semibold text-navy">{chart.title}</p>
       </div>
       <div className="px-3 py-3">
@@ -352,8 +352,8 @@ export function PrismReportPanel({ report }: { report: PrismReport }) {
   return (
     <div className="flex flex-col h-full">
       {/* Header */}
-      <div className="flex items-start gap-2 pb-4 border-b border-border">
-        <span className="inline-flex items-center justify-center h-7 w-7 rounded-full bg-crimsonLight text-crimson shrink-0 mt-0.5">
+      <div className="flex items-start gap-2 pb-4 border-b border-rule">
+        <span className="inline-flex items-center justify-center h-7 w-7 rounded-full bg-crimsonTint text-crimson shrink-0 mt-0.5">
           <SparklesIcon className="h-4 w-4" />
         </span>
         <div className="min-w-0">
@@ -377,19 +377,19 @@ export function PrismReportPanel({ report }: { report: PrismReport }) {
           <div className="flex flex-col gap-5 animate-in fade-in duration-300">
             {/* Executive Summary */}
             <section>
-              <p className="text-[10px] text-mutedText uppercase tracking-widest font-semibold mb-2">
+              <p className="text-[10px] text-mute uppercase tracking-widest font-semibold mb-2">
                 Executive Summary
               </p>
               <div className="flex flex-col gap-2.5">
                 {report.summary.map((p, i) => (
-                  <p key={i} className="text-[13px] leading-relaxed text-bodyText">{p}</p>
+                  <p key={i} className="text-[13px] leading-relaxed text-ink">{p}</p>
                 ))}
               </div>
             </section>
 
             {/* KPI Row */}
             <section>
-              <p className="text-[10px] text-mutedText uppercase tracking-widest font-semibold mb-2">
+              <p className="text-[10px] text-mute uppercase tracking-widest font-semibold mb-2">
                 Key Metrics
               </p>
               <KpiRow kpis={report.kpis} />
@@ -402,7 +402,7 @@ export function PrismReportPanel({ report }: { report: PrismReport }) {
 
             {/* Findings */}
             <section>
-              <p className="text-[10px] text-mutedText uppercase tracking-widest font-semibold mb-2">
+              <p className="text-[10px] text-mute uppercase tracking-widest font-semibold mb-2">
                 Detailed Findings
               </p>
               <ul className="flex flex-col gap-2.5">
@@ -413,18 +413,18 @@ export function PrismReportPanel({ report }: { report: PrismReport }) {
                     >
                       {f.impact}
                     </span>
-                    <p className="text-[12.5px] leading-relaxed text-bodyText">{f.body}</p>
+                    <p className="text-[12.5px] leading-relaxed text-ink">{f.body}</p>
                   </li>
                 ))}
               </ul>
             </section>
 
             {/* Recommendations */}
-            <section className="bg-offWhite border border-border rounded-lg p-4">
-              <p className="text-[10px] text-mutedText uppercase tracking-widest font-semibold mb-2">
+            <section className="bg-cream border border-rule rounded-lg p-4">
+              <p className="text-[10px] text-mute uppercase tracking-widest font-semibold mb-2">
                 Recommended Actions
               </p>
-              <ol className="flex flex-col gap-2 text-[12.5px] text-bodyText list-decimal list-inside marker:text-crimson">
+              <ol className="flex flex-col gap-2 text-[12.5px] text-ink list-decimal list-inside marker:text-crimson">
                 {report.recommendations.map((r, i) => (
                   <li key={i} className="leading-relaxed">{r}</li>
                 ))}
@@ -433,33 +433,33 @@ export function PrismReportPanel({ report }: { report: PrismReport }) {
 
             {/* Methodology */}
             <section>
-              <p className="text-[10px] text-mutedText uppercase tracking-widest font-semibold mb-2">
+              <p className="text-[10px] text-mute uppercase tracking-widest font-semibold mb-2">
                 Methodology
               </p>
-              <p className="text-[12.5px] leading-relaxed text-bodyText">
+              <p className="text-[12.5px] leading-relaxed text-ink">
                 {report.methodology}
               </p>
             </section>
 
             {/* Appendix — runs past the fade line */}
             <section>
-              <p className="text-[10px] text-mutedText uppercase tracking-widest font-semibold mb-2">
+              <p className="text-[10px] text-mute uppercase tracking-widest font-semibold mb-2">
                 {report.appendix.title}
               </p>
-              <div className="border border-border rounded-md overflow-hidden">
+              <div className="border border-rule rounded-md overflow-hidden">
                 <div className="grid grid-cols-[1fr,auto] text-[11px]">
-                  <div className="px-3 py-1.5 bg-offWhite text-[9px] uppercase tracking-wider text-mutedText font-semibold">
+                  <div className="px-3 py-1.5 bg-cream text-[9px] uppercase tracking-wider text-mute font-semibold">
                     {report.appendix.columns[0]}
                   </div>
-                  <div className="px-3 py-1.5 bg-offWhite text-[9px] uppercase tracking-wider text-mutedText font-semibold text-right">
+                  <div className="px-3 py-1.5 bg-cream text-[9px] uppercase tracking-wider text-mute font-semibold text-right">
                     {report.appendix.columns[1]}
                   </div>
                   {report.appendix.rows.map((row, i) => (
                     <div key={i} className="contents">
-                      <div className="px-3 py-1.5 border-t border-border text-bodyText truncate">
+                      <div className="px-3 py-1.5 border-t border-rule text-ink truncate">
                         {row.label}
                       </div>
-                      <div className="px-3 py-1.5 border-t border-border font-mono text-navy text-right whitespace-nowrap">
+                      <div className="px-3 py-1.5 border-t border-rule font-mono text-navy text-right whitespace-nowrap">
                         {row.value}
                       </div>
                     </div>

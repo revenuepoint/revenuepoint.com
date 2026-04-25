@@ -156,9 +156,15 @@ export default function SalesforceImplementationsPage() {
   return (
     <>
       <HeroSection
-        eyebrow="SALESFORCE IMPLEMENTATIONS"
-        heading="A working CRM your team uses on day one."
+        byline="Salesforce · Implementations"
+        heading={
+          <>
+            A working CRM your team uses on <em>day one</em>.
+          </>
+        }
         body="Every Salesforce implementation we run is fixed-fee, time-boxed, and delivered against a documented scope — whether it is a greenfield Sales Cloud build, a migration off HubSpot or Dynamics, or a re-implementation of an org that never got configured right. Discovery, build, UAT, training, go-live, hypercare. Then fully managed by RevenuePoint."
+        issue="I"
+        sidenote="Fixed-fee · time-boxed · documented scope · then fully managed."
         ctas={[
           { label: 'Scope an implementation', href: '#lead-form', variant: 'primary' },
           { label: 'See typical pricing', href: '#pricing', variant: 'secondary' },
@@ -174,7 +180,7 @@ export default function SalesforceImplementationsPage() {
       />
 
       {/* Engagement types */}
-      <section className="bg-white py-16 lg:py-24 border-t border-border">
+      <section className="bg-white py-16 lg:py-24 border-t border-rule">
         <div className="max-w-7xl mx-auto px-4">
           <SectionHeader
             eyebrow="Shapes of an implementation"
@@ -190,7 +196,7 @@ export default function SalesforceImplementationsPage() {
       </section>
 
       {/* Implementation process */}
-      <section className="bg-offWhite py-16 lg:py-24 border-y border-border">
+      <section className="bg-cream py-16 lg:py-24 border-y border-rule">
         <div className="max-w-7xl mx-auto px-4">
           <SectionHeader
             eyebrow="Our implementation process"
@@ -201,13 +207,13 @@ export default function SalesforceImplementationsPage() {
             {implementationSteps.map((step) => (
               <div
                 key={step.number}
-                className="bg-white border border-border rounded-sm shadow-sm p-6"
+                className="bg-white border border-rule rounded-sm shadow-sm p-6"
               >
-                <div className="w-10 h-10 rounded-full bg-crimsonLight text-crimson font-bold text-lg flex items-center justify-center mb-4">
+                <div className="w-10 h-10 rounded-full bg-crimsonTint text-crimson font-bold text-lg flex items-center justify-center mb-4">
                   {step.number}
                 </div>
                 <h3 className="text-lg font-semibold text-navy mb-2">{step.title}</h3>
-                <p className="text-sm text-bodyText leading-relaxed">{step.description}</p>
+                <p className="text-sm text-ink leading-relaxed">{step.description}</p>
               </div>
             ))}
           </div>
@@ -250,14 +256,14 @@ export default function SalesforceImplementationsPage() {
             />
           </div>
 
-          <p className="text-center text-sm text-mutedText mt-6">
+          <p className="text-center text-sm text-mute mt-6">
             Typical ranges. Final scope and price are set during Discovery.
           </p>
         </div>
       </section>
 
       {/* Industries */}
-      <section className="bg-offWhite py-16 lg:py-24 border-y border-border">
+      <section className="bg-cream py-16 lg:py-24 border-y border-rule">
         <div className="max-w-7xl mx-auto px-4">
           <SectionHeader
             eyebrow="Industries we implement in"
@@ -269,7 +275,7 @@ export default function SalesforceImplementationsPage() {
               <Link
                 key={industry.id}
                 href={`/solutions/${industry.slug}/`}
-                className="group border border-border rounded-lg bg-white p-6 hover:border-crimson transition-colors block"
+                className="group border border-rule rounded-lg bg-white p-6 hover:border-crimson transition-colors block"
               >
                 <div className="text-[10px] uppercase tracking-widest text-crimson font-semibold">
                   Industry
@@ -277,10 +283,10 @@ export default function SalesforceImplementationsPage() {
                 <h3 className="mt-2 text-xl font-bold text-navy tracking-tight">
                   {industry.navLabel}
                 </h3>
-                <p className="mt-3 text-sm text-bodyText leading-relaxed">
+                <p className="mt-3 text-sm text-ink leading-relaxed">
                   {industry.hero.sub}
                 </p>
-                <div className="mt-5 pt-4 border-t border-border text-[10px] uppercase tracking-widest text-mutedText font-semibold">
+                <div className="mt-5 pt-4 border-t border-rule text-[10px] uppercase tracking-widest text-mute font-semibold">
                   Record page + {industry.lexComponents.length} components +{' '}
                   {industry.integrations.systems.length} integrations
                 </div>
@@ -293,7 +299,7 @@ export default function SalesforceImplementationsPage() {
           <div className="mt-10 text-center">
             <Link
               href="/solutions/"
-              className="text-sm font-semibold text-crimson hover:text-crimsonDark transition-colors inline-flex items-center gap-1"
+              className="text-sm font-semibold text-crimson hover:text-crimsonDeep transition-colors inline-flex items-center gap-1"
             >
               See all industries <span aria-hidden="true">&rarr;</span>
             </Link>
@@ -309,11 +315,11 @@ export default function SalesforceImplementationsPage() {
             heading="What teams ask before they commit"
           />
           <FAQAccordion items={faqs} />
-          <p className="mt-8 text-sm text-bodyText leading-relaxed">
+          <p className="mt-8 text-sm text-ink leading-relaxed">
             Not sure if you need an implementation or a reset?{' '}
             <Link
               href="/salesforce/health-check/"
-              className="text-crimson font-semibold hover:text-crimsonDark"
+              className="text-crimson font-semibold hover:text-crimsonDeep"
             >
               A CRM Health Check
             </Link>{' '}
@@ -324,7 +330,7 @@ export default function SalesforceImplementationsPage() {
       </section>
 
       {/* Managed Services handoff */}
-      <section className="bg-offWhite py-16 lg:py-24 border-y border-border">
+      <section className="bg-cream py-16 lg:py-24 border-y border-rule">
         <div className="max-w-5xl mx-auto px-4">
           <SectionHeader
             eyebrow="After go-live"
@@ -333,34 +339,34 @@ export default function SalesforceImplementationsPage() {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-            <div className="bg-white border border-border rounded-sm shadow-sm p-6">
+            <div className="bg-white border border-rule rounded-sm shadow-sm p-6">
               <div className="text-[10px] uppercase tracking-widest text-crimson font-semibold">
                 Hypercare
               </div>
               <h3 className="mt-2 text-lg font-semibold text-navy">
                 Included in every implementation.
               </h3>
-              <p className="mt-3 text-sm text-bodyText leading-relaxed">
+              <p className="mt-3 text-sm text-ink leading-relaxed">
                 A dedicated post-go-live support window where the same team that built the org is
                 on call for rapid fixes, user questions, and small configuration changes. No new
                 contract, no new contacts.
               </p>
             </div>
-            <div className="bg-white border border-border rounded-sm shadow-sm p-6">
+            <div className="bg-white border border-rule rounded-sm shadow-sm p-6">
               <div className="text-[10px] uppercase tracking-widest text-crimson font-semibold">
                 Managed Administration
               </div>
               <h3 className="mt-2 text-lg font-semibold text-navy">
                 Ongoing admin, dedicated team, no long-term contract.
               </h3>
-              <p className="mt-3 text-sm text-bodyText leading-relaxed">
+              <p className="mt-3 text-sm text-ink leading-relaxed">
                 A dedicated Salesforce administrator and project manager running your org — audits,
                 automations, data hygiene, training, and third-party integration support. Sales
                 Cloud Administration from $2,400/month; Full Stack from $4,000/month.
               </p>
               <Link
                 href="/salesforce/managed-services/pricing/"
-                className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-crimson hover:text-crimsonDark transition-colors"
+                className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-crimson hover:text-crimsonDeep transition-colors"
               >
                 See Managed Administration plans <span aria-hidden="true">&rarr;</span>
               </Link>
@@ -405,7 +411,7 @@ export default function SalesforceImplementationsPage() {
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3">
             <Link
               href="/foundry/"
-              className="inline-flex items-center justify-center px-5 py-2.5 rounded-sm bg-crimson text-white text-sm font-semibold hover:bg-crimsonDark transition-colors"
+              className="inline-flex items-center justify-center px-5 py-2.5 rounded-sm bg-crimson text-white text-sm font-semibold hover:bg-crimsonDeep transition-colors"
             >
               See Foundry in full &rarr;
             </Link>
@@ -420,7 +426,7 @@ export default function SalesforceImplementationsPage() {
       </section>
 
       {/* Lead Form */}
-      <section className="bg-offWhite py-16 lg:py-24 border-t border-border">
+      <section className="bg-cream py-16 lg:py-24 border-t border-rule">
         <div className="max-w-3xl mx-auto px-4">
           <SectionHeader
             heading="Tell us about your Salesforce implementation"

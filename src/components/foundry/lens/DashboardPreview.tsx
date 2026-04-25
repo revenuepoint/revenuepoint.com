@@ -32,10 +32,10 @@ function Sparkline({ values, color, width = 160, height = 34 }: { values: number
 
 function KpiCard({ kpi }: { kpi: DashboardKpi }) {
   return (
-    <div className="border border-border rounded-lg bg-white p-4 flex flex-col gap-2">
+    <div className="border border-rule rounded-lg bg-white p-4 flex flex-col gap-2">
       <div className="flex items-center gap-1.5">
         <span className={`h-2 w-2 rounded-full ${STATUS_DOT[kpi.status]}`} />
-        <p className="text-[10px] font-semibold uppercase tracking-widest text-mutedText">{kpi.label}</p>
+        <p className="text-[10px] font-semibold uppercase tracking-widest text-mute">{kpi.label}</p>
       </div>
       <div className="flex items-baseline gap-2">
         <p className="text-2xl font-bold font-mono text-navy">{kpi.value}</p>
@@ -44,7 +44,7 @@ function KpiCard({ kpi }: { kpi: DashboardKpi }) {
         </span>
       </div>
       <Sparkline values={kpi.spark} color={STATUS_STROKE[kpi.status]} />
-      <p className="text-[10px] text-mutedText">Goal: <span className="font-mono text-bodyText">{kpi.goal}</span></p>
+      <p className="text-[10px] text-mute">Goal: <span className="font-mono text-ink">{kpi.goal}</span></p>
     </div>
   );
 }
@@ -117,7 +117,7 @@ function Donut({ slices, centerValue, centerSublabel }: {
         startAngle = endAngle;
         return <path key={i} d={d} fill={s.color} opacity={0.9} />;
       })}
-      <text x={cx} y={cy - 2} textAnchor="middle" fontSize="14" fontWeight="700" fill="#0F2B4D">{centerValue}</text>
+      <text x={cx} y={cy - 2} textAnchor="middle" fontSize="14" fontWeight="700" fill="#0F1A2B">{centerValue}</text>
       <text x={cx} y={cy + 12} textAnchor="middle" fontSize="8" fill="#6B8299">{centerSublabel}</text>
     </svg>
   );
@@ -137,8 +137,8 @@ function HorizontalBars({ bars, max, goal, unit, goalLabel }: {
         const over = b.value > goal;
         return (
           <div key={b.label} className="flex items-center gap-2">
-            <span className="text-[10px] text-mutedText w-20 shrink-0 truncate">{b.label}</span>
-            <div className="relative flex-1 h-5 bg-offWhite rounded-sm overflow-hidden border border-border">
+            <span className="text-[10px] text-mute w-20 shrink-0 truncate">{b.label}</span>
+            <div className="relative flex-1 h-5 bg-cream rounded-sm overflow-hidden border border-rule">
               <div
                 className={`absolute left-0 top-0 bottom-0 ${over ? 'bg-red-400' : 'bg-emerald-500'}`}
                 style={{ width: `${pct}%`, opacity: 0.75 }}
@@ -152,7 +152,7 @@ function HorizontalBars({ bars, max, goal, unit, goalLabel }: {
           </div>
         );
       })}
-      <p className="text-[10px] text-mutedText mt-1">
+      <p className="text-[10px] text-mute mt-1">
         <span className="inline-block h-2 w-0.5 bg-crimson mr-1 align-middle" /> {goalLabel}
       </p>
     </div>
@@ -165,16 +165,16 @@ export function DashboardPreview() {
 
   return (
     <div className="flex flex-col gap-5">
-      <div className="flex items-center justify-between flex-wrap gap-3 pb-4 border-b border-border">
+      <div className="flex items-center justify-between flex-wrap gap-3 pb-4 border-b border-rule">
         <div>
-          <p className="text-[10px] uppercase tracking-widest text-mutedText">{spec.eyebrow}</p>
+          <p className="text-[10px] uppercase tracking-widest text-mute">{spec.eyebrow}</p>
           <h4 className="text-base font-semibold text-navy">{spec.title}</h4>
         </div>
         <div className="flex items-center gap-1.5">
-          <span className="text-[10px] px-2 py-1 rounded border border-border text-mutedText">7d</span>
-          <span className="text-[10px] px-2 py-1 rounded border border-crimson/40 bg-crimsonLight text-crimson font-semibold">30d</span>
-          <span className="text-[10px] px-2 py-1 rounded border border-border text-mutedText">YTD</span>
-          <span className="ml-2 text-[10px] px-2 py-1 rounded border border-border bg-white text-bodyText">Export PDF</span>
+          <span className="text-[10px] px-2 py-1 rounded border border-rule text-mute">7d</span>
+          <span className="text-[10px] px-2 py-1 rounded border border-crimson/40 bg-crimsonTint text-crimson font-semibold">30d</span>
+          <span className="text-[10px] px-2 py-1 rounded border border-rule text-mute">YTD</span>
+          <span className="ml-2 text-[10px] px-2 py-1 rounded border border-rule bg-white text-ink">Export PDF</span>
         </div>
       </div>
 
@@ -182,12 +182,12 @@ export function DashboardPreview() {
         {spec.kpis.map((k) => <KpiCard key={k.label} kpi={k} />)}
       </div>
 
-      <div className="border border-border rounded-lg bg-white p-4">
+      <div className="border border-rule rounded-lg bg-white p-4">
         <div className="flex items-center justify-between mb-2">
           <p className="text-xs font-semibold text-navy">{spec.line.title}</p>
           <div className="flex items-center gap-3 text-[10px]">
             {spec.line.series.map((s) => (
-              <span key={s.name} className="flex items-center gap-1 text-mutedText">
+              <span key={s.name} className="flex items-center gap-1 text-mute">
                 <span className="inline-block h-2 w-2 rounded-full" style={{ backgroundColor: s.color }} />
                 {s.name}
               </span>
@@ -198,20 +198,20 @@ export function DashboardPreview() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-        <div className="border border-border rounded-lg bg-white p-4 flex items-center gap-4">
+        <div className="border border-rule rounded-lg bg-white p-4 flex items-center gap-4">
           <Donut slices={spec.donut.slices} centerValue={spec.donut.centerValue} centerSublabel={spec.donut.centerSublabel} />
           <div className="flex flex-col gap-1.5 flex-1 min-w-0">
             <p className="text-xs font-semibold text-navy mb-1">{spec.donut.title}</p>
             {spec.donut.slices.map((s) => (
               <div key={s.label} className="flex items-center gap-2 text-[11px]">
                 <span className="h-2 w-2 rounded-full shrink-0" style={{ backgroundColor: s.color }} />
-                <span className="text-bodyText flex-1 truncate">{s.label}</span>
-                <span className="font-mono text-mutedText">{s.value}%</span>
+                <span className="text-ink flex-1 truncate">{s.label}</span>
+                <span className="font-mono text-mute">{s.value}%</span>
               </div>
             ))}
           </div>
         </div>
-        <div className="border border-border rounded-lg bg-white p-4">
+        <div className="border border-rule rounded-lg bg-white p-4">
           <p className="text-xs font-semibold text-navy mb-3">{spec.horizontalBars.title}</p>
           <HorizontalBars
             bars={spec.horizontalBars.bars}

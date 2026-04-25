@@ -144,15 +144,15 @@ function KpiGrid({
         {kpis.map((k) => (
           <div
             key={k.label}
-            className="bg-offWhite border border-border/60 rounded-md px-2 py-1.5"
+            className="bg-cream border border-rule/60 rounded-md px-2 py-1.5"
           >
-            <p className="text-[9px] uppercase tracking-wider text-mutedText">{k.label}</p>
+            <p className="text-[9px] uppercase tracking-wider text-mute">{k.label}</p>
             <p
               className={`text-xs font-mono font-bold mt-0.5 ${
                 k.tone === 'good'
-                  ? 'text-green'
+                  ? 'text-navy'
                   : k.tone === 'bad'
-                    ? 'text-red'
+                    ? 'text-rust'
                     : 'text-navy'
               }`}
             >
@@ -173,8 +173,8 @@ function FieldList({ fields }: { fields: NonNullable<FoundryFeedItem['fields']> 
     <div className="flex flex-col gap-2">
       {fields.map((f) => (
         <div key={f.label} className="text-xs">
-          <p className="text-[9px] uppercase tracking-wider text-mutedText">{f.label}</p>
-          <p className="text-bodyText mt-0.5 leading-snug">{f.value}</p>
+          <p className="text-[9px] uppercase tracking-wider text-mute">{f.label}</p>
+          <p className="text-ink mt-0.5 leading-snug">{f.value}</p>
         </div>
       ))}
     </div>
@@ -188,14 +188,14 @@ function FeedCard({ item }: { item: FoundryFeedItem }) {
 
   return (
     <div
-      className={`bg-white border border-border rounded-lg border-l-4 ${cfg.border} overflow-hidden`}
+      className={`bg-white border border-rule rounded-lg border-l-4 ${cfg.border} overflow-hidden`}
     >
       <div className="flex flex-col md:flex-row">
         <div className="p-4 flex-1 min-w-0">
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-2">
               <Icon className={`h-3.5 w-3.5 ${cfg.iconColor}`} />
-              <span className="text-[10px] font-semibold uppercase tracking-widest text-mutedText">
+              <span className="text-[10px] font-semibold uppercase tracking-widest text-mute">
                 {item.category}
               </span>
               {item.severity && (
@@ -223,20 +223,20 @@ function FeedCard({ item }: { item: FoundryFeedItem }) {
                 </span>
               )}
             </div>
-            <span className="text-[10px] text-mutedText hidden md:block">
+            <span className="text-[10px] text-mute hidden md:block">
               {item.timestamp}
             </span>
           </div>
 
           <h3 className="text-sm font-semibold text-navy leading-snug">{item.headline}</h3>
-          <p className="text-xs text-bodyText mt-2 leading-relaxed">{item.body}</p>
-          <span className="text-[10px] text-mutedText mt-3 md:hidden block">
+          <p className="text-xs text-ink mt-2 leading-relaxed">{item.body}</p>
+          <span className="text-[10px] text-mute mt-3 md:hidden block">
             {item.timestamp}
           </span>
         </div>
 
         {hasPanel && (
-          <div className="border-t md:border-t-0 md:border-l border-border/60 p-4 md:w-72 flex-shrink-0">
+          <div className="border-t md:border-t-0 md:border-l border-rule/60 p-4 md:w-72 flex-shrink-0">
             {item.kpis ? (
               <KpiGrid
                 kpis={item.kpis}

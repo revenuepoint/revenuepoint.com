@@ -72,9 +72,9 @@ const STEP_ICONS = [MailI, ShieldI, LinkI, PortalI];
 
 function StepEmail() {
   return (
-    <div className="border border-border rounded-md bg-white p-5">
-      <p className="text-[10px] uppercase tracking-widest text-mutedText font-semibold mb-3">Sign in to acme.portal.revenuepoint.com</p>
-      <label className="text-[11px] uppercase tracking-widest text-mutedText font-semibold">Work email</label>
+    <div className="border border-rule rounded-md bg-white p-5">
+      <p className="text-[10px] uppercase tracking-widest text-mute font-semibold mb-3">Sign in to acme.portal.revenuepoint.com</p>
+      <label className="text-[11px] uppercase tracking-widest text-mute font-semibold">Work email</label>
       <div className="mt-1 flex items-center gap-2">
         <div className="flex-1 border border-crimson rounded-sm px-3 py-2 text-sm text-navy bg-white font-mono">
           maria.chen@acme.com<span className="animate-pulse">|</span>
@@ -83,7 +83,7 @@ function StepEmail() {
       <button className="mt-4 px-4 py-2 rounded-sm bg-crimson text-white text-sm font-semibold w-full">
         Send me a magic link →
       </button>
-      <p className="mt-3 text-[11px] text-mutedText leading-relaxed">
+      <p className="mt-3 text-[11px] text-mute leading-relaxed">
         We&apos;ll email you a one-time link. No password required.
       </p>
     </div>
@@ -92,7 +92,7 @@ function StepEmail() {
 
 function StepRule() {
   return (
-    <div className="border border-border rounded-md bg-navy text-white p-5 font-mono text-[12px] leading-relaxed">
+    <div className="border border-rule rounded-md bg-navy text-white p-5 font-mono text-[12px] leading-relaxed">
       <p className="text-[10px] uppercase tracking-widest text-gray-400 mb-3 font-sans">Access rule check</p>
       <pre className="whitespace-pre overflow-x-auto">
 {`access: (email) => isActiveContact(
@@ -116,16 +116,16 @@ function StepRule() {
 
 function StepInbox() {
   return (
-    <div className="border border-border rounded-md bg-white p-5">
-      <div className="flex items-center gap-2 pb-3 border-b border-border">
-        <MailI className="h-4 w-4 text-mutedText" />
-        <span className="text-[11px] uppercase tracking-widest text-mutedText font-semibold">Inbox</span>
+    <div className="border border-rule rounded-md bg-white p-5">
+      <div className="flex items-center gap-2 pb-3 border-b border-rule">
+        <MailI className="h-4 w-4 text-mute" />
+        <span className="text-[11px] uppercase tracking-widest text-mute font-semibold">Inbox</span>
       </div>
       <div className="pt-3 flex flex-col gap-2">
-        <div className="border border-crimson/40 rounded-sm bg-crimsonLight/40 p-3">
+        <div className="border border-crimson/40 rounded-sm bg-crimsonTint/40 p-3">
           <p className="text-[10px] uppercase tracking-widest text-crimson font-semibold">From: Acme Portal &lt;portal@acme.com&gt;</p>
           <p className="text-sm text-navy font-semibold mt-0.5">Sign in to your Acme Portal</p>
-          <p className="text-xs text-bodyText mt-1.5">
+          <p className="text-xs text-ink mt-1.5">
             Click the link below to sign in. This link expires in 15 minutes.
           </p>
           <span className="inline-block mt-2 text-[11px] font-mono text-crimson underline">
@@ -139,8 +139,8 @@ function StepInbox() {
 
 function StepPortal() {
   return (
-    <div className="border border-border rounded-md bg-white p-5">
-      <div className="flex items-center gap-2 pb-3 border-b border-border">
+    <div className="border border-rule rounded-md bg-white p-5">
+      <div className="flex items-center gap-2 pb-3 border-b border-rule">
         <span className="inline-flex items-center justify-center h-5 w-5 rounded text-white text-[9px] font-black bg-[#1A56DB]">
           AC
         </span>
@@ -148,16 +148,16 @@ function StepPortal() {
         <span className="ml-auto text-[10px] text-emerald-600 font-semibold">● Authenticated</span>
       </div>
       <div className="pt-3 grid grid-cols-2 gap-2">
-        <div className="border border-border rounded-sm p-2">
-          <p className="text-[9px] uppercase tracking-widest text-mutedText">Open Cases</p>
+        <div className="border border-rule rounded-sm p-2">
+          <p className="text-[9px] uppercase tracking-widest text-mute">Open Cases</p>
           <p className="text-base font-bold text-navy">14</p>
         </div>
-        <div className="border border-border rounded-sm p-2">
-          <p className="text-[9px] uppercase tracking-widest text-mutedText">Avg. Resolve</p>
+        <div className="border border-rule rounded-sm p-2">
+          <p className="text-[9px] uppercase tracking-widest text-mute">Avg. Resolve</p>
           <p className="text-base font-bold text-navy">2.4d</p>
         </div>
-        <div className="col-span-2 border border-border rounded-sm p-2">
-          <p className="text-[9px] uppercase tracking-widest text-mutedText">Latest</p>
+        <div className="col-span-2 border border-rule rounded-sm p-2">
+          <p className="text-[9px] uppercase tracking-widest text-mute">Latest</p>
           <p className="text-xs text-navy mt-0.5">CS-10481 — Pallet shipment damaged on arrival</p>
         </div>
       </div>

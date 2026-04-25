@@ -43,10 +43,10 @@ const PrismI = ({ className = 'h-3.5 w-3.5' }: { className?: string }) => (
 
 export function ModuleHeader({ title, eyebrow }: { title: string; eyebrow?: string }) {
   return (
-    <div className="flex items-center justify-between gap-2 px-3 py-2 border-b border-border/50 shrink-0">
+    <div className="flex items-center justify-between gap-2 px-3 py-2 border-b border-rule/50 shrink-0">
       <div className="min-w-0">
         {eyebrow && (
-          <p className="text-[8px] font-bold uppercase tracking-widest text-mutedText">
+          <p className="text-[8px] font-bold uppercase tracking-widest text-mute">
             {eyebrow}
           </p>
         )}
@@ -86,8 +86,8 @@ function MiniBarChart() {
 
 function MiniTable() {
   return (
-    <div className="rounded border border-border overflow-hidden bg-white mt-2">
-      <div className="grid grid-cols-[40%_30%_30%] text-[8px] font-semibold uppercase tracking-wider text-mutedText bg-offWhite px-2 py-1 border-b border-border">
+    <div className="rounded border border-rule overflow-hidden bg-white mt-2">
+      <div className="grid grid-cols-[40%_30%_30%] text-[8px] font-semibold uppercase tracking-wider text-mute bg-cream px-2 py-1 border-b border-rule">
         <span>Record</span>
         <span>Status</span>
         <span className="text-right">Value</span>
@@ -95,7 +95,7 @@ function MiniTable() {
       {[0, 1, 2].map((i) => (
         <div
           key={i}
-          className="grid grid-cols-[40%_30%_30%] items-center px-2 py-1.5 border-b last:border-0 border-border gap-2"
+          className="grid grid-cols-[40%_30%_30%] items-center px-2 py-1.5 border-b last:border-0 border-rule gap-2"
         >
           <div className="h-1.5 rounded-sm bg-navy/60 w-3/4" />
           <div className="h-1.5 rounded-sm bg-emerald-500/60 w-1/2" />
@@ -159,7 +159,7 @@ const MAX_ENTRIES = 24;
 
 function TypingDots() {
   return (
-    <div className="rounded-md rounded-bl-sm bg-white border border-border px-2.5 py-1.5 flex items-center gap-1">
+    <div className="rounded-md rounded-bl-sm bg-white border border-rule px-2.5 py-1.5 flex items-center gap-1">
       {[0, 180, 360].map((d) => (
         <span
           key={d}
@@ -209,8 +209,8 @@ function MiniPie() {
         {segments.map((s, i) => (
           <div key={i} className="flex items-center gap-1.5">
             <span className="h-1.5 w-1.5 rounded-sm shrink-0" style={{ backgroundColor: s.color }} />
-            <div className="h-1.5 rounded-sm bg-mutedText/30 flex-1 max-w-[70%]" />
-            <span className="text-[8px] font-mono text-mutedText">{s.value}%</span>
+            <div className="h-1.5 rounded-sm bg-mute/30 flex-1 max-w-[70%]" />
+            <span className="text-[8px] font-mono text-mute">{s.value}%</span>
           </div>
         ))}
       </div>
@@ -220,8 +220,8 @@ function MiniPie() {
 
 function MiniRecord() {
   return (
-    <div className="rounded border border-border bg-white overflow-hidden">
-      <div className="px-2 py-1.5 bg-offWhite border-b border-border flex items-center gap-1.5">
+    <div className="rounded border border-rule bg-white overflow-hidden">
+      <div className="px-2 py-1.5 bg-cream border-b border-rule flex items-center gap-1.5">
         <span className="h-4 w-4 rounded-sm bg-blue-500/80" />
         <div className="h-1.5 rounded-sm bg-navy/60 w-20" />
         <span className="ml-auto text-[8px] px-1 py-0.5 rounded border border-emerald-200 bg-emerald-50 text-emerald-700 font-semibold">
@@ -236,7 +236,7 @@ function MiniRecord() {
           { label: 'w-14', value: 'w-5/12' },
         ].map((r, i) => (
           <div key={i} className="flex items-center gap-2">
-            <span className={`h-1 rounded-sm bg-mutedText/40 ${r.label}`} />
+            <span className={`h-1 rounded-sm bg-mute/40 ${r.label}`} />
             <span className={`h-1.5 rounded-sm bg-navy/55 ${r.value}`} />
           </div>
         ))}
@@ -256,11 +256,11 @@ function MiniActionList() {
       {actions.map((a, i) => (
         <div
           key={i}
-          className={`rounded border border-border border-l-[3px] ${a.color} bg-white px-2 py-1.5 flex items-center gap-2`}
+          className={`rounded border border-rule border-l-[3px] ${a.color} bg-white px-2 py-1.5 flex items-center gap-2`}
         >
           <div className="flex-1 min-w-0 flex flex-col gap-1">
             <div className="h-1.5 rounded-sm bg-navy/60 w-10/12" />
-            <div className="h-1 rounded-sm bg-mutedText/35 w-7/12" />
+            <div className="h-1 rounded-sm bg-mute/35 w-7/12" />
           </div>
           <span className={`text-[8px] font-semibold px-1.5 py-0.5 rounded border ${a.chipTone}`}>
             {a.chip}
@@ -274,7 +274,7 @@ function MiniActionList() {
 function ReplyBody({ variant }: { variant: number }) {
   const v = REPLY_VARIANTS[variant % REPLY_VARIANTS.length];
   return (
-    <div className="flex-1 min-w-0 rounded-md rounded-bl-sm bg-white border border-border px-2.5 py-2 flex flex-col gap-2">
+    <div className="flex-1 min-w-0 rounded-md rounded-bl-sm bg-white border border-rule px-2.5 py-2 flex flex-col gap-2">
       {/* One-line intro for every reply */}
       <div className="flex flex-col gap-1">
         <div className="h-1.5 rounded-sm bg-navy/55 w-10/12" />
@@ -283,8 +283,8 @@ function ReplyBody({ variant }: { variant: number }) {
 
       {v.kind === 'rich' && (
         <>
-          <div className="rounded border border-border/60 bg-offWhite/40 px-2 pt-1.5 pb-1.5">
-            <p className="text-[8px] text-mutedText uppercase tracking-wider mb-1">Chart</p>
+          <div className="rounded border border-rule/60 bg-cream/40 px-2 pt-1.5 pb-1.5">
+            <p className="text-[8px] text-mute uppercase tracking-wider mb-1">Chart</p>
             <MiniBarChart />
           </div>
           <MiniTable />
@@ -292,8 +292,8 @@ function ReplyBody({ variant }: { variant: number }) {
       )}
 
       {v.kind === 'pie' && (
-        <div className="rounded border border-border/60 bg-offWhite/40 px-2 py-2">
-          <p className="text-[8px] text-mutedText uppercase tracking-wider mb-1.5">Breakdown</p>
+        <div className="rounded border border-rule/60 bg-cream/40 px-2 py-2">
+          <p className="text-[8px] text-mute uppercase tracking-wider mb-1.5">Breakdown</p>
           <MiniPie />
         </div>
       )}
@@ -310,7 +310,7 @@ function ReplyBody({ variant }: { variant: number }) {
               className={`text-[8px] px-1.5 py-0.5 rounded border font-semibold ${
                 c.tone === 'primary'
                   ? 'border-blue-200 bg-blue-50 text-blue-700'
-                  : 'border-border bg-white text-mutedText'
+                  : 'border-rule bg-white text-mute'
               }`}
             >
               {c.label}
@@ -396,15 +396,15 @@ export function OttoView() {
 
   return (
     <div className="flex-1 min-w-0 overflow-hidden bg-white flex flex-col">
-      <div className="flex items-center gap-2 px-3 py-2 border-b border-border/50 shrink-0">
+      <div className="flex items-center gap-2 px-3 py-2 border-b border-rule/50 shrink-0">
         <span className="inline-flex items-center justify-center h-5 w-5 rounded-full bg-crimson text-white">
           <OttoI className="h-3 w-3" />
         </span>
         <div className="min-w-0 flex-1">
           <p className="text-[11px] font-semibold text-navy leading-tight">Otto</p>
-          <p className="text-[9px] text-mutedText">· AI analyst</p>
+          <p className="text-[9px] text-mute">· AI analyst</p>
         </div>
-        <span className="text-[9px] text-mutedText">live · claude-sonnet</span>
+        <span className="text-[9px] text-mute">live · claude-sonnet</span>
       </div>
 
       <div
@@ -467,10 +467,10 @@ export function OttoView() {
         </AnimatePresence>
       </div>
 
-      <div className="px-3 py-2 border-t border-border shrink-0">
+      <div className="px-3 py-2 border-t border-rule shrink-0">
         <div
           data-cursor-target="otto-input"
-          className="h-6 rounded bg-offWhite border border-border flex items-center px-2 text-[9px] text-mutedText"
+          className="h-6 rounded bg-cream border border-rule flex items-center px-2 text-[9px] text-mute"
         >
           Ask Otto anything…
         </div>
@@ -491,20 +491,20 @@ export function LensView() {
       <ModuleHeader eyebrow="Lens" title="Sales Overview" />
       <div className="px-3 pt-2 pb-1 flex items-center justify-between shrink-0">
         <div className="flex gap-1">
-          <span className="text-[8px] px-1.5 py-0.5 rounded border border-border text-mutedText">7d</span>
+          <span className="text-[8px] px-1.5 py-0.5 rounded border border-rule text-mute">7d</span>
           <span
             data-cursor-target="lens-range-30d"
             className={`text-[8px] px-1.5 py-0.5 rounded border font-semibold transition-colors ${
               range30dActive
                 ? 'border-crimson bg-crimson text-white ring-2 ring-crimson/30'
-                : 'border-crimson bg-crimsonLight text-crimson'
+                : 'border-crimson bg-crimsonTint text-crimson'
             }`}
           >
             30d
           </span>
-          <span className="text-[8px] px-1.5 py-0.5 rounded border border-border text-mutedText">YTD</span>
+          <span className="text-[8px] px-1.5 py-0.5 rounded border border-rule text-mute">YTD</span>
         </div>
-        <div className="h-1.5 rounded-sm bg-mutedText/30 w-16" />
+        <div className="h-1.5 rounded-sm bg-mute/30 w-16" />
       </div>
       <div className="grid grid-cols-2 gap-1.5 px-3 pb-2 shrink-0">
         {[
@@ -513,8 +513,8 @@ export function LensView() {
           { color: '#d97706', points: '0,8 10,9 20,7 30,8 40,10 50,7 60,5' },
           { color: '#10b981', points: '0,10 10,9 20,7 30,8 40,5 50,4 60,2' },
         ].map((k, i) => (
-          <div key={i} className="bg-offWhite border border-border rounded px-2 py-1.5">
-            <div className="h-1.5 rounded-sm bg-mutedText/30 w-10 mb-1" />
+          <div key={i} className="bg-cream border border-rule rounded px-2 py-1.5">
+            <div className="h-1.5 rounded-sm bg-mute/30 w-10 mb-1" />
             <div className="h-2.5 rounded-sm bg-navy/70 w-14 mb-1" />
             <svg viewBox="0 0 60 16" preserveAspectRatio="none" className="w-full h-3">
               <polyline points={k.points} fill="none" stroke={k.color} strokeWidth="1.2" strokeLinecap="round" />
@@ -528,16 +528,16 @@ export function LensView() {
           initial={{ opacity: 0.4 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.4 }}
-          className="border border-border rounded bg-white h-full p-2 flex flex-col"
+          className="border border-rule rounded bg-white h-full p-2 flex flex-col"
         >
           <div className="flex items-center justify-between mb-1.5">
             <div className="h-1.5 rounded-sm bg-navy/60 w-20" />
             <div className="flex gap-1.5">
-              <span className="flex items-center gap-1 text-[8px] text-mutedText">
-                <span className="h-1.5 w-1.5 rounded-full bg-blue-500" /> <span className="h-1.5 w-6 bg-mutedText/30 rounded-sm" />
+              <span className="flex items-center gap-1 text-[8px] text-mute">
+                <span className="h-1.5 w-1.5 rounded-full bg-blue-500" /> <span className="h-1.5 w-6 bg-mute/30 rounded-sm" />
               </span>
-              <span className="flex items-center gap-1 text-[8px] text-mutedText">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> <span className="h-1.5 w-6 bg-mutedText/30 rounded-sm" />
+              <span className="flex items-center gap-1 text-[8px] text-mute">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> <span className="h-1.5 w-6 bg-mute/30 rounded-sm" />
               </span>
             </div>
           </div>
@@ -584,7 +584,7 @@ export function CourierView() {
                 key={i}
                 data-cursor-target={`courier-row-${i}`}
                 className={`flex items-center gap-2 border rounded px-2 py-1.5 transition-colors ${
-                  hovered ? 'border-crimson bg-crimsonLight shadow-sm' : 'border-border bg-white'
+                  hovered ? 'border-crimson bg-crimsonTint shadow-sm' : 'border-rule bg-white'
                 }`}
               >
                 <span
@@ -595,10 +595,10 @@ export function CourierView() {
                 </span>
                 <div className="min-w-0 flex-1">
                   <div className={`h-2 rounded-sm bg-navy/65 ${d.line}`} />
-                  <div className="h-1.5 rounded-sm bg-mutedText/30 w-6/12 mt-1" />
+                  <div className="h-1.5 rounded-sm bg-mute/30 w-6/12 mt-1" />
                 </div>
-                <span className="text-[8px] text-mutedText whitespace-nowrap">{d.sched}</span>
-                <span className={`h-1.5 rounded-sm bg-mutedText/30 ${d.chip}`} />
+                <span className="text-[8px] text-mute whitespace-nowrap">{d.sched}</span>
+                <span className={`h-1.5 rounded-sm bg-mute/30 ${d.chip}`} />
               </div>
             );
           })}
@@ -681,11 +681,11 @@ export function PrismView() {
                 </span>
               </div>
               <div className="h-2 rounded-sm bg-navy/65 w-11/12" />
-              <div className="h-1.5 rounded-sm bg-mutedText/30 w-9/12" />
-              <div className="h-1.5 rounded-sm bg-mutedText/30 w-7/12" />
+              <div className="h-1.5 rounded-sm bg-mute/30 w-9/12" />
+              <div className="h-1.5 rounded-sm bg-mute/30 w-7/12" />
               <div className="flex items-center justify-between mt-0.5">
-                <div className="h-1.5 rounded-sm bg-mutedText/30 w-8" />
-                <span className="text-[8px] text-mutedText">~3m</span>
+                <div className="h-1.5 rounded-sm bg-mute/30 w-8" />
+                <span className="text-[8px] text-mute">~3m</span>
               </div>
             </div>
           ))}
@@ -833,7 +833,7 @@ function AgentShowcaseCard({
   return (
     <div
       className={`rounded-md border bg-white border-t-[3px] ${t.border} p-2 flex flex-col gap-1.5 shadow-sm transition-colors ${
-        expanded ? 'border-crimson ring-1 ring-crimson/30' : 'border-border'
+        expanded ? 'border-crimson ring-1 ring-crimson/30' : 'border-rule'
       }`}
     >
       <div>
@@ -847,13 +847,13 @@ function AgentShowcaseCard({
           >
             {t.label}
           </span>
-          <span className="inline-flex items-center text-[8px] font-medium px-1 py-[1px] rounded border border-border text-mutedText truncate max-w-full">
+          <span className="inline-flex items-center text-[8px] font-medium px-1 py-[1px] rounded border border-rule text-mute truncate max-w-full">
             {agent.category}
           </span>
         </div>
       </div>
 
-      <div className="flex items-center gap-1 text-[9px] text-mutedText">
+      <div className="flex items-center gap-1 text-[9px] text-mute">
         <svg className="h-2.5 w-2.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
           <circle cx="12" cy="12" r="9" />
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 7v5l3 2" />
@@ -861,8 +861,8 @@ function AgentShowcaseCard({
         <span className="truncate">{agent.schedule}</span>
       </div>
 
-      <div className="border-t border-border pt-1.5">
-        <p className="text-[8px] text-mutedText uppercase tracking-widest mb-1">
+      <div className="border-t border-rule pt-1.5">
+        <p className="text-[8px] text-mute uppercase tracking-widest mb-1">
           Recent runs
         </p>
         <div className="flex items-end gap-[1.5px] h-3">
@@ -878,25 +878,25 @@ function AgentShowcaseCard({
         </div>
       </div>
 
-      <div className="grid grid-cols-4 gap-1 border-t border-border pt-1.5">
+      <div className="grid grid-cols-4 gap-1 border-t border-rule pt-1.5">
         <div>
-          <p className="text-[7px] text-mutedText uppercase tracking-wider">Success</p>
+          <p className="text-[7px] text-mute uppercase tracking-wider">Success</p>
           <p className={`font-mono font-bold text-[10px] mt-0.5 ${successTone}`}>
             {agent.successRate}%
           </p>
         </div>
         <div>
-          <p className="text-[7px] text-mutedText uppercase tracking-wider">Avg</p>
+          <p className="text-[7px] text-mute uppercase tracking-wider">Avg</p>
           <p className="font-mono font-medium text-[10px] mt-0.5 text-navy">
             {agent.avgDuration}
           </p>
         </div>
         <div>
-          <p className="text-[7px] text-mutedText uppercase tracking-wider">Last</p>
+          <p className="text-[7px] text-mute uppercase tracking-wider">Last</p>
           <p className="font-medium text-[10px] mt-0.5 text-navy truncate">{agent.lastRun}</p>
         </div>
         <div>
-          <p className="text-[7px] text-mutedText uppercase tracking-wider">Next</p>
+          <p className="text-[7px] text-mute uppercase tracking-wider">Next</p>
           <p className="font-medium text-[10px] mt-0.5 text-navy truncate">{agent.nextRun}</p>
         </div>
       </div>
@@ -944,7 +944,7 @@ export function ActionsView() {
       <div className="flex-1 overflow-hidden px-2 py-2">
         <div className="grid grid-cols-4 gap-1 h-full">
           {cols.map((c) => (
-            <div key={c.key} className="flex flex-col gap-1 rounded bg-offWhite/60 border border-border p-1">
+            <div key={c.key} className="flex flex-col gap-1 rounded bg-cream/60 border border-rule p-1">
               <div className="flex items-center gap-1 px-1 pt-0.5 shrink-0">
                 <span className={`h-1.5 w-1.5 rounded-full ${c.dot} ${c.pulse ? 'animate-pulse' : ''}`} />
                 <span className="text-[8px] font-bold uppercase tracking-widest text-navy truncate">{c.label}</span>
@@ -961,10 +961,10 @@ export function ActionsView() {
                           : { x: 0, opacity: 1, scale: 1 }
                       }
                       transition={{ duration: 0.7, ease: [0.3, 0.8, 0.3, 1] }}
-                      className={`relative bg-white border border-border rounded border-l-2 ${c.border} p-1.5 flex flex-col gap-1`}
+                      className={`relative bg-white border border-rule rounded border-l-2 ${c.border} p-1.5 flex flex-col gap-1`}
                     >
                       <div className="h-1.5 rounded-sm bg-navy/70 w-11/12" />
-                      <div className="h-1 rounded-sm bg-mutedText/30 w-8/12" />
+                      <div className="h-1 rounded-sm bg-mute/30 w-8/12" />
                       {isTopPending && (
                         <div
                           data-cursor-target="actions-approve-top"
@@ -985,10 +985,10 @@ export function ActionsView() {
                     initial={{ opacity: 0, y: -8, scale: 0.9 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ delay: 0.6, duration: 0.4, ease: 'easeOut' }}
-                    className={`bg-white border border-border rounded border-l-2 ${c.border} p-1.5 flex flex-col gap-1`}
+                    className={`bg-white border border-rule rounded border-l-2 ${c.border} p-1.5 flex flex-col gap-1`}
                   >
                     <div className="h-1.5 rounded-sm bg-navy/70 w-11/12" />
-                    <div className="h-1 rounded-sm bg-mutedText/30 w-8/12" />
+                    <div className="h-1 rounded-sm bg-mute/30 w-8/12" />
                   </motion.div>
                 )}
               </div>

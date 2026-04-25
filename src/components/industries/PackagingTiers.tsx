@@ -10,75 +10,78 @@ export function PackagingTiers({
 }) {
   const interestSlug = navLabel ? encodeURIComponent(navLabel) : '';
   return (
-    <section className="bg-white">
-      <div className="max-w-7xl mx-auto px-4 py-16 lg:py-20">
-        <div className="max-w-3xl mb-10">
-          <p className="text-xs font-bold uppercase tracking-widest text-crimson mb-4">
-            How we package the work
-          </p>
-          <h2 className="text-3xl font-bold tracking-tight text-navy">
-            Fully managed by RevenuePoint. Three tiers.
+    <section className="bg-paper">
+      <div className="max-w-editorial mx-auto px-6 lg:px-8 py-section">
+        <div className="max-w-3xl mb-12">
+          <p className="eyebrow mb-4">How we package the work</p>
+          <h2 className="text-d1 font-serif font-medium text-ink">
+            <em>Fully managed</em> by RevenuePoint. Three tiers.
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-bodyText">
-            Flat monthly pricing. One named administrator. We keep the instance clean as your
-            business changes.
+          <p className="mt-4 text-lede leading-[1.65] text-inkSoft max-w-prose">
+            Flat monthly pricing. One named administrator. We keep the instance clean as your business changes.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {tiers.map((t, i) => (
-            <div
-              key={t.name}
-              className={`border rounded-lg p-6 flex flex-col ${
-                i === 1
-                  ? 'border-crimson bg-crimsonLight'
-                  : 'border-border bg-offWhite'
-              }`}
-            >
-              <div className="flex items-baseline justify-between">
-                <div className="text-lg font-bold text-navy">{t.name}</div>
-                <div className="text-xs text-mutedText font-semibold">{t.duration}</div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {tiers.map((t, i) => {
+            const featured = i === 1;
+            return (
+              <div
+                key={t.name}
+                className={`relative border bg-cream p-6 lg:p-8 flex flex-col ${
+                  featured ? 'border-crimson lg:scale-[1.02] shadow-editorial' : 'border-ruleSoft'
+                }`}
+              >
+                {featured && (
+                  <div className="absolute -top-3 left-6">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.16em] bg-crimson text-paper px-2 py-1">
+                      Most chosen
+                    </span>
+                  </div>
+                )}
+                <div className="flex items-baseline justify-between mt-2">
+                  <p className="font-serif italic text-[1.5rem] text-ink">{t.name}</p>
+                  <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-mute">{t.duration}</p>
+                </div>
+                <p className="mt-3 text-sm text-inkSoft leading-relaxed">{t.headline}</p>
+                <ul className="mt-6 space-y-3 text-sm text-ink flex-1">
+                  {t.includes.map((inc) => (
+                    <li key={inc} className="flex gap-3 leading-relaxed">
+                      <span className="text-crimson font-mono shrink-0" aria-hidden="true">→</span>
+                      <span>{inc}</span>
+                    </li>
+                  ))}
+                </ul>
+                {interestSlug && (
+                  <Link
+                    href={`/contact/?interest=${interestSlug}+${encodeURIComponent(t.name)}`}
+                    className={`mt-7 inline-flex items-center gap-2 font-serif italic text-[15px] transition-colors ${
+                      featured ? 'text-crimson hover:text-crimsonDeep' : 'text-ink hover:text-crimson'
+                    }`}
+                  >
+                    Book a working session <span aria-hidden="true">→</span>
+                  </Link>
+                )}
               </div>
-              <div className="mt-2 text-sm text-bodyText leading-relaxed">{t.headline}</div>
-              <ul className="mt-5 space-y-2 text-sm text-bodyText flex-1">
-                {t.includes.map((inc) => (
-                  <li key={inc} className="flex gap-2">
-                    <span className="text-crimson font-bold shrink-0">—</span>
-                    <span>{inc}</span>
-                  </li>
-                ))}
-              </ul>
-              {interestSlug && (
-                <Link
-                  href={`/contact/?interest=${interestSlug}+${encodeURIComponent(t.name)}`}
-                  className={`mt-6 inline-flex items-center text-sm font-semibold ${
-                    i === 1
-                      ? 'text-crimson hover:text-crimsonDark'
-                      : 'text-navy hover:text-crimson'
-                  } transition-colors`}
-                >
-                  Book a working session →
-                </Link>
-              )}
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        {/* Managed-services + consulting hand-offs */}
-        <div className="mt-10 border-t border-border pt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <p className="text-sm text-bodyText">
+        {/* Hand-offs */}
+        <div className="mt-12 border-t border-rule pt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <p className="serif-italic text-base text-inkSoft">
             Need to see the full managed-services pricing, or meet the team who runs it?
           </p>
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold">
+          <div className="flex flex-wrap gap-x-8 gap-y-2 text-sm">
             <Link
               href="/salesforce/managed-services/pricing/"
-              className="text-crimson hover:text-crimsonDark transition-colors"
+              className="font-serif italic text-crimson hover:text-crimsonDeep transition-colors"
             >
               See full managed-services pricing →
             </Link>
             <Link
               href="/salesforce/"
-              className="text-navy hover:text-crimson transition-colors"
+              className="font-serif italic text-ink hover:text-crimson transition-colors"
             >
               Meet our 60+ certified consultants →
             </Link>

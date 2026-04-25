@@ -137,14 +137,19 @@ export default function SAPPage() {
   return (
     <>
       <HeroSection
-        eyebrow="SAP MANAGED SERVICES"
-        heading="Your outsourced SAP admin team. Business One and S/4HANA, fully managed by RevenuePoint."
+        byline="SAP · Managed services"
+        heading={
+          <>
+            Your outsourced <em>SAP admin team</em>. Business One and S/4HANA, fully managed.
+          </>
+        }
         body="A named consultant and project manager. A block of hours each month. Two-week sprints to ship the work. Inventory, financial close, end-user support, workflow tuning — everything an in-house SAP admin would do, sized to a smaller team that doesn't need a full-time hire."
         ctas={[
           { label: 'Start a managed services engagement', href: '#lead-form', variant: 'primary' },
           { label: 'See pricing', href: '/sap/pricing/', variant: 'secondary' },
         ]}
-        variant="navy"
+        issue="P"
+        sidenote="Business One + S/4HANA · Two-week sprints · Month-to-month · Named consultant + PM."
       />
 
       {/* What's included */}
@@ -164,7 +169,7 @@ export default function SAPPage() {
       </section>
 
       {/* How it works */}
-      <section className="bg-offWhite py-16 lg:py-24 border-y border-border">
+      <section className="bg-cream py-16 lg:py-24 border-y border-rule">
         <div className="max-w-7xl mx-auto px-4">
           <SectionHeader
             eyebrow="How it works"
@@ -176,39 +181,56 @@ export default function SAPPage() {
       </section>
 
       {/* Who it's for */}
-      <section className="bg-white py-16 lg:py-24">
-        <div className="max-w-5xl mx-auto px-4">
+      <section className="bg-paper py-section">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
           <SectionHeader
             eyebrow="Who it's for"
-            heading="Four situations where managed services is the right shape"
+            heading={
+              <>
+                Four situations where managed services is the <em>right shape</em>.
+              </>
+            }
+            align="left"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {audienceSegments.map((segment) => (
-              <div
+            {audienceSegments.map((segment, idx) => (
+              <article
                 key={segment.headline}
-                className="border border-border rounded-sm bg-white p-6"
+                className="relative border border-ruleSoft bg-cream p-6 lg:p-7"
               >
-                <h3 className="text-lg font-semibold text-navy mb-3">{segment.headline}</h3>
-                <p className="text-sm text-bodyText leading-relaxed">{segment.body}</p>
-              </div>
+                <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-rule" />
+                <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-crimson" />
+                <p className="font-serif italic text-[1.25rem] text-crimson mt-3 leading-none">
+                  {['i', 'ii', 'iii', 'iv'][idx]}
+                </p>
+                <h3 className="mt-3 font-serif text-[1.125rem] text-ink leading-tight font-medium">
+                  {segment.headline}
+                </h3>
+                <p className="mt-3 text-sm text-inkSoft leading-relaxed">{segment.body}</p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
       {/* Pricing summary */}
-      <section className="bg-offWhite py-16 lg:py-24 border-y border-border">
-        <div className="max-w-3xl mx-auto px-4 text-center">
+      <section className="bg-cream border-y border-ruleSoft py-section">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
           <SectionHeader
             eyebrow="Pricing"
-            heading="Sized to your modules, your users, and your integrations"
+            heading={
+              <>
+                Sized to your <em>modules</em>, your users, your integrations.
+              </>
+            }
             body="Every SAP engagement is scoped — module mix, user count, integration footprint, and how active your roadmap is. There are no off-the-shelf tiers; there is a quote that fits your operations."
+            align="center"
           />
           <Link
             href="/sap/pricing/"
-            className="inline-flex items-center justify-center px-5 py-2.5 rounded-sm bg-crimson text-white text-sm font-semibold hover:bg-crimsonDark transition-colors"
+            className="inline-flex items-center gap-2 border border-crimson text-crimson font-serif italic text-[15px] px-5 py-2 hover:bg-crimsonTint transition-colors"
           >
-            See how we scope it &rarr;
+            See how we scope it <span aria-hidden="true">→</span>
           </Link>
         </div>
       </section>
@@ -225,57 +247,55 @@ export default function SAPPage() {
       </section>
 
       {/* Foundry jumpoff */}
-      <section className="bg-navy text-white">
-        <div className="max-w-7xl mx-auto px-4 py-16 lg:py-20">
-          <div className="max-w-3xl mb-10">
-            <p className="text-xs font-bold uppercase tracking-widest text-crimson mb-4">
-              Foundry &middot; Orchestrated intelligence
+      <section className="bg-ink text-paper">
+        <div className="max-w-editorial mx-auto px-6 lg:px-8 py-section">
+          <div className="max-w-3xl mb-12">
+            <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-paper/70 inline-flex items-center gap-3 mb-4">
+              <span className="h-px w-8 bg-crimson" />
+              Foundry · Orchestrated intelligence
             </p>
-            <h2 className="text-3xl font-bold tracking-tight text-white">
-              Foundry connects your SAP data to the rest of your stack.
+            <h2 className="text-d1 font-serif font-medium text-paper leading-tight">
+              Foundry connects your <em className="text-crimson">SAP data</em> to the rest of your stack.
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-gray-300">
-              Once your SAP is humming, Foundry pipes the data inside it — inventory, financials,
-              sales — into live dashboards, AI reports, and agents that take action across
-              Salesforce, accounting, telephony, and the rest of your systems. Fully managed by
-              RevenuePoint.
+            <p className="mt-4 text-lede leading-[1.65] text-paper/80 max-w-prose">
+              Once your SAP is humming, Foundry pipes the data inside it — inventory, financials, sales — into live dashboards, AI reports, and agents that take action across Salesforce, accounting, telephony, and the rest of your systems. Fully managed by RevenuePoint.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {foundryPillars.map((pillar) => (
-              <div
-                key={pillar.eyebrow}
-                className="border border-white/10 rounded-lg bg-white/[0.03] p-5"
-              >
-                <div className="text-[10px] uppercase tracking-widest text-crimson font-semibold">
+              <div key={pillar.eyebrow} className="border-t border-paper/20 pt-5 relative">
+                <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-crimson" />
+                <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-paper/60">
                   {pillar.eyebrow}
-                </div>
-                <div className="mt-2 text-base font-bold text-white">{pillar.headline}</div>
-                <p className="mt-3 text-sm text-gray-300 leading-relaxed">{pillar.body}</p>
+                </p>
+                <h3 className="mt-3 font-serif text-[1.25rem] text-paper font-medium leading-tight">
+                  {pillar.headline}
+                </h3>
+                <p className="mt-3 text-sm text-paper/75 leading-relaxed">{pillar.body}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3">
+          <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3">
             <Link
               href="/foundry/"
-              className="inline-flex items-center justify-center px-5 py-2.5 rounded-sm bg-crimson text-white text-sm font-semibold hover:bg-crimsonDark transition-colors"
+              className="inline-flex items-center gap-2 border border-paper text-paper font-serif italic text-[15px] px-5 py-2 hover:bg-paper hover:text-ink transition-colors"
             >
-              See Foundry in full &rarr;
+              See Foundry in full <span aria-hidden="true">→</span>
             </Link>
             <Link
               href="/contact/?interest=Foundry"
-              className="text-sm text-gray-300 hover:text-white underline underline-offset-4"
+              className="font-serif italic text-sm text-paper/80 hover:text-paper underline underline-offset-4"
             >
-              Request a Foundry demo &rarr;
+              Request a Foundry demo →
             </Link>
           </div>
         </div>
       </section>
 
       {/* Lead Form */}
-      <section className="bg-offWhite py-16 lg:py-24 border-t border-border">
+      <section className="bg-cream py-16 lg:py-24 border-t border-rule">
         <div className="max-w-3xl mx-auto px-4">
           <SectionHeader
             heading="Tell us about your SAP managed services needs"

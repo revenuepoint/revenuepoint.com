@@ -13,53 +13,59 @@ export const metadata = buildMetadata({
 
 export default function ContactPage() {
   return (
-    <section className="bg-white py-16 lg:py-24">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="lg:grid lg:grid-cols-2 lg:gap-16">
+    <section className="bg-paper py-section">
+      <div className="max-w-editorial mx-auto px-6 lg:px-8">
+        <div className="lg:grid lg:grid-cols-12 lg:gap-16">
           {/* Left — contact details */}
-          <div className="mb-12 lg:mb-0">
+          <div className="mb-12 lg:mb-0 lg:col-span-5">
             <SectionHeader
-              heading="Let's find out if we're a good fit."
-              body="We respond to every submission within one business day. We're selective about the engagements we take on — not to be difficult, but because we only work with clients where we're confident we can deliver results. Tell us about your business."
+              eyebrow="Get in touch"
+              heading={
+                <>
+                  Let&rsquo;s find out if we&rsquo;re a <em>good fit</em>.
+                </>
+              }
+              body="We respond to every submission within one business day. We're selective about the engagements we take on — not to be difficult, but because we only work with clients where we're confident we can deliver results."
               align="left"
             />
-            <div className="space-y-4 text-sm text-bodyText">
-              <div className="space-y-1">
-                <p>
-                  <a href="mailto:team@revenuepoint.com" className="hover:text-crimson transition-colors">
-                    team@revenuepoint.com
-                  </a>
-                </p>
-                <p>
-                  <a href="tel:+13329001150" className="hover:text-crimson transition-colors">
-                    +1 (332) 900-1150
-                  </a>
-                </p>
-              </div>
-              <p className="text-mutedText leading-relaxed">
+            <div className="space-y-4 text-sm text-inkSoft border-t border-rule pt-6 mt-2">
+              <p className="eyebrow mb-3">Direct lines</p>
+              <p>
+                <a href="mailto:team@revenuepoint.com" className="serif-italic text-ink hover:text-crimson transition-colors">
+                  team@revenuepoint.com
+                </a>
+              </p>
+              <p>
+                <a href="tel:+13329001150" className="font-mono text-ink hover:text-crimson transition-colors">
+                  +1 (332) 900-1150
+                </a>
+              </p>
+              <address className="not-italic font-mono text-xs text-mute leading-relaxed pt-3">
                 Three World Financial Center<br />
                 200 Vesey Street, 24th Floor<br />
                 New York, NY 10281
-              </p>
-              <p className="pt-2">
-                <span className="text-mutedText">Prefer to schedule directly? </span>
+              </address>
+              <p className="pt-4 border-t border-ruleSoft mt-4">
+                <span className="text-mute">Prefer to schedule directly? </span>
                 <a
                   href={process.env.NEXT_PUBLIC_CALENDLY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-crimson font-semibold hover:text-crimsonDark transition-colors"
+                  className="serif-italic text-crimson hover:text-crimsonDeep transition-colors"
                 >
-                  Book an Intro Call →
+                  Book an intro call →
                 </a>
               </p>
             </div>
           </div>
 
           {/* Right — form */}
-          <div>
-            <Suspense fallback={<LeadForm interest="General" />}>
-              <ContactFormSection />
-            </Suspense>
+          <div className="lg:col-span-7">
+            <div className="border border-rule bg-cream p-6 lg:p-8">
+              <Suspense fallback={<LeadForm interest="General" />}>
+                <ContactFormSection />
+              </Suspense>
+            </div>
           </div>
         </div>
       </div>

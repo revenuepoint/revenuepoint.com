@@ -22,19 +22,19 @@ export const navItems: NavItem[] = [
     href: '/salesforce/',
     groups: [
       {
-        heading: 'Salesforce',
+        heading: 'Customer Relationship Management',
         links: [
-          { label: 'Consulting', href: '/salesforce/' },
-          { label: 'Implementations', href: '/salesforce/implementations/' },
-          { label: 'Health Check', href: '/salesforce/health-check/' },
-          { label: 'Training', href: '/salesforce/training/' },
+          { label: 'Salesforce Consulting', href: '/salesforce/' },
+          { label: 'Salesforce Implementations', href: '/salesforce/implementations/' },
+          { label: 'Salesforce Training', href: '/salesforce/training/' },
+          { label: 'CRM Health Check', href: '/salesforce/health-check/' },
         ],
       },
       {
         heading: 'Managed Services',
         links: [
-          { label: 'Salesforce Managed', href: '/salesforce/managed-services/' },
-          { label: 'SAP Managed', href: '/sap/' },
+          { label: 'Salesforce', href: '/salesforce/managed-services/' },
+          { label: 'SAP Business One and S/4HANA', href: '/sap/' },
         ],
       },
       {

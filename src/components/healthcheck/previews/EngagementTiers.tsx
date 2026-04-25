@@ -19,7 +19,7 @@ const tiers = [
 export function EngagementTiers() {
   return (
     <div>
-      <div className="text-[10px] uppercase tracking-widest text-mutedText font-semibold">
+      <div className="text-[10px] uppercase tracking-widest text-mute font-semibold">
         Proposed engagement
       </div>
       <div className="mt-3 space-y-2">
@@ -27,16 +27,16 @@ export function EngagementTiers() {
           <div
             key={t.name}
             className={`border rounded-md p-3 ${
-              i === 0 ? 'border-crimson bg-crimsonLight' : 'border-border bg-white'
+              i === 0 ? 'border-crimson bg-crimsonTint' : 'border-rule bg-white'
             }`}
           >
             <div className="flex items-baseline justify-between gap-2">
               <div className="text-sm font-bold text-navy">{t.name}</div>
-              <div className="text-[10px] uppercase tracking-widest text-mutedText">
+              <div className="text-[10px] uppercase tracking-widest text-mute">
                 {t.duration}
               </div>
             </div>
-            <div className="mt-1 text-xs text-bodyText leading-snug">{t.outcome}</div>
+            <div className="mt-1 text-xs text-ink leading-snug">{t.outcome}</div>
           </div>
         ))}
       </div>

@@ -30,12 +30,12 @@ export function WhoItsFor() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {personas.map((p) => (
-            <div key={p.role} className="border border-border rounded-lg bg-offWhite p-6">
+            <div key={p.role} className="border border-rule rounded-lg bg-cream p-6">
               <div className="text-[10px] uppercase tracking-widest text-crimson font-bold">
                 {p.role}
               </div>
               <div className="mt-2 text-lg font-bold text-navy leading-snug">{p.line}</div>
-              <div className="mt-3 text-sm text-bodyText leading-relaxed">{p.body}</div>
+              <div className="mt-3 text-sm text-ink leading-relaxed">{p.body}</div>
             </div>
           ))}
         </div>

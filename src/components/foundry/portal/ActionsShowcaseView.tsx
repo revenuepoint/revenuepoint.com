@@ -192,7 +192,7 @@ function FeaturedCard({
 }) {
   return (
     <div
-      className={`bg-white rounded border border-border border-l-4 ${BORDER[phase]} p-2 flex flex-col gap-1.5 shadow-sm`}
+      className={`bg-white rounded border border-rule border-l-4 ${BORDER[phase]} p-2 flex flex-col gap-1.5 shadow-sm`}
     >
       <div className="flex items-start gap-1.5">
         <div className="flex-1 min-w-0 flex flex-col gap-1">
@@ -202,9 +202,9 @@ function FeaturedCard({
         <RiskChip risk="high" />
       </div>
 
-      <div className="flex items-center gap-1 text-[9px] text-mutedText">
+      <div className="flex items-center gap-1 text-[9px] text-mute">
         <BotI className="h-2.5 w-2.5 text-crimson shrink-0" />
-        <span className="h-1.5 rounded-sm bg-mutedText/30 w-20" />
+        <span className="h-1.5 rounded-sm bg-mute/30 w-20" />
       </div>
 
       <div className="flex flex-wrap gap-1">
@@ -214,12 +214,12 @@ function FeaturedCard({
       </div>
 
       <div className="flex flex-col gap-0.5">
-        <div className="h-1.5 rounded-sm bg-mutedText/30 w-11/12" />
-        <div className="h-1.5 rounded-sm bg-mutedText/30 w-9/12" />
+        <div className="h-1.5 rounded-sm bg-mute/30 w-11/12" />
+        <div className="h-1.5 rounded-sm bg-mute/30 w-9/12" />
       </div>
 
       {(phase === 'pending' || phase === 'approving') && (
-        <div className="flex items-center gap-1 pt-1.5 border-t border-border">
+        <div className="flex items-center gap-1 pt-1.5 border-t border-rule">
           <div
             className={`flex-1 text-center text-[9px] font-bold py-1 rounded border transition-all duration-300 ${
               phase === 'approving'
@@ -229,14 +229,14 @@ function FeaturedCard({
           >
             {phase === 'approving' ? 'Approved ✓' : 'Approve'}
           </div>
-          <div className="flex-1 text-center text-[9px] font-bold py-1 rounded border bg-offWhite text-mutedText border-border">
+          <div className="flex-1 text-center text-[9px] font-bold py-1 rounded border bg-cream text-mute border-rule">
             Reject
           </div>
         </div>
       )}
 
       {phase === 'queued' && (
-        <div className="flex items-center gap-1 pt-1.5 border-t border-border text-[9px] text-mutedText">
+        <div className="flex items-center gap-1 pt-1.5 border-t border-rule text-[9px] text-mute">
           <ClockI className="h-2.5 w-2.5 text-blue-500 shrink-0" />
           <span className="truncate">
             Approved by <span className="text-navy font-medium">{action.approver}</span> · just now
@@ -245,14 +245,14 @@ function FeaturedCard({
       )}
 
       {phase === 'running' && (
-        <div className="flex flex-col gap-1 pt-1.5 border-t border-border">
-          <div className="flex items-center gap-1 text-[9px] text-mutedText">
+        <div className="flex flex-col gap-1 pt-1.5 border-t border-rule">
+          <div className="flex items-center gap-1 text-[9px] text-mute">
             <SpinnerI className="h-2.5 w-2.5 text-cyan-600" />
             <span>
               Step <span className="font-mono font-semibold text-navy">{runningStep} of {action.totalSteps}</span>
             </span>
           </div>
-          <div className="h-1 w-full bg-lightGray rounded-full overflow-hidden">
+          <div className="h-1 w-full bg-bone rounded-full overflow-hidden">
             <div
               className="h-full bg-cyan-500"
               style={{
@@ -265,7 +265,7 @@ function FeaturedCard({
       )}
 
       {phase === 'done' && (
-        <div className="flex items-center gap-1 pt-1.5 border-t border-border text-[9px] text-mutedText">
+        <div className="flex items-center gap-1 pt-1.5 border-t border-rule text-[9px] text-mute">
           <CheckI className="h-2.5 w-2.5 text-emerald-600 shrink-0" />
           <span>
             <span className="font-mono text-navy">{action.duration}</span> · just now
@@ -286,7 +286,7 @@ function BgCard({ phase, widthIdx }: { phase: CardPhase; widthIdx: number }) {
   const w2 = widths[(widthIdx + 1) % widths.length];
   return (
     <div
-      className={`bg-white rounded border border-border border-l-4 ${BORDER[phase]} p-2 flex flex-col gap-1.5 opacity-70`}
+      className={`bg-white rounded border border-rule border-l-4 ${BORDER[phase]} p-2 flex flex-col gap-1.5 opacity-70`}
     >
       <div className="flex items-start gap-1.5">
         <div className="flex-1 min-w-0 flex flex-col gap-1">
@@ -295,12 +295,12 @@ function BgCard({ phase, widthIdx }: { phase: CardPhase; widthIdx: number }) {
         </div>
       </div>
       <div className="flex items-center gap-1">
-        <BotI className="h-2 w-2 text-mutedText shrink-0" />
-        <span className="h-1.5 rounded-sm bg-mutedText/25 w-16" />
+        <BotI className="h-2 w-2 text-mute shrink-0" />
+        <span className="h-1.5 rounded-sm bg-mute/25 w-16" />
       </div>
       <div className="flex gap-1">
-        <span className="h-2 w-8 rounded-sm bg-mutedText/25" />
-        <span className="h-2 w-10 rounded-sm bg-mutedText/25" />
+        <span className="h-2 w-8 rounded-sm bg-mute/25" />
+        <span className="h-2 w-10 rounded-sm bg-mute/25" />
       </div>
     </div>
   );
@@ -327,11 +327,11 @@ function DetailModal({
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ opacity: { duration: 0.25 }, scale: { duration: 0.3 } }}
-      className="pointer-events-auto w-[88%] max-w-[620px] max-h-[88%] rounded-lg bg-white shadow-2xl border border-border flex flex-col"
+      className="pointer-events-auto w-[88%] max-w-[620px] max-h-[88%] rounded-lg bg-white shadow-2xl border border-rule flex flex-col"
       aria-hidden="true"
     >
       {/* Header */}
-      <div className="px-4 py-3 border-b border-border flex flex-col gap-2">
+      <div className="px-4 py-3 border-b border-rule flex flex-col gap-2">
         <div className="flex flex-col gap-1">
           <div className={`h-2.5 rounded-sm bg-navy/80 ${action.titleWidths[0]}`} />
           <div className={`h-2.5 rounded-sm bg-navy/70 ${action.titleWidths[1]}`} />
@@ -345,9 +345,9 @@ function DetailModal({
             <SystemChip key={s.label} chip={s} />
           ))}
         </div>
-        <div className="flex items-center gap-1.5 text-[10px] text-mutedText">
+        <div className="flex items-center gap-1.5 text-[10px] text-mute">
           <BotI className="h-2.5 w-2.5 text-crimson" />
-          <span className="h-1.5 rounded-sm bg-mutedText/30 w-28" />
+          <span className="h-1.5 rounded-sm bg-mute/30 w-28" />
           <span>·</span>
           <span>requested 6m ago</span>
         </div>
@@ -358,7 +358,7 @@ function DetailModal({
         {/* LEFT: summary + steps + rationale */}
         <div className="col-span-2 flex flex-col gap-3 min-h-0 overflow-hidden">
           <section>
-            <p className="text-[8px] uppercase tracking-widest text-mutedText font-semibold mb-1">
+            <p className="text-[8px] uppercase tracking-widest text-mute font-semibold mb-1">
               What Will Happen
             </p>
             <div className="bg-navy/[0.03] border border-navy/10 rounded px-2.5 py-1.5 flex flex-col gap-1">
@@ -369,16 +369,16 @@ function DetailModal({
           </section>
 
           <section>
-            <p className="text-[8px] uppercase tracking-widest text-mutedText font-semibold mb-1.5">
+            <p className="text-[8px] uppercase tracking-widest text-mute font-semibold mb-1.5">
               Execution Steps
             </p>
             <div className="flex flex-col">
               {action.stepLabels.map((w, i) => (
                 <div key={i} className="flex gap-2">
                   <div className="flex flex-col items-center">
-                    <span className="inline-block h-3 w-3 rounded-full border-2 border-border bg-white shrink-0" />
+                    <span className="inline-block h-3 w-3 rounded-full border-2 border-rule bg-white shrink-0" />
                     {i < action.stepLabels.length - 1 && (
-                      <div className="w-0.5 flex-1 min-h-[12px] bg-border" />
+                      <div className="w-0.5 flex-1 min-h-[12px] bg-rule" />
                     )}
                   </div>
                   <div className="pb-1.5 flex-1 min-w-0 flex items-center gap-1">
@@ -391,26 +391,26 @@ function DetailModal({
           </section>
 
           <section>
-            <p className="text-[8px] uppercase tracking-widest text-mutedText font-semibold mb-1">
+            <p className="text-[8px] uppercase tracking-widest text-mute font-semibold mb-1">
               Agent Rationale
             </p>
-            <div className="bg-offWhite border border-border rounded px-2.5 py-1.5 flex flex-col gap-1">
-              <div className="h-1.5 rounded-sm bg-mutedText/50 w-11/12" />
-              <div className="h-1.5 rounded-sm bg-mutedText/45 w-10/12" />
-              <div className="h-1.5 rounded-sm bg-mutedText/40 w-8/12" />
+            <div className="bg-cream border border-rule rounded px-2.5 py-1.5 flex flex-col gap-1">
+              <div className="h-1.5 rounded-sm bg-mute/50 w-11/12" />
+              <div className="h-1.5 rounded-sm bg-mute/45 w-10/12" />
+              <div className="h-1.5 rounded-sm bg-mute/40 w-8/12" />
             </div>
           </section>
         </div>
 
         {/* RIGHT: data changes */}
         <div className="col-span-3 flex flex-col gap-2 min-h-0 overflow-hidden">
-          <p className="text-[8px] uppercase tracking-widest text-mutedText font-semibold">
+          <p className="text-[8px] uppercase tracking-widest text-mute font-semibold">
             Data Changes
           </p>
           <div className="flex flex-col gap-2 overflow-hidden">
             {[0, 1].map((ci) => (
-              <div key={ci} className="border border-border rounded overflow-hidden bg-white">
-                <div className="flex items-center gap-1.5 px-2 py-1.5 bg-offWhite border-b border-border">
+              <div key={ci} className="border border-rule rounded overflow-hidden bg-white">
+                <div className="flex items-center gap-1.5 px-2 py-1.5 bg-cream border-b border-rule">
                   <span
                     className={`text-[8px] font-semibold uppercase tracking-wider px-1 py-0.5 rounded border ${
                       ci === 0
@@ -426,8 +426,8 @@ function DetailModal({
                 <div className="px-2 py-1.5 flex flex-col gap-1">
                   {[0, 1, 2].map((fi) => (
                     <div key={fi} className="flex flex-col gap-0.5">
-                      <span className="h-1 rounded-sm bg-mutedText/40 w-10" />
-                      <span className={`h-1.5 rounded-sm bg-bodyText/50 ${['w-10/12','w-8/12','w-9/12'][fi]}`} />
+                      <span className="h-1 rounded-sm bg-mute/40 w-10" />
+                      <span className={`h-1.5 rounded-sm bg-ink/50 ${['w-10/12','w-8/12','w-9/12'][fi]}`} />
                     </div>
                   ))}
                 </div>
@@ -438,8 +438,8 @@ function DetailModal({
       </div>
 
       {/* Footer: reject / approve */}
-      <div className="px-4 py-2.5 border-t border-border flex items-center justify-end gap-2">
-        <div className="text-center text-[10px] font-semibold px-3 py-1.5 rounded border bg-offWhite text-mutedText border-border">
+      <div className="px-4 py-2.5 border-t border-rule flex items-center justify-end gap-2">
+        <div className="text-center text-[10px] font-semibold px-3 py-1.5 rounded border bg-cream text-mute border-rule">
           Reject
         </div>
         <div
@@ -574,7 +574,7 @@ export function ActionsShowcaseView() {
             {COLS.map((col) => (
               <div
                 key={col.key}
-                className="flex flex-col gap-1.5 rounded-md bg-offWhite/60 border border-border p-1.5 min-h-0"
+                className="flex flex-col gap-1.5 rounded-md bg-cream/60 border border-rule p-1.5 min-h-0"
               >
                 <div className="flex items-center gap-1.5 px-0.5 shrink-0">
                   <span

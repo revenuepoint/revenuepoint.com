@@ -15,33 +15,36 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="divide-y divide-border border-t border-b border-border">
-      {items.map((item, i) => (
-        <div key={i}>
-          <button
-            onClick={() => setOpenIndex(openIndex === i ? null : i)}
-            className="flex items-center justify-between w-full py-5 text-left gap-4"
-          >
-            <span className="text-base font-semibold text-navy">{item.question}</span>
-            <svg
-              className={`w-5 h-5 text-mutedText shrink-0 transition-transform ${
-                openIndex === i ? 'rotate-180' : ''
-              }`}
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
+    <div className="border-t border-rule">
+      {items.map((item, i) => {
+        const isOpen = openIndex === i;
+        return (
+          <div key={i} className="border-b border-rule">
+            <button
+              onClick={() => setOpenIndex(isOpen ? null : i)}
+              className="flex items-center justify-between w-full py-5 text-left gap-6"
+              aria-expanded={isOpen}
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          {openIndex === i && (
-            <div className="pb-5 text-sm text-bodyText leading-relaxed">
-              {item.answer}
-            </div>
-          )}
-        </div>
-      ))}
+              <span className="font-serif text-[1.125rem] lg:text-[1.25rem] font-medium text-ink">
+                {item.question}
+              </span>
+              <span
+                className={`shrink-0 font-mono text-base text-crimson transition-transform duration-200 ${
+                  isOpen ? 'rotate-45' : ''
+                }`}
+                aria-hidden="true"
+              >
+                +
+              </span>
+            </button>
+            {isOpen && (
+              <div className="pb-6 text-sm lg:text-base text-inkSoft leading-relaxed max-w-prose">
+                {item.answer}
+              </div>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }

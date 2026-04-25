@@ -49,7 +49,7 @@ function CheckIcon() {
 }
 
 function DashIcon() {
-  return <span className="text-mutedText/60 shrink-0 select-none">—</span>;
+  return <span className="text-mute/60 shrink-0 select-none">—</span>;
 }
 
 export default function NpspMiddlewarePage() {
@@ -57,13 +57,18 @@ export default function NpspMiddlewarePage() {
     <>
       {/* Hero */}
       <HeroSection
-        variant="navy"
-        eyebrow="NPSP Middleware · Open Source"
-        heading="Open-source donor experience for Salesforce NPSP."
+        byline="NPSP Middleware · Open source"
+        heading={
+          <>
+            Open-source donor experience for <em>Salesforce NPSP</em>.
+          </>
+        }
         body="A modern donate form, member portal, and events platform — syncing into NPSP. Host it yourself under AGPL-3.0. Or let RevenuePoint run it end-to-end with observability, dunning, and a managed premium stack."
+        issue="N"
+        sidenote="AGPL-3.0 · self-host or fully managed."
         ctas={[
-          { label: 'View on GitHub →', href: NPSP_GITHUB_URL, variant: 'primary' },
-          { label: 'Talk to us →', href: NPSP_CONTACT_HREF, variant: 'ghost' },
+          { label: 'View on GitHub', href: NPSP_GITHUB_URL, variant: 'primary' },
+          { label: 'Talk to us', href: NPSP_CONTACT_HREF, variant: 'secondary' },
         ]}
       />
 
@@ -78,12 +83,12 @@ export default function NpspMiddlewarePage() {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
             {npspComponents.map((c) => (
-              <div key={c.title} className="border border-border rounded-lg bg-white p-6 flex flex-col">
+              <div key={c.title} className="border border-rule rounded-lg bg-white p-6 flex flex-col">
                 <div className="text-[10px] uppercase tracking-widest text-crimson font-semibold">
                   {c.tag}
                 </div>
                 <div className="mt-2 text-lg font-bold text-navy">{c.title}</div>
-                <p className="mt-3 text-sm text-bodyText leading-relaxed">{c.body}</p>
+                <p className="mt-3 text-sm text-ink leading-relaxed">{c.body}</p>
               </div>
             ))}
           </div>
@@ -91,7 +96,7 @@ export default function NpspMiddlewarePage() {
       </section>
 
       {/* Baked-in features strip */}
-      <section className="bg-offWhite border-y border-border py-16 lg:py-24">
+      <section className="bg-cream border-y border-rule py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4">
           <SectionHeader
             eyebrow="Both tiers get this"
@@ -100,9 +105,9 @@ export default function NpspMiddlewarePage() {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
             {npspFeatures.map((f) => (
-              <div key={f.title} className="border border-border rounded-lg bg-white p-5">
+              <div key={f.title} className="border border-rule rounded-lg bg-white p-5">
                 <div className="text-sm font-bold text-navy">{f.title}</div>
-                <p className="mt-2 text-xs text-bodyText leading-relaxed">{f.body}</p>
+                <p className="mt-2 text-xs text-ink leading-relaxed">{f.body}</p>
               </div>
             ))}
           </div>
@@ -119,14 +124,14 @@ export default function NpspMiddlewarePage() {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-10">
             {npspIntegrations.map((i) => (
-              <div key={i.name} className="border border-border rounded-md bg-white p-4">
+              <div key={i.name} className="border border-rule rounded-md bg-white p-4">
                 <div className="flex items-center gap-2">
                   <span className="w-7 h-7 rounded bg-navy text-white text-[10px] font-bold flex items-center justify-center">
                     {i.name.slice(0, 2).toUpperCase()}
                   </span>
                   <div className="text-sm font-bold text-navy truncate">{i.name}</div>
                 </div>
-                <div className="mt-2 text-xs text-bodyText leading-snug">{i.purpose}</div>
+                <div className="mt-2 text-xs text-ink leading-snug">{i.purpose}</div>
               </div>
             ))}
           </div>
@@ -134,7 +139,7 @@ export default function NpspMiddlewarePage() {
       </section>
 
       {/* Open source vs Managed matrix */}
-      <section className="bg-offWhite border-y border-border py-16 lg:py-24">
+      <section className="bg-cream border-y border-rule py-16 lg:py-24">
         <div className="max-w-5xl mx-auto px-4">
           <SectionHeader
             eyebrow="Open source vs Managed"
@@ -142,7 +147,7 @@ export default function NpspMiddlewarePage() {
             body="Self-host when you have engineering capacity. Choose managed when donate-form uptime and premium integrations matter more than running infrastructure."
             align="left"
           />
-          <div className="mt-10 border border-border rounded-lg bg-white shadow-sm overflow-hidden">
+          <div className="mt-10 border border-rule rounded-lg bg-white shadow-sm overflow-hidden">
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-navy text-white">
@@ -153,8 +158,8 @@ export default function NpspMiddlewarePage() {
               </thead>
               <tbody>
                 {npspMatrix.map((row, i) => (
-                  <tr key={row.label} className={i % 2 === 0 ? 'bg-white' : 'bg-lightGray'}>
-                    <td className="py-3 px-5 text-bodyText">{row.label}</td>
+                  <tr key={row.label} className={i % 2 === 0 ? 'bg-white' : 'bg-bone'}>
+                    <td className="py-3 px-5 text-ink">{row.label}</td>
                     <td className="py-3 px-5 text-center">
                       <div className="inline-flex">{row.openSource ? <CheckIcon /> : <DashIcon />}</div>
                     </td>
@@ -199,15 +204,15 @@ export default function NpspMiddlewarePage() {
       <section className="bg-white py-16 lg:py-24">
         <div className="max-w-3xl mx-auto px-4">
           <SectionHeader heading="Managed-tier pricing" align="center" />
-          <div className="mt-10 border-2 border-crimson rounded-lg bg-crimsonLight p-8 text-center">
+          <div className="mt-10 border-2 border-crimson rounded-lg bg-crimsonTint p-8 text-center">
             <div className="text-xs uppercase tracking-widest text-crimson font-semibold">
               Fully managed by RevenuePoint
             </div>
             <div className="mt-3 text-5xl font-bold text-navy tracking-tight">
               {NPSP_MANAGED_PRICE}
             </div>
-            <div className="mt-1 text-sm text-mutedText">{NPSP_MANAGED_PERIOD}</div>
-            <p className="mt-5 text-sm text-bodyText leading-relaxed max-w-xl mx-auto">
+            <div className="mt-1 text-sm text-mute">{NPSP_MANAGED_PERIOD}</div>
+            <p className="mt-5 text-sm text-ink leading-relaxed max-w-xl mx-auto">
               Includes hosting, 99.9% uptime SLA, Datadog observability, session replay, Stripe
               Smart Retries, the full premium integration stack, upgrades, security patching, and
               a named RevenuePoint administrator. Billed annually.
@@ -215,7 +220,7 @@ export default function NpspMiddlewarePage() {
             <div className="mt-6 flex flex-wrap gap-3 justify-center">
               <Link
                 href={NPSP_CONTACT_HREF}
-                className="inline-flex items-center px-6 py-3 rounded-sm bg-crimson text-white text-sm font-semibold hover:bg-crimsonDark transition-colors"
+                className="inline-flex items-center px-6 py-3 rounded-sm bg-crimson text-white text-sm font-semibold hover:bg-crimsonDeep transition-colors"
               >
                 Schedule a walkthrough →
               </Link>
@@ -223,7 +228,7 @@ export default function NpspMiddlewarePage() {
                 href={NPSP_GITHUB_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-sm border border-border bg-white text-sm font-semibold text-navy hover:border-crimson transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-sm border border-rule bg-white text-sm font-semibold text-navy hover:border-crimson transition-colors"
               >
                 <GithubIcon /> Or start free on GitHub
               </a>
@@ -233,7 +238,7 @@ export default function NpspMiddlewarePage() {
       </section>
 
       {/* Why open source */}
-      <section className="bg-offWhite border-y border-border py-16 lg:py-24">
+      <section className="bg-cream border-y border-rule py-16 lg:py-24">
         <div className="max-w-3xl mx-auto px-4">
           <p className="text-xs font-bold uppercase tracking-widest text-crimson mb-4">
             Why we open-sourced it
@@ -241,12 +246,12 @@ export default function NpspMiddlewarePage() {
           <h2 className="text-3xl font-bold tracking-tight text-navy">
             Newsroom margins are thin. The code should not be the tax.
           </h2>
-          <p className="mt-6 text-base text-bodyText leading-relaxed">
+          <p className="mt-6 text-base text-ink leading-relaxed">
             Nonprofit newsrooms already pay for NPSP, Stripe, a CRM administrator, and an email
             platform. They should not also pay a license fee for the donate form itself. So we
             published it under AGPL-3.0 — fork it, run it, modify it.
           </p>
-          <p className="mt-4 text-base text-bodyText leading-relaxed">
+          <p className="mt-4 text-base text-ink leading-relaxed">
             RevenuePoint charges for the operational lift: hosting, monitoring, premium
             integrations, dunning, and a named administrator who owns the donate-form experience
             end-to-end. You decide which side of that line you want to be on.

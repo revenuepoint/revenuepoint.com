@@ -43,11 +43,17 @@ export default function SalesforceManagedServicesPricingPage() {
   return (
     <>
       {/* Header */}
-      <section className="bg-white py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="bg-paper py-section">
+        <div className="max-w-editorial mx-auto px-6 lg:px-8">
           <SectionHeader
-            heading="Flexible pricing for teams of any size"
+            eyebrow="Salesforce · Managed services pricing"
+            heading={
+              <>
+                Flexible pricing for teams of <em>any size</em>.
+              </>
+            }
             body="White-glove Salesforce administration from dedicated administrators and project managers — your single point of contact for everything Salesforce. No shared queues, no offshore routing."
+            align="left"
           />
 
           {/* Pricing Cards */}
@@ -82,41 +88,35 @@ export default function SalesforceManagedServicesPricingPage() {
             />
           </div>
 
-          <p className="text-center text-sm text-mutedText mt-6">
-            No long-term contract or commitment. Cancel anytime.
+          <p className="text-center font-mono text-[11px] uppercase tracking-[0.14em] text-mute mt-8">
+            No long-term contract · cancel anytime.
           </p>
         </div>
       </section>
 
       {/* Additional Services */}
-      <section className="bg-offWhite py-16 lg:py-24">
-        <div className="max-w-4xl mx-auto px-4">
-          <SectionHeader heading="Additional Services" />
-          <div className="bg-white border border-border rounded-sm shadow-sm overflow-hidden">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="bg-navy text-white">
-                  <th className="text-left py-3 px-6 font-semibold">Service</th>
-                  <th className="text-right py-3 px-6 font-semibold">Starting Price</th>
-                </tr>
-              </thead>
-              <tbody>
-                {additionalServices.map((row, i) => (
-                  <tr key={row.service} className={i % 2 === 0 ? 'bg-white' : 'bg-lightGray'}>
-                    <td className="py-3 px-6 text-bodyText">{row.service}</td>
-                    <td className="py-3 px-6 text-right font-semibold text-navy">{row.price}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+      <section className="bg-cream border-t border-ruleSoft py-section">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+          <SectionHeader heading="Additional services." eyebrow="A la carte" />
+          <div className="border-t-2 border-ink">
+            <div className="grid grid-cols-[1fr_auto] py-3 border-b border-rule">
+              <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-mute">Service</span>
+              <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-mute text-right">Starting price</span>
+            </div>
+            {additionalServices.map((row) => (
+              <div key={row.service} className="grid grid-cols-[1fr_auto] py-4 border-b border-ruleSoft">
+                <span className="text-ink">{row.service}</span>
+                <span className="font-mono text-ink font-semibold tabular-nums text-right">{row.price}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Lead Form */}
-      <section className="bg-white py-16 lg:py-24">
-        <div className="max-w-3xl mx-auto px-4">
-          <SectionHeader heading="Ready to get started?" />
+      <section className="bg-paper py-section">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <SectionHeader heading="Ready to get started?" eyebrow="Get in touch" />
           <LeadForm interest="Salesforce" />
         </div>
       </section>

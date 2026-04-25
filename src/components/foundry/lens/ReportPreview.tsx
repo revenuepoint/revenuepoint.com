@@ -13,7 +13,7 @@ function AgingBar({ buckets }: { buckets: { label: string; value: number; color:
   const total = buckets.reduce((s, b) => s + b.value, 0);
   return (
     <div className="mt-3 flex flex-col gap-2">
-      <div className="flex h-6 w-full rounded-md overflow-hidden border border-border">
+      <div className="flex h-6 w-full rounded-md overflow-hidden border border-rule">
         {buckets.map((b, i) => {
           const pct = (b.value / total) * 100;
           return (
@@ -28,11 +28,11 @@ function AgingBar({ buckets }: { buckets: { label: string; value: number; color:
           );
         })}
       </div>
-      <div className="flex flex-wrap gap-3 text-[10px] text-mutedText">
+      <div className="flex flex-wrap gap-3 text-[10px] text-mute">
         {buckets.map((b) => (
           <span key={b.label} className="flex items-center gap-1">
             <span className="h-2 w-2 rounded-full" style={{ backgroundColor: b.color }} />
-            {b.label} · <span className="font-mono text-bodyText">{b.display}</span>
+            {b.label} · <span className="font-mono text-ink">{b.display}</span>
           </span>
         ))}
       </div>
@@ -49,9 +49,9 @@ export function ReportPreview() {
       <div className="bg-navy/[0.03] border border-navy/10 rounded-lg px-5 py-4">
         <div className="flex items-start justify-between gap-3 flex-wrap">
           <div className="min-w-0">
-            <p className="text-[10px] uppercase tracking-widest text-mutedText">{spec.category}</p>
+            <p className="text-[10px] uppercase tracking-widest text-mute">{spec.category}</p>
             <h4 className="text-base font-semibold text-navy mt-1">{spec.title}</h4>
-            <p className="text-[11px] text-mutedText mt-1">{spec.dateLine}</p>
+            <p className="text-[11px] text-mute mt-1">{spec.dateLine}</p>
           </div>
           <div className="flex items-center gap-2">
             <span
@@ -68,23 +68,23 @@ export function ReportPreview() {
       </div>
 
       <section>
-        <p className="text-[10px] text-mutedText uppercase tracking-widest font-semibold mb-2">
+        <p className="text-[10px] text-mute uppercase tracking-widest font-semibold mb-2">
           Executive Summary
         </p>
         {spec.summary.map((p, i) => (
-          <p key={i} className={`text-[13px] leading-relaxed text-bodyText ${i > 0 ? 'mt-3' : ''}`}>{p}</p>
+          <p key={i} className={`text-[13px] leading-relaxed text-ink ${i > 0 ? 'mt-3' : ''}`}>{p}</p>
         ))}
       </section>
 
       <section>
-        <p className="text-[10px] text-mutedText uppercase tracking-widest font-semibold mb-2">
+        <p className="text-[10px] text-mute uppercase tracking-widest font-semibold mb-2">
           {spec.chartTitle}
         </p>
         <AgingBar buckets={spec.aging} />
       </section>
 
       <section>
-        <p className="text-[10px] text-mutedText uppercase tracking-widest font-semibold mb-2">
+        <p className="text-[10px] text-mute uppercase tracking-widest font-semibold mb-2">
           Key Findings
         </p>
         <ul className="flex flex-col gap-2.5">
@@ -95,26 +95,26 @@ export function ReportPreview() {
               >
                 {f.impact}
               </span>
-              <p className="text-[12px] leading-relaxed text-bodyText italic">{f.body}</p>
+              <p className="text-[12px] leading-relaxed text-ink italic">{f.body}</p>
             </li>
           ))}
         </ul>
       </section>
 
-      <section className="bg-offWhite border border-border rounded-lg p-4">
-        <p className="text-[10px] text-mutedText uppercase tracking-widest font-semibold mb-2">
+      <section className="bg-cream border border-rule rounded-lg p-4">
+        <p className="text-[10px] text-mute uppercase tracking-widest font-semibold mb-2">
           Recommended Actions
         </p>
-        <ol className="flex flex-col gap-2 text-[12px] text-bodyText list-decimal list-inside marker:text-crimson">
+        <ol className="flex flex-col gap-2 text-[12px] text-ink list-decimal list-inside marker:text-crimson">
           {spec.recommendations.map((r, i) => (
             <li key={i}>{r}</li>
           ))}
         </ol>
       </section>
 
-      <div className="flex items-center justify-between pt-3 border-t border-border text-[10px] text-mutedText">
+      <div className="flex items-center justify-between pt-3 border-t border-rule text-[10px] text-mute">
         <span>{spec.footer}</span>
-        <span className="px-3 py-1 rounded border border-border bg-white text-bodyText font-medium">
+        <span className="px-3 py-1 rounded border border-rule bg-white text-ink font-medium">
           Download PDF
         </span>
       </div>

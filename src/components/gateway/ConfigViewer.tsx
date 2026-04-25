@@ -81,7 +81,7 @@ export function ConfigViewer() {
         <p className="text-[10px] font-bold uppercase tracking-widest text-crimson">
           tenants/acme.ts
         </p>
-        <p className="text-sm text-bodyText leading-relaxed mb-2">
+        <p className="text-sm text-ink leading-relaxed mb-2">
           One file per tenant. Domain, connection, auth, views, theme — all here, all typed,
           all in Git. Click a block to see what it does.
         </p>
@@ -95,17 +95,17 @@ export function ConfigViewer() {
                 onClick={() => setSelected(b.id)}
                 className={`text-left rounded-md px-4 py-3 border transition-colors ${
                   active
-                    ? 'border-crimson bg-crimsonLight'
-                    : 'border-border bg-white hover:border-crimson/40'
+                    ? 'border-crimson bg-crimsonTint'
+                    : 'border-rule bg-white hover:border-crimson/40'
                 }`}
                 aria-pressed={active}
               >
-                <p className={`text-[10px] font-bold uppercase tracking-widest ${active ? 'text-crimson' : 'text-mutedText'}`}>
+                <p className={`text-[10px] font-bold uppercase tracking-widest ${active ? 'text-crimson' : 'text-mute'}`}>
                   {b.eyebrow}
                 </p>
                 <p className="text-sm font-semibold text-navy mt-0.5">{b.label}</p>
                 {active && (
-                  <p className="text-xs text-bodyText mt-2 leading-relaxed">{NARRATIVES[b.id]}</p>
+                  <p className="text-xs text-ink mt-2 leading-relaxed">{NARRATIVES[b.id]}</p>
                 )}
               </button>
             );
@@ -114,7 +114,7 @@ export function ConfigViewer() {
       </div>
 
       {/* Annotated code */}
-      <div className="rounded-lg bg-navy text-white p-5 lg:p-6 border border-border shadow-sm overflow-hidden">
+      <div className="rounded-lg bg-navy text-white p-5 lg:p-6 border border-rule shadow-sm overflow-hidden">
         <div className="flex items-center gap-2 pb-4 mb-4 border-b border-white/10">
           <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F57]" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#FEBC2E]" />

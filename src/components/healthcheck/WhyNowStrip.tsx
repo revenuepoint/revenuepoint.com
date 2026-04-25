@@ -19,22 +19,22 @@ const tiles = [
 
 export function WhyNowStrip() {
   return (
-    <section className="bg-white">
-      <div className="max-w-7xl mx-auto px-4 py-12 lg:py-16">
-        <div className="max-w-3xl mb-8">
-          <p className="text-xs font-bold uppercase tracking-widest text-crimson mb-4">
-            Why now
-          </p>
-          <h2 className="text-3xl font-bold tracking-tight text-navy">
-            The cost of waiting is compounding.
+    <section className="bg-paper">
+      <div className="max-w-editorial mx-auto px-6 lg:px-8 py-12 lg:py-16">
+        <div className="max-w-3xl mb-10">
+          <p className="eyebrow mb-4">Why now</p>
+          <h2 className="text-d2 font-serif font-medium text-ink">
+            The cost of waiting is <em>compounding</em>.
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {tiles.map((t) => (
-            <div key={t.title} className="border border-border rounded-lg bg-offWhite p-5">
-              <div className="text-sm font-bold text-navy leading-snug">{t.title}</div>
-              <div className="mt-2 text-xs text-bodyText leading-relaxed">{t.body}</div>
-            </div>
+            <article key={t.title} className="relative border border-ruleSoft bg-cream p-5">
+              <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-rule" />
+              <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-crimson" />
+              <h3 className="font-serif italic text-[1rem] text-ink leading-snug mt-3">{t.title}</h3>
+              <p className="mt-2 text-xs text-inkSoft leading-relaxed">{t.body}</p>
+            </article>
           ))}
         </div>
       </div>

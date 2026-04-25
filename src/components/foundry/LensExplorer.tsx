@@ -24,7 +24,7 @@ export function LensExplorer() {
       <div>
         <LensSidebar items={lensItems} selectedId={selectedId} onSelect={setSelectedId} />
       </div>
-      <div className="rounded-lg border border-border bg-white shadow-sm p-5 lg:p-6 min-h-[620px]">
+      <div className="rounded-lg border border-rule bg-white shadow-sm p-5 lg:p-6 min-h-[620px]">
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={selectedId}

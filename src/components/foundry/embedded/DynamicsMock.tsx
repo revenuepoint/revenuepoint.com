@@ -22,7 +22,7 @@ function BoltIcon({ className = 'h-3 w-3' }: { className?: string }) {
 export function DynamicsMock() {
   const steps = ['Qualify', 'Develop', 'Propose', 'Close'];
   return (
-    <div className="h-full flex flex-col rounded-xl overflow-hidden border border-border shadow-2xl bg-white">
+    <div className="h-full flex flex-col rounded-xl overflow-hidden border border-rule shadow-2xl bg-white">
       {/* Header */}
       <div className="flex items-center gap-3 px-3 py-2 bg-[#002050] text-white">
         <MSSquares className="h-4 w-4" />
@@ -112,13 +112,13 @@ export function DynamicsMock() {
             {/* Foundry widget */}
             <div className="col-span-2 flex flex-col gap-2">
               {/* Prism CLV */}
-              <div className="rounded-md border border-border bg-white shadow-sm ring-1 ring-crimson/20 overflow-hidden">
-                <div className="flex items-center gap-1.5 px-2.5 py-1.5 bg-crimsonLight border-b border-crimson/20">
+              <div className="rounded-md border border-rule bg-white shadow-sm ring-1 ring-crimson/20 overflow-hidden">
+                <div className="flex items-center gap-1.5 px-2.5 py-1.5 bg-crimsonTint border-b border-crimson/20">
                   <BoltIcon className="h-3 w-3 text-crimson" />
                   <span className="text-[9px] font-bold uppercase tracking-widest text-crimson">Foundry · Prism</span>
                 </div>
                 <div className="px-2.5 py-2 flex flex-col gap-1.5">
-                  <p className="text-[9px] text-mutedText uppercase tracking-wider">Predicted 24-mo CLV</p>
+                  <p className="text-[9px] text-mute uppercase tracking-wider">Predicted 24-mo CLV</p>
                   <div className="flex items-baseline gap-1.5">
                     <p className="text-lg font-bold font-mono text-navy">$620K</p>
                     <p className="text-[10px] text-emerald-600 font-mono">2.3× avg</p>
@@ -138,8 +138,8 @@ export function DynamicsMock() {
               </div>
 
               {/* Mini metric tree */}
-              <div className="rounded-md border border-border bg-white shadow-sm ring-1 ring-crimson/20 overflow-hidden">
-                <div className="flex items-center gap-1.5 px-2.5 py-1 bg-crimsonLight border-b border-crimson/20">
+              <div className="rounded-md border border-rule bg-white shadow-sm ring-1 ring-crimson/20 overflow-hidden">
+                <div className="flex items-center gap-1.5 px-2.5 py-1 bg-crimsonTint border-b border-crimson/20">
                   <BoltIcon className="h-3 w-3 text-crimson" />
                   <span className="text-[9px] font-bold uppercase tracking-widest text-crimson">
                     Metric tree
@@ -147,7 +147,7 @@ export function DynamicsMock() {
                 </div>
                 <div className="px-2.5 py-2">
                   <svg viewBox="0 0 160 60" className="w-full h-14" aria-hidden="true">
-                    <rect x="55" y="2" width="50" height="16" rx="3" fill="#0F2B4D" />
+                    <rect x="55" y="2" width="50" height="16" rx="3" fill="#0F1A2B" />
                     <text x="80" y="13" textAnchor="middle" fontSize="8" fill="#fff" fontWeight="600">Revenue</text>
                     <rect x="5" y="40" width="44" height="16" rx="3" fill="#2563eb" />
                     <text x="27" y="51" textAnchor="middle" fontSize="7" fill="#fff" fontWeight="600">Orders</text>

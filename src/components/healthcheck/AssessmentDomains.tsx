@@ -9,34 +9,30 @@ export function AssessmentDomains() {
   const map = Object.fromEntries(content.domainBlurbs.map((b) => [b.name, b.blurb]));
 
   return (
-    <section className="bg-white">
-      <div className="max-w-7xl mx-auto px-4 py-16 lg:py-20">
-        <div className="max-w-3xl mb-10">
-          <p className="text-xs font-bold uppercase tracking-widest text-crimson mb-4">
-            The twelve domains we assess
-          </p>
-          <h2 className="text-3xl font-bold tracking-tight text-navy">
-            What we look at, in one glance.
+    <section className="bg-paper">
+      <div className="max-w-editorial mx-auto px-6 lg:px-8 py-section">
+        <div className="max-w-3xl mb-12">
+          <p className="eyebrow mb-4">The twelve domains we assess</p>
+          <h2 className="text-d1 font-serif font-medium text-ink leading-tight">
+            What we look at, <em>in one glance</em>.
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-bodyText">
-            Every domain below gets a dedicated scorecard page in the report. Descriptions below
-            are keyed to {crmMeta[crmId].short} — they translate cleanly to any CRM.
+          <p className="mt-4 text-lede leading-[1.65] text-inkSoft max-w-prose">
+            Every domain below gets a dedicated scorecard page in the report. Descriptions below are keyed to {crmMeta[crmId].short} — they translate cleanly to any CRM.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {domainNames.map((name, i) => (
-            <div
-              key={name}
-              className="border border-border rounded-lg bg-offWhite p-5"
-            >
-              <div className="flex items-baseline gap-2">
-                <span className="text-[10px] uppercase tracking-widest text-crimson font-bold">
+            <article key={name} className="relative border border-ruleSoft bg-cream p-5">
+              <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-rule" />
+              <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-crimson" />
+              <div className="flex items-baseline gap-3 mt-3">
+                <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-mute">
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <div className="text-sm font-bold text-navy">{name}</div>
+                <h3 className="font-serif italic text-[1rem] text-ink leading-snug">{name}</h3>
               </div>
-              <div className="mt-2 text-xs text-bodyText leading-relaxed">{map[name]}</div>
-            </div>
+              <p className="mt-3 text-xs text-inkSoft leading-relaxed">{map[name]}</p>
+            </article>
           ))}
         </div>
       </div>

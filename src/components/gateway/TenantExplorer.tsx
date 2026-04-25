@@ -76,7 +76,7 @@ function TenantPills() {
               {tenant.logoMonogram}
             </span>
             <span>{tenant.name}</span>
-            <span className="text-[10px] font-normal text-mutedText hidden lg:inline">
+            <span className="text-[10px] font-normal text-mute hidden lg:inline">
               · {tenant.industry}
             </span>
           </button>

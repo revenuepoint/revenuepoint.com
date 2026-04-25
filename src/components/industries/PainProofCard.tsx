@@ -2,30 +2,33 @@ import type { ProofCard } from '@/types/industry';
 
 export function PainProofCard({ proof }: { proof: ProofCard }) {
   return (
-    <section className="bg-navy">
-      <div className="max-w-7xl mx-auto px-4 py-16 lg:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-10 items-center">
+    <section className="bg-ink">
+      <div className="max-w-editorial mx-auto px-6 lg:px-8 py-section">
+        <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-12 lg:items-center">
           <div className="text-center lg:text-left">
-            <div className="text-6xl lg:text-7xl font-bold text-white tracking-tight leading-none">
+            <span className="absolute h-px w-8 bg-crimson block mb-4" />
+            <p className="font-mono text-[5rem] lg:text-[6rem] font-semibold text-paper leading-none tabular-nums tracking-tight">
               {proof.stat}
-            </div>
-            <div className="mt-3 text-xs uppercase tracking-widest text-gray-400">
+            </p>
+            <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.16em] text-paper/60">
               {proof.sourceNote}
-            </div>
+            </p>
           </div>
-          <div>
-            <div className="text-[10px] uppercase tracking-widest text-crimson font-semibold">
+          <div className="border-l border-paper/15 lg:pl-12">
+            <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-crimson">
               The problem
-            </div>
-            <p className="mt-2 text-lg text-white leading-relaxed">{proof.problem}</p>
-            <div className="mt-6 text-[10px] uppercase tracking-widest text-crimson font-semibold">
+            </p>
+            <p className="mt-3 font-serif italic text-[1.5rem] text-paper leading-snug max-w-prose">
+              {proof.problem}
+            </p>
+            <p className="mt-8 font-mono text-[11px] uppercase tracking-[0.16em] text-crimson">
               What we do
-            </div>
-            <p className="mt-2 text-base text-gray-300 leading-relaxed">{proof.fix}</p>
-            <div className="mt-6 text-[10px] uppercase tracking-widest text-crimson font-semibold">
+            </p>
+            <p className="mt-3 text-base text-paper/80 leading-relaxed max-w-prose">{proof.fix}</p>
+            <p className="mt-8 font-mono text-[11px] uppercase tracking-[0.16em] text-crimson">
               Outcome
-            </div>
-            <p className="mt-2 text-base text-white font-semibold leading-relaxed">
+            </p>
+            <p className="mt-3 font-serif text-[1.125rem] text-paper leading-relaxed max-w-prose">
               {proof.outcome}
             </p>
           </div>

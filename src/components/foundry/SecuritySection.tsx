@@ -7,8 +7,8 @@ function ShieldCheckBadge({ className = 'h-14 w-14' }: { className?: string }) {
     <svg className={className} viewBox="0 0 64 64" fill="none" aria-hidden="true">
       <defs>
         <linearGradient id="shieldGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#1A3F6F" />
-          <stop offset="100%" stopColor="#0F2B4D" />
+          <stop offset="0%" stopColor="#2A3F58" />
+          <stop offset="100%" stopColor="#0F1A2B" />
         </linearGradient>
       </defs>
       <path

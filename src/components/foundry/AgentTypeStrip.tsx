@@ -39,7 +39,7 @@ export function AgentTypeStrip() {
       {TYPES.map((t) => (
         <div
           key={t.label}
-          className={`rounded-lg border border-border bg-white px-4 py-4`}
+          className={`rounded-lg border border-rule bg-white px-4 py-4`}
         >
           <div className="flex items-center gap-2">
             <span className={`inline-block h-2 w-2 rounded-full ${t.dot}`} />
@@ -47,7 +47,7 @@ export function AgentTypeStrip() {
               {t.label}
             </span>
           </div>
-          <p className="mt-2 text-sm text-bodyText leading-relaxed">{t.copy}</p>
+          <p className="mt-2 text-sm text-ink leading-relaxed">{t.copy}</p>
         </div>
       ))}
     </div>

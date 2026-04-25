@@ -30,7 +30,7 @@ function BoltIcon({ className = 'h-3 w-3' }: { className?: string }) {
 
 export function TeamsMock() {
   return (
-    <div className="h-full flex flex-col rounded-xl overflow-hidden border border-border shadow-2xl bg-white">
+    <div className="h-full flex flex-col rounded-xl overflow-hidden border border-rule shadow-2xl bg-white">
       {/* Header */}
       <div className="flex items-center gap-3 px-3 py-2 bg-[#4B53BC] text-white">
         <MSSquares className="h-4 w-4" />

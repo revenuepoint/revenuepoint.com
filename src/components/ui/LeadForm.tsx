@@ -8,7 +8,7 @@ type LeadFormProps = {
 };
 
 const inputClass =
-  'w-full border border-border rounded-sm px-4 py-3 text-sm text-bodyText placeholder:text-mutedText focus:outline-none focus:border-crimson focus:ring-1 focus:ring-crimson transition-colors';
+  'w-full bg-paper border border-rule px-4 py-3 text-sm text-ink placeholder:text-muteSoft focus:outline-none focus:border-crimson focus:ring-1 focus:ring-crimson transition-colors';
 
 export function LeadForm({ interest, id }: LeadFormProps) {
   useEffect(() => {
@@ -44,14 +44,14 @@ export function LeadForm({ interest, id }: LeadFormProps) {
       {/* Visible fields */}
       <input
         name="first_name"
-        placeholder="First Name *"
+        placeholder="First name *"
         required
         maxLength={40}
         className={inputClass}
       />
       <input
         name="last_name"
-        placeholder="Last Name *"
+        placeholder="Last name *"
         required
         maxLength={80}
         className={inputClass}
@@ -59,7 +59,7 @@ export function LeadForm({ interest, id }: LeadFormProps) {
       <input
         name="email"
         type="email"
-        placeholder="Work Email *"
+        placeholder="Work email *"
         required
         maxLength={80}
         className={inputClass}
@@ -73,7 +73,7 @@ export function LeadForm({ interest, id }: LeadFormProps) {
       />
       <input
         name="company"
-        placeholder="Company Name *"
+        placeholder="Company name *"
         required
         maxLength={40}
         className={inputClass}
@@ -81,7 +81,7 @@ export function LeadForm({ interest, id }: LeadFormProps) {
       <input
         name="URL"
         type="url"
-        placeholder="Company Website"
+        placeholder="Company website"
         maxLength={80}
         className={inputClass}
       />
@@ -92,7 +92,7 @@ export function LeadForm({ interest, id }: LeadFormProps) {
         defaultValue=""
       >
         <option value="" disabled>
-          Annual Revenue (optional)
+          Annual revenue (optional)
         </option>
         <option value="Under $1M">Under $1M</option>
         <option value="$1M–$5M">$1M–$5M</option>
@@ -107,7 +107,6 @@ export function LeadForm({ interest, id }: LeadFormProps) {
         className={`${inputClass} md:col-span-2`}
       />
 
-      {/* reCAPTCHA */}
       <div className="md:col-span-2">
         <div
           className="g-recaptcha"
@@ -117,9 +116,9 @@ export function LeadForm({ interest, id }: LeadFormProps) {
 
       <button
         type="submit"
-        className="md:col-span-2 bg-crimson text-white font-semibold py-3 px-8 rounded-sm hover:bg-crimsonDark transition-colors"
+        className="md:col-span-2 inline-flex items-center justify-center gap-2 border border-crimson text-crimson font-serif italic text-[15px] py-3 px-8 hover:bg-crimsonTint transition-colors"
       >
-        Get in Touch &rarr;
+        Get in touch <span aria-hidden="true">→</span>
       </button>
     </form>
   );

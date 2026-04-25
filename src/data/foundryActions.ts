@@ -303,7 +303,7 @@ export const systemChipStyle: Record<TargetSystem, string> = {
   SendGrid: 'bg-cyan-50 text-cyan-700 border-cyan-200',
   Mailchimp: 'bg-cyan-50 text-cyan-700 border-cyan-200',
   // Platform
-  Courier: 'bg-crimsonLight text-crimson border-crimson/20',
+  Courier: 'bg-crimsonTint text-crimson border-crimson/20',
   // Commerce / EDI
   Shopify: 'bg-lime-50 text-lime-700 border-lime-200',
   EDI: 'bg-lime-50 text-lime-700 border-lime-200',
@@ -339,7 +339,7 @@ export const riskStyle: Record<RiskLevel, { label: string; className: string }> 
   },
   high: {
     label: 'High',
-    className: 'bg-crimsonLight text-crimson border-crimson/30',
+    className: 'bg-crimsonTint text-crimson border-crimson/30',
   },
 };
 

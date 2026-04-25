@@ -10,10 +10,10 @@ export function EvidenceCardMini() {
   const code = f.blocks.find((b) => b.kind === 'code');
   return (
     <div>
-      <div className="text-[10px] uppercase tracking-widest text-mutedText font-semibold">
+      <div className="text-[10px] uppercase tracking-widest text-mute font-semibold">
         Appendix · finding detail
       </div>
-      <div className="mt-3 border border-border rounded-md p-3">
+      <div className="mt-3 border border-rule rounded-md p-3">
         <div className="flex items-center gap-2">
           <span
             className={`text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded border ${sevPillClasses(
@@ -22,7 +22,7 @@ export function EvidenceCardMini() {
           >
             Critical
           </span>
-          <span className="text-[10px] font-mono text-mutedText">{f.id}</span>
+          <span className="text-[10px] font-mono text-mute">{f.id}</span>
         </div>
         <div className="mt-2 text-xs font-semibold text-navy leading-snug">{f.title}</div>
         {code && code.kind === 'code' && (

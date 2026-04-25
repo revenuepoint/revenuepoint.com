@@ -40,7 +40,7 @@ type MetricNodeData = {
 const CARD_W = 200;
 const CARD_H = 96;
 const LEVEL_STYLE: Record<Level, { top: string; width: number; height: number; fontSize: string }> = {
-  L1: { top: '#0F2B4D', width: CARD_W, height: CARD_H, fontSize: '12px' },
+  L1: { top: '#0F1A2B', width: CARD_W, height: CARD_H, fontSize: '12px' },
   L2: { top: '#2563EB', width: CARD_W, height: CARD_H, fontSize: '12px' },
   L3: { top: '#06B6D4', width: CARD_W, height: CARD_H, fontSize: '12px' },
   L4: { top: '#94A3B8', width: CARD_W, height: CARD_H, fontSize: '12px' },
@@ -83,7 +83,7 @@ function MetricNode({ data, selected }: NodeProps<Node<MetricNodeData>>) {
       className={`rounded-lg bg-white overflow-hidden shadow-sm transition-all flex flex-col cursor-pointer ${
         selected
           ? 'border border-crimson ring-2 ring-crimson/30 shadow-md'
-          : 'border border-border'
+          : 'border border-rule'
       }`}
     >
       {/* BT layout: source (outgoing edge) leaves the top; target (incoming) arrives at the bottom. */}
@@ -104,8 +104,8 @@ function MetricNode({ data, selected }: NodeProps<Node<MetricNodeData>>) {
             {data.trend.direction === 'up' ? '▲' : '▼'} {data.trend.value}
           </span>
         </div>
-        <p className="text-[9px] text-mutedText">
-          Goal: <span className="font-mono text-bodyText">{data.goal}</span>
+        <p className="text-[9px] text-mute">
+          Goal: <span className="font-mono text-ink">{data.goal}</span>
         </p>
       </div>
       <Handle type="target" position={Position.Bottom} style={{ opacity: 0, pointerEvents: 'none' }} />
@@ -402,10 +402,10 @@ function MetricDetailSidebar({ metric, upstreamStatuses, downstreamStatuses, onC
       animate={{ x: 0, opacity: 1 }}
       exit={{ x: 340, opacity: 0 }}
       transition={{ duration: 0.28, ease: 'easeOut' }}
-      className="absolute right-3 top-3 bottom-3 w-[320px] z-30 flex flex-col bg-white/95 backdrop-blur-sm border border-border rounded-lg shadow-lg overflow-hidden"
+      className="absolute right-3 top-3 bottom-3 w-[320px] z-30 flex flex-col bg-white/95 backdrop-blur-sm border border-rule rounded-lg shadow-lg overflow-hidden"
     >
       {/* Header */}
-      <div className="px-3.5 py-3 border-b border-border flex items-start justify-between shrink-0">
+      <div className="px-3.5 py-3 border-b border-rule flex items-start justify-between shrink-0">
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-1.5">
             <span className="h-2 w-2 rounded-full shrink-0" style={{ backgroundColor: dot }} />
@@ -415,13 +415,13 @@ function MetricDetailSidebar({ metric, upstreamStatuses, downstreamStatuses, onC
             <span className={`text-[9px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded border ${badge.className}`}>
               {badge.label}
             </span>
-            <span className="h-2 rounded-sm bg-mutedText/30 w-14" />
+            <span className="h-2 rounded-sm bg-mute/30 w-14" />
           </div>
         </div>
         <button
           type="button"
           onClick={onClose}
-          className="h-6 w-6 flex items-center justify-center rounded hover:bg-offWhite text-mutedText shrink-0"
+          className="h-6 w-6 flex items-center justify-center rounded hover:bg-cream text-mute shrink-0"
           aria-label="Close"
         >
           <XIcon className="h-3.5 w-3.5" />
@@ -431,22 +431,22 @@ function MetricDetailSidebar({ metric, upstreamStatuses, downstreamStatuses, onC
       {/* Body */}
       <div className="flex-1 overflow-y-auto px-3.5 py-3 flex flex-col gap-4">
         {/* Larger sparkline */}
-        <div className="bg-offWhite/60 rounded-md p-2.5" style={{ height: 80 }}>
+        <div className="bg-cream/60 rounded-md p-2.5" style={{ height: 80 }}>
           <SparklinePath values={metric.spark} status={metric.status} width={260} height={60} />
         </div>
 
         {/* Stats grid */}
         <div className="grid grid-cols-3 gap-1.5">
-          <div className="bg-offWhite border border-border rounded px-2 py-1.5">
-            <p className="text-[8px] font-semibold uppercase tracking-wider text-mutedText">Current</p>
+          <div className="bg-cream border border-rule rounded px-2 py-1.5">
+            <p className="text-[8px] font-semibold uppercase tracking-wider text-mute">Current</p>
             <p className="text-[11px] font-mono font-bold text-navy mt-0.5 truncate">{metric.value}</p>
           </div>
-          <div className="bg-offWhite border border-border rounded px-2 py-1.5">
-            <p className="text-[8px] font-semibold uppercase tracking-wider text-mutedText">Goal</p>
-            <p className="text-[11px] font-mono text-bodyText mt-0.5 truncate">{metric.goal}</p>
+          <div className="bg-cream border border-rule rounded px-2 py-1.5">
+            <p className="text-[8px] font-semibold uppercase tracking-wider text-mute">Goal</p>
+            <p className="text-[11px] font-mono text-ink mt-0.5 truncate">{metric.goal}</p>
           </div>
-          <div className="bg-offWhite border border-border rounded px-2 py-1.5">
-            <p className="text-[8px] font-semibold uppercase tracking-wider text-mutedText">Trend</p>
+          <div className="bg-cream border border-rule rounded px-2 py-1.5">
+            <p className="text-[8px] font-semibold uppercase tracking-wider text-mute">Trend</p>
             <p className={`text-[11px] font-mono font-semibold mt-0.5 ${isGood ? 'text-emerald-600' : 'text-red-600'}`}>
               {metric.trend.direction === 'up' ? '▲' : '▼'} {metric.trend.value}
             </p>
@@ -455,19 +455,19 @@ function MetricDetailSidebar({ metric, upstreamStatuses, downstreamStatuses, onC
 
         {/* What Drives This */}
         <div>
-          <p className="text-[9px] font-bold uppercase tracking-widest text-mutedText mb-1.5">
+          <p className="text-[9px] font-bold uppercase tracking-widest text-mute mb-1.5">
             What drives this
           </p>
           {upstreamStatuses.length === 0 ? (
-            <p className="text-[10px] italic text-mutedText">Raw input · no upstream drivers</p>
+            <p className="text-[10px] italic text-mute">Raw input · no upstream drivers</p>
           ) : (
             <div className="flex flex-col gap-1">
               {upstreamStatuses.slice(0, 3).map((s, i) => (
-                <div key={i} className="flex items-center gap-1.5 px-1.5 py-1 rounded hover:bg-offWhite/50">
+                <div key={i} className="flex items-center gap-1.5 px-1.5 py-1 rounded hover:bg-cream/50">
                   <span className="h-1.5 w-1.5 rounded-full shrink-0" style={{ backgroundColor: STATUS_DOT[s] }} />
                   <span className="h-2 rounded-sm bg-navy/65 flex-1" />
-                  <span className="h-2 rounded-sm bg-mutedText/30 w-8" />
-                  <ArrowRightIcon className="h-2.5 w-2.5 text-mutedText" />
+                  <span className="h-2 rounded-sm bg-mute/30 w-8" />
+                  <ArrowRightIcon className="h-2.5 w-2.5 text-mute" />
                 </div>
               ))}
             </div>
@@ -476,19 +476,19 @@ function MetricDetailSidebar({ metric, upstreamStatuses, downstreamStatuses, onC
 
         {/* What This Drives */}
         <div>
-          <p className="text-[9px] font-bold uppercase tracking-widest text-mutedText mb-1.5">
+          <p className="text-[9px] font-bold uppercase tracking-widest text-mute mb-1.5">
             What this drives
           </p>
           {downstreamStatuses.length === 0 ? (
-            <p className="text-[10px] italic text-mutedText">Terminal outcome · no downstream</p>
+            <p className="text-[10px] italic text-mute">Terminal outcome · no downstream</p>
           ) : (
             <div className="flex flex-col gap-1">
               {downstreamStatuses.slice(0, 3).map((s, i) => (
-                <div key={i} className="flex items-center gap-1.5 px-1.5 py-1 rounded hover:bg-offWhite/50">
+                <div key={i} className="flex items-center gap-1.5 px-1.5 py-1 rounded hover:bg-cream/50">
                   <span className="h-1.5 w-1.5 rounded-full shrink-0" style={{ backgroundColor: STATUS_DOT[s] }} />
                   <span className="h-2 rounded-sm bg-navy/65 flex-1" />
-                  <span className="h-2 rounded-sm bg-mutedText/30 w-8" />
-                  <ArrowRightIcon className="h-2.5 w-2.5 text-mutedText" />
+                  <span className="h-2 rounded-sm bg-mute/30 w-8" />
+                  <ArrowRightIcon className="h-2.5 w-2.5 text-mute" />
                 </div>
               ))}
             </div>
@@ -497,7 +497,7 @@ function MetricDetailSidebar({ metric, upstreamStatuses, downstreamStatuses, onC
 
         {/* Otto's Analysis — skeleton paragraph */}
         <div>
-          <p className="text-[9px] font-bold uppercase tracking-widest text-mutedText mb-1.5">
+          <p className="text-[9px] font-bold uppercase tracking-widest text-mute mb-1.5">
             Otto&apos;s analysis
           </p>
           <div className="flex flex-col gap-1.5">
@@ -510,7 +510,7 @@ function MetricDetailSidebar({ metric, upstreamStatuses, downstreamStatuses, onC
       </div>
 
       {/* Ask Otto footer */}
-      <div className="px-3.5 py-3 border-t border-border shrink-0">
+      <div className="px-3.5 py-3 border-t border-rule shrink-0">
         <div
           className="flex items-center justify-center gap-1.5 rounded border border-blue-200 bg-blue-50 text-blue-700 text-[11px] font-semibold py-1.5 select-none"
           aria-hidden="true"
@@ -680,7 +680,7 @@ function MetricTreeFlow() {
         <Controls
           position="bottom-right"
           showInteractive={false}
-          className="!shadow-md !border !border-border !rounded-md !overflow-hidden"
+          className="!shadow-md !border !border-rule !rounded-md !overflow-hidden"
         />
       </ReactFlow>
       <AnimatePresence>
@@ -703,13 +703,13 @@ export function MetricTreePreview() {
   const spec = lensContentByIndustry[industryId].metricTree;
   return (
     <div
-      className="metric-tree-demo relative rounded-lg border border-border bg-offWhite overflow-hidden"
+      className="metric-tree-demo relative rounded-lg border border-rule bg-cream overflow-hidden"
       style={{ height: 560 }}
     >
-      <div className="absolute top-3 left-3 z-10 pointer-events-none bg-white/95 backdrop-blur-sm border border-border rounded-md px-3 py-2 shadow-sm">
-        <p className="text-[10px] uppercase tracking-widest text-mutedText">{spec.eyebrow}</p>
+      <div className="absolute top-3 left-3 z-10 pointer-events-none bg-white/95 backdrop-blur-sm border border-rule rounded-md px-3 py-2 shadow-sm">
+        <p className="text-[10px] uppercase tracking-widest text-mute">{spec.eyebrow}</p>
         <p className="text-xs font-semibold text-navy leading-tight">{spec.title}</p>
-        <p className="text-[10px] text-mutedText mt-0.5 max-w-[280px]">{spec.subtitle}</p>
+        <p className="text-[10px] text-mute mt-0.5 max-w-[280px]">{spec.subtitle}</p>
       </div>
       <style jsx global>{`
         .metric-tree-demo .react-flow__node {

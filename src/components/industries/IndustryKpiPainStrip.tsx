@@ -2,17 +2,24 @@ import type { PainKpi } from '@/types/industry';
 
 export function IndustryKpiPainStrip({ kpis }: { kpis: PainKpi[] }) {
   return (
-    <section className="bg-white border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <section className="bg-paper border-y border-rule">
+      <div className="max-w-editorial mx-auto px-6 lg:px-8 py-12 lg:py-14">
+        <p className="eyebrow mb-8">The pain · in numbers</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
           {kpis.map((k) => (
-            <div key={k.label} className="border border-border rounded-lg bg-offWhite p-5">
-              <div className="text-3xl font-bold text-crimson tracking-tight">{k.stat}</div>
-              <div className="mt-2 text-sm text-bodyText leading-snug">{k.label}</div>
+            <div key={k.label} className="relative pt-6">
+              <span className="absolute left-0 top-0 h-px w-full bg-rule" />
+              <span className="absolute left-0 top-0 h-px w-8 bg-crimson" />
+              <p className="font-mono text-[2rem] xl:text-[2.5rem] font-semibold leading-none text-crimson tabular-nums">
+                {k.stat}
+              </p>
+              <p className="serif-italic text-[1.0625rem] leading-snug text-ink mt-3 max-w-[26ch]">
+                {k.label}
+              </p>
               {k.source && (
-                <div className="mt-3 text-[11px] uppercase tracking-widest text-mutedText">
+                <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-mute mt-2">
                   {k.source}
-                </div>
+                </p>
               )}
             </div>
           ))}

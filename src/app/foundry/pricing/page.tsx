@@ -56,11 +56,24 @@ export default function FoundryPricingPage() {
   return (
     <>
       {/* Header */}
-      <section className="bg-white py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="relative bg-paper py-section overflow-hidden">
+        <span
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute right-[-0.05em] top-[-0.15em] font-serif italic font-light text-ink leading-[0.86] whitespace-nowrap"
+          style={{ fontSize: 'clamp(14rem, 32vw, 32rem)', opacity: 0.05 }}
+        >
+          $
+        </span>
+        <div className="relative max-w-editorial mx-auto px-6 lg:px-8">
           <SectionHeader
-            heading="Simple, predictable pricing. No surprises."
+            eyebrow="Foundry · Pricing"
+            heading={
+              <>
+                Simple, predictable pricing. <em>No surprises</em>.
+              </>
+            }
             body="Flat monthly managed service pricing. No usage fees, no per-seat charges, no consumption bills. You always know what Foundry costs."
+            align="left"
           />
 
           {/* Pricing Cards */}
@@ -116,7 +129,7 @@ export default function FoundryPricingPage() {
 
           {/* Implementation fee */}
           <div className="max-w-3xl mx-auto mt-10 text-center">
-            <p className="text-sm text-bodyText leading-relaxed">
+            <p className="text-sm text-ink leading-relaxed">
               One-time implementation fee of{' '}
               <span className="font-semibold text-navy">$8,000–$60,000</span> depending on source
               system count and data complexity. Scoped during a paid discovery engagement before you
@@ -127,34 +140,28 @@ export default function FoundryPricingPage() {
       </section>
 
       {/* Add-Ons */}
-      <section className="bg-offWhite py-16 lg:py-24">
-        <div className="max-w-4xl mx-auto px-4">
-          <SectionHeader heading="Add-Ons" />
-          <div className="bg-white border border-border rounded-sm shadow-sm overflow-hidden">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="bg-navy text-white">
-                  <th className="text-left py-3 px-6 font-semibold">Add-On</th>
-                  <th className="text-right py-3 px-6 font-semibold">Price</th>
-                </tr>
-              </thead>
-              <tbody>
-                {addOns.map((row, i) => (
-                  <tr key={row.addon} className={i % 2 === 0 ? 'bg-white' : 'bg-lightGray'}>
-                    <td className="py-3 px-6 text-bodyText">{row.addon}</td>
-                    <td className="py-3 px-6 text-right font-semibold text-navy">{row.price}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+      <section className="bg-cream border-y border-ruleSoft py-section">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+          <SectionHeader eyebrow="A la carte" heading="Add-ons." align="left" />
+          <div className="border-t-2 border-ink">
+            <div className="grid grid-cols-[1fr_auto] py-3 border-b border-rule">
+              <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-mute">Add-on</span>
+              <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-mute text-right">Price</span>
+            </div>
+            {addOns.map((row) => (
+              <div key={row.addon} className="grid grid-cols-[1fr_auto] py-4 border-b border-ruleSoft">
+                <span className="text-ink">{row.addon}</span>
+                <span className="font-mono text-ink font-semibold tabular-nums text-right">{row.price}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="bg-white py-16 lg:py-24">
-        <div className="max-w-3xl mx-auto px-4">
-          <SectionHeader heading="Frequently Asked Questions" />
+      <section className="bg-paper py-section">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <SectionHeader eyebrow="Frequently asked" heading="Before you sign." align="left" />
           <FAQAccordion items={faqItems} />
         </div>
       </section>

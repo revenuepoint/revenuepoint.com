@@ -45,7 +45,7 @@ export function PlatformModuleSidebar({ items, selectedId, onSelect }: Props) {
               className={`group text-left rounded-lg border px-3 py-3 transition-colors ${
                 selected
                   ? 'bg-white border-crimson/40 shadow-sm'
-                  : 'bg-white/50 border-border hover:bg-white hover:border-border'
+                  : 'bg-white/50 border-rule hover:bg-white hover:border-rule'
               }`}
               aria-current={selected ? 'true' : undefined}
             >
@@ -54,7 +54,7 @@ export function PlatformModuleSidebar({ items, selectedId, onSelect }: Props) {
                   className={`mt-0.5 inline-flex items-center justify-center h-7 w-7 rounded-md shrink-0 ${
                     selected
                       ? 'bg-crimson text-white'
-                      : 'bg-offWhite text-navy border border-border'
+                      : 'bg-cream text-navy border border-rule'
                   }`}
                   aria-hidden="true"
                 >
@@ -68,7 +68,7 @@ export function PlatformModuleSidebar({ items, selectedId, onSelect }: Props) {
                   >
                     {item.name}
                   </p>
-                  <p className="text-[11px] text-mutedText mt-0.5 leading-snug">
+                  <p className="text-[11px] text-mute mt-0.5 leading-snug">
                     {item.role}
                   </p>
                   <span
@@ -99,12 +99,12 @@ export function PlatformModuleSidebar({ items, selectedId, onSelect }: Props) {
               className={`shrink-0 snap-start flex items-center gap-2 rounded-full border px-3 py-2 text-xs font-semibold transition-colors ${
                 selected
                   ? 'bg-white border-crimson/40 text-crimson shadow-sm'
-                  : 'bg-white/50 border-border text-navy'
+                  : 'bg-white/50 border-rule text-navy'
               }`}
             >
               <span
                 className={`inline-flex items-center justify-center h-5 w-5 rounded ${
-                  selected ? 'bg-crimson text-white' : 'bg-offWhite text-navy'
+                  selected ? 'bg-crimson text-white' : 'bg-cream text-navy'
                 }`}
                 aria-hidden="true"
               >

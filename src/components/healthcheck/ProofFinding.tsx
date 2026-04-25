@@ -24,9 +24,9 @@ export function ProofFinding() {
           </p>
         </div>
 
-        <div className="bg-white border border-border rounded-lg overflow-hidden shadow-sm">
+        <div className="bg-white border border-rule rounded-lg overflow-hidden shadow-sm">
           {/* Header */}
-          <div className="px-5 py-4 border-b border-border flex flex-wrap items-center gap-3">
+          <div className="px-5 py-4 border-b border-rule flex flex-wrap items-center gap-3">
             <span
               className={`text-[10px] font-semibold uppercase tracking-widest px-2 py-1 rounded border ${sevPillClasses(
                 f.severity
@@ -34,24 +34,24 @@ export function ProofFinding() {
             >
               Critical · Red
             </span>
-            <span className="text-xs font-mono text-mutedText">{f.id}</span>
+            <span className="text-xs font-mono text-mute">{f.id}</span>
             <div className="text-sm font-bold text-navy flex-1 min-w-0 truncate">{f.title}</div>
           </div>
 
           {/* Body grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-border">
+          <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-rule">
             {/* Left: evidence + diagram */}
             <div className="p-5">
-              <div className="text-[10px] uppercase tracking-widest text-mutedText font-semibold">
+              <div className="text-[10px] uppercase tracking-widest text-mute font-semibold">
                 Evidence
               </div>
-              <p className="mt-2 text-sm text-bodyText leading-relaxed">{f.evidence}</p>
+              <p className="mt-2 text-sm text-ink leading-relaxed">{f.evidence}</p>
 
               {f.blocks.map((b, i) => {
                 if (b.kind !== 'diagram') return null;
                 return (
                   <div key={i} className="mt-5">
-                    <div className="text-[10px] uppercase tracking-widest text-mutedText font-semibold mb-2">
+                    <div className="text-[10px] uppercase tracking-widest text-mute font-semibold mb-2">
                       Trigger chain
                     </div>
                     <div className="space-y-2">
@@ -60,23 +60,23 @@ export function ProofFinding() {
                           key={j}
                           className="flex items-center gap-2 text-xs"
                         >
-                          <div className="shrink-0 rounded border border-border bg-offWhite px-2 py-1 font-medium text-navy whitespace-nowrap">
+                          <div className="shrink-0 rounded border border-rule bg-cream px-2 py-1 font-medium text-navy whitespace-nowrap">
                             {r.from}
                           </div>
-                          <div className="text-mutedText">→</div>
+                          <div className="text-mute">→</div>
                           <div
                             className={`rounded px-2 py-1 font-semibold whitespace-nowrap ${
                               r.tone === 'red'
-                                ? 'bg-red/10 text-red border border-red/30'
+                                ? 'bg-rust/10 text-rust border border-rust/30'
                                 : r.tone === 'yellow'
                                 ? 'bg-amber/10 text-amber border border-amber/30'
-                                : 'bg-green/10 text-green border border-green/30'
+                                : 'bg-navy/10 text-navy border border-navy/30'
                             }`}
                           >
                             {r.via}
                           </div>
-                          <div className="text-mutedText">→</div>
-                          <div className="shrink-0 rounded border border-border bg-offWhite px-2 py-1 font-medium text-navy whitespace-nowrap">
+                          <div className="text-mute">→</div>
+                          <div className="shrink-0 rounded border border-rule bg-cream px-2 py-1 font-medium text-navy whitespace-nowrap">
                             {r.to}
                           </div>
                         </div>
@@ -93,7 +93,7 @@ export function ProofFinding() {
                 if (b.kind !== 'code') return null;
                 return (
                   <div key={i}>
-                    <div className="text-[10px] uppercase tracking-widest text-mutedText font-semibold mb-2">
+                    <div className="text-[10px] uppercase tracking-widest text-mute font-semibold mb-2">
                       Reproduce it · {b.language}
                     </div>
                     <pre className="rounded bg-navy text-white text-[11px] font-mono p-3 overflow-x-auto leading-relaxed">
@@ -106,13 +106,13 @@ export function ProofFinding() {
                 <div className="text-[10px] uppercase tracking-widest text-crimson font-semibold">
                   Recommended fix
                 </div>
-                <p className="mt-2 text-sm text-bodyText leading-relaxed">{f.recommendation}</p>
+                <p className="mt-2 text-sm text-ink leading-relaxed">{f.recommendation}</p>
               </div>
             </div>
           </div>
 
           {/* Footer */}
-          <div className="px-5 py-3 border-t border-border bg-offWhite text-[10px] uppercase tracking-widest text-mutedText">
+          <div className="px-5 py-3 border-t border-rule bg-cream text-[10px] uppercase tracking-widest text-mute">
             Findings like this one are attached per finding in the appendix of every Health Check
             report.
           </div>

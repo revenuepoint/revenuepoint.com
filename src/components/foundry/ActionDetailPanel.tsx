@@ -27,7 +27,7 @@ const STATUS_STYLE: Record<DetailStatus, { label: string; className: string }> =
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-[10px] text-mutedText uppercase tracking-widest font-semibold mb-2">
+    <p className="text-[10px] text-mute uppercase tracking-widest font-semibold mb-2">
       {children}
     </p>
   );
@@ -151,7 +151,7 @@ function StepDot({ status }: { status: ActionStep['status'] }) {
     );
   }
   return (
-    <span className="inline-block h-4 w-4 rounded-full border-2 border-border bg-white" />
+    <span className="inline-block h-4 w-4 rounded-full border-2 border-rule bg-white" />
   );
 }
 
@@ -165,7 +165,7 @@ function StepTimeline({ steps }: { steps: ActionStep[] }) {
             {i < steps.length - 1 && (
               <div
                 className={`w-0.5 flex-1 min-h-[20px] ${
-                  step.status === 'completed' ? 'bg-emerald-500/40' : 'bg-border'
+                  step.status === 'completed' ? 'bg-emerald-500/40' : 'bg-rule'
                 }`}
               />
             )}
@@ -175,8 +175,8 @@ function StepTimeline({ steps }: { steps: ActionStep[] }) {
               <div className="flex items-center gap-1.5 min-w-0">
                 <p
                   className={`text-xs leading-snug ${
-                    step.status === 'running' ? 'text-navy font-medium' : 'text-bodyText'
-                  } ${step.status === 'completed' ? 'text-mutedText' : ''}`}
+                    step.status === 'running' ? 'text-navy font-medium' : 'text-ink'
+                  } ${step.status === 'completed' ? 'text-mute' : ''}`}
                 >
                   {step.label}
                 </p>
@@ -188,7 +188,7 @@ function StepTimeline({ steps }: { steps: ActionStep[] }) {
                   </span>
                 )}
               </div>
-              <span className="text-[10px] text-mutedText font-mono">
+              <span className="text-[10px] text-mute font-mono">
                 {step.status === 'completed' ? step.duration ?? '' : step.status === 'running' ? 'running…' : 'pending'}
               </span>
             </div>
@@ -201,8 +201,8 @@ function StepTimeline({ steps }: { steps: ActionStep[] }) {
 
 function ChangeCard({ change }: { change: ActionChange }) {
   return (
-    <div className="border border-border rounded-lg overflow-hidden bg-white">
-      <div className="flex items-center gap-2 px-3 py-2 bg-offWhite border-b border-border">
+    <div className="border border-rule rounded-lg overflow-hidden bg-white">
+      <div className="flex items-center gap-2 px-3 py-2 bg-cream border-b border-rule">
         <span
           className={`inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded border ${VERB_STYLE[change.verb]}`}
         >
@@ -221,10 +221,10 @@ function ChangeCard({ change }: { change: ActionChange }) {
       <div className="px-3 py-2.5 flex flex-col gap-1.5">
         {change.fields.map((f, i) => (
           <div key={i} className="text-[11px] leading-snug">
-            <span className="text-[9px] uppercase tracking-wider text-mutedText">
+            <span className="text-[9px] uppercase tracking-wider text-mute">
               {f.label}
             </span>
-            <p className="text-bodyText">{f.value}</p>
+            <p className="text-ink">{f.value}</p>
           </div>
         ))}
       </div>
@@ -245,10 +245,10 @@ function TimelineEntryRow({ entry }: { entry: ActionTimelineEntry }) {
             : ShieldIcon;
   return (
     <div className="flex items-start gap-2">
-      <Icon className="h-3.5 w-3.5 text-mutedText shrink-0 mt-0.5" />
+      <Icon className="h-3.5 w-3.5 text-mute shrink-0 mt-0.5" />
       <div className="min-w-0">
-        <p className="text-[10px] uppercase tracking-wider text-mutedText">{entry.label}</p>
-        <p className="text-xs text-bodyText">{entry.value}</p>
+        <p className="text-[10px] uppercase tracking-wider text-mute">{entry.label}</p>
+        <p className="text-xs text-ink">{entry.value}</p>
       </div>
     </div>
   );
@@ -261,7 +261,7 @@ export function ActionDetailPanel({ action }: { action: ActionDetail }) {
   return (
     <div className="flex flex-col gap-6">
       {/* Header */}
-      <div className="flex flex-col gap-3 pb-5 border-b border-border">
+      <div className="flex flex-col gap-3 pb-5 border-b border-rule">
         <h3 className="text-base font-semibold text-navy leading-snug">{action.name}</h3>
         <div className="flex items-center gap-1.5 flex-wrap">
           <span
@@ -283,7 +283,7 @@ export function ActionDetailPanel({ action }: { action: ActionDetail }) {
             </span>
           ))}
         </div>
-        <div className="flex items-center gap-1.5 text-xs text-mutedText">
+        <div className="flex items-center gap-1.5 text-xs text-mute">
           <BotIcon className="h-3 w-3 text-crimson" />
           <span className="truncate">{action.agent}</span>
           <span>·</span>
@@ -298,7 +298,7 @@ export function ActionDetailPanel({ action }: { action: ActionDetail }) {
           <section>
             <SectionLabel>What Will Happen</SectionLabel>
             <div className="bg-navy/[0.03] border border-navy/10 rounded-lg px-4 py-3">
-              <p className="text-sm leading-relaxed text-bodyText">{action.summary}</p>
+              <p className="text-sm leading-relaxed text-ink">{action.summary}</p>
             </div>
           </section>
 
@@ -311,8 +311,8 @@ export function ActionDetailPanel({ action }: { action: ActionDetail }) {
 
           <section>
             <SectionLabel>Agent Rationale</SectionLabel>
-            <div className="bg-offWhite border border-border rounded-lg px-4 py-3">
-              <p className="text-xs leading-relaxed text-bodyText italic">
+            <div className="bg-cream border border-rule rounded-lg px-4 py-3">
+              <p className="text-xs leading-relaxed text-ink italic">
                 {action.rationale}
               </p>
             </div>
@@ -331,7 +331,7 @@ export function ActionDetailPanel({ action }: { action: ActionDetail }) {
       </div>
 
       {/* Footer: Timeline entries inline with Approve / Reject buttons */}
-      <div className="pt-5 border-t border-border">
+      <div className="pt-5 border-t border-rule">
         <div className="flex items-center flex-wrap gap-x-6 gap-y-3">
           {action.timeline.map((entry, i) => (
             <TimelineEntryRow key={i} entry={entry} />
@@ -340,7 +340,7 @@ export function ActionDetailPanel({ action }: { action: ActionDetail }) {
             className="ml-auto flex items-center gap-2 select-none"
             aria-hidden="true"
           >
-            <div className="text-center text-xs font-semibold px-4 py-2 rounded border bg-offWhite text-mutedText border-border">
+            <div className="text-center text-xs font-semibold px-4 py-2 rounded border bg-cream text-mute border-rule">
               Reject
             </div>
             <div className="text-center text-xs font-semibold px-5 py-2 rounded border bg-emerald-50 text-emerald-700 border-emerald-200">
@@ -349,7 +349,7 @@ export function ActionDetailPanel({ action }: { action: ActionDetail }) {
           </div>
         </div>
         {action.note && (
-          <p className="mt-3 text-[11px] text-mutedText italic">{action.note}</p>
+          <p className="mt-3 text-[11px] text-mute italic">{action.note}</p>
         )}
       </div>
     </div>

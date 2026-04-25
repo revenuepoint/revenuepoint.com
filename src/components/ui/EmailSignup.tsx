@@ -11,11 +11,11 @@ type EmailSignupProps = {
 };
 
 const inputClass =
-  'flex-1 border border-border rounded-sm px-4 py-3 text-sm text-bodyText placeholder:text-mutedText focus:outline-none focus:border-crimson focus:ring-1 focus:ring-crimson transition-colors bg-white';
+  'flex-1 border border-rule px-4 py-3 text-sm text-ink placeholder:text-muteSoft focus:outline-none focus:border-crimson focus:ring-1 focus:ring-crimson transition-colors bg-paper';
 
 export function EmailSignup({
-  heading = 'Get new posts in your inbox',
-  body = 'Occasional essays on orchestration, data infrastructure, and the work of running a modern business. No spam, unsubscribe anytime.',
+  heading = 'Get new posts in your inbox.',
+  body = 'Occasional essays on orchestration, data infrastructure, and the work of running a modern business. No spam — unsubscribe anytime.',
   buttonLabel = 'Subscribe',
   source = 'Insights Email Signup',
   id,
@@ -30,23 +30,21 @@ export function EmailSignup({
   }, []);
 
   return (
-    <div className="rounded-md border border-border bg-offWhite px-6 py-8 lg:px-10 lg:py-10">
+    <div className="border border-rule bg-cream px-6 py-8 lg:px-10 lg:py-10">
       <div className="max-w-xl">
-        <h3 className="text-xl lg:text-2xl font-bold text-navy tracking-tight">
+        <p className="eyebrow mb-4">Newsletter · monthly</p>
+        <h3 className="font-serif text-[1.5rem] lg:text-[1.75rem] font-medium text-ink leading-tight">
           {heading}
         </h3>
-        <p className="mt-2 text-sm lg:text-base text-bodyText leading-relaxed">
-          {body}
-        </p>
+        <p className="mt-3 text-sm lg:text-base text-inkSoft leading-relaxed">{body}</p>
       </div>
 
       <form
         id={id}
         action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8"
         method="POST"
-        className="mt-5 flex flex-col sm:flex-row gap-3 max-w-xl"
+        className="mt-6 flex flex-col sm:flex-row gap-3 max-w-xl"
       >
-        {/* Salesforce hidden fields */}
         <input type="hidden" name="oid" value={process.env.NEXT_PUBLIC_SF_OID} />
         <input type="hidden" name="retURL" value="https://revenuepoint.com/thank-you/" />
         <input type="hidden" name="lead_source" value="Web" />
@@ -66,9 +64,6 @@ export function EmailSignup({
           name={process.env.NEXT_PUBLIC_SF_SOURCE_FIELD_ID}
           value={source}
         />
-
-        {/* Salesforce requires first_name, last_name, and company on Lead records.
-            We populate them with sentinel values so the email-only signup is valid. */}
         <input type="hidden" name="first_name" value="Insights" />
         <input type="hidden" name="last_name" value="Subscriber" />
         <input type="hidden" name="company" value="Newsletter Signup" />
@@ -85,9 +80,9 @@ export function EmailSignup({
 
         <button
           type="submit"
-          className="bg-crimson text-white font-semibold py-3 px-6 rounded-sm hover:bg-crimsonDark transition-colors whitespace-nowrap"
+          className="inline-flex items-center justify-center gap-2 border border-crimson text-crimson font-serif italic text-[15px] py-3 px-6 hover:bg-crimsonTint transition-colors whitespace-nowrap"
         >
-          {buttonLabel} &rarr;
+          {buttonLabel} <span aria-hidden="true">→</span>
         </button>
       </form>
 

@@ -26,7 +26,7 @@ const CALLS = [
 
 export function EightByEightMock() {
   return (
-    <div className="h-full flex flex-col rounded-xl overflow-hidden border border-border shadow-2xl bg-white">
+    <div className="h-full flex flex-col rounded-xl overflow-hidden border border-rule shadow-2xl bg-white">
       {/* Header */}
       <div className="flex items-center gap-3 px-3 py-2 bg-[#27292F] text-white">
         <div className="flex items-center gap-1.5">
@@ -86,40 +86,40 @@ export function EightByEightMock() {
 
           {/* Talking points panel — Foundry */}
           <div className="flex-1 p-3">
-            <div className="rounded-md border border-border bg-white shadow-sm ring-1 ring-crimson/20 overflow-hidden">
-              <div className="flex items-center justify-between gap-2 px-3 py-1.5 bg-crimsonLight border-b border-crimson/20">
+            <div className="rounded-md border border-rule bg-white shadow-sm ring-1 ring-crimson/20 overflow-hidden">
+              <div className="flex items-center justify-between gap-2 px-3 py-1.5 bg-crimsonTint border-b border-crimson/20">
                 <div className="flex items-center gap-1.5">
                   <BoltIcon className="h-3 w-3 text-crimson" />
                   <span className="text-[9px] font-bold uppercase tracking-widest text-crimson">
                     Foundry · Cold-call brief
                   </span>
                 </div>
-                <span className="text-[9px] text-mutedText">auto-generated 4m ago</span>
+                <span className="text-[9px] text-mute">auto-generated 4m ago</span>
               </div>
 
               <div className="p-3 flex flex-col gap-2.5">
                 {/* Snapshot */}
                 <div className="grid grid-cols-3 gap-2">
-                  <div className="bg-offWhite border border-border rounded px-2 py-1.5">
-                    <p className="text-[9px] text-mutedText uppercase tracking-wider">Account value</p>
+                  <div className="bg-cream border border-rule rounded px-2 py-1.5">
+                    <p className="text-[9px] text-mute uppercase tracking-wider">Account value</p>
                     <p className="text-[12px] font-mono font-bold text-navy">$2.4M / yr</p>
                   </div>
-                  <div className="bg-offWhite border border-border rounded px-2 py-1.5">
-                    <p className="text-[9px] text-mutedText uppercase tracking-wider">Last order</p>
+                  <div className="bg-cream border border-rule rounded px-2 py-1.5">
+                    <p className="text-[9px] text-mute uppercase tracking-wider">Last order</p>
                     <p className="text-[12px] font-mono font-bold text-navy">Apr 1 · $48K</p>
                   </div>
-                  <div className="bg-offWhite border border-border rounded px-2 py-1.5">
-                    <p className="text-[9px] text-mutedText uppercase tracking-wider">Open opp</p>
+                  <div className="bg-cream border border-rule rounded px-2 py-1.5">
+                    <p className="text-[9px] text-mute uppercase tracking-wider">Open opp</p>
                     <p className="text-[12px] font-mono font-bold text-emerald-600">$340K</p>
                   </div>
                 </div>
 
                 {/* Talking points */}
                 <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-mutedText mb-1.5">
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-mute mb-1.5">
                     Talking points
                   </p>
-                  <ul className="flex flex-col gap-1.5 text-[11.5px] leading-snug text-bodyText">
+                  <ul className="flex flex-col gap-1.5 text-[11.5px] leading-snug text-ink">
                     <li className="flex gap-2">
                       <span className="inline-flex items-center justify-center h-4 w-4 shrink-0 rounded-full bg-emerald-500/15 text-emerald-700 text-[9px] font-bold">1</span>
                       <span>

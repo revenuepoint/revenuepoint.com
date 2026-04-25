@@ -2,12 +2,309 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =========================================================================
+   RevenuePoint · Direction A — Editorial design system.
+   Crimson #8B0A39 (locked) on warm ivory paper, navy #0F1A2B as the
+   supporting accent. Fraunces sets the voice; Geist carries body and UI;
+   JetBrains Mono carries quantitative content (KPIs, timestamps, micro-labels).
+   ========================================================================= */
+
+:root {
+  /* Editorial colour tokens — keep in sync with tailwind.config.ts */
+  --ink: #1A1612;
+  --ink-soft: #2D261E;
+  --paper: #F4EFE6;
+  --cream: #FAF6EC;
+  --bone: #E8E2D5;
+  --rule: #C4BCA8;
+  --rule-soft: #DCD4C0;
+  --mute: #7A6F5C;
+  --mute-soft: #A09683;
+  --crimson: #8B0A39;
+  --crimson-deep: #6B0829;
+  --crimson-tint: #F2E0E5;
+  --navy: #0F1A2B;
+  --navy-soft: #2A3F58;
+  --navy-tint: #DDE3EA;
+  --amber: #A86A1F;
+  --rust: #A4391E;
+  --gold: #C39A4A;
+
+  /* Geist ships its CSS variable as --font-geist-sans; alias it so our
+     Tailwind config + utility classes can refer to the simpler --font-geist. */
+  --font-geist: var(--font-geist-sans);
+
+  /* Fluid section rhythm */
+  --s-section: clamp(4.5rem, 9vw, 8rem);
+
+  /* Motion */
+  --ease: cubic-bezier(0.32, 0.04, 0.16, 1);
+  --ease-out: cubic-bezier(0.2, 0.7, 0.1, 1);
+  --d-fast: 180ms;
+  --d-mid: 320ms;
+  --d-slow: 600ms;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  color: #2C3E50;
+  background: var(--paper);
+  color: var(--ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'kern' 1, 'ss01' 1, 'cv11' 1;
+  line-height: 1.65;
+}
+
+/* ----- Headings -------------------------------------------------------- */
+
+h1, h2, h3, h4 {
+  font-family: var(--font-fraunces), 'Iowan Old Style', 'Apple Garamond', Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.018em;
+  line-height: 1.05;
+  color: var(--ink);
+  font-feature-settings: 'kern' 1, 'liga' 1, 'ss01' 1;
+  text-wrap: balance;
+}
+
+h1 {
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.022em;
+}
+
+h2 { line-height: 1.08; }
+h3 { line-height: 1.15; }
+h4 { line-height: 1.25; }
+
+/* Italic accent inside any heading uses Fraunces italic at the same size */
+h1 em, h2 em, h3 em, h4 em {
+  font-style: italic;
+  font-weight: inherit;
+  color: var(--crimson);
+}
+
+/* ----- Editorial utilities -------------------------------------------- */
+
+/* Eyebrow — uppercase mono with crimson rule before */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--mute);
+}
+.eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 22px;
+  height: 1px;
+  background: var(--crimson);
+}
+
+/* Byline — eyebrow's heavier sibling, uses ink rule */
+.byline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--mute);
+}
+.byline::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--ink);
+}
+
+/* Drop cap — reserved for executive-summary moments */
+.dropcap::first-letter {
+  font-family: var(--font-fraunces), 'Iowan Old Style', Georgia, serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 5.4em;
+  line-height: 0.86;
+  color: var(--crimson);
+  float: left;
+  padding-right: 0.08em;
+  padding-top: 0.06em;
+  margin-bottom: -0.08em;
+}
+
+/* Pull quote — one per page maximum */
+.pullquote {
+  font-family: var(--font-fraunces), 'Iowan Old Style', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.4rem, 2.4vw, 1.95rem);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+  border-left: 2px solid var(--crimson);
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  max-width: 36ch;
+  margin: 2rem 0;
+}
+.pullquote cite {
+  display: block;
+  margin-top: 0.75rem;
+  font-family: var(--font-geist), system-ui, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--mute);
+}
+
+/* Footnote / marginalia */
+.footnote {
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+  font-size: 0.6875rem;
+  line-height: 1.55;
+  letter-spacing: 0.02em;
+  color: var(--mute);
+}
+.footnote-num {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.66em;
+  color: var(--crimson);
+  vertical-align: super;
+  line-height: 0;
+  margin: 0 0.1em 0 0.05em;
+}
+
+/* Serif italic helper — for inline accent moments */
+.serif-italic {
+  font-family: var(--font-fraunces), 'Iowan Old Style', Georgia, serif;
+  font-style: italic;
+}
+
+/* Hairline rules — section dividers */
+.hairline {
+  height: 1px;
+  background: var(--rule);
+  border: 0;
+  margin: 3rem 0;
+}
+.hairline--soft {
+  background: var(--rule-soft);
+}
+.hairline-strong {
+  height: 2px;
+  background: var(--ink);
+  border: 0;
+  margin: 3rem 0;
+}
+
+/* Watermark numeral — hero pseudo-element. Apply to hero containers
+   alongside `data-issue="01"` (or letter). */
+.watermark-numeral {
+  position: relative;
+  isolation: isolate;
+}
+.watermark-numeral::before {
+  content: attr(data-issue);
+  position: absolute;
+  right: -0.05em;
+  top: -0.15em;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(14rem, 32vw, 32rem);
+  line-height: 0.86;
+  color: var(--ink);
+  opacity: 0.05;
+  pointer-events: none;
+  user-select: none;
+  z-index: -1;
+  white-space: nowrap;
+}
+
+/* Product-surface scope — wraps explorers and product UIs so they keep
+   sans-serif inheritance regardless of parent context. Belt-and-braces
+   alongside the body default. */
+.product-surface,
+.product-surface * {
+  font-family: var(--font-geist), system-ui, sans-serif;
+}
+.product-surface .font-mono,
+.product-surface code,
+.product-surface pre {
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+}
+.product-surface h1,
+.product-surface h2,
+.product-surface h3,
+.product-surface h4,
+.product-surface h5,
+.product-surface h6 {
+  font-family: var(--font-geist), system-ui, sans-serif;
+  letter-spacing: -0.012em;
+}
+
+/* Tabular numerals on mono blocks — keeps KPI columns aligned */
+.font-mono,
+[class*='tabular'] {
+  font-feature-settings: 'tnum' 1, 'zero' 1;
+}
+
+/* Live indicator — pulsing navy dot, used in product viewport captions
+   and "live" tags. Honors prefers-reduced-motion. */
+.live-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--navy);
+  margin-right: 6px;
+  position: relative;
+}
+.live-dot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: var(--navy);
+  opacity: 0.3;
+  animation: rp-live-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes rp-live-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.6); opacity: 0; }
+}
+
+/* Reduced motion — strip animations and transitions */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .live-dot::after { animation: none; }
+}
+
+/* Selection — crimson on paper */
+::selection {
+  background: var(--crimson);
+  color: var(--paper);
 }

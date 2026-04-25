@@ -20,7 +20,7 @@ export function DeliverableWalkthrough() {
 
   return (
     <div id="walkthrough">
-      <section className="bg-offWhite border-b border-border">
+      <section className="bg-cream border-b border-rule">
         <div className="max-w-7xl mx-auto px-4 py-14 lg:py-20">
           <div className="max-w-3xl">
             <p className="text-xs font-bold uppercase tracking-widest text-crimson mb-4">
@@ -29,7 +29,7 @@ export function DeliverableWalkthrough() {
             <h2 className="text-3xl font-bold tracking-tight text-navy">
               A 40–80 page report plus a companion register. Here&apos;s what&apos;s in it.
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-bodyText">
+            <p className="mt-4 text-base leading-relaxed text-ink">
               Every CRM Health Check produces the same report structure — so findings are
               comparable across engagements and every stakeholder reads the same shape of
               document. Examples below are keyed to the {crmLabel} tab above.

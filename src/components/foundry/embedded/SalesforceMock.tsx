@@ -42,7 +42,7 @@ function BotIcon({ className = 'h-3 w-3' }: { className?: string }) {
 
 export function SalesforceMock() {
   return (
-    <div className="h-full flex flex-col rounded-xl overflow-hidden border border-border shadow-2xl bg-white">
+    <div className="h-full flex flex-col rounded-xl overflow-hidden border border-rule shadow-2xl bg-white">
       {/* Top header */}
       <div className="flex items-center gap-3 px-3 py-2 bg-[#00A1E0]">
         <SalesforceCloudIcon className="h-5 w-7" />
@@ -137,14 +137,14 @@ export function SalesforceMock() {
 
             {/* Foundry widget */}
             <div className="col-span-2 relative">
-              <div className="rounded-md border border-border bg-white shadow-sm ring-1 ring-crimson/20 overflow-hidden">
-                <div className="flex items-center gap-1.5 px-2.5 py-1.5 bg-crimsonLight border-b border-crimson/20">
+              <div className="rounded-md border border-rule bg-white shadow-sm ring-1 ring-crimson/20 overflow-hidden">
+                <div className="flex items-center gap-1.5 px-2.5 py-1.5 bg-crimsonTint border-b border-crimson/20">
                   <BoltIcon className="h-3 w-3 text-crimson" />
                   <span className="text-[9px] font-bold uppercase tracking-widest text-crimson">Foundry</span>
                 </div>
                 <div className="px-2.5 py-2 flex flex-col gap-2">
                   <div>
-                    <p className="text-[9px] text-mutedText uppercase tracking-wider mb-1">AR aging · $47.2K</p>
+                    <p className="text-[9px] text-mute uppercase tracking-wider mb-1">AR aging · $47.2K</p>
                     <div className="flex h-2 rounded-sm overflow-hidden">
                       <div className="bg-emerald-500" style={{ width: '34%' }} />
                       <div className="bg-amber-500" style={{ width: '18%' }} />
@@ -152,7 +152,7 @@ export function SalesforceMock() {
                       <div className="bg-red-500" style={{ width: '28%' }} />
                     </div>
                   </div>
-                  <div className="flex items-center gap-1.5 text-[10px] text-bodyText">
+                  <div className="flex items-center gap-1.5 text-[10px] text-ink">
                     <span className="h-1.5 w-1.5 rounded-full bg-red-500 shrink-0" />
                     <span className="truncate">
                       <span className="text-navy font-medium">Out-of-Stock Responder</span> · 2m ago

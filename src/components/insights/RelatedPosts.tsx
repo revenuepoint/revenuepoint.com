@@ -6,12 +6,13 @@ export function RelatedPosts({ currentSlug }: { currentSlug: string }) {
   if (others.length === 0) return null;
   const shown = others.slice(0, 3);
   return (
-    <section className="bg-offWhite border-t border-border py-16">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-xl font-bold text-navy tracking-tight mb-6">
-          More from Insights
+    <section className="bg-cream border-t border-ruleSoft py-section">
+      <div className="max-w-editorial mx-auto px-6 lg:px-8">
+        <p className="eyebrow mb-4">Continue reading</p>
+        <h2 className="font-serif text-d2 font-medium text-ink mb-8">
+          More from <em>Insights</em>.
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {shown.map((p) => (
             <PostCard key={p.meta.slug} meta={p.meta} />
           ))}

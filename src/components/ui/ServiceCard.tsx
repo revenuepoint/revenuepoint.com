@@ -13,31 +13,31 @@ type ServiceCardProps = {
 
 export function ServiceCard({ title, body, cta, badge, elevated }: ServiceCardProps) {
   return (
-    <div
-      className={`bg-white border border-border rounded-sm shadow-sm flex ${
-        elevated ? 'ring-1 ring-crimson/20' : ''
+    <article
+      className={`relative bg-cream border flex flex-col p-6 lg:p-8 transition-shadow hover:shadow-hairline ${
+        elevated ? 'border-crimson' : 'border-ruleSoft'
       }`}
     >
-      <div className="w-1 bg-crimson rounded-l-sm shrink-0" />
-      <div className="p-6 flex flex-col flex-1">
-        <div className="flex items-center gap-2 mb-3">
-          <h3 className="text-xl font-semibold text-navy">{title}</h3>
-          {badge && (
-            <span className="text-[10px] font-bold bg-crimson text-white px-1.5 py-0.5 rounded-sm leading-none">
-              {badge}
-            </span>
-          )}
-        </div>
-        <p className="text-base text-bodyText leading-relaxed flex-1">{body}</p>
-        {cta && (
-          <Link
-            href={cta.href}
-            className="mt-4 text-sm font-semibold text-crimson hover:text-crimsonDark transition-colors inline-flex items-center gap-1"
-          >
-            {cta.label} <span aria-hidden="true">&rarr;</span>
-          </Link>
+      {/* Crimson accent bar — top, 32px */}
+      <span aria-hidden="true" className="absolute left-6 top-0 h-px w-8 bg-crimson" />
+      <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-rule" />
+      <div className="flex items-baseline gap-3 mt-3">
+        <h3 className="font-serif text-[1.5rem] font-medium text-ink leading-tight">{title}</h3>
+        {badge && (
+          <span className="font-mono text-[9px] uppercase tracking-[0.16em] bg-crimson text-paper px-1.5 py-[2px] leading-none">
+            {badge}
+          </span>
         )}
       </div>
-    </div>
+      <p className="mt-4 text-sm text-inkSoft leading-relaxed flex-1">{body}</p>
+      {cta && (
+        <Link
+          href={cta.href}
+          className="mt-6 inline-flex items-center gap-2 text-sm font-serif italic text-crimson hover:text-crimsonDeep transition-colors"
+        >
+          {cta.label} <span aria-hidden="true">→</span>
+        </Link>
+      )}
+    </article>
   );
 }

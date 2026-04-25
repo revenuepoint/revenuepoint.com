@@ -34,7 +34,7 @@ export function IndustrySwitcher() {
   return (
     <>
       {/* Eyebrow + heading (scrolls away normally) */}
-      <section className="bg-offWhite pt-16 pb-6 lg:pt-20 lg:pb-8">
+      <section className="bg-cream pt-16 pb-6 lg:pt-20 lg:pb-8">
         <div className="max-w-7xl mx-auto px-4">
           <SectionHeader
             eyebrow="INDUSTRY"
@@ -50,7 +50,7 @@ export function IndustrySwitcher() {
 
       {/* Sticky tab bar — pins below the fixed Navbar (63px mobile, 75px desktop) */}
       <div
-        className={`sticky top-[63px] lg:top-[75px] z-30 bg-offWhite/95 backdrop-blur border-y border-border transition-shadow ${
+        className={`sticky top-[63px] lg:top-[75px] z-30 bg-cream/95 backdrop-blur border-y border-rule transition-shadow ${
           isStuck ? 'shadow-md' : ''
         }`}
       >
@@ -60,7 +60,7 @@ export function IndustrySwitcher() {
       </div>
 
       {/* Intro content (in-module, changes per industry) */}
-      <section className="bg-offWhite pt-8 pb-16 lg:pb-24">
+      <section className="bg-cream pt-8 pb-16 lg:pb-24">
         <div className="max-w-7xl mx-auto px-4">
           <IndustryIntro />
         </div>

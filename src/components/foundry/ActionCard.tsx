@@ -93,7 +93,7 @@ export function ActionCard({ card }: { card: Card }) {
 
   return (
     <div
-      className={`bg-white rounded-md border border-border border-l-4 ${PHASE_BORDER[card.phase]} p-3 flex flex-col gap-2 shadow-sm transition-[border-color] duration-500`}
+      className={`bg-white rounded-md border border-rule border-l-4 ${PHASE_BORDER[card.phase]} p-3 flex flex-col gap-2 shadow-sm transition-[border-color] duration-500`}
     >
       <div className="flex items-start gap-2">
         <h4 className="text-[13px] font-semibold leading-snug text-navy flex-1 min-w-0">
@@ -106,7 +106,7 @@ export function ActionCard({ card }: { card: Card }) {
         </span>
       </div>
 
-      <div className="flex items-center gap-1.5 text-[11px] text-mutedText">
+      <div className="flex items-center gap-1.5 text-[11px] text-mute">
         <BotIcon className="h-3 w-3 text-crimson shrink-0" />
         <span className="truncate">{card.agent}</span>
       </div>
@@ -122,11 +122,11 @@ export function ActionCard({ card }: { card: Card }) {
         ))}
       </div>
 
-      <p className="text-[11px] leading-relaxed text-bodyText">{card.summary}</p>
+      <p className="text-[11px] leading-relaxed text-ink">{card.summary}</p>
 
       {(card.phase === 'pending' || card.phase === 'approving') && (
         <div
-          className="flex items-center gap-1.5 pt-2 border-t border-border select-none"
+          className="flex items-center gap-1.5 pt-2 border-t border-rule select-none"
           aria-hidden="true"
         >
           <div
@@ -134,14 +134,14 @@ export function ActionCard({ card }: { card: Card }) {
           >
             {isApproving ? 'Approved ✓' : 'Approve'}
           </div>
-          <div className="flex-1 text-center text-[11px] font-semibold py-1.5 rounded border bg-offWhite text-mutedText border-border">
+          <div className="flex-1 text-center text-[11px] font-semibold py-1.5 rounded border bg-cream text-mute border-rule">
             Reject
           </div>
         </div>
       )}
 
       {card.phase === 'queued' && (
-        <div className="flex items-center gap-1.5 pt-2 border-t border-border text-[10px] text-mutedText">
+        <div className="flex items-center gap-1.5 pt-2 border-t border-rule text-[10px] text-mute">
           <ClockIcon className="h-3 w-3 text-blue-500 shrink-0" />
           <span>
             Approved by <span className="text-navy font-medium">{card.approver ?? '—'}</span> · just now
@@ -150,10 +150,10 @@ export function ActionCard({ card }: { card: Card }) {
       )}
 
       {card.phase === 'running' && (
-        <div className="flex flex-col gap-1.5 pt-2 border-t border-border">
+        <div className="flex flex-col gap-1.5 pt-2 border-t border-rule">
           <div className="flex items-center gap-1.5">
             <SpinnerIcon className="h-3 w-3 text-cyan-600" />
-            <span className="text-[10px] text-mutedText">
+            <span className="text-[10px] text-mute">
               Step{' '}
               <span className="font-mono font-semibold text-navy">
                 {currentStep} of {card.totalSteps}
@@ -161,7 +161,7 @@ export function ActionCard({ card }: { card: Card }) {
               · <span className="font-mono">{formatElapsed(elapsedSeconds)}</span> elapsed
             </span>
           </div>
-          <div className="h-1 w-full bg-lightGray rounded-full overflow-hidden">
+          <div className="h-1 w-full bg-bone rounded-full overflow-hidden">
             <div
               className="h-full bg-cyan-500"
               style={{
@@ -174,7 +174,7 @@ export function ActionCard({ card }: { card: Card }) {
       )}
 
       {card.phase === 'done' && (
-        <div className="flex items-center gap-1.5 pt-2 border-t border-border text-[10px] text-mutedText">
+        <div className="flex items-center gap-1.5 pt-2 border-t border-rule text-[10px] text-mute">
           <CheckIcon className="h-3 w-3 text-emerald-600 shrink-0" />
           <span>
             <span className="font-mono text-navy">{card.duration ?? '—'}</span>

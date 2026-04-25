@@ -32,18 +32,18 @@ function ModuleIntro({ module: m }: { module: FoundryModule }) {
         >
           {layer.label}
         </span>
-        <span className="text-[10px] uppercase tracking-widest text-mutedText">
+        <span className="text-[10px] uppercase tracking-widest text-mute">
           {m.role}
         </span>
       </div>
       <h3 className="text-2xl font-bold text-navy">
         {m.name}
-        <span className="text-mutedText font-normal"> — {m.role}</span>
+        <span className="text-mute font-normal"> — {m.role}</span>
       </h3>
       <p className="text-sm text-crimson font-medium mt-1 leading-snug">
         {m.tagline}
       </p>
-      <p className="text-sm text-bodyText mt-2 leading-relaxed">
+      <p className="text-sm text-ink mt-2 leading-relaxed">
         {m.description}
       </p>
     </div>

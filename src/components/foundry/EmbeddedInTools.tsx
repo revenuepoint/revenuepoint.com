@@ -57,7 +57,7 @@ export function EmbeddedInTools() {
             <div className="h-[420px] overflow-hidden">
               {item.render}
             </div>
-            <p className="text-[11px] text-mutedText px-1">{item.caption}</p>
+            <p className="text-[11px] text-mute px-1">{item.caption}</p>
           </motion.div>
         ))}
       </div>

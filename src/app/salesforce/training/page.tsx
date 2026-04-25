@@ -74,9 +74,15 @@ export default function SalesforceTrainingPage() {
   return (
     <>
       <HeroSection
-        eyebrow="SALESFORCE TRAINING & PLAYBOOK"
-        heading="Salesforce training that leaves a Playbook embedded in your org."
+        byline="Salesforce · Training & Playbook"
+        heading={
+          <>
+            Salesforce training that leaves a <em>Playbook</em> embedded in your org.
+          </>
+        }
         body="Generic Salesforce training fades the week after the workshop because it teaches the platform, not your configuration. Ours doesn't — every engagement produces a custom Playbook authored to your fields, processes, and reports, then embedded inside Salesforce where the work happens. Live training delivers it. The Playbook keeps it."
+        issue="T"
+        sidenote="Custom Playbook · embedded in Salesforce · authored to your config."
         ctas={[
           { label: 'Schedule a training scoping call', href: '#lead-form', variant: 'primary' },
         ]}
@@ -90,7 +96,7 @@ export default function SalesforceTrainingPage() {
         variant="light"
       />
 
-      <section className="bg-offWhite py-16 lg:py-24 border-y border-border">
+      <section className="bg-cream py-16 lg:py-24 border-y border-rule">
         <div className="max-w-7xl mx-auto px-4">
           <SectionHeader
             eyebrow="How the engagement works"
@@ -103,16 +109,16 @@ export default function SalesforceTrainingPage() {
 
       <PlaybookWalkthrough />
 
-      <section className="bg-white py-16 lg:py-24 border-t border-border">
+      <section className="bg-white py-16 lg:py-24 border-t border-rule">
         <div className="max-w-3xl mx-auto px-4">
           <SectionHeader
             eyebrow="Frequently asked"
             heading="What teams ask before they engage"
           />
           <FAQAccordion items={faqs} />
-          <p className="mt-8 text-sm text-bodyText leading-relaxed">
+          <p className="mt-8 text-sm text-ink leading-relaxed">
             Not sure where to start?{' '}
-            <Link href="/salesforce/health-check/" className="text-crimson font-semibold hover:text-crimsonDark">
+            <Link href="/salesforce/health-check/" className="text-crimson font-semibold hover:text-crimsonDeep">
               A CRM Health Check
             </Link>{' '}
             often surfaces the gaps that seed the first Playbook sections — many engagements
@@ -121,7 +127,7 @@ export default function SalesforceTrainingPage() {
         </div>
       </section>
 
-      <section className="bg-offWhite py-16 lg:py-24 border-t border-border">
+      <section className="bg-cream py-16 lg:py-24 border-t border-rule">
         <div className="max-w-3xl mx-auto px-4">
           <SectionHeader
             heading="Tell us about your Salesforce training and Playbook needs"

@@ -6,12 +6,14 @@ export function PullQuote({
   attribution?: string;
 }) {
   return (
-    <figure className="my-10 border-l-4 border-crimson pl-6">
-      <blockquote className="text-xl lg:text-2xl font-semibold text-navy leading-snug tracking-tight">
+    <figure className="my-12 border-l-2 border-crimson pl-6 max-w-prose">
+      <blockquote className="font-serif italic text-[1.5rem] lg:text-[1.75rem] text-ink leading-snug tracking-[-0.012em]">
         &ldquo;{children}&rdquo;
       </blockquote>
       {attribution && (
-        <figcaption className="mt-3 text-sm text-mutedText">— {attribution}</figcaption>
+        <figcaption className="mt-4 font-mono text-[11px] uppercase tracking-[0.14em] text-mute">
+          — {attribution}
+        </figcaption>
       )}
     </figure>
   );

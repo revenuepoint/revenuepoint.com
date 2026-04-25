@@ -52,14 +52,14 @@ export function FoundryAgentCard({ agent }: { agent: FoundryAgent }) {
   const t = TYPE_STYLES[agent.type];
   const successTone =
     agent.successRate >= 95
-      ? 'text-green'
+      ? 'text-navy'
       : agent.successRate >= 80
         ? 'text-amber'
-        : 'text-red';
+        : 'text-rust';
 
   return (
     <div
-      className={`rounded-lg border border-border bg-white border-t-4 ${t.border} p-4 flex flex-col gap-3 shadow-sm`}
+      className={`rounded-lg border border-rule bg-white border-t-4 ${t.border} p-4 flex flex-col gap-3 shadow-sm`}
     >
       <div>
         <h3 className="font-semibold text-sm text-navy leading-snug">{agent.name}</h3>
@@ -69,23 +69,23 @@ export function FoundryAgentCard({ agent }: { agent: FoundryAgent }) {
           >
             {t.label}
           </span>
-          <span className="inline-flex items-center text-[10px] font-medium px-1.5 py-0.5 rounded border border-border text-mutedText">
+          <span className="inline-flex items-center text-[10px] font-medium px-1.5 py-0.5 rounded border border-rule text-mute">
             {agent.category}
           </span>
         </div>
       </div>
 
-      <p className="text-xs text-bodyText leading-relaxed line-clamp-3">
+      <p className="text-xs text-ink leading-relaxed line-clamp-3">
         {agent.description}
       </p>
 
-      <div className="flex items-center gap-1.5 text-[11px] text-mutedText">
+      <div className="flex items-center gap-1.5 text-[11px] text-mute">
         <ClockIcon />
         <span>{agent.schedule}</span>
       </div>
 
-      <div className="border-t border-border pt-3">
-        <p className="text-[10px] text-mutedText uppercase tracking-widest mb-1.5">
+      <div className="border-t border-rule pt-3">
+        <p className="text-[10px] text-mute uppercase tracking-widest mb-1.5">
           Recent runs
         </p>
         <div className="flex items-end gap-[2px] h-5">
@@ -99,25 +99,25 @@ export function FoundryAgentCard({ agent }: { agent: FoundryAgent }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-4 gap-2 border-t border-border pt-3">
+      <div className="grid grid-cols-4 gap-2 border-t border-rule pt-3">
         <div>
-          <p className="text-[9px] text-mutedText uppercase tracking-wider">Success</p>
+          <p className="text-[9px] text-mute uppercase tracking-wider">Success</p>
           <p className={`font-mono font-bold text-sm mt-0.5 ${successTone}`}>
             {agent.successRate}%
           </p>
         </div>
         <div>
-          <p className="text-[9px] text-mutedText uppercase tracking-wider">Avg</p>
+          <p className="text-[9px] text-mute uppercase tracking-wider">Avg</p>
           <p className="font-mono font-medium text-sm mt-0.5 text-navy">
             {agent.avgDuration}
           </p>
         </div>
         <div>
-          <p className="text-[9px] text-mutedText uppercase tracking-wider">Last</p>
+          <p className="text-[9px] text-mute uppercase tracking-wider">Last</p>
           <p className="font-medium text-sm mt-0.5 text-navy">{agent.lastRun}</p>
         </div>
         <div>
-          <p className="text-[9px] text-mutedText uppercase tracking-wider">Next</p>
+          <p className="text-[9px] text-mute uppercase tracking-wider">Next</p>
           <p className="font-medium text-sm mt-0.5 text-navy">{agent.nextRun}</p>
         </div>
       </div>

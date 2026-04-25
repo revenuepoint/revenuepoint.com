@@ -36,7 +36,7 @@ export default function CrmHealthCheckPage() {
         <HealthCheckFaqs />
       </CrmProvider>
 
-      <section id="request" className="bg-white border-t border-border">
+      <section id="request" className="bg-white border-t border-rule">
         <div className="max-w-3xl mx-auto px-4 py-16 lg:py-20">
           <SectionHeader
             eyebrow="Start with a 30-minute scoping call"

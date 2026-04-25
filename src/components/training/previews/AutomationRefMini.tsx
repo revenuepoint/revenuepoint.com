@@ -25,19 +25,19 @@ const typeTone: Record<string, string> = {
 export function AutomationRefMini() {
   return (
     <div>
-      <div className="text-[10px] uppercase tracking-widest text-mutedText font-semibold">
+      <div className="text-[10px] uppercase tracking-widest text-mute font-semibold">
         Automation · in plain English
       </div>
       <div className="mt-3 space-y-3">
         {items.map((i) => (
-          <div key={i.name} className="border border-border rounded-sm p-3">
+          <div key={i.name} className="border border-rule rounded-sm p-3">
             <div className="flex items-center gap-2">
               <span className={`text-[9px] uppercase tracking-widest font-bold px-1.5 py-0.5 rounded-sm ${typeTone[i.type]}`}>
                 {i.type}
               </span>
               <code className="text-[11px] text-navy font-semibold truncate">{i.name}</code>
             </div>
-            <div className="mt-2 text-[11px] text-bodyText leading-relaxed">{i.plain}</div>
+            <div className="mt-2 text-[11px] text-ink leading-relaxed">{i.plain}</div>
           </div>
         ))}
       </div>

@@ -6,13 +6,13 @@ export function CodeBlock({
   code: string;
 }) {
   return (
-    <div className="my-8 rounded-md border border-border overflow-hidden bg-navy text-white">
+    <div className="my-8 border border-rule overflow-hidden bg-ink text-paper">
       {language && (
-        <div className="px-4 py-1.5 border-b border-white/10 bg-white/5 text-[10px] uppercase tracking-widest text-white/60 font-mono">
+        <div className="px-4 py-2 border-b border-paper/10 bg-paper/5 font-mono text-[10px] uppercase tracking-[0.16em] text-paper/60">
           {language}
         </div>
       )}
-      <pre className="overflow-x-auto p-4 text-[13px] leading-relaxed font-mono">
+      <pre className="overflow-x-auto p-5 text-[13px] leading-relaxed font-mono">
         <code>{code}</code>
       </pre>
     </div>

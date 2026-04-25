@@ -20,7 +20,7 @@ export function IndustryTabs() {
             className={`shrink-0 snap-start inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold transition-colors ${
               selected
                 ? 'bg-crimson text-white border-crimson shadow-sm'
-                : 'bg-white text-navy border-border hover:border-crimson/40'
+                : 'bg-white text-navy border-rule hover:border-crimson/40'
             }`}
             aria-current={selected ? 'true' : undefined}
           >

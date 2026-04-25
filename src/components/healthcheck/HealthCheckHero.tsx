@@ -2,29 +2,34 @@ import { Button } from '@/components/ui/Button';
 
 export function HealthCheckHero() {
   return (
-    <section className="bg-navy">
-      <div className="max-w-7xl mx-auto px-4 py-16 lg:py-24">
+    <section className="relative bg-paper overflow-hidden">
+      <span
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute right-[-0.05em] top-[-0.15em] font-serif italic font-light text-ink leading-[0.86] whitespace-nowrap"
+        style={{ fontSize: 'clamp(14rem, 32vw, 32rem)', opacity: 0.05 }}
+      >
+        H
+      </span>
+      <div className="relative max-w-editorial mx-auto px-6 lg:px-8 pt-16 lg:pt-28 pb-16 lg:pb-24">
         <div className="max-w-3xl">
-          <p className="text-xs font-bold uppercase tracking-widest text-white mb-4">
-            CRM Health Check
-          </p>
-          <div className="w-10 h-[3px] mb-6 bg-crimson" />
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
-            Is your CRM working for you, or against you?
+          <p className="byline mb-5">CRM · Health Check</p>
+          <h1 className="text-d0 font-serif font-semibold text-ink leading-tight">
+            Is your CRM working for you, <em>or against you</em>?
           </h1>
-          <p className="mt-6 text-lg leading-relaxed max-w-2xl text-gray-300">
-            Bad data, broken automations, reports that disagree, license spend nobody can explain.
-            A CRM Health Check gives you a structured audit and a prioritized action plan in two
-            weeks — for Salesforce, HubSpot, Dynamics, or a custom system.
+          <p className="mt-6 text-lede leading-[1.65] max-w-lede text-inkSoft">
+            Bad data, broken automations, reports that disagree, license spend nobody can explain. A CRM Health Check gives you a structured audit and a prioritized action plan in two weeks — for Salesforce, HubSpot, Dynamics, or a custom system.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Button variant="primary" href="#request">
               Request a Health Check
             </Button>
-            <Button variant="ghost" href="#walkthrough">
-              See what you&apos;ll receive
+            <Button variant="secondary" href="#walkthrough">
+              See what you&rsquo;ll receive
             </Button>
           </div>
+          <p className="mt-6 pt-4 border-t border-ruleSoft font-mono text-[11px] uppercase tracking-[0.14em] text-mute max-w-prose">
+            Two-week structured audit · Salesforce · HubSpot · Dynamics · custom systems.
+          </p>
         </div>
       </div>
     </section>

@@ -7,7 +7,7 @@ const toneBg: Record<string, string> = {
   crimson: 'bg-crimson',
   navy: 'bg-navy',
   amber: 'bg-amber',
-  green: 'bg-green',
+  green: 'bg-navy',
 };
 
 const horizons = [
@@ -22,12 +22,12 @@ export function RoadmapBars() {
   const ws = healthCheckContent[crmId].roadmap;
   return (
     <div>
-      <div className="text-[10px] uppercase tracking-widest text-mutedText font-semibold">
+      <div className="text-[10px] uppercase tracking-widest text-mute font-semibold">
         Roadmap · workstreams by horizon
       </div>
       <div className="mt-3 relative pt-5">
         {/* horizon markers */}
-        <div className="absolute top-0 left-0 right-0 flex justify-between text-[9px] uppercase tracking-widest text-mutedText font-semibold">
+        <div className="absolute top-0 left-0 right-0 flex justify-between text-[9px] uppercase tracking-widest text-mute font-semibold">
           {horizons.map((h) => (
             <span key={h.label}>{h.label}</span>
           ))}
@@ -37,7 +37,7 @@ export function RoadmapBars() {
           {ws.map((w) => (
             <div key={w.name} className="text-xs">
               <div className="text-[11px] text-navy font-medium mb-1">{w.name}</div>
-              <div className="relative h-2 bg-lightGray rounded-full overflow-hidden">
+              <div className="relative h-2 bg-bone rounded-full overflow-hidden">
                 <div
                   className={`absolute top-0 bottom-0 ${toneBg[w.tone] ?? 'bg-navy'} rounded-full`}
                   style={{ left: `${w.spans[0]}%`, right: `${100 - w.spans[1]}%` }}

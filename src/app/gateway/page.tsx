@@ -30,7 +30,7 @@ function LockInIcon() {
       <path
         d="M14 24a8 8 0 0 1 14-6 10 10 0 0 1 19 4 7 7 0 0 1-1 14H16a8 8 0 0 1-2-12z"
         fill="#ffffff"
-        stroke="#0F2B4D"
+        stroke="#0F1A2B"
         strokeWidth="1.5"
       />
       {/* Chain link */}
@@ -49,12 +49,12 @@ function BuildCostIcon() {
   return (
     <svg viewBox="0 0 64 48" className="h-12 w-20 mb-4" aria-hidden="true">
       {/* Calendar with stacked months crossed out */}
-      <rect x="6" y="8" width="22" height="22" rx="2" fill="#ffffff" stroke="#0F2B4D" strokeWidth="1.4" />
-      <rect x="6" y="8" width="22" height="5" rx="2" fill="#0F2B4D" />
-      <rect x="14" y="14" width="22" height="22" rx="2" fill="#ffffff" stroke="#0F2B4D" strokeWidth="1.4" />
-      <rect x="14" y="14" width="22" height="5" rx="2" fill="#0F2B4D" />
-      <rect x="22" y="20" width="22" height="22" rx="2" fill="#ffffff" stroke="#0F2B4D" strokeWidth="1.4" />
-      <rect x="22" y="20" width="22" height="5" rx="2" fill="#0F2B4D" />
+      <rect x="6" y="8" width="22" height="22" rx="2" fill="#ffffff" stroke="#0F1A2B" strokeWidth="1.4" />
+      <rect x="6" y="8" width="22" height="5" rx="2" fill="#0F1A2B" />
+      <rect x="14" y="14" width="22" height="22" rx="2" fill="#ffffff" stroke="#0F1A2B" strokeWidth="1.4" />
+      <rect x="14" y="14" width="22" height="5" rx="2" fill="#0F1A2B" />
+      <rect x="22" y="20" width="22" height="22" rx="2" fill="#ffffff" stroke="#0F1A2B" strokeWidth="1.4" />
+      <rect x="22" y="20" width="22" height="5" rx="2" fill="#0F1A2B" />
       {/* Big strikethrough across all */}
       <line x1="4" y1="42" x2="48" y2="6" stroke="#8B0A39" strokeWidth="2.2" strokeLinecap="round" />
       {/* Dollar sign */}
@@ -69,10 +69,10 @@ function IsolationGapIcon() {
   return (
     <svg viewBox="0 0 64 48" className="h-12 w-20 mb-4" aria-hidden="true">
       {/* Two tenant boxes that overlap — bleed-through visualized */}
-      <rect x="6" y="10" width="28" height="28" rx="3" fill="#ffffff" stroke="#0F2B4D" strokeWidth="1.4" />
-      <text x="20" y="28" fontSize="9" fontWeight="700" fill="#0F2B4D" textAnchor="middle">A</text>
-      <rect x="30" y="10" width="28" height="28" rx="3" fill="#ffffff" stroke="#0F2B4D" strokeWidth="1.4" opacity="0.92" />
-      <text x="44" y="28" fontSize="9" fontWeight="700" fill="#0F2B4D" textAnchor="middle">B</text>
+      <rect x="6" y="10" width="28" height="28" rx="3" fill="#ffffff" stroke="#0F1A2B" strokeWidth="1.4" />
+      <text x="20" y="28" fontSize="9" fontWeight="700" fill="#0F1A2B" textAnchor="middle">A</text>
+      <rect x="30" y="10" width="28" height="28" rx="3" fill="#ffffff" stroke="#0F1A2B" strokeWidth="1.4" opacity="0.92" />
+      <text x="44" y="28" fontSize="9" fontWeight="700" fill="#0F1A2B" textAnchor="middle">B</text>
       {/* Overlap region rendered in crimson hatch */}
       <rect x="30" y="10" width="4" height="28" fill="#8B0A39" opacity="0.45" />
       {/* Warning bolt */}
@@ -92,21 +92,27 @@ export default function GatewayPage() {
     <TenantProvider>
       {/* 1 — Hero */}
       <HeroSection
-        eyebrow="REVENUEPOINT GATEWAY"
-        heading="Multi-tenant portals. Connected to your CRM and ERP. Fully managed."
+        byline="RevenuePoint Gateway · Issue G"
+        heading={
+          <>
+            Multi-tenant portals. Connected to your CRM and ERP. <em>Fully managed</em>.
+          </>
+        }
         body="Gateway gives every customer, partner, dealer, or location their own branded portal — wired into your CRM, ERP, and accounting. Magic-link login, code-defined access rules, tenant-level data isolation. Fully managed by RevenuePoint."
+        issue="G"
+        sidenote="Magic-link auth · code-defined rules · tenant-level isolation."
         ctas={[
-          { label: 'Schedule a Walkthrough →', href: '/contact/?interest=Gateway', variant: 'primary' },
-          { label: 'View Pricing →', href: '/gateway/pricing/', variant: 'ghost' },
+          { label: 'Schedule a walkthrough', href: '/contact/?interest=Gateway', variant: 'primary' },
+          { label: 'View pricing', href: '/gateway/pricing/', variant: 'secondary' },
         ]}
         rightSlot={<TenantSwitcherHero />}
       />
 
       {/* 2 — Problem */}
-      <section className="bg-offWhite py-16 lg:py-24">
+      <section className="bg-cream py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4">
           <SectionHeader heading="The portal layer most companies are stuck with." />
-          <p className="text-center text-mutedText -mt-6 mb-10 text-base">
+          <p className="text-center text-mute -mt-6 mb-10 text-base">
             Three traps. One missing layer.
           </p>
 
@@ -116,28 +122,28 @@ export default function GatewayPage() {
               return (
                 <div
                   key={card.title}
-                  className="bg-white border border-border rounded-sm shadow-sm p-6 flex flex-col"
+                  className="bg-white border border-rule rounded-sm shadow-sm p-6 flex flex-col"
                 >
                   <Icon />
                   <h3 className="text-base font-semibold text-navy mb-3 leading-snug">
                     {card.title}
                   </h3>
-                  <p className="text-sm text-bodyText leading-relaxed">{card.body}</p>
+                  <p className="text-sm text-ink leading-relaxed">{card.body}</p>
                 </div>
               );
             })}
           </div>
 
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 border-t border-border pt-6 divide-y md:divide-y-0 md:divide-x divide-border">
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 border-t border-rule pt-6 divide-y md:divide-y-0 md:divide-x divide-rule">
             {gatewayProblemStats.map((s) => (
               <div key={s.label} className="px-6 py-4 text-center">
                 <p className="text-3xl font-bold font-mono text-navy">{s.value}</p>
-                <p className="text-sm text-mutedText mt-1 leading-snug">{s.label}</p>
+                <p className="text-sm text-mute mt-1 leading-snug">{s.label}</p>
               </div>
             ))}
           </div>
 
-          <p className="text-center italic text-mutedText mt-8 text-base">
+          <p className="text-center italic text-mute mt-8 text-base">
             Gateway is the portal layer that fixes all three at once.
           </p>
         </div>
@@ -147,7 +153,7 @@ export default function GatewayPage() {
       <section className="bg-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4">
           <SectionHeader heading="Connect. Configure. Launch." />
-          <p className="text-center text-mutedText -mt-6 mb-10 text-base">
+          <p className="text-center text-mute -mt-6 mb-10 text-base">
             Three layers of a multi-tenant portal.
           </p>
 
@@ -183,13 +189,13 @@ export default function GatewayPage() {
             ].map((step, i) => (
               <div
                 key={step.title}
-                className="bg-white border border-border rounded-sm p-6 lg:p-7 flex flex-col"
+                className="bg-white border border-rule rounded-sm p-6 lg:p-7 flex flex-col"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-xs font-mono font-bold text-crimson tracking-widest">
                     {String(i + 1).padStart(2, '0')}
                   </span>
-                  <div className="h-px flex-1 bg-border" />
+                  <div className="h-px flex-1 bg-rule" />
                 </div>
                 <h3 className="text-xl font-bold text-navy mb-2">{step.title}</h3>
                 <p className="text-sm font-semibold text-navy mb-4 leading-snug">
@@ -197,7 +203,7 @@ export default function GatewayPage() {
                 </p>
                 <ul className="space-y-2 mt-auto">
                   {step.bullets.map((b) => (
-                    <li key={b} className="flex gap-2 text-sm text-bodyText leading-snug">
+                    <li key={b} className="flex gap-2 text-sm text-ink leading-snug">
                       <span className="text-crimson shrink-0 font-semibold">→</span>
                       <span>{b}</span>
                     </li>
@@ -207,7 +213,7 @@ export default function GatewayPage() {
             ))}
           </div>
 
-          <p className="text-center italic text-mutedText mt-10 text-base">
+          <p className="text-center italic text-mute mt-10 text-base">
             Below: each layer of Gateway, up close.
           </p>
         </div>
@@ -230,7 +236,7 @@ export default function GatewayPage() {
       </section>
 
       {/* 5 — Views */}
-      <section className="bg-offWhite py-16 lg:py-24">
+      <section className="bg-cream py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4">
           <SectionHeader
             eyebrow="VIEWS"
@@ -258,8 +264,8 @@ export default function GatewayPage() {
           </div>
 
           {/* Integration strip */}
-          <div className="mt-16 pt-10 border-t border-border">
-            <p className="text-xs uppercase tracking-widest text-mutedText text-center mb-6">
+          <div className="mt-16 pt-10 border-t border-rule">
+            <p className="text-xs uppercase tracking-widest text-mute text-center mb-6">
               Wired into the systems you already run on
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 lg:gap-4">
@@ -278,13 +284,13 @@ export default function GatewayPage() {
               ].map((name) => (
                 <div
                   key={name}
-                  className="h-10 px-5 flex items-center justify-center rounded-sm border border-border bg-white"
+                  className="h-10 px-5 flex items-center justify-center rounded-sm border border-rule bg-white"
                 >
                   <span className="text-sm font-medium text-navy">{name}</span>
                 </div>
               ))}
             </div>
-            <p className="text-[11px] text-mutedText text-center mt-4">
+            <p className="text-[11px] text-mute text-center mt-4">
               Need a connector we don&apos;t list?{' '}
               <a href="/gateway/connectors/" className="text-crimson font-semibold hover:underline">
                 Tell us →
@@ -362,7 +368,7 @@ export default function GatewayPage() {
       </section>
 
       {/* 11 — Implementation */}
-      <section className="bg-offWhite py-16 lg:py-24">
+      <section className="bg-cream py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4">
           <SectionHeader heading="Live in 4 weeks. Here's how." />
           <StepList

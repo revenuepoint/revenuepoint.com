@@ -23,7 +23,7 @@ const steps = [
 
 export function Methodology() {
   return (
-    <section className="bg-offWhite border-y border-border">
+    <section className="bg-cream border-y border-rule">
       <div className="max-w-7xl mx-auto px-4 py-16 lg:py-20">
         <div className="max-w-3xl mb-10">
           <p className="text-xs font-bold uppercase tracking-widest text-crimson mb-4">
@@ -32,7 +32,7 @@ export function Methodology() {
           <h2 className="text-3xl font-bold tracking-tight text-navy">
             Two weeks. A named auditor. Nothing mysterious.
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-bodyText">
+          <p className="mt-4 text-base leading-relaxed text-ink">
             Every Health Check runs the same four-stage cadence. Metadata pulls are read-only; no
             changes are made to your system. We publish methodology transparently because we want
             you to trust the result — and repeat it if you need to.
@@ -40,12 +40,12 @@ export function Methodology() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {steps.map((s) => (
-            <div key={s.num} className="border border-border rounded-lg bg-white p-5">
+            <div key={s.num} className="border border-rule rounded-lg bg-white p-5">
               <div className="w-8 h-8 rounded-full bg-crimson text-white font-bold flex items-center justify-center text-sm">
                 {s.num}
               </div>
               <div className="mt-3 text-sm font-bold text-navy">{s.title}</div>
-              <div className="mt-2 text-xs text-bodyText leading-relaxed">{s.body}</div>
+              <div className="mt-2 text-xs text-ink leading-relaxed">{s.body}</div>
             </div>
           ))}
         </div>

@@ -11,43 +11,44 @@ export function DataModelDiagram({
   const custom = objects.filter((o) => o.kind === 'custom');
 
   return (
-    <section className="bg-white">
-      <div className="max-w-7xl mx-auto px-4 py-16 lg:py-20">
-        <div className="max-w-3xl mb-10">
-          <p className="text-xs font-bold uppercase tracking-widest text-crimson mb-4">
-            Data model
-          </p>
-          <h2 className="text-3xl font-bold tracking-tight text-navy">
-            The objects we build on. The objects we add.
+    <section className="bg-paper">
+      <div className="max-w-editorial mx-auto px-6 lg:px-8 py-section">
+        <div className="max-w-3xl mb-12">
+          <p className="eyebrow mb-4">Data model</p>
+          <h2 className="text-d1 font-serif font-medium text-ink">
+            The objects we <em>build on</em>. The objects we add.
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-bodyText">{description}</p>
+          <p className="mt-4 text-lede leading-[1.65] text-inkSoft max-w-prose">{description}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="border border-border rounded-lg bg-offWhite p-6">
-            <div className="text-[10px] uppercase tracking-widest text-mutedText font-semibold">
+          <div className="border border-ruleSoft bg-cream p-6 lg:p-7 relative">
+            <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-rule" />
+            <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-navy" />
+            <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-mute mt-3">
               Standard Salesforce
-            </div>
-            <div className="mt-3 flex flex-wrap gap-2">
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
               {standard.map((o) => (
                 <span
                   key={o.name}
-                  className="px-2.5 py-1 text-xs font-semibold bg-white border border-border rounded text-navy"
+                  className="font-mono px-2.5 py-1 text-[11px] bg-paper border border-rule text-ink"
                 >
                   {o.name}
                 </span>
               ))}
             </div>
           </div>
-          <div className="border border-crimson rounded-lg bg-crimsonLight p-6">
-            <div className="text-[10px] uppercase tracking-widest text-crimson font-semibold">
+          <div className="border border-crimson bg-crimsonTint p-6 lg:p-7 relative">
+            <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-crimson" />
+            <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-crimson mt-3">
               Custom — built by RevenuePoint
-            </div>
-            <div className="mt-3 flex flex-wrap gap-2">
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
               {custom.map((o) => (
                 <span
                   key={o.name}
-                  className="px-2.5 py-1 text-xs font-semibold bg-white border border-crimson/30 rounded text-crimson"
+                  className="font-mono px-2.5 py-1 text-[11px] bg-paper border border-crimson text-crimson"
                 >
                   {o.name}
                 </span>

@@ -72,13 +72,13 @@ export function LensSidebar({ items, selectedId, onSelect }: Props) {
               className={`group text-left rounded-lg border px-3 py-3 transition-colors ${
                 selected
                   ? 'bg-white border-crimson/40 shadow-sm'
-                  : 'bg-white/50 border-border hover:bg-white hover:border-border'
+                  : 'bg-white/50 border-rule hover:bg-white hover:border-rule'
               }`}
               aria-current={selected ? 'true' : undefined}
             >
               <div className="flex items-start gap-2">
                 <span
-                  className={`mt-0.5 shrink-0 ${selected ? 'text-crimson' : 'text-mutedText'}`}
+                  className={`mt-0.5 shrink-0 ${selected ? 'text-crimson' : 'text-mute'}`}
                 >
                   <IconForItem id={item.id} className="h-4 w-4" />
                 </span>
@@ -90,7 +90,7 @@ export function LensSidebar({ items, selectedId, onSelect }: Props) {
                   >
                     {item.name}
                   </p>
-                  <p className="text-[10px] text-mutedText mt-1">{item.tagline}</p>
+                  <p className="text-[10px] text-mute mt-1">{item.tagline}</p>
                 </div>
               </div>
             </button>
@@ -113,7 +113,7 @@ export function LensSidebar({ items, selectedId, onSelect }: Props) {
               className={`shrink-0 snap-start flex items-center gap-2 rounded-full border px-3 py-2 text-xs font-medium transition-colors ${
                 selected
                   ? 'bg-white border-crimson/40 text-crimson shadow-sm'
-                  : 'bg-white/50 border-border text-navy'
+                  : 'bg-white/50 border-rule text-navy'
               }`}
             >
               <IconForItem id={item.id} className="h-3.5 w-3.5" />

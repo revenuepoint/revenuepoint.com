@@ -8,7 +8,7 @@ const flows = [
 export function IntegrationMapMini() {
   return (
     <div>
-      <div className="text-[10px] uppercase tracking-widest text-mutedText font-semibold">
+      <div className="text-[10px] uppercase tracking-widest text-mute font-semibold">
         Integration map · what flows where
       </div>
       <div className="mt-3 space-y-2">
@@ -17,11 +17,11 @@ export function IntegrationMapMini() {
             <span className="font-semibold text-navy text-right truncate">{f.from}</span>
             <span className="text-center text-crimson font-bold">{f.dir}</span>
             <span className="font-semibold text-navy truncate">{f.to}</span>
-            <span className="text-bodyText leading-snug">{f.label}</span>
+            <span className="text-ink leading-snug">{f.label}</span>
           </div>
         ))}
       </div>
-      <div className="mt-4 pt-3 border-t border-border text-[10px] uppercase tracking-widest text-mutedText font-semibold">
+      <div className="mt-4 pt-3 border-t border-rule text-[10px] uppercase tracking-widest text-mute font-semibold">
         Each line links to its connector + owner
       </div>
     </div>

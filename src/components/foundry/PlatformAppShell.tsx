@@ -115,7 +115,7 @@ export function PlatformAppShell({
   children: ReactNode;
 }) {
   return (
-    <div className="rounded-xl overflow-hidden border border-border shadow-2xl bg-white flex flex-col h-full">
+    <div className="rounded-xl overflow-hidden border border-rule shadow-2xl bg-white flex flex-col h-full">
       {/* Browser chrome */}
       <div className="flex items-center gap-1.5 px-3 py-2 bg-[#E5E7EB] border-b border-[#D1D5DB] shrink-0">
         <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F57]" />
@@ -124,25 +124,25 @@ export function PlatformAppShell({
       </div>
 
       {/* Top bar */}
-      <div className="flex items-center gap-2 px-3 py-2 border-b border-border bg-white shrink-0">
+      <div className="flex items-center gap-2 px-3 py-2 border-b border-rule bg-white shrink-0">
         <span className="inline-flex items-center justify-center h-6 w-6 rounded bg-crimson text-white text-[11px] font-black">
           F
         </span>
         <span className="text-xs font-semibold text-navy hidden sm:inline">
           RevenuePoint Foundry
         </span>
-        <div className="flex-1 h-6 mx-2 rounded bg-offWhite border border-border flex items-center gap-1.5 px-2 text-[10px] text-mutedText">
+        <div className="flex-1 h-6 mx-2 rounded bg-cream border border-rule flex items-center gap-1.5 px-2 text-[10px] text-mute">
           <SearchI className="h-3 w-3" />
           <span className="truncate">Search Otto, Lens, Prism…</span>
         </div>
-        <SunI className="h-4 w-4 text-mutedText" />
+        <SunI className="h-4 w-4 text-mute" />
         <div className="relative">
-          <BellI className="h-4 w-4 text-mutedText" />
+          <BellI className="h-4 w-4 text-mute" />
           <span className="absolute -top-1 -right-1.5 h-3.5 min-w-[14px] px-0.5 rounded-full bg-crimson text-white text-[8px] font-bold flex items-center justify-center">
             3
           </span>
         </div>
-        <span className="text-[10px] px-2 py-0.5 rounded bg-crimsonLight text-crimson font-semibold border border-crimson/20">
+        <span className="text-[10px] px-2 py-0.5 rounded bg-crimsonTint text-crimson font-semibold border border-crimson/20">
           Ask Otto
         </span>
         <span className="h-6 w-6 rounded-full bg-navy text-white flex items-center justify-center text-[9px] font-bold">
@@ -154,7 +154,7 @@ export function PlatformAppShell({
       <div className="flex flex-1 min-h-0">
         {/* Sidebar */}
         <nav
-          className="w-12 border-r border-border bg-offWhite/50 flex flex-col py-1 shrink-0"
+          className="w-12 border-r border-rule bg-cream/50 flex flex-col py-1 shrink-0"
           aria-label="Modules"
         >
           {NAV.map((item) => {
@@ -179,10 +179,10 @@ export function PlatformAppShell({
                 aria-label={item.label}
                 className={`relative flex items-center justify-center py-2.5 transition-colors w-full ${
                   isActive
-                    ? 'bg-crimsonLight text-crimson border-l-2 border-crimson'
+                    ? 'bg-crimsonTint text-crimson border-l-2 border-crimson'
                     : isSelectable
-                      ? 'text-mutedText hover:text-navy hover:bg-white cursor-pointer'
-                      : 'text-mutedText/50 cursor-default'
+                      ? 'text-mute hover:text-navy hover:bg-white cursor-pointer'
+                      : 'text-mute/50 cursor-default'
                 }`}
                 title={item.label}
               >

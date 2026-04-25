@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
 import { navItems } from '@/lib/navigation';
 import type { NavItem } from '@/lib/navigation';
+import { Wordmark } from '@/components/brand/Wordmark';
 
 export function Navbar() {
   const pathname = usePathname();
@@ -50,20 +51,17 @@ export function Navbar() {
 
   return (
     <>
-      {/* Thin crimson accent bar */}
+      {/* Crimson signature bar */}
       <div className="fixed top-0 left-0 right-0 z-[60] h-[3px] bg-crimson" />
 
       <header
-        className={`fixed top-[3px] left-0 right-0 z-50 bg-white transition-shadow duration-200 ${
-          scrolled ? 'shadow-[0_1px_3px_rgba(0,0,0,0.08)]' : ''
+        className={`fixed top-[3px] left-0 right-0 z-50 bg-paper transition-shadow duration-200 border-b border-ruleSoft ${
+          scrolled ? 'shadow-hairline' : ''
         }`}
       >
-        {/* Primary nav bar */}
-        <nav className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-[60px] lg:h-[72px]">
-          {/* Logo */}
-          <Link href="/" className="text-[22px] font-bold tracking-tight text-crimson leading-none">
-            RevenuePoint
-          </Link>
+        {/* Primary nav */}
+        <nav className="max-w-editorial mx-auto px-6 lg:px-8 flex items-center justify-between h-[60px] lg:h-[72px]">
+          <Wordmark size="md" tone="crimson" />
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center">
@@ -72,20 +70,20 @@ export function Navbar() {
                 <div
                   key={item.label}
                   className="relative"
-                  onMouseEnter={() => hasDropdown(item) ? handleEnter(item.label) : undefined}
+                  onMouseEnter={() => (hasDropdown(item) ? handleEnter(item.label) : undefined)}
                   onMouseLeave={hasDropdown(item) ? handleLeave : undefined}
                 >
                   {hasDropdown(item) ? (
                     <button
-                      className={`flex items-center gap-1 text-[13px] uppercase tracking-[0.05em] font-medium px-4 py-2 transition-colors ${
+                      className={`flex items-center gap-1 font-mono text-[11px] uppercase tracking-[0.16em] px-4 py-2 transition-colors ${
                         isActive(item) || openDropdown === item.label
                           ? 'text-crimson'
-                          : 'text-navy/80 hover:text-crimson'
+                          : 'text-mute hover:text-crimson'
                       }`}
                     >
                       {item.label}
                       {item.badge && (
-                        <span className="ml-1.5 text-[9px] font-bold bg-crimson text-white px-1.5 py-[2px] rounded-[2px] leading-none tracking-wider">
+                        <span className="ml-2 font-mono text-[8px] font-semibold bg-crimson text-paper px-1.5 py-[2px] tracking-[0.12em] leading-none">
                           {item.badge}
                         </span>
                       )}
@@ -96,7 +94,7 @@ export function Navbar() {
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        strokeWidth={2}
+                        strokeWidth={1.5}
                       >
                         <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                       </svg>
@@ -104,10 +102,8 @@ export function Navbar() {
                   ) : (
                     <Link
                       href={item.href}
-                      className={`text-[13px] uppercase tracking-[0.05em] font-medium px-4 py-2 transition-colors ${
-                        isActive(item)
-                          ? 'text-crimson'
-                          : 'text-navy/80 hover:text-crimson'
+                      className={`font-mono text-[11px] uppercase tracking-[0.16em] px-4 py-2 transition-colors ${
+                        isActive(item) ? 'text-crimson' : 'text-mute hover:text-crimson'
                       }`}
                     >
                       {item.label}
@@ -117,22 +113,22 @@ export function Navbar() {
               ))}
             </div>
 
-            {/* Separator */}
-            <div className="w-px h-6 bg-border/60 mx-4" />
+            {/* Hairline separator */}
+            <div className="w-px h-5 bg-rule mx-4" />
 
             <a
               href={process.env.NEXT_PUBLIC_CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-crimson text-white text-[12px] uppercase tracking-[0.08em] font-semibold px-5 py-2.5 hover:bg-crimsonDark transition-colors"
+              className="border border-crimson text-crimson font-serif italic text-[14px] px-5 py-1.5 hover:bg-crimsonTint transition-colors"
             >
-              Schedule a Call
+              Schedule a call
             </a>
           </div>
 
           {/* Mobile hamburger */}
           <button
-            className="lg:hidden p-2 text-navy"
+            className="lg:hidden p-2 text-ink"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -148,41 +144,37 @@ export function Navbar() {
           </button>
         </nav>
 
-        {/* Mega menu panel — expands down from the header */}
+        {/* Mega menu panel */}
         <div
-          className={`hidden lg:block overflow-hidden transition-all duration-300 ease-in-out ${
-            activeMenu ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
+          className={`hidden lg:block overflow-hidden transition-all duration-300 ease-editorialOut ${
+            activeMenu ? 'max-h-[440px] opacity-100' : 'max-h-0 opacity-0'
           }`}
           onMouseEnter={() => openDropdown && handleEnter(openDropdown)}
           onMouseLeave={handleLeave}
         >
-          <div className="border-t border-border/40">
-            <div className="max-w-7xl mx-auto px-6 lg:px-8 py-8">
+          <div className="border-t border-rule bg-paper">
+            <div className="max-w-editorial mx-auto px-6 lg:px-8 py-10">
               {activeMenu && activeMenu.groups ? (
-                <div className="flex gap-16">
+                <div className="grid grid-cols-3 gap-12">
                   {activeMenu.groups.map((group) => (
                     <div key={group.heading}>
-                      <p className="text-[10px] uppercase tracking-[0.15em] text-mutedText font-semibold mb-4">
-                        {group.heading}
-                      </p>
+                      <p className="eyebrow mb-5">{group.heading}</p>
                       <div className="space-y-1">
                         {group.links.map((link) => (
                           <Link
                             key={link.href}
                             href={link.href}
                             className={`group flex items-center py-2 transition-colors ${
-                              pathname === link.href
-                                ? 'text-crimson'
-                                : 'text-navy hover:text-crimson'
+                              pathname === link.href ? 'text-crimson' : 'text-ink hover:text-crimson'
                             }`}
                           >
-                            <span className="text-[15px] font-medium">{link.label}</span>
+                            <span className="text-[15px]">{link.label}</span>
                             <svg
                               className="w-4 h-4 ml-2 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200"
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"
-                              strokeWidth={2}
+                              strokeWidth={1.5}
                             >
                               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                             </svg>
@@ -194,27 +186,23 @@ export function Navbar() {
                 </div>
               ) : activeMenu && activeMenu.children ? (
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.15em] text-mutedText font-semibold mb-5">
-                    {activeMenu.label}
-                  </p>
+                  <p className="eyebrow mb-5">{activeMenu.label}</p>
                   <div className="grid grid-cols-3 gap-x-12 gap-y-1">
                     {activeMenu.children.map((child) => (
                       <Link
                         key={child.href}
                         href={child.href}
-                        className={`group flex items-center py-2.5 transition-colors ${
-                          pathname === child.href
-                            ? 'text-crimson'
-                            : 'text-navy hover:text-crimson'
+                        className={`group flex items-center py-2 transition-colors ${
+                          pathname === child.href ? 'text-crimson' : 'text-ink hover:text-crimson'
                         }`}
                       >
-                        <span className="text-[15px] font-medium">{child.label}</span>
+                        <span className="text-[15px]">{child.label}</span>
                         <svg
                           className="w-4 h-4 ml-2 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
-                          strokeWidth={2}
+                          strokeWidth={1.5}
                         >
                           <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                         </svg>
@@ -230,7 +218,7 @@ export function Navbar() {
 
       {/* Backdrop overlay when mega menu is open */}
       <div
-        className={`fixed inset-0 bg-navy/20 z-40 transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-ink/15 z-40 transition-opacity duration-300 ${
           activeMenu ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         style={{ top: '75px' }}
@@ -239,23 +227,21 @@ export function Navbar() {
 
       {/* Mobile overlay */}
       {mobileOpen && (
-        <div className="lg:hidden fixed inset-0 top-[63px] bg-navy z-40 overflow-y-auto">
+        <div className="lg:hidden fixed inset-0 top-[63px] bg-paper z-40 overflow-y-auto">
           <div className="px-6 py-8 space-y-6">
             {navItems.map((item) => (
               <div key={item.label}>
                 {hasDropdown(item) ? (
                   <>
                     <button
-                      onClick={() =>
-                        setOpenDropdown(openDropdown === item.label ? null : item.label)
-                      }
-                      className={`flex items-center gap-2 text-[15px] uppercase tracking-[0.08em] font-semibold w-full ${
-                        isActive(item) ? 'text-crimson' : 'text-white'
+                      onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
+                      className={`flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.16em] w-full ${
+                        isActive(item) ? 'text-crimson' : 'text-ink'
                       }`}
                     >
                       {item.label}
                       {item.badge && (
-                        <span className="text-[9px] font-bold bg-crimson text-white px-1.5 py-[2px] rounded-[2px] leading-none">
+                        <span className="font-mono text-[9px] font-semibold bg-crimson text-paper px-1.5 py-[2px] tracking-wider leading-none">
                           {item.badge}
                         </span>
                       )}
@@ -272,20 +258,18 @@ export function Navbar() {
                       </svg>
                     </button>
                     {openDropdown === item.label && (
-                      <div className="mt-3 ml-4 space-y-4">
+                      <div className="mt-3 ml-4 space-y-5 border-l border-ruleSoft pl-4">
                         {item.groups ? (
                           item.groups.map((group) => (
                             <div key={group.heading}>
-                              <p className="text-[10px] uppercase tracking-[0.12em] text-gray-500 font-semibold mb-2">
-                                {group.heading}
-                              </p>
-                              <div className="space-y-2 ml-2">
+                              <p className="eyebrow mb-3">{group.heading}</p>
+                              <div className="space-y-2 ml-1">
                                 {group.links.map((link) => (
                                   <Link
                                     key={link.href}
                                     href={link.href}
                                     className={`block text-sm ${
-                                      pathname === link.href ? 'text-crimson' : 'text-gray-300 hover:text-white'
+                                      pathname === link.href ? 'text-crimson' : 'text-ink hover:text-crimson'
                                     }`}
                                   >
                                     {link.label}
@@ -300,7 +284,7 @@ export function Navbar() {
                               key={child.href}
                               href={child.href}
                               className={`block text-sm ${
-                                pathname === child.href ? 'text-crimson' : 'text-gray-300 hover:text-white'
+                                pathname === child.href ? 'text-crimson' : 'text-ink hover:text-crimson'
                               }`}
                             >
                               {child.label}
@@ -313,8 +297,8 @@ export function Navbar() {
                 ) : (
                   <Link
                     href={item.href}
-                    className={`block text-[15px] uppercase tracking-[0.08em] font-semibold ${
-                      isActive(item) ? 'text-crimson' : 'text-white'
+                    className={`block font-mono text-[12px] uppercase tracking-[0.16em] ${
+                      isActive(item) ? 'text-crimson' : 'text-ink'
                     }`}
                   >
                     {item.label}
@@ -327,10 +311,19 @@ export function Navbar() {
               href={process.env.NEXT_PUBLIC_CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-center bg-crimson text-white text-[12px] uppercase tracking-[0.08em] font-semibold px-6 py-3 hover:bg-crimsonDark transition-colors mt-8"
+              className="block text-center border border-crimson text-crimson font-serif italic text-[15px] px-6 py-3 hover:bg-crimsonTint transition-colors mt-8"
             >
-              Schedule a Call
+              Schedule a call
             </a>
+
+            <div className="pt-6 border-t border-ruleSoft mt-8">
+              <Link
+                href="/brand/"
+                className="block font-mono text-[11px] uppercase tracking-[0.16em] text-mute hover:text-crimson transition-colors"
+              >
+                Brand guide
+              </Link>
+            </div>
           </div>
         </div>
       )}

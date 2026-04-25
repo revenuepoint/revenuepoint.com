@@ -25,13 +25,13 @@ export function CrmTabs() {
     <>
       <div ref={sentinelRef} aria-hidden="true" style={{ height: 1 }} />
       <div
-        className={`sticky top-[63px] lg:top-[75px] z-30 bg-white/95 backdrop-blur border-y border-border transition-shadow ${
+        className={`sticky top-[63px] lg:top-[75px] z-30 bg-white/95 backdrop-blur border-y border-rule transition-shadow ${
           isStuck ? 'shadow-md' : ''
         }`}
       >
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center gap-3 py-3 overflow-x-auto">
-            <span className="text-[10px] uppercase tracking-widest text-mutedText font-semibold shrink-0">
+            <span className="text-[10px] uppercase tracking-widest text-mute font-semibold shrink-0">
               Your CRM
             </span>
             <nav className="flex gap-1" aria-label="CRM">
@@ -46,7 +46,7 @@ export function CrmTabs() {
                     className={`shrink-0 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold transition-colors ${
                       selected
                         ? 'bg-crimson text-white border-crimson shadow-sm'
-                        : 'bg-white text-navy border-border hover:border-crimson/40'
+                        : 'bg-white text-navy border-rule hover:border-crimson/40'
                     }`}
                   >
                     <span

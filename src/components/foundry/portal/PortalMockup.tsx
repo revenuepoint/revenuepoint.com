@@ -159,13 +159,13 @@ type NavItem = {
 };
 
 const NAV: NavItem[] = [
-  { id: 'home', label: 'Home', icon: HomeI, color: '#0F2B4D', badge: 3, active: true },
+  { id: 'home', label: 'Home', icon: HomeI, color: '#0F1A2B', badge: 3, active: true },
   { id: 'lens', label: 'Lens', icon: LensI, color: '#2563eb' },
   { id: 'courier', label: 'Courier', icon: CourierI, color: '#7c3aed' },
   { id: 'prism', label: 'Prism', icon: PrismI, color: '#d97706' },
   { id: 'otto', label: 'Otto', icon: OttoI, color: '#8B0A39' },
   { id: 'agents', label: 'Agents', icon: AgentsI, color: '#0891b2' },
-  { id: 'actions', label: 'Actions', icon: ActionsI, color: '#0F2B4D', badge: 12 },
+  { id: 'actions', label: 'Actions', icon: ActionsI, color: '#0F1A2B', badge: 12 },
   { id: 'radar', label: 'Radar', icon: RadarI, color: '#dc2626', badge: 7 },
   { id: 'blueprint', label: 'Blueprint', icon: BlueprintI, color: '#9333ea' },
 ];
@@ -405,7 +405,7 @@ function KpiTile({
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.5 + index * 0.1, duration: 0.35, ease: 'easeOut' }}
       className={`bg-white border rounded-md p-2.5 transition-colors duration-300 ${
-        flashing ? 'border-crimson/40 shadow-sm bg-crimsonLight/30' : 'border-border'
+        flashing ? 'border-crimson/40 shadow-sm bg-crimsonTint/30' : 'border-rule'
       }`}
     >
       <div className="flex items-center gap-1">
@@ -414,7 +414,7 @@ function KpiTile({
             kpi.tone === 'good' ? 'bg-emerald-500' : kpi.tone === 'bad' ? 'bg-red-500' : 'bg-amber-500'
           }`}
         />
-        <p className="text-[8px] font-semibold uppercase tracking-wider text-mutedText truncate">{kpi.label}</p>
+        <p className="text-[8px] font-semibold uppercase tracking-wider text-mute truncate">{kpi.label}</p>
       </div>
       <div className="flex items-baseline gap-1.5 mt-0.5">
         <p className={`text-sm font-bold font-mono text-navy transition-colors duration-500 ${flashing ? 'text-crimson' : ''}`}>
@@ -442,8 +442,8 @@ function SidebarItem({
       data-cursor-target={`sidebar-${item.id}`}
       className={`relative flex items-center justify-center py-2 transition-colors w-full ${
         isActive
-          ? 'bg-crimsonLight text-crimson border-l-2 border-crimson'
-          : 'text-mutedText'
+          ? 'bg-crimsonTint text-crimson border-l-2 border-crimson'
+          : 'text-mute'
       }`}
       title={item.label}
       aria-current={isActive ? 'page' : undefined}
@@ -483,7 +483,7 @@ function RadarView() {
             <div
               key={i}
               {...(isFirstCritical ? { 'data-cursor-target': 'radar-critical-0' } : {})}
-              className={`bg-white border border-border rounded border-l-4 ${a.border} p-2 flex items-start gap-2 transition-opacity ${
+              className={`bg-white border border-rule rounded border-l-4 ${a.border} p-2 flex items-start gap-2 transition-opacity ${
                 dim ? 'opacity-45' : ''
               }`}
             >
@@ -495,10 +495,10 @@ function RadarView() {
                   <span className={`text-[8px] font-semibold uppercase tracking-wider px-1 py-0.5 rounded border ${a.badge}`}>
                     {a.chip}
                   </span>
-                  <span className="text-[8px] text-mutedText">just now</span>
+                  <span className="text-[8px] text-mute">just now</span>
                 </div>
                 <div className="h-2 rounded-sm bg-navy/70 w-11/12" />
-                <div className="h-1.5 rounded-sm bg-mutedText/30 w-7/12" />
+                <div className="h-1.5 rounded-sm bg-mute/30 w-7/12" />
               </div>
               <svg viewBox="0 0 40 16" preserveAspectRatio="none" className="w-10 h-4 shrink-0">
                 <polyline points="0,12 8,11 16,10 24,11 32,4 40,6" fill="none" stroke={a.spark} strokeWidth="1.3" strokeLinecap="round" />
@@ -588,7 +588,7 @@ function BlueprintView() {
                     strokeWidth={active ? 2 : 1}
                   />
                   <rect x={n.x} y={n.y} width={n.w} height="3" fill={n.top} />
-                  <rect x={n.x + 8} y={n.y + 12} width={32} height="4" rx="1" fill="#0F2B4D" opacity="0.7" />
+                  <rect x={n.x + 8} y={n.y + 12} width={32} height="4" rx="1" fill="#0F1A2B" opacity="0.7" />
                   <rect x={n.x + 8} y={n.y + 22} width={48} height="3" rx="1" fill="#6B8299" opacity="0.5" />
                   {active && (
                     <rect
@@ -645,7 +645,7 @@ function ModulePlaceholder({ item }: { item: NavItem }) {
       </span>
       <div className="text-center">
         <p className="text-sm font-semibold text-navy">{item.label}</p>
-        <p className="text-[10px] text-mutedText mt-1 max-w-[220px]">
+        <p className="text-[10px] text-mute mt-1 max-w-[220px]">
           Full {item.label} workspace · click Home or Otto to continue the demo.
         </p>
       </div>
@@ -658,7 +658,7 @@ function FeedCardView({ card }: { card: FeedCard }) {
   const Icon = style.Icon;
   return (
     <div
-      className={`${style.bg} border border-border rounded-md border-l-4 ${style.border} p-2 flex items-start gap-2 shadow-sm`}
+      className={`${style.bg} border border-rule rounded-md border-l-4 ${style.border} p-2 flex items-start gap-2 shadow-sm`}
     >
       <span
         className={`inline-flex items-center justify-center h-5 w-5 rounded-full shrink-0 ${style.iconBg} ${style.iconColor}`}
@@ -666,13 +666,13 @@ function FeedCardView({ card }: { card: FeedCard }) {
         <Icon className="h-3 w-3" />
       </span>
       <div className="min-w-0 flex-1 flex flex-col gap-1.5">
-        <p className="text-[8px] font-semibold uppercase tracking-wider text-mutedText">
+        <p className="text-[8px] font-semibold uppercase tracking-wider text-mute">
           {card.category}
         </p>
         {/* Skeleton headline */}
         <div className={`h-2 rounded-sm bg-navy/70 ${card.headlineW}`} />
         {/* Skeleton detail */}
-        <div className={`h-1.5 rounded-sm bg-mutedText/30 ${card.detailW}`} />
+        <div className={`h-1.5 rounded-sm bg-mute/30 ${card.detailW}`} />
       </div>
     </div>
   );
@@ -725,7 +725,7 @@ export function PortalMockup() {
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
-        className="relative rounded-xl overflow-hidden border border-border shadow-2xl bg-white"
+        className="relative rounded-xl overflow-hidden border border-rule shadow-2xl bg-white"
         style={{ aspectRatio: '4 / 3', pointerEvents: 'none' }}
         data-cursor-root
       >
@@ -736,19 +736,19 @@ export function PortalMockup() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.1, duration: 0.3 }}
-          className="flex items-center gap-2 px-3 py-2 border-b border-border bg-white"
+          className="flex items-center gap-2 px-3 py-2 border-b border-rule bg-white"
         >
           <span className="inline-flex items-center justify-center h-5 w-5 rounded bg-crimson text-white text-[10px] font-black">
             F
           </span>
           <span className="text-[10px] font-semibold text-navy hidden sm:inline">RevenuePoint Foundry</span>
-          <div className="flex-1 h-5 mx-2 rounded-sm bg-offWhite border border-border flex items-center gap-1.5 px-2 text-[9px] text-mutedText">
+          <div className="flex-1 h-5 mx-2 rounded-sm bg-cream border border-rule flex items-center gap-1.5 px-2 text-[9px] text-mute">
             <SearchI className="h-2.5 w-2.5" />
             <span className="truncate">Search Otto, Lens, Prism...</span>
           </div>
-          <SunI className="h-3.5 w-3.5 text-mutedText" />
+          <SunI className="h-3.5 w-3.5 text-mute" />
           <div className="relative">
-            <BellI className="h-3.5 w-3.5 text-mutedText" />
+            <BellI className="h-3.5 w-3.5 text-mute" />
             <motion.span
               key={state.notificationCount}
               initial={{ scale: 0.6, opacity: 0.5 }}
@@ -759,7 +759,7 @@ export function PortalMockup() {
               {state.notificationCount}
             </motion.span>
           </div>
-          <span className="text-[9px] px-2 py-0.5 rounded bg-crimsonLight text-crimson font-semibold border border-crimson/20">
+          <span className="text-[9px] px-2 py-0.5 rounded bg-crimsonTint text-crimson font-semibold border border-crimson/20">
             Ask Otto
           </span>
           <span className="h-5 w-5 rounded-full bg-navy text-white flex items-center justify-center text-[8px] font-bold">
@@ -774,7 +774,7 @@ export function PortalMockup() {
             initial={{ x: -30, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.15, duration: 0.35, ease: 'easeOut' }}
-            className="flex w-10 border-r border-border bg-offWhite/50 flex-col py-1 shrink-0"
+            className="flex w-10 border-r border-rule bg-cream/50 flex-col py-1 shrink-0"
           >
             {NAV.map((item) => (
               <SidebarItem
@@ -797,10 +797,10 @@ export function PortalMockup() {
                 className="flex-1 min-w-0 overflow-hidden bg-white flex flex-col"
               >
                 {/* Greeting */}
-                <div className="flex items-center justify-between gap-2 px-3 py-2 border-b border-border/50 shrink-0">
+                <div className="flex items-center justify-between gap-2 px-3 py-2 border-b border-rule/50 shrink-0">
                   <div className="min-w-0">
                     <p className="text-[11px] font-semibold text-navy">Good morning, Sarah</p>
-                    <p className="text-[9px] text-mutedText">Wednesday · April 18 · 6 signals overnight</p>
+                    <p className="text-[9px] text-mute">Wednesday · April 18 · 6 signals overnight</p>
                   </div>
                 </div>
 
@@ -821,9 +821,9 @@ export function PortalMockup() {
                 <div className="flex items-center gap-1.5 px-3 pt-2 pb-1.5 shrink-0">
                   <p className="text-[10px] font-bold uppercase tracking-widest text-crimson">Feed</p>
                   <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-crimson text-white font-semibold">All</span>
-                  <span className="text-[9px] px-1.5 py-0.5 rounded-full border border-border text-mutedText">Anomalies</span>
-                  <span className="text-[9px] px-1.5 py-0.5 rounded-full border border-border text-mutedText">Agents</span>
-                  <span className="text-[9px] px-1.5 py-0.5 rounded-full border border-border text-mutedText hidden lg:inline">Reports</span>
+                  <span className="text-[9px] px-1.5 py-0.5 rounded-full border border-rule text-mute">Anomalies</span>
+                  <span className="text-[9px] px-1.5 py-0.5 rounded-full border border-rule text-mute">Agents</span>
+                  <span className="text-[9px] px-1.5 py-0.5 rounded-full border border-rule text-mute hidden lg:inline">Reports</span>
                 </div>
 
                 {/* Feed stream */}

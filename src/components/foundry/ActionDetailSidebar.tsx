@@ -35,7 +35,7 @@ export function ActionDetailSidebar({ items, selectedId, onSelect }: Props) {
               className={`group text-left rounded-lg border px-3 py-3 transition-colors ${
                 selected
                   ? 'bg-white border-crimson/40 shadow-sm'
-                  : 'bg-white/50 border-border hover:bg-white hover:border-border'
+                  : 'bg-white/50 border-rule hover:bg-white hover:border-rule'
               }`}
               aria-current={selected ? 'true' : undefined}
             >
@@ -54,8 +54,8 @@ export function ActionDetailSidebar({ items, selectedId, onSelect }: Props) {
                   >
                     {item.name}
                   </p>
-                  <p className="text-[10px] text-mutedText mt-1 truncate">{item.agent}</p>
-                  <p className="text-[9px] uppercase tracking-widest text-mutedText mt-1">
+                  <p className="text-[10px] text-mute mt-1 truncate">{item.agent}</p>
+                  <p className="text-[9px] uppercase tracking-widest text-mute mt-1">
                     {STATUS_LABEL[item.status]}
                   </p>
                 </div>
@@ -63,7 +63,7 @@ export function ActionDetailSidebar({ items, selectedId, onSelect }: Props) {
             </button>
           );
         })}
-        <p className="text-[10px] text-mutedText mt-3 px-1">Read-only preview</p>
+        <p className="text-[10px] text-mute mt-3 px-1">Read-only preview</p>
       </nav>
 
       {/* Mobile: horizontal chip strip */}
@@ -81,7 +81,7 @@ export function ActionDetailSidebar({ items, selectedId, onSelect }: Props) {
               className={`shrink-0 snap-start flex items-center gap-2 rounded-full border px-3 py-2 text-xs font-medium transition-colors ${
                 selected
                   ? 'bg-white border-crimson/40 text-crimson shadow-sm'
-                  : 'bg-white/50 border-border text-navy'
+                  : 'bg-white/50 border-rule text-navy'
               }`}
             >
               <span

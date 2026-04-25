@@ -9,21 +9,21 @@ type LogoStripProps = {
 
 export function LogoStrip({ heading, logos }: LogoStripProps) {
   return (
-    <section className="bg-white">
-      <div className="max-w-7xl mx-auto px-4 py-12 lg:py-16 text-center">
+    <section className="bg-paper border-y border-ruleSoft">
+      <div className="max-w-editorial mx-auto px-6 lg:px-8 py-10 lg:py-12">
         {heading && (
-          <p className="text-sm text-mutedText mb-8">{heading}</p>
+          <p className="serif-italic text-center text-base text-mute mb-6">{heading}</p>
         )}
-        <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-12">
-          {logos.map((logo) => (
-            <div
-              key={logo.name}
-              className="h-10 px-6 flex items-center justify-center bg-lightGray rounded-sm"
-            >
-              <span className="text-sm font-medium text-mutedText">{logo.name}</span>
-            </div>
+        <ul className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 lg:gap-x-14">
+          {logos.map((logo, i) => (
+            <li key={logo.name} className="flex items-center gap-x-10">
+              {i > 0 && <span aria-hidden="true" className="hidden lg:block w-px h-4 bg-rule -ml-5" />}
+              <span className="font-mono text-[12px] uppercase tracking-[0.16em] text-ink">
+                {logo.name}
+              </span>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

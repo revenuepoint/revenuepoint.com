@@ -9,7 +9,7 @@ import { OnboardingTrackMini } from './previews/OnboardingTrackMini';
 export function PlaybookWalkthrough() {
   return (
     <div id="playbook">
-      <section className="bg-offWhite border-b border-border">
+      <section className="bg-cream border-b border-rule">
         <div className="max-w-7xl mx-auto px-4 py-14 lg:py-20">
           <div className="max-w-3xl">
             <p className="text-xs font-bold uppercase tracking-widest text-crimson mb-4">
@@ -18,7 +18,7 @@ export function PlaybookWalkthrough() {
             <h2 className="text-3xl font-bold tracking-tight text-navy">
               Your org&apos;s instruction manual, embedded where the work happens.
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-bodyText">
+            <p className="mt-4 text-base leading-relaxed text-ink">
               Every Playbook follows the same six-section structure so anyone in your org
               can find what they need in seconds. The contents are custom to your
               configuration — your objects, your stages, your reports, your automations —

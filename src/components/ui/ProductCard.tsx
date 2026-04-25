@@ -5,12 +5,11 @@ type ProductCardProps = {
 
 export function ProductCard({ name, description }: ProductCardProps) {
   return (
-    <div className="bg-white border border-border rounded-sm shadow-sm flex">
-      <div className="w-1 bg-crimson rounded-l-sm shrink-0" />
-      <div className="p-6">
-        <h3 className="text-lg font-semibold text-navy mb-2">{name}</h3>
-        <p className="text-sm text-bodyText leading-relaxed">{description}</p>
-      </div>
-    </div>
+    <article className="relative bg-cream border border-ruleSoft p-6 lg:p-8">
+      <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-rule" />
+      <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-crimson" />
+      <h3 className="mt-3 font-serif text-[1.25rem] font-medium text-ink">{name}</h3>
+      <p className="mt-3 text-sm text-inkSoft leading-relaxed">{description}</p>
+    </article>
   );
 }

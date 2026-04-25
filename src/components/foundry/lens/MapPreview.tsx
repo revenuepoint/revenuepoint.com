@@ -34,7 +34,7 @@ export function MapPreview() {
   const spec = lensContentByIndustry[industryId].map;
   return (
     <div
-      className="map-preview relative rounded-lg overflow-hidden border border-border shadow-inner"
+      className="map-preview relative rounded-lg overflow-hidden border border-rule shadow-inner"
       style={{ background: '#060b1a', height: 560 }}
     >
       {/* Dark-theme overrides for MapLibre's default attribution control */}

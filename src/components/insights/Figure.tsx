@@ -12,16 +12,16 @@ export function Figure({
   height: number;
 }) {
   return (
-    <figure className="my-8">
+    <figure className="my-10">
       <img
         src={src}
         alt={alt}
         width={width}
         height={height}
-        className="w-full h-auto rounded-md border border-border bg-offWhite"
+        className="w-full h-auto border border-rule bg-cream"
       />
       {caption && (
-        <figcaption className="mt-2 text-xs text-mutedText leading-relaxed">
+        <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.14em] text-mute leading-relaxed">
           {caption}
         </figcaption>
       )}

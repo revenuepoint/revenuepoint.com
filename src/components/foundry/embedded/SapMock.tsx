@@ -19,7 +19,7 @@ function AlertIcon({ className = 'h-3 w-3' }: { className?: string }) {
 
 export function SapMock() {
   return (
-    <div className="h-full flex flex-col rounded-xl overflow-hidden border border-border shadow-2xl bg-white">
+    <div className="h-full flex flex-col rounded-xl overflow-hidden border border-rule shadow-2xl bg-white">
       {/* Header — Fiori shell */}
       <div className="flex items-center gap-3 px-3 py-2 bg-[#354A5F] text-white">
         <div className="flex items-center gap-1.5">
@@ -119,8 +119,8 @@ export function SapMock() {
         {/* Foundry widget */}
         <div className="col-span-2 flex flex-col gap-2">
           {/* Cross-system alert */}
-          <div className="rounded-md border border-border bg-white shadow-sm ring-1 ring-crimson/20 overflow-hidden">
-            <div className="flex items-center gap-1.5 px-2.5 py-1.5 bg-crimsonLight border-b border-crimson/20">
+          <div className="rounded-md border border-rule bg-white shadow-sm ring-1 ring-crimson/20 overflow-hidden">
+            <div className="flex items-center gap-1.5 px-2.5 py-1.5 bg-crimsonTint border-b border-crimson/20">
               <BoltIcon className="h-3 w-3 text-crimson" />
               <span className="text-[9px] font-bold uppercase tracking-widest text-crimson">
                 Foundry · cross-system
@@ -133,22 +133,22 @@ export function SapMock() {
                   <p className="text-[10px] font-semibold text-red-700 leading-tight">
                     Customer has $34.2K overdue in QuickBooks
                   </p>
-                  <p className="text-[10px] text-bodyText leading-tight mt-0.5">
+                  <p className="text-[10px] text-ink leading-tight mt-0.5">
                     INV-4821 · 78 days late · Net 30
                   </p>
                 </div>
               </div>
               <div className="flex flex-col gap-1 text-[10px]">
-                <div className="flex items-center justify-between gap-2 text-bodyText">
-                  <span className="text-mutedText">YTD Revenue</span>
+                <div className="flex items-center justify-between gap-2 text-ink">
+                  <span className="text-mute">YTD Revenue</span>
                   <span className="font-mono font-semibold text-navy">$186K</span>
                 </div>
-                <div className="flex items-center justify-between gap-2 text-bodyText">
-                  <span className="text-mutedText">Credit remaining</span>
+                <div className="flex items-center justify-between gap-2 text-ink">
+                  <span className="text-mute">Credit remaining</span>
                   <span className="font-mono font-semibold text-amber-700">$13.8K</span>
                 </div>
-                <div className="flex items-center justify-between gap-2 text-bodyText">
-                  <span className="text-mutedText">Salesforce owner</span>
+                <div className="flex items-center justify-between gap-2 text-ink">
+                  <span className="text-mute">Salesforce owner</span>
                   <span className="font-mono text-navy">Marcus Torres</span>
                 </div>
               </div>
@@ -156,15 +156,15 @@ export function SapMock() {
           </div>
 
           {/* Agent recommendation */}
-          <div className="rounded-md border border-border bg-white shadow-sm ring-1 ring-crimson/20 overflow-hidden">
-            <div className="flex items-center gap-1.5 px-2.5 py-1 bg-crimsonLight border-b border-crimson/20">
+          <div className="rounded-md border border-rule bg-white shadow-sm ring-1 ring-crimson/20 overflow-hidden">
+            <div className="flex items-center gap-1.5 px-2.5 py-1 bg-crimsonTint border-b border-crimson/20">
               <BoltIcon className="h-3 w-3 text-crimson" />
               <span className="text-[9px] font-bold uppercase tracking-widest text-crimson">
                 Recommended action
               </span>
             </div>
             <div className="px-2.5 py-2 flex flex-col gap-1.5">
-              <p className="text-[11px] text-bodyText leading-snug">
+              <p className="text-[11px] text-ink leading-snug">
                 Place a <span className="font-semibold text-navy">credit hold</span> on this SO until
                 Meridian&apos;s overdue AR clears.
               </p>

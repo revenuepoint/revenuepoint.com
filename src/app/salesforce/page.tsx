@@ -37,10 +37,19 @@ export default function SalesforcePage() {
   return (
     <>
       <HeroSection
-        eyebrow="SALESFORCE CONSULTING"
-        heading="Certified Salesforce consulting. Across every cloud, across every industry."
+        byline="Salesforce · Consulting"
+        heading={
+          <>
+            Certified Salesforce consulting. Across every cloud, across <em>every industry</em>.
+          </>
+        }
         body="Our consultants hold over 60 Salesforce certifications and have implemented Salesforce for teams of 10 to global rollouts of hundreds of users. We specialize in implementations that stick — configured to your process, trained to your team, supported beyond go-live."
-        variant="light"
+        ctas={[
+          { label: 'Schedule a call', href: '/contact/?interest=Salesforce', variant: 'primary' },
+          { label: 'See pricing', href: '/salesforce/managed-services/pricing/', variant: 'secondary' },
+        ]}
+        issue="S"
+        sidenote="60+ Salesforce certifications · Sales · Service · CPQ · Marketing · Experience · NPSP."
       />
 
       {/* What we do — activity groupings */}
@@ -65,7 +74,7 @@ export default function SalesforcePage() {
       </section>
 
       {/* Salesforce products — interactive picker */}
-      <section className="bg-offWhite py-16 lg:py-24">
+      <section className="bg-cream py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4">
           <SectionHeader
             eyebrow="Salesforce products"
@@ -84,87 +93,86 @@ export default function SalesforcePage() {
             heading="Ten industries. Ten clean record pages."
             body="Salesforce looks different in a specialty pharmacy than it does in a distributor or a nonprofit. We build Lightning record pages that work the way your industry actually runs."
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {industryPageList.map((industry) => (
               <Link
                 key={industry.id}
                 href={`/solutions/${industry.slug}/`}
-                className="group border border-border rounded-lg bg-white p-6 hover:border-crimson transition-colors block"
+                className="group relative border border-ruleSoft bg-cream p-6 hover:border-crimson transition-colors block"
               >
-                <div className="text-[10px] uppercase tracking-widest text-crimson font-semibold">
+                <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-rule" />
+                <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-crimson" />
+                <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-mute mt-3">
                   Industry
-                </div>
-                <h3 className="mt-2 text-xl font-bold text-navy tracking-tight">
+                </p>
+                <h3 className="mt-2 font-serif text-[1.25rem] font-medium text-ink leading-tight">
                   {industry.navLabel}
                 </h3>
-                <p className="mt-3 text-sm text-bodyText leading-relaxed">
-                  {industry.hero.sub}
-                </p>
-                <div className="mt-5 pt-4 border-t border-border text-[10px] uppercase tracking-widest text-mutedText font-semibold">
-                  Record page + {industry.lexComponents.length} components +{' '}
+                <p className="mt-3 text-sm text-inkSoft leading-relaxed">{industry.hero.sub}</p>
+                <p className="mt-5 pt-4 border-t border-ruleSoft font-mono text-[10px] uppercase tracking-[0.14em] text-mute">
+                  Record page · {industry.lexComponents.length} components ·{' '}
                   {industry.integrations.systems.length} integrations
-                </div>
-                <div className="mt-3 text-sm text-crimson font-semibold group-hover:underline">
-                  See the record page &rarr;
-                </div>
+                </p>
+                <p className="mt-3 font-serif italic text-sm text-crimson group-hover:underline">
+                  See the record page →
+                </p>
               </Link>
             ))}
           </div>
           <div className="mt-10 text-center">
             <Link
               href="/solutions/"
-              className="text-sm font-semibold text-crimson hover:text-crimsonDark transition-colors inline-flex items-center gap-1"
+              className="font-serif italic text-sm text-crimson hover:text-crimsonDeep transition-colors inline-flex items-center gap-1"
             >
-              See all industries <span aria-hidden="true">&rarr;</span>
+              See all industries <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>
       </section>
 
       {/* Foundry teaser */}
-      <section className="bg-navy text-white">
-        <div className="max-w-7xl mx-auto px-4 py-16 lg:py-20">
-          <div className="max-w-3xl mb-10">
-            <p className="text-xs font-bold uppercase tracking-widest text-crimson mb-4">
-              Foundry &middot; Orchestrated intelligence
+      <section className="bg-ink text-paper">
+        <div className="max-w-editorial mx-auto px-6 lg:px-8 py-section">
+          <div className="max-w-3xl mb-12">
+            <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-paper/70 inline-flex items-center gap-3 mb-4">
+              <span className="h-px w-8 bg-crimson" />
+              Foundry · Orchestrated intelligence
             </p>
-            <h2 className="text-3xl font-bold tracking-tight text-white">
-              Foundry sits on top of a clean Salesforce.
+            <h2 className="text-d1 font-serif font-medium text-paper leading-tight">
+              Foundry sits on top of a <em className="text-crimson">clean</em> Salesforce.
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-gray-300">
-              Once your Salesforce is clean, Foundry connects the rest of your stack — ERP,
-              accounting, telephony, marketing — and delivers live dashboards, AI reports, and
-              agents that take action. Fully managed by RevenuePoint.
+            <p className="mt-4 text-lede leading-[1.65] text-paper/80 max-w-prose">
+              Once your Salesforce is clean, Foundry connects the rest of your stack — ERP, accounting, telephony, marketing — and delivers live dashboards, AI reports, and agents that take action. Fully managed by RevenuePoint.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {foundryPillars.map((pillar) => (
-              <div
-                key={pillar.eyebrow}
-                className="border border-white/10 rounded-lg bg-white/[0.03] p-5"
-              >
-                <div className="text-[10px] uppercase tracking-widest text-crimson font-semibold">
+              <div key={pillar.eyebrow} className="border-t border-paper/20 pt-5 relative">
+                <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-crimson" />
+                <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-paper/60">
                   {pillar.eyebrow}
-                </div>
-                <div className="mt-2 text-base font-bold text-white">{pillar.headline}</div>
-                <p className="mt-3 text-sm text-gray-300 leading-relaxed">{pillar.body}</p>
+                </p>
+                <h3 className="mt-3 font-serif text-[1.25rem] text-paper font-medium leading-tight">
+                  {pillar.headline}
+                </h3>
+                <p className="mt-3 text-sm text-paper/75 leading-relaxed">{pillar.body}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3">
+          <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3">
             <Link
               href="/foundry/"
-              className="inline-flex items-center justify-center px-5 py-2.5 rounded-sm bg-crimson text-white text-sm font-semibold hover:bg-crimsonDark transition-colors"
+              className="inline-flex items-center gap-2 border border-paper text-paper font-serif italic text-[15px] px-5 py-2 hover:bg-paper hover:text-ink transition-colors"
             >
-              See Foundry in full &rarr;
+              See Foundry in full <span aria-hidden="true">→</span>
             </Link>
             <Link
               href="/contact/?interest=Foundry"
-              className="text-sm text-gray-300 hover:text-white underline underline-offset-4"
+              className="font-serif italic text-sm text-paper/80 hover:text-paper underline underline-offset-4"
             >
-              Request a Foundry demo &rarr;
+              Request a Foundry demo →
             </Link>
           </div>
         </div>

@@ -19,7 +19,7 @@ function BotIcon({ className = 'h-3 w-3' }: { className?: string }) {
 
 export function SlackMock() {
   return (
-    <div className="h-full flex flex-col rounded-xl overflow-hidden border border-border shadow-2xl bg-[#1A1D21]">
+    <div className="h-full flex flex-col rounded-xl overflow-hidden border border-rule shadow-2xl bg-[#1A1D21]">
       {/* Header */}
       <div className="flex items-center gap-3 px-3 py-2 bg-[#19171D] text-white/90 border-b border-white/5">
         <div className="flex items-center gap-1.5">

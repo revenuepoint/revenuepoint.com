@@ -16,19 +16,19 @@ function Col({
   tone: 'crimson' | 'navy' | 'mutedText';
 }) {
   const toneText =
-    tone === 'crimson' ? 'text-crimson' : tone === 'navy' ? 'text-navy' : 'text-mutedText';
+    tone === 'crimson' ? 'text-crimson' : tone === 'navy' ? 'text-navy' : 'text-mute';
   return (
     <div className="flex-1 min-w-0">
       <div className={`text-[10px] uppercase tracking-widest font-semibold ${toneText}`}>
         {label}
       </div>
-      <div className="text-[10px] text-mutedText mt-0.5">{sub}</div>
+      <div className="text-[10px] text-mute mt-0.5">{sub}</div>
       <ul className="mt-2 space-y-2">
         {items.map((it) => (
-          <li key={it.title} className="border border-border rounded p-2">
+          <li key={it.title} className="border border-rule rounded p-2">
             <div className="flex items-start justify-between gap-2">
               <div className="text-[11px] font-semibold text-navy leading-snug">{it.title}</div>
-              <span className="text-[9px] font-bold text-crimson bg-crimsonLight rounded px-1.5 py-0.5 shrink-0">
+              <span className="text-[9px] font-bold text-crimson bg-crimsonTint rounded px-1.5 py-0.5 shrink-0">
                 {it.effort}
               </span>
             </div>
@@ -44,7 +44,7 @@ export function HorizonColumnsMini() {
   const h = healthCheckContent[crmId].horizons;
   return (
     <div>
-      <div className="text-[10px] uppercase tracking-widest text-mutedText font-semibold">
+      <div className="text-[10px] uppercase tracking-widest text-mute font-semibold">
         Prioritized · Now / Next / Later
       </div>
       <div className="mt-3 flex gap-2">

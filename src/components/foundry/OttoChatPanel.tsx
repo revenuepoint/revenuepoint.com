@@ -59,13 +59,13 @@ function KpiBlock({ metrics }: { metrics: KpiMetric[] }) {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 my-2">
       {metrics.map((m) => (
-        <div key={m.label} className="bg-offWhite border border-border rounded-md px-2.5 py-2">
-          <p className="text-[9px] uppercase tracking-wider text-mutedText">{m.label}</p>
+        <div key={m.label} className="bg-cream border border-rule rounded-md px-2.5 py-2">
+          <p className="text-[9px] uppercase tracking-wider text-mute">{m.label}</p>
           <p className="text-sm font-bold font-mono text-navy mt-0.5">{m.value}</p>
           {m.change && (
             <p
               className={`text-[10px] font-mono mt-0.5 ${
-                m.changeTone === 'good' ? 'text-emerald-600' : m.changeTone === 'bad' ? 'text-red-600' : 'text-mutedText'
+                m.changeTone === 'good' ? 'text-emerald-600' : m.changeTone === 'bad' ? 'text-red-600' : 'text-mute'
               }`}
             >
               {m.change}
@@ -94,8 +94,8 @@ function LineChartBlock({ spec }: { spec: LineChartSpec }) {
   const yFor = (v: number) => padT + (H - padT - padB) * (1 - (v - min) / range);
 
   return (
-    <div className="my-2 border border-border rounded-md overflow-hidden bg-white">
-      <div className="px-3 py-1.5 border-b border-border bg-offWhite">
+    <div className="my-2 border border-rule rounded-md overflow-hidden bg-white">
+      <div className="px-3 py-1.5 border-b border-rule bg-cream">
         <p className="text-[11px] font-semibold text-navy">{spec.title}</p>
       </div>
       <div className="px-2 pb-2 pt-1">
@@ -179,8 +179,8 @@ function DonutBlock({ spec }: { spec: DonutSpec }) {
   let startAngle = -Math.PI / 2;
   const total = spec.slices.reduce((s, x) => s + x.value, 0);
   return (
-    <div className="my-2 border border-border rounded-md overflow-hidden bg-white">
-      <div className="px-3 py-1.5 border-b border-border bg-offWhite">
+    <div className="my-2 border border-rule rounded-md overflow-hidden bg-white">
+      <div className="px-3 py-1.5 border-b border-rule bg-cream">
         <p className="text-[11px] font-semibold text-navy">{spec.title}</p>
       </div>
       <div className="p-3 flex items-center gap-4">
@@ -206,8 +206,8 @@ function DonutBlock({ spec }: { spec: DonutSpec }) {
           {spec.slices.map((s) => (
             <div key={s.label} className="flex items-center gap-2 text-[11px]">
               <span className="h-2 w-2 rounded-full shrink-0" style={{ backgroundColor: s.color }} />
-              <span className="text-bodyText flex-1 truncate">{s.label}</span>
-              <span className="font-mono text-mutedText">{s.value}%</span>
+              <span className="text-ink flex-1 truncate">{s.label}</span>
+              <span className="font-mono text-mute">{s.value}%</span>
             </div>
           ))}
         </div>
@@ -218,19 +218,19 @@ function DonutBlock({ spec }: { spec: DonutSpec }) {
 
 function TableBlock({ spec }: { spec: TableSpec }) {
   return (
-    <div className="my-2 border border-border rounded-md overflow-hidden bg-white">
+    <div className="my-2 border border-rule rounded-md overflow-hidden bg-white">
       {spec.title && (
-        <div className="px-3 py-1.5 border-b border-border bg-offWhite">
+        <div className="px-3 py-1.5 border-b border-rule bg-cream">
           <p className="text-[11px] font-semibold text-navy">{spec.title}</p>
         </div>
       )}
       <table className="w-full text-xs">
         <thead>
-          <tr className="bg-offWhite">
+          <tr className="bg-cream">
             {spec.headers.map((h) => (
               <th
                 key={h}
-                className="text-left px-3 py-2 font-semibold text-mutedText uppercase tracking-wider text-[9px]"
+                className="text-left px-3 py-2 font-semibold text-mute uppercase tracking-wider text-[9px]"
               >
                 {h}
               </th>
@@ -239,9 +239,9 @@ function TableBlock({ spec }: { spec: TableSpec }) {
         </thead>
         <tbody>
           {spec.rows.map((row, i) => (
-            <tr key={i} className="border-t border-border">
+            <tr key={i} className="border-t border-rule">
               {row.map((cell, j) => (
-                <td key={j} className="px-3 py-2 font-mono text-bodyText">
+                <td key={j} className="px-3 py-2 font-mono text-ink">
                   {cell}
                 </td>
               ))}
@@ -255,9 +255,9 @@ function TableBlock({ spec }: { spec: TableSpec }) {
 
 function RecordBlock({ spec }: { spec: RecordCardSpec }) {
   return (
-    <div className="my-2 border border-border rounded-md overflow-hidden bg-white">
-      <div className="flex items-center gap-2 px-3 py-2 bg-offWhite border-b border-border">
-        <DatabaseIcon className="h-3.5 w-3.5 text-mutedText" />
+    <div className="my-2 border border-rule rounded-md overflow-hidden bg-white">
+      <div className="flex items-center gap-2 px-3 py-2 bg-cream border-b border-rule">
+        <DatabaseIcon className="h-3.5 w-3.5 text-mute" />
         <span className="text-xs font-semibold text-navy flex-1 truncate">{spec.title}</span>
         {spec.status && (
           <span className="text-[9px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded border bg-red-50 text-red-700 border-red-200">
@@ -271,12 +271,12 @@ function RecordBlock({ spec }: { spec: RecordCardSpec }) {
       <div className="px-3 py-3 grid grid-cols-2 gap-x-4 gap-y-2">
         {spec.fields.map((f) => (
           <div key={f.label} className="min-w-0">
-            <p className="text-[9px] uppercase tracking-wider text-mutedText">{f.label}</p>
-            <p className="text-[11px] font-mono text-bodyText leading-snug">{f.value}</p>
+            <p className="text-[9px] uppercase tracking-wider text-mute">{f.label}</p>
+            <p className="text-[11px] font-mono text-ink leading-snug">{f.value}</p>
           </div>
         ))}
       </div>
-      <div className="px-3 pb-2 text-[10px] text-mutedText font-mono">
+      <div className="px-3 pb-2 text-[10px] text-mute font-mono">
         {spec.recordType} · {spec.recordId}
       </div>
     </div>
@@ -287,13 +287,13 @@ function BulletsBlock({ title, items }: { title?: string; items: string[] }) {
   return (
     <div className="my-2">
       {title && (
-        <p className="text-[10px] font-semibold uppercase tracking-wider text-mutedText mb-1.5">
+        <p className="text-[10px] font-semibold uppercase tracking-wider text-mute mb-1.5">
           {title}
         </p>
       )}
       <ul className="flex flex-col gap-1.5">
         {items.map((it, i) => (
-          <li key={i} className="flex gap-2 text-[12px] leading-relaxed text-bodyText">
+          <li key={i} className="flex gap-2 text-[12px] leading-relaxed text-ink">
             <span className="text-blue-500 font-bold mt-0.5 shrink-0">·</span>
             <span>{it}</span>
           </li>
@@ -307,7 +307,7 @@ function TextBlock({ paragraphs }: { paragraphs: string[] }) {
   return (
     <div className="my-2 flex flex-col gap-2">
       {paragraphs.map((p, i) => (
-        <p key={i} className="text-[12.5px] leading-relaxed text-bodyText">{p}</p>
+        <p key={i} className="text-[12.5px] leading-relaxed text-ink">{p}</p>
       ))}
     </div>
   );
@@ -315,7 +315,7 @@ function TextBlock({ paragraphs }: { paragraphs: string[] }) {
 
 function ActionBlock({ spec }: { spec: ActionSuggestionSpec }) {
   return (
-    <div className="my-2 border border-border rounded-md bg-offWhite p-3">
+    <div className="my-2 border border-rule rounded-md bg-cream p-3">
       <p className="text-[11px] font-semibold text-navy mb-2">{spec.title}</p>
       <div className="flex gap-2 flex-wrap">
         {spec.buttons.map((b, i) => (
@@ -324,7 +324,7 @@ function ActionBlock({ spec }: { spec: ActionSuggestionSpec }) {
             className={`inline-flex items-center px-3 py-1.5 rounded border text-[11px] font-semibold select-none ${
               b.primary
                 ? 'bg-blue-500 text-white border-blue-500 shadow-sm'
-                : 'bg-white text-bodyText border-border'
+                : 'bg-white text-ink border-rule'
             }`}
           >
             {b.label}
@@ -419,18 +419,18 @@ export function OttoChatPanel({ conversation }: { conversation: OttoConversation
   return (
     <div className="flex flex-col h-full min-h-[620px]">
       {/* Header */}
-      <div className="flex items-center gap-2 pb-3 border-b border-border">
+      <div className="flex items-center gap-2 pb-3 border-b border-rule">
         <span className="inline-flex items-center justify-center h-7 w-7 rounded-full bg-blue-50 text-blue-600">
           <BotIcon className="h-3.5 w-3.5" />
         </span>
         <div className="flex-1 min-w-0">
           <p className="text-sm font-semibold text-navy leading-tight">Otto</p>
-          <p className="text-[10px] text-mutedText">· {conversation.persona}</p>
+          <p className="text-[10px] text-mute">· {conversation.persona}</p>
         </div>
         <button
           type="button"
           onClick={() => setReplayToken((t) => t + 1)}
-          className="inline-flex items-center gap-1.5 text-[11px] text-mutedText hover:text-navy border border-border rounded px-2 py-1 bg-white"
+          className="inline-flex items-center gap-1.5 text-[11px] text-mute hover:text-navy border border-rule rounded px-2 py-1 bg-white"
           aria-label="Replay conversation"
         >
           <ReplayIcon className="h-3 w-3" />
@@ -456,7 +456,7 @@ export function OttoChatPanel({ conversation }: { conversation: OttoConversation
               <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-blue-50 text-blue-600 shrink-0 mb-1">
                 <BotIcon className="h-3 w-3" />
               </span>
-              <div className="rounded-lg px-3 py-2.5 bg-white border border-border">
+              <div className="rounded-lg px-3 py-2.5 bg-white border border-rule">
                 <div className="flex items-center gap-1">
                   <span className="h-1.5 w-1.5 rounded-full bg-blue-500 animate-bounce" style={{ animationDelay: '0ms', animationDuration: '1.2s' }} />
                   <span className="h-1.5 w-1.5 rounded-full bg-blue-500 animate-bounce" style={{ animationDelay: '180ms', animationDuration: '1.2s' }} />
@@ -474,8 +474,8 @@ export function OttoChatPanel({ conversation }: { conversation: OttoConversation
               <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-blue-50 text-blue-600 shrink-0 mt-1">
                 <BotIcon className="h-3 w-3" />
               </span>
-              <div className="rounded-lg px-3 py-2.5 bg-white border border-border flex-1 min-w-0">
-                <p className="text-sm leading-relaxed text-bodyText">
+              <div className="rounded-lg px-3 py-2.5 bg-white border border-rule flex-1 min-w-0">
+                <p className="text-sm leading-relaxed text-ink">
                   {streamedText}
                   {streaming && (
                     <span className="inline-block w-[2px] h-[13px] bg-blue-500 ml-0.5 align-middle animate-pulse" />
@@ -502,9 +502,9 @@ export function OttoChatPanel({ conversation }: { conversation: OttoConversation
       </div>
 
       {/* Composer (disabled) */}
-      <div className="pt-3 border-t border-border">
+      <div className="pt-3 border-t border-rule">
         <div className="flex items-center gap-2">
-          <div className="flex-1 px-3 py-2 text-sm text-mutedText bg-offWhite border border-border rounded-md select-none">
+          <div className="flex-1 px-3 py-2 text-sm text-mute bg-cream border border-rule rounded-md select-none">
             Ask Otto anything…
           </div>
           <div className="inline-flex items-center justify-center h-9 w-9 rounded-md bg-blue-500 text-white shrink-0">

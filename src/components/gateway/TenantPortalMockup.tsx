@@ -78,7 +78,7 @@ function BrowserChrome({ subdomain, color }: { subdomain: string; color: string 
       <span className="h-2 w-2 rounded-full bg-[#28C840]" />
       <div className="ml-2 flex-1 flex items-center gap-1.5 px-2 py-0.5 rounded-sm bg-white border border-[#D1D5DB]">
         <span className="h-1.5 w-1.5 rounded-full" style={{ background: color }} />
-        <span className="text-[9px] font-mono text-mutedText truncate">{subdomain}</span>
+        <span className="text-[9px] font-mono text-mute truncate">{subdomain}</span>
       </div>
     </div>
   );
@@ -97,14 +97,14 @@ export function TenantPortalMockup({ size = 'compact' }: { size?: PortalSize }) 
       initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.32, ease: 'easeOut' }}
-      className="rounded-lg overflow-hidden border border-border shadow-2xl bg-white"
+      className="rounded-lg overflow-hidden border border-rule shadow-2xl bg-white"
       style={{ aspectRatio: isLarge ? '4 / 3' : '5 / 4' }}
     >
       <BrowserChrome subdomain={tenant.subdomain} color={tenant.primaryColor} />
 
       {/* Tenant header bar */}
       <div
-        className="flex items-center gap-2 px-3 py-2 border-b border-border"
+        className="flex items-center gap-2 px-3 py-2 border-b border-rule"
         style={{ background: tenant.primaryColorTint }}
       >
         <span
@@ -115,10 +115,10 @@ export function TenantPortalMockup({ size = 'compact' }: { size?: PortalSize }) 
         </span>
         <div className="flex flex-col leading-tight">
           <span className="text-[10px] font-semibold text-navy">{tenant.name}</span>
-          <span className="text-[8px] text-mutedText">Portal · {tenant.connectionLabel}</span>
+          <span className="text-[8px] text-mute">Portal · {tenant.connectionLabel}</span>
         </div>
         <div className="flex-1" />
-        <BellI className="h-3 w-3 text-mutedText" />
+        <BellI className="h-3 w-3 text-mute" />
         <span
           className="h-5 w-5 rounded-full text-white text-[8px] font-bold flex items-center justify-center"
           style={{ background: tenant.primaryColor }}
@@ -129,7 +129,7 @@ export function TenantPortalMockup({ size = 'compact' }: { size?: PortalSize }) 
 
       <div className="flex" style={{ height: 'calc(100% - 60px)' }}>
         {/* Sidebar */}
-        <div className="flex flex-col w-10 shrink-0 border-r border-border bg-offWhite/60 py-1.5">
+        <div className="flex flex-col w-10 shrink-0 border-r border-rule bg-cream/60 py-1.5">
           {[
             { Icon: HomeI, active: true },
             { Icon: ListI, active: false },
@@ -160,7 +160,7 @@ export function TenantPortalMockup({ size = 'compact' }: { size?: PortalSize }) 
         {/* Main canvas */}
         <div className="flex-1 min-w-0 flex flex-col bg-white">
           {/* Section header */}
-          <div className="flex items-center justify-between px-3 py-1.5 border-b border-border/60">
+          <div className="flex items-center justify-between px-3 py-1.5 border-b border-rule/60">
             <div className="flex flex-col leading-tight">
               <span
                 className="text-[8px] font-bold uppercase tracking-widest"
@@ -186,9 +186,9 @@ export function TenantPortalMockup({ size = 'compact' }: { size?: PortalSize }) 
               {tenant.records.slice(0, isLarge ? 5 : 3).map((r) => (
                 <div
                   key={r.id}
-                  className="flex items-center gap-2 px-2 py-1.5 border border-border rounded-sm bg-white hover:bg-offWhite transition-colors"
+                  className="flex items-center gap-2 px-2 py-1.5 border border-rule rounded-sm bg-white hover:bg-cream transition-colors"
                 >
-                  <span className="text-[9px] font-mono text-mutedText shrink-0 w-16 truncate">
+                  <span className="text-[9px] font-mono text-mute shrink-0 w-16 truncate">
                     {r.id}
                   </span>
                   <span className="text-[9.5px] text-navy flex-1 truncate">{r.title}</span>
@@ -200,11 +200,11 @@ export function TenantPortalMockup({ size = 'compact' }: { size?: PortalSize }) 
                     {r.status}
                   </span>
                   {isLarge && (
-                    <span className="text-[9px] font-mono text-mutedText shrink-0 w-16 text-right">
+                    <span className="text-[9px] font-mono text-mute shrink-0 w-16 text-right">
                       {r.amount}
                     </span>
                   )}
-                  <span className="text-[8px] text-mutedText shrink-0 w-16 text-right truncate hidden lg:block">
+                  <span className="text-[8px] text-mute shrink-0 w-16 text-right truncate hidden lg:block">
                     {r.updated}
                   </span>
                 </div>
@@ -213,11 +213,11 @@ export function TenantPortalMockup({ size = 'compact' }: { size?: PortalSize }) 
           </div>
 
           {/* Footer strip */}
-          <div className="flex items-center justify-between px-3 py-1 border-t border-border/60 bg-offWhite/40">
-            <span className="text-[8px] text-mutedText">
+          <div className="flex items-center justify-between px-3 py-1 border-t border-rule/60 bg-cream/40">
+            <span className="text-[8px] text-mute">
               Showing {Math.min(tenant.records.length, isLarge ? 5 : 3)} of {tenant.records.length}
             </span>
-            <span className="text-[8px] text-mutedText font-mono">
+            <span className="text-[8px] text-mute font-mono">
               {tenant.accessRuleSummary}
             </span>
           </div>

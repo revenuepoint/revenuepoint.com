@@ -47,7 +47,7 @@ export function ActionsKanban() {
             return (
               <div
                 key={col.id}
-                className="shrink-0 snap-start w-[85%] sm:w-[65%] md:w-[46%] lg:w-auto flex flex-col rounded-lg bg-white/60 border border-border p-3 h-[820px]"
+                className="shrink-0 snap-start w-[85%] sm:w-[65%] md:w-[46%] lg:w-auto flex flex-col rounded-lg bg-white/60 border border-rule p-3 h-[820px]"
               >
                 <div className="flex items-center gap-2 mb-3 px-1 shrink-0">
                   <span

@@ -12,26 +12,25 @@ export function TwoColumn({
   rightHeading?: string;
 }) {
   return (
-    <div className="my-8 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-      <div className="border border-border rounded-md bg-offWhite/40 p-5">
+    <div className="my-10 grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+      <div className="border border-ruleSoft bg-cream p-5 lg:p-6 relative">
+        <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-rule" />
+        <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-mute" />
         {leftHeading && (
-          <p className="text-[10px] font-bold uppercase tracking-widest text-mutedText mb-2">
+          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-mute mt-3 mb-3">
             {leftHeading}
           </p>
         )}
-        <div className="text-sm text-bodyText leading-relaxed space-y-2">
-          {left}
-        </div>
+        <div className="text-sm text-inkSoft leading-relaxed space-y-2">{left}</div>
       </div>
-      <div className="border border-crimson/20 rounded-md bg-crimsonLight p-5">
+      <div className="border border-crimson bg-crimsonTint p-5 lg:p-6 relative">
+        <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-crimson" />
         {rightHeading && (
-          <p className="text-[10px] font-bold uppercase tracking-widest text-crimson mb-2">
+          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-crimson mt-3 mb-3">
             {rightHeading}
           </p>
         )}
-        <div className="text-sm text-bodyText leading-relaxed space-y-2 [&_strong]:text-navy">
-          {right}
-        </div>
+        <div className="text-sm text-ink leading-relaxed space-y-2 [&_strong]:text-ink">{right}</div>
       </div>
     </div>
   );
