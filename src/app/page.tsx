@@ -30,11 +30,17 @@ export default function Home() {
           </>
         }
         rightSlot={
-          <div className="border border-rule bg-cream p-8 lg:p-10">
+          <div className="border border-rule bg-cream p-8 lg:p-10 lg:mt-24">
             <p className="eyebrow mb-4">The track record</p>
-            <p className="serif-italic text-[1.0625rem] text-ink leading-snug mb-8 max-w-[30ch]">
-              Built on a decade of running operating systems end-to-end.
-            </p>
+            <div className="mb-8 max-w-[40ch] space-y-3">
+              <p className="serif-italic text-[1.0625rem] text-ink leading-snug">
+                Built on a decade of running operating systems end-to-end.
+              </p>
+              <p className="text-[0.875rem] text-inkSoft leading-relaxed">
+                Implementation, management, and intelligence under one engagement — one partner,
+                every step.
+              </p>
+            </div>
             <ul className="divide-y divide-rule">
               {[
                 { value: '$950M+', label: 'Revenue managed per year' },
