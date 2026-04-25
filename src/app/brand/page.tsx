@@ -117,7 +117,7 @@ export default function BrandPage() {
           </div>
           <p className="mt-6 pt-4 border-t border-ruleSoft font-mono text-[11px] uppercase tracking-[0.14em] text-mute max-w-prose">
             Last updated 2026-04-25 · contact{' '}
-            <a href="mailto:team@revenuepoint.com" className="text-ink hover:text-crimson transition-colors">
+            <a href="mailto:team@revenuepoint.com" className="text-ink hover:text-navySoft transition-colors">
               team@revenuepoint.com
             </a>{' '}
             with questions.
@@ -136,19 +136,19 @@ export default function BrandPage() {
             </p>
             <ul className="mt-6 space-y-2.5 text-sm text-inkSoft">
               <li className="flex gap-3">
-                <span className="text-crimson font-mono shrink-0" aria-hidden="true">→</span>
+                <span className="text-navySoft font-mono shrink-0" aria-hidden="true">→</span>
                 <span>Always use the supplied wordmark file — never re-typeset it.</span>
               </li>
               <li className="flex gap-3">
-                <span className="text-crimson font-mono shrink-0" aria-hidden="true">→</span>
+                <span className="text-navySoft font-mono shrink-0" aria-hidden="true">→</span>
                 <span>Three sizes: <span className="font-mono text-ink">sm</span> 18px, <span className="font-mono text-ink">md</span> 28px, <span className="font-mono text-ink">lg</span> 40px. Do not scale below 14px.</span>
               </li>
               <li className="flex gap-3">
-                <span className="text-crimson font-mono shrink-0" aria-hidden="true">→</span>
+                <span className="text-navySoft font-mono shrink-0" aria-hidden="true">→</span>
                 <span>On crimson backgrounds, switch the mark to paper. Never set crimson on crimson.</span>
               </li>
               <li className="flex gap-3">
-                <span className="text-crimson font-mono shrink-0" aria-hidden="true">→</span>
+                <span className="text-navySoft font-mono shrink-0" aria-hidden="true">→</span>
                 <span>Need an SVG, PDF, or PNG? Email <a href="mailto:team@revenuepoint.com" className="text-crimson hover:text-crimsonDeep underline underline-offset-2">team@revenuepoint.com</a>.</span>
               </li>
             </ul>
@@ -202,7 +202,7 @@ export default function BrandPage() {
             <p className="serif-italic text-[1.25rem] text-ink mb-6">Signal</p>
             <PaletteGrid swatches={SIGNALS} />
           </div>
-          <div className="border-l-2 border-crimson pl-5 max-w-prose">
+          <div className="border-l-2 border-navySoft pl-5 max-w-prose">
             <p className="serif-italic text-[1.125rem] text-ink leading-snug">
               Crimson is locked. Do not tint, shade, gradient, screen, or animate it. It earns its weight by
               showing up sparingly.
@@ -394,19 +394,19 @@ export default function BrandPage() {
         </div>
         <ul className="mt-10 space-y-2.5 text-sm text-inkSoft max-w-prose">
           <li className="flex gap-3">
-            <span className="text-crimson font-mono shrink-0" aria-hidden="true">→</span>
+            <span className="text-navySoft font-mono shrink-0" aria-hidden="true">→</span>
             <span>Always include a visible focus indicator. Default ring is 2px crimson with 2px offset.</span>
           </li>
           <li className="flex gap-3">
-            <span className="text-crimson font-mono shrink-0" aria-hidden="true">→</span>
+            <span className="text-navySoft font-mono shrink-0" aria-hidden="true">→</span>
             <span>Keep heading hierarchy semantic (h1 → h2 → h3) — do not pick a heading level for visual weight.</span>
           </li>
           <li className="flex gap-3">
-            <span className="text-crimson font-mono shrink-0" aria-hidden="true">→</span>
+            <span className="text-navySoft font-mono shrink-0" aria-hidden="true">→</span>
             <span>Make every interactive element keyboard-reachable; tab order must follow reading order.</span>
           </li>
           <li className="flex gap-3">
-            <span className="text-crimson font-mono shrink-0" aria-hidden="true">→</span>
+            <span className="text-navySoft font-mono shrink-0" aria-hidden="true">→</span>
             <span>Honour <span className="font-mono text-ink">prefers-reduced-motion</span>. All cascades collapse to instant; live indicators stop pulsing.</span>
           </li>
         </ul>

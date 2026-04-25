@@ -38,7 +38,7 @@ export function PrismSidebar({ items, selectedId, onSelect }: Props) {
               type="button"
               onClick={() => onSelect(item.id)}
               className={`group text-left rounded-lg border px-3 py-3 transition-colors relative overflow-hidden ${
-                selected ? 'bg-white border-crimson/40 shadow-sm' : 'bg-white/50 border-rule hover:bg-white'
+                selected ? 'bg-white border-navySoft/40 shadow-sm' : 'bg-white/50 border-rule hover:bg-white'
               }`}
               aria-current={selected ? 'true' : undefined}
             >
@@ -50,7 +50,7 @@ export function PrismSidebar({ items, selectedId, onSelect }: Props) {
                   </span>
                   <span className="text-[9px] font-mono text-mute">{item.estimatedTime}</span>
                 </div>
-                <p className={`text-xs font-semibold leading-snug ${selected ? 'text-crimson' : 'text-navy'}`}>
+                <p className={`text-xs font-semibold leading-snug ${selected ? 'text-navySoft' : 'text-navy'}`}>
                   {item.name}
                 </p>
                 <p className="text-[10px] text-mute mt-1 line-clamp-2 leading-relaxed">
@@ -79,7 +79,7 @@ export function PrismSidebar({ items, selectedId, onSelect }: Props) {
               type="button"
               onClick={() => onSelect(item.id)}
               className={`shrink-0 snap-start flex items-center gap-2 rounded-full border px-3 py-2 text-xs font-medium transition-colors ${
-                selected ? 'bg-white border-crimson/40 text-crimson shadow-sm' : 'bg-white/50 border-rule text-navy'
+                selected ? 'bg-white border-navySoft/40 text-navySoft shadow-sm' : 'bg-white/50 border-rule text-navy'
               }`}
             >
               <span className={`h-2 w-2 rounded-full ${style.bar}`} />

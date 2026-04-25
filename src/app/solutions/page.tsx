@@ -26,9 +26,9 @@ export default function IndustriesIndex() {
               <Link
                 key={industry.id}
                 href={`/solutions/${industry.slug}/`}
-                className="group border border-rule rounded-lg bg-white p-6 hover:border-crimson transition-colors block"
+                className="group border border-rule rounded-lg bg-white p-6 hover:border-navySoft transition-colors block"
               >
-                <div className="text-[10px] uppercase tracking-widest text-crimson font-semibold">
+                <div className="text-[10px] uppercase tracking-widest text-navySoft font-semibold">
                   Industry
                 </div>
                 <h2 className="mt-2 text-xl font-bold text-navy tracking-tight">
@@ -42,7 +42,7 @@ export default function IndustriesIndex() {
                   {industry.integrations.systems.length} integrations
                 </div>
                 <div className="mt-3 text-sm text-crimson font-semibold group-hover:underline">
-                  See the record page →
+                  Explore {industry.navLabel} →
                 </div>
               </Link>
             ))}

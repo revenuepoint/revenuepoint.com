@@ -12,7 +12,7 @@ export function ReportGuideMini() {
       </div>
       <div className="mt-3 space-y-3">
         {annotations.map((a) => (
-          <div key={a.label} className="border-l-2 border-crimson pl-3">
+          <div key={a.label} className="border-l-2 border-navySoft pl-3">
             <div className="text-xs font-semibold text-navy">{a.label}</div>
             <div className="mt-1 text-[11px] text-ink leading-relaxed">{a.body}</div>
           </div>

@@ -6,7 +6,7 @@ const stages = [
 
 const toneBg: Record<string, string> = {
   navy: 'bg-navy text-white',
-  crimson: 'bg-crimson text-white',
+  crimson: 'bg-navySoft text-white',
   green: 'bg-navy text-white',
 };
 

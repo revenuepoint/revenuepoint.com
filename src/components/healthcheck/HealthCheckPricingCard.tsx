@@ -17,7 +17,7 @@ export function HealthCheckPricingCard() {
     <section className="bg-white">
       <div className="max-w-3xl mx-auto px-4 py-16 lg:py-20">
         <div className="mb-8 text-center">
-          <p className="text-xs font-bold uppercase tracking-widest text-crimson mb-4">
+          <p className="text-xs font-bold uppercase tracking-widest text-navySoft mb-4">
             Flat fee. Two weeks. One report.
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-navy">

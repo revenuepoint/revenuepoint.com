@@ -21,7 +21,7 @@ export function WhoItsFor() {
     <section className="bg-white">
       <div className="max-w-7xl mx-auto px-4 py-16 lg:py-20">
         <div className="max-w-3xl mb-10">
-          <p className="text-xs font-bold uppercase tracking-widest text-crimson mb-4">
+          <p className="text-xs font-bold uppercase tracking-widest text-navySoft mb-4">
             Who it&apos;s for
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-navy">
@@ -31,7 +31,7 @@ export function WhoItsFor() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {personas.map((p) => (
             <div key={p.role} className="border border-rule rounded-lg bg-cream p-6">
-              <div className="text-[10px] uppercase tracking-widest text-crimson font-bold">
+              <div className="text-[10px] uppercase tracking-widest text-navySoft font-bold">
                 {p.role}
               </div>
               <div className="mt-2 text-lg font-bold text-navy leading-snug">{p.line}</div>

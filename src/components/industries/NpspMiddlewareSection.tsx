@@ -23,7 +23,7 @@ export function NpspMiddlewareSection() {
       <div className="max-w-7xl mx-auto px-4 py-16 lg:py-20">
         {/* Header */}
         <div className="max-w-3xl mb-10">
-          <p className="text-xs font-bold uppercase tracking-widest text-crimson mb-4">
+          <p className="text-xs font-bold uppercase tracking-widest text-navySoft mb-4">
             RevenuePoint Open Source · NPSP Middleware
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-navy">
@@ -90,16 +90,16 @@ export function NpspMiddlewareSection() {
               vendor lock-in.
             </p>
             <ul className="mt-5 space-y-2 text-sm text-ink flex-1">
-              <li className="flex gap-2"><span className="text-crimson font-bold shrink-0">—</span>Full source under AGPL-3.0</li>
-              <li className="flex gap-2"><span className="text-crimson font-bold shrink-0">—</span>Docs + self-hosting guide</li>
-              <li className="flex gap-2"><span className="text-crimson font-bold shrink-0">—</span>Plugin API for your own integrations</li>
-              <li className="flex gap-2"><span className="text-crimson font-bold shrink-0">—</span>Provided as-is — no SLA, no on-call</li>
+              <li className="flex gap-2"><span className="text-navySoft font-bold shrink-0">—</span>Full source under AGPL-3.0</li>
+              <li className="flex gap-2"><span className="text-navySoft font-bold shrink-0">—</span>Docs + self-hosting guide</li>
+              <li className="flex gap-2"><span className="text-navySoft font-bold shrink-0">—</span>Plugin API for your own integrations</li>
+              <li className="flex gap-2"><span className="text-navySoft font-bold shrink-0">—</span>Provided as-is — no SLA, no on-call</li>
             </ul>
             <a
               href={NPSP_GITHUB_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-crimson transition-colors"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-navySoft transition-colors"
             >
               <GithubIcon /> View on GitHub →
             </a>
@@ -144,7 +144,7 @@ export function NpspMiddlewareSection() {
               </Link>
               <Link
                 href="/npsp-middleware/"
-                className="inline-flex items-center text-sm font-semibold text-navy hover:text-crimson transition-colors"
+                className="inline-flex items-center text-sm font-semibold text-navy hover:text-navySoft transition-colors"
               >
                 See the full page →
               </Link>

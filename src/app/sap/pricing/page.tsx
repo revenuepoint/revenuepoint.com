@@ -37,7 +37,7 @@ export default function SAPPricingPage() {
             <ol className="space-y-3 list-none">
               {intakeItems.map((item) => (
                 <li key={item.num} className="grid grid-cols-[2.5rem_1fr] gap-3 items-baseline">
-                  <span className="font-serif italic text-[1.25rem] text-crimson">{item.num}</span>
+                  <span className="font-serif italic text-[1.25rem] text-navySoft">{item.num}</span>
                   <span className="text-sm text-ink leading-relaxed">{item.label}</span>
                 </li>
               ))}

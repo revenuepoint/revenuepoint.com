@@ -98,10 +98,10 @@ export default function SalesforcePage() {
               <Link
                 key={industry.id}
                 href={`/solutions/${industry.slug}/`}
-                className="group relative border border-ruleSoft bg-cream p-6 hover:border-crimson transition-colors block"
+                className="group relative border border-ruleSoft bg-cream p-6 hover:border-navySoft transition-colors block"
               >
                 <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-rule" />
-                <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-crimson" />
+                <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-navySoft" />
                 <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-mute mt-3">
                   Industry
                 </p>
@@ -114,7 +114,7 @@ export default function SalesforcePage() {
                   {industry.integrations.systems.length} integrations
                 </p>
                 <p className="mt-3 font-serif italic text-sm text-crimson group-hover:underline">
-                  See the record page →
+                  Explore {industry.navLabel} →
                 </p>
               </Link>
             ))}

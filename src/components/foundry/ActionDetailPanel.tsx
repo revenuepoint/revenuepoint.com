@@ -284,7 +284,7 @@ export function ActionDetailPanel({ action }: { action: ActionDetail }) {
           ))}
         </div>
         <div className="flex items-center gap-1.5 text-xs text-mute">
-          <BotIcon className="h-3 w-3 text-crimson" />
+          <BotIcon className="h-3 w-3 text-navySoft" />
           <span className="truncate">{action.agent}</span>
           <span>·</span>
           <span>requested {action.requestedAgo}</span>

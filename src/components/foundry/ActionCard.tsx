@@ -107,7 +107,7 @@ export function ActionCard({ card }: { card: Card }) {
       </div>
 
       <div className="flex items-center gap-1.5 text-[11px] text-mute">
-        <BotIcon className="h-3 w-3 text-crimson shrink-0" />
+        <BotIcon className="h-3 w-3 text-navySoft shrink-0" />
         <span className="truncate">{card.agent}</span>
       </div>
 

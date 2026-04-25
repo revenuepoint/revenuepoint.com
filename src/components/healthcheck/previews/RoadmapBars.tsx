@@ -4,7 +4,7 @@ import { useCrm } from '@/context/CrmContext';
 import { healthCheckContent } from '@/data/healthCheckContent';
 
 const toneBg: Record<string, string> = {
-  crimson: 'bg-crimson',
+  crimson: 'bg-navySoft',
   navy: 'bg-navy',
   amber: 'bg-amber',
   green: 'bg-navy',

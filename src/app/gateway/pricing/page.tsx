@@ -93,7 +93,7 @@ export default function GatewayPricingPage() {
             {GATEWAY_INCLUSIONS.map((inc) => (
               <article key={inc.title} className="relative border border-ruleSoft bg-paper p-5">
                 <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-rule" />
-                <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-crimson" />
+                <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-navySoft" />
                 <h3 className="font-serif italic text-[1rem] text-ink mt-3">{inc.title}</h3>
                 <p className="mt-2 text-xs text-inkSoft leading-relaxed">{inc.body}</p>
               </article>

@@ -26,7 +26,7 @@ export function Methodology() {
     <section className="bg-cream border-y border-rule">
       <div className="max-w-7xl mx-auto px-4 py-16 lg:py-20">
         <div className="max-w-3xl mb-10">
-          <p className="text-xs font-bold uppercase tracking-widest text-crimson mb-4">
+          <p className="text-xs font-bold uppercase tracking-widest text-navySoft mb-4">
             How we do it
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-navy">
@@ -41,7 +41,7 @@ export function Methodology() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {steps.map((s) => (
             <div key={s.num} className="border border-rule rounded-lg bg-white p-5">
-              <div className="w-8 h-8 rounded-full bg-crimson text-white font-bold flex items-center justify-center text-sm">
+              <div className="w-8 h-8 rounded-full bg-navySoft text-white font-bold flex items-center justify-center text-sm">
                 {s.num}
               </div>
               <div className="mt-3 text-sm font-bold text-navy">{s.title}</div>

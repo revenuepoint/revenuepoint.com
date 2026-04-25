@@ -103,7 +103,7 @@ export function ProofFinding() {
                 );
               })}
               <div className="mt-5">
-                <div className="text-[10px] uppercase tracking-widest text-crimson font-semibold">
+                <div className="text-[10px] uppercase tracking-widest text-navySoft font-semibold">
                   Recommended fix
                 </div>
                 <p className="mt-2 text-sm text-ink leading-relaxed">{f.recommendation}</p>

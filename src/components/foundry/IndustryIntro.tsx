@@ -105,7 +105,7 @@ export function IndustryIntro() {
         </div>
 
         {/* Case story */}
-        <div className="flex flex-col lg:flex-row lg:items-center gap-3 lg:gap-6 border-l-2 border-crimson pl-4">
+        <div className="flex flex-col lg:flex-row lg:items-center gap-3 lg:gap-6 border-l-2 border-navySoft pl-4">
           <p className="text-sm text-ink flex-1 leading-relaxed italic">{industry.caseStory}</p>
           <span className="text-xs font-semibold text-crimson whitespace-nowrap">
             Read the {industry.shortName} case study →

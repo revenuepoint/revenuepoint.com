@@ -424,7 +424,7 @@ export function PrismReportPanel({ report }: { report: PrismReport }) {
               <p className="text-[10px] text-mute uppercase tracking-widest font-semibold mb-2">
                 Recommended Actions
               </p>
-              <ol className="flex flex-col gap-2 text-[12.5px] text-ink list-decimal list-inside marker:text-crimson">
+              <ol className="flex flex-col gap-2 text-[12.5px] text-ink list-decimal list-inside marker:text-navySoft">
                 {report.recommendations.map((r, i) => (
                   <li key={i} className="leading-relaxed">{r}</li>
                 ))}

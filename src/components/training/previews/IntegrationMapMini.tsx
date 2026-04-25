@@ -15,7 +15,7 @@ export function IntegrationMapMini() {
         {flows.map((f) => (
           <div key={`${f.from}-${f.to}-${f.label}`} className="grid grid-cols-[80px_18px_80px_1fr] items-center gap-2 text-[11px]">
             <span className="font-semibold text-navy text-right truncate">{f.from}</span>
-            <span className="text-center text-crimson font-bold">{f.dir}</span>
+            <span className="text-center text-navySoft font-bold">{f.dir}</span>
             <span className="font-semibold text-navy truncate">{f.to}</span>
             <span className="text-ink leading-snug">{f.label}</span>
           </div>

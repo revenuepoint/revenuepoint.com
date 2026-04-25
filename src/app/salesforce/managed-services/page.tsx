@@ -108,8 +108,8 @@ export default function SalesforceManagedServicesPage() {
                 className="relative border border-ruleSoft bg-cream p-6 lg:p-7"
               >
                 <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-rule" />
-                <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-crimson" />
-                <p className="font-serif italic text-[1.25rem] text-crimson mt-3 leading-none">
+                <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-navySoft" />
+                <p className="font-serif italic text-[1.25rem] text-navySoft mt-3 leading-none">
                   {['i', 'ii', 'iii', 'iv'][idx]}
                 </p>
                 <h3 className="mt-3 font-serif text-[1.125rem] text-ink leading-tight font-medium">
@@ -144,7 +144,7 @@ export default function SalesforceManagedServicesPage() {
               <div
                 key={tier.name}
                 className={`relative border bg-paper p-6 lg:p-7 ${
-                  tier.featured ? 'border-crimson lg:scale-[1.02] shadow-editorial' : 'border-ruleSoft'
+                  tier.featured ? 'border-navySoft lg:scale-[1.02] shadow-editorial' : 'border-ruleSoft'
                 }`}
               >
                 {tier.featured && (

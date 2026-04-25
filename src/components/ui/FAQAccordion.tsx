@@ -29,7 +29,7 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
                 {item.question}
               </span>
               <span
-                className={`shrink-0 font-mono text-base text-crimson transition-transform duration-200 ${
+                className={`shrink-0 font-mono text-base text-navySoft transition-transform duration-200 ${
                   isOpen ? 'rotate-45' : ''
                 }`}
                 aria-hidden="true"

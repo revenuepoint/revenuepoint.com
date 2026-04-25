@@ -144,14 +144,12 @@ export function LeadForm({ interest, id }: LeadFormProps) {
         className={`${inputClass} md:col-span-2`}
       />
 
-      <div className="md:col-span-2">
-        <div className="inline-block bg-white border border-rule p-3">
-          <div
-            className="g-recaptcha"
-            data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-            data-theme="light"
-          />
-        </div>
+      <div className="md:col-span-2 pt-2">
+        <div
+          className="g-recaptcha"
+          data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+          data-theme="light"
+        />
       </div>
 
       <button

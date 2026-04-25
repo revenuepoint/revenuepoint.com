@@ -19,13 +19,13 @@ export function IndustryTabs() {
             onClick={() => setIndustryId(ind.id as IndustryId)}
             className={`shrink-0 snap-start inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold transition-colors ${
               selected
-                ? 'bg-crimson text-white border-crimson shadow-sm'
-                : 'bg-white text-navy border-rule hover:border-crimson/40'
+                ? 'bg-navySoft text-white border-navySoft shadow-sm'
+                : 'bg-white text-navy border-rule hover:border-navySoft/40'
             }`}
             aria-current={selected ? 'true' : undefined}
           >
             <span
-              className={`h-1.5 w-1.5 rounded-full ${selected ? 'bg-white' : 'bg-crimson'}`}
+              className={`h-1.5 w-1.5 rounded-full ${selected ? 'bg-white' : 'bg-navySoft'}`}
               aria-hidden="true"
             />
             <span className="whitespace-nowrap">{ind.shortName}</span>

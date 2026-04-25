@@ -41,7 +41,7 @@ function ModuleIntro({ module: m }: { module: FoundryModule }) {
         {m.name}
         <span className="text-mute font-normal"> — {m.role}</span>
       </h3>
-      <p className="text-sm text-crimson font-medium mt-1 leading-snug">
+      <p className="text-sm text-navySoft font-medium mt-1 leading-snug">
         {m.tagline}
       </p>
       <p className="text-sm text-ink mt-2 leading-relaxed">

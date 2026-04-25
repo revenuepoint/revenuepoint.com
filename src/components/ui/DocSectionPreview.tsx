@@ -32,7 +32,7 @@ export function DocSectionPreview({
             <h3 className="mt-4 font-serif text-d2 font-medium text-ink leading-tight">{title}</h3>
             <p className="mt-4 text-base leading-[1.65] text-inkSoft max-w-prose">{description}</p>
             {example && (
-              <div className="mt-6 border-l-2 border-crimson pl-4">
+              <div className="mt-6 border-l-2 border-navySoft pl-4">
                 {exampleLabel && (
                   <div className="font-mono text-[10px] uppercase tracking-[0.16em] text-mute mb-1">
                     {exampleLabel}

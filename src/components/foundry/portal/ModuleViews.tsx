@@ -496,8 +496,8 @@ export function LensView() {
             data-cursor-target="lens-range-30d"
             className={`text-[8px] px-1.5 py-0.5 rounded border font-semibold transition-colors ${
               range30dActive
-                ? 'border-crimson bg-crimson text-white ring-2 ring-crimson/30'
-                : 'border-crimson bg-crimsonTint text-crimson'
+                ? 'border-navySoft bg-navySoft text-white ring-2 ring-navySoft/30'
+                : 'border-navySoft bg-navySoft/10 text-navySoft'
             }`}
           >
             30d
@@ -584,7 +584,7 @@ export function CourierView() {
                 key={i}
                 data-cursor-target={`courier-row-${i}`}
                 className={`flex items-center gap-2 border rounded px-2 py-1.5 transition-colors ${
-                  hovered ? 'border-crimson bg-crimsonTint shadow-sm' : 'border-rule bg-white'
+                  hovered ? 'border-navySoft bg-navySoft/10 shadow-sm' : 'border-rule bg-white'
                 }`}
               >
                 <span
@@ -619,7 +619,7 @@ function PrismClickRipple() {
       animate={{ opacity: 0, scale: 2.6 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-8 w-8 rounded-full border-2 border-crimson z-10"
+      className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-8 w-8 rounded-full border-2 border-navySoft z-10"
       aria-hidden="true"
     />
   );
@@ -663,7 +663,7 @@ export function PrismView() {
               key={i}
               data-cursor-target={`prism-card-${i}`}
               className={`relative border ${c.border} rounded p-2 bg-white flex flex-col gap-1.5 transition-shadow ${
-                activeModal === i ? 'ring-1 ring-crimson/30 shadow-sm' : ''
+                activeModal === i ? 'ring-1 ring-navySoft/30 shadow-sm' : ''
               }`}
             >
               <AnimatePresence>
@@ -833,7 +833,7 @@ function AgentShowcaseCard({
   return (
     <div
       className={`rounded-md border bg-white border-t-[3px] ${t.border} p-2 flex flex-col gap-1.5 shadow-sm transition-colors ${
-        expanded ? 'border-crimson ring-1 ring-crimson/30' : 'border-rule'
+        expanded ? 'border-navySoft ring-1 ring-navySoft/30' : 'border-rule'
       }`}
     >
       <div>

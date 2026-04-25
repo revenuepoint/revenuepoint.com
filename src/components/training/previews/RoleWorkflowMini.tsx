@@ -14,7 +14,7 @@ export function RoleWorkflowMini() {
       <ol className="mt-3 space-y-2">
         {tasks.map((t) => (
           <li key={t.time} className="flex items-start gap-3">
-            <span className="shrink-0 mt-0.5 inline-flex items-center justify-center min-w-[40px] px-1.5 py-0.5 rounded-sm bg-crimsonTint text-crimson text-[10px] font-bold tracking-wide">
+            <span className="shrink-0 mt-0.5 inline-flex items-center justify-center min-w-[40px] px-1.5 py-0.5 rounded-sm bg-navySoft/10 text-navySoft text-[10px] font-bold tracking-wide">
               {t.time}
             </span>
             <div className="text-xs">

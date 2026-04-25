@@ -32,12 +32,12 @@ export default function ContactPage() {
             <div className="space-y-4 text-sm text-inkSoft border-t border-rule pt-6 mt-2">
               <p className="eyebrow mb-3">Direct lines</p>
               <p>
-                <a href="mailto:team@revenuepoint.com" className="serif-italic text-ink hover:text-crimson transition-colors">
+                <a href="mailto:team@revenuepoint.com" className="serif-italic text-ink hover:text-navySoft transition-colors">
                   team@revenuepoint.com
                 </a>
               </p>
               <p>
-                <a href="tel:+13329001150" className="font-mono text-ink hover:text-crimson transition-colors">
+                <a href="tel:+13329001150" className="font-mono text-ink hover:text-navySoft transition-colors">
                   +1 (332) 900-1150
                 </a>
               </p>

@@ -36,7 +36,7 @@ function CodeBlock({ active }: { active: Block }) {
   return (
     <pre className="text-[12.5px] font-mono leading-relaxed text-white overflow-x-auto whitespace-pre">
 {'export default '}
-<span className="text-crimson">defineTenant</span>
+<span className="text-navySoft">defineTenant</span>
 {'({\n'}
 <span className={`block transition-colors duration-200 rounded-sm ${cls('domain')}`}>
 {'  domain: '}<span className="text-emerald-300">{`'acme.portal.revenuepoint.com'`}</span>{',\n'}
@@ -78,7 +78,7 @@ export function ConfigViewer() {
     <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)] gap-6 lg:gap-8 items-start">
       {/* Narrative + block picker */}
       <div className="flex flex-col gap-3">
-        <p className="text-[10px] font-bold uppercase tracking-widest text-crimson">
+        <p className="text-[10px] font-bold uppercase tracking-widest text-navySoft">
           tenants/acme.ts
         </p>
         <p className="text-sm text-ink leading-relaxed mb-2">

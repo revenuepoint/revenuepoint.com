@@ -105,7 +105,7 @@ export function ReportPreview() {
         <p className="text-[10px] text-mute uppercase tracking-widest font-semibold mb-2">
           Recommended Actions
         </p>
-        <ol className="flex flex-col gap-2 text-[12px] text-ink list-decimal list-inside marker:text-crimson">
+        <ol className="flex flex-col gap-2 text-[12px] text-ink list-decimal list-inside marker:text-navySoft">
           {spec.recommendations.map((r, i) => (
             <li key={i}>{r}</li>
           ))}

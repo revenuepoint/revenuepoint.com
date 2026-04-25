@@ -81,8 +81,8 @@ export function Navbar() {
                     <button
                       className={`flex items-center gap-1 font-mono text-[11px] uppercase tracking-[0.16em] px-4 py-2 transition-colors ${
                         isActive(item) || openDropdown === item.label
-                          ? 'text-crimson'
-                          : 'text-mute hover:text-crimson'
+                          ? 'text-navySoft'
+                          : 'text-mute hover:text-navySoft'
                       }`}
                     >
                       {item.label}
@@ -114,7 +114,7 @@ export function Navbar() {
                         })
                       }
                       className={`font-mono text-[11px] uppercase tracking-[0.16em] px-4 py-2 transition-colors ${
-                        isActive(item) ? 'text-crimson' : 'text-mute hover:text-crimson'
+                        isActive(item) ? 'text-navySoft' : 'text-mute hover:text-navySoft'
                       }`}
                     >
                       {item.label}
@@ -193,7 +193,7 @@ export function Navbar() {
                               })
                             }
                             className={`group flex items-center py-2 transition-colors ${
-                              pathname === link.href ? 'text-crimson' : 'text-ink hover:text-crimson'
+                              pathname === link.href ? 'text-navySoft' : 'text-ink hover:text-navySoft'
                             }`}
                           >
                             <span className="text-[15px]">{link.label}</span>
@@ -234,7 +234,7 @@ export function Navbar() {
                           })
                         }
                         className={`group flex items-center py-2 transition-colors ${
-                          pathname === child.href ? 'text-crimson' : 'text-ink hover:text-crimson'
+                          pathname === child.href ? 'text-navySoft' : 'text-ink hover:text-navySoft'
                         }`}
                       >
                         <span className="text-[15px]">{child.label}</span>
@@ -277,7 +277,7 @@ export function Navbar() {
                     <button
                       onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
                       className={`flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.16em] w-full ${
-                        isActive(item) ? 'text-crimson' : 'text-ink'
+                        isActive(item) ? 'text-navySoft' : 'text-ink'
                       }`}
                     >
                       {item.label}
@@ -319,7 +319,7 @@ export function Navbar() {
                                       })
                                     }
                                     className={`flex items-center gap-2 text-sm ${
-                                      pathname === link.href ? 'text-crimson' : 'text-ink hover:text-crimson'
+                                      pathname === link.href ? 'text-navySoft' : 'text-ink hover:text-navySoft'
                                     }`}
                                   >
                                     <span>{link.label}</span>
@@ -347,7 +347,7 @@ export function Navbar() {
                                 })
                               }
                               className={`block text-sm ${
-                                pathname === child.href ? 'text-crimson' : 'text-ink hover:text-crimson'
+                                pathname === child.href ? 'text-navySoft' : 'text-ink hover:text-navySoft'
                               }`}
                             >
                               {child.label}
@@ -368,7 +368,7 @@ export function Navbar() {
                       })
                     }
                     className={`block font-mono text-[12px] uppercase tracking-[0.16em] ${
-                      isActive(item) ? 'text-crimson' : 'text-ink'
+                      isActive(item) ? 'text-navySoft' : 'text-ink'
                     }`}
                   >
                     {item.label}
@@ -397,7 +397,7 @@ export function Navbar() {
             <div className="pt-6 border-t border-ruleSoft mt-8">
               <Link
                 href="/brand/"
-                className="block font-mono text-[11px] uppercase tracking-[0.16em] text-mute hover:text-crimson transition-colors"
+                className="block font-mono text-[11px] uppercase tracking-[0.16em] text-mute hover:text-navySoft transition-colors"
               >
                 Brand guide
               </Link>

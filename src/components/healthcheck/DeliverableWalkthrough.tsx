@@ -23,7 +23,7 @@ export function DeliverableWalkthrough() {
       <section className="bg-cream border-b border-rule">
         <div className="max-w-7xl mx-auto px-4 py-14 lg:py-20">
           <div className="max-w-3xl">
-            <p className="text-xs font-bold uppercase tracking-widest text-crimson mb-4">
+            <p className="text-xs font-bold uppercase tracking-widest text-navySoft mb-4">
               The deliverable, section by section
             </p>
             <h2 className="text-3xl font-bold tracking-tight text-navy">

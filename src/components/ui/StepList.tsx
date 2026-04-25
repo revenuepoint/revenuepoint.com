@@ -24,7 +24,7 @@ export function StepList({ steps }: StepListProps) {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 lg:gap-y-0 lg:divide-x lg:divide-dotted lg:divide-rule">
       {steps.map((step) => (
         <div key={step.number} className="lg:px-6 first:lg:pl-0">
-          <p className="font-serif italic text-[3rem] leading-none text-crimson font-medium">
+          <p className="font-serif italic text-[3rem] leading-none text-navySoft font-medium">
             {ROMAN[step.number] ?? step.number}
           </p>
           <h3 className="mt-4 font-serif text-[1.5rem] font-medium text-ink leading-snug">{step.title}</h3>

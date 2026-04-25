@@ -161,7 +161,7 @@ export default function SecurityPage() {
                 'How you’d like to be credited — name, handle, or anonymous.',
               ].map((item) => (
                 <li key={item} className="flex gap-3">
-                  <span className="text-crimson font-mono shrink-0 mt-0.5" aria-hidden="true">→</span>
+                  <span className="text-navySoft font-mono shrink-0 mt-0.5" aria-hidden="true">→</span>
                   <span>{item}</span>
                 </li>
               ))}
@@ -173,28 +173,28 @@ export default function SecurityPage() {
             <h2 className="text-d2 font-serif font-medium text-ink mb-4">What to expect from us.</h2>
             <ul className="space-y-2">
               <li className="flex gap-3">
-                <span className="text-crimson font-mono shrink-0 mt-0.5" aria-hidden="true">→</span>
+                <span className="text-navySoft font-mono shrink-0 mt-0.5" aria-hidden="true">→</span>
                 <span>
                   <span className="text-ink font-medium">Within 1 business day</span> — a real human
                   acknowledges your report. No auto-replies.
                 </span>
               </li>
               <li className="flex gap-3">
-                <span className="text-crimson font-mono shrink-0 mt-0.5" aria-hidden="true">→</span>
+                <span className="text-navySoft font-mono shrink-0 mt-0.5" aria-hidden="true">→</span>
                 <span>
                   <span className="text-ink font-medium">Within 5 business days</span> — triage, severity
                   assessment, and a target window for the fix.
                 </span>
               </li>
               <li className="flex gap-3">
-                <span className="text-crimson font-mono shrink-0 mt-0.5" aria-hidden="true">→</span>
+                <span className="text-navySoft font-mono shrink-0 mt-0.5" aria-hidden="true">→</span>
                 <span>
                   <span className="text-ink font-medium">Through to resolution</span> — a status note at least
                   every 7 days while we work the fix.
                 </span>
               </li>
               <li className="flex gap-3">
-                <span className="text-crimson font-mono shrink-0 mt-0.5" aria-hidden="true">→</span>
+                <span className="text-navySoft font-mono shrink-0 mt-0.5" aria-hidden="true">→</span>
                 <span>
                   <span className="text-ink font-medium">Coordinated disclosure</span> — default 90 days from
                   initial report or fix release, whichever comes first. Credit goes to researchers who follow

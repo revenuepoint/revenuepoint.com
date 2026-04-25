@@ -41,7 +41,7 @@ function ShippedCard({ connector }: { connector: GatewayConnector }) {
   return (
     <article className="relative border border-ruleSoft bg-paper p-6 flex flex-col">
       <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-rule" />
-      <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-crimson" />
+      <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-navySoft" />
       <div className="flex items-start justify-between gap-3 mt-3 mb-3">
         <div>
           <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-mute">

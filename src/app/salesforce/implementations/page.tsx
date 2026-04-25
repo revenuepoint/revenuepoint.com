@@ -274,9 +274,9 @@ export default function SalesforceImplementationsPage() {
               <Link
                 key={industry.id}
                 href={`/solutions/${industry.slug}/`}
-                className="group border border-rule rounded-lg bg-white p-6 hover:border-crimson transition-colors block"
+                className="group border border-rule rounded-lg bg-white p-6 hover:border-navySoft transition-colors block"
               >
-                <div className="text-[10px] uppercase tracking-widest text-crimson font-semibold">
+                <div className="text-[10px] uppercase tracking-widest text-navySoft font-semibold">
                   Industry
                 </div>
                 <h3 className="mt-2 text-xl font-bold text-navy tracking-tight">
@@ -290,7 +290,7 @@ export default function SalesforceImplementationsPage() {
                   {industry.integrations.systems.length} integrations
                 </div>
                 <div className="mt-3 text-sm text-crimson font-semibold group-hover:underline">
-                  See the record page &rarr;
+                  Explore {industry.navLabel} &rarr;
                 </div>
               </Link>
             ))}
@@ -339,7 +339,7 @@ export default function SalesforceImplementationsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
             <div className="bg-white border border-rule rounded-sm shadow-sm p-6">
-              <div className="text-[10px] uppercase tracking-widest text-crimson font-semibold">
+              <div className="text-[10px] uppercase tracking-widest text-navySoft font-semibold">
                 Hypercare
               </div>
               <h3 className="mt-2 text-lg font-semibold text-navy">
@@ -352,7 +352,7 @@ export default function SalesforceImplementationsPage() {
               </p>
             </div>
             <div className="bg-white border border-rule rounded-sm shadow-sm p-6">
-              <div className="text-[10px] uppercase tracking-widest text-crimson font-semibold">
+              <div className="text-[10px] uppercase tracking-widest text-navySoft font-semibold">
                 Managed Administration
               </div>
               <h3 className="mt-2 text-lg font-semibold text-navy">

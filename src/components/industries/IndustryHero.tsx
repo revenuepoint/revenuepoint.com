@@ -19,7 +19,7 @@ export function IndustryHero({ content }: { content: IndustryPageContent }) {
               Book a working session
             </Button>
             <Button variant="secondary" href="#record-page">
-              See the record page
+              Look inside
             </Button>
           </div>
         </div>

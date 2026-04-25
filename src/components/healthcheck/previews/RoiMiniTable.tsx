@@ -23,7 +23,7 @@ export function RoiMiniTable() {
             <th className="text-right text-[10px] uppercase tracking-widest text-mute pb-2">
               Invest
             </th>
-            <th className="text-right text-[10px] uppercase tracking-widest text-crimson pb-2">
+            <th className="text-right text-[10px] uppercase tracking-widest text-navySoft pb-2">
               Value
             </th>
           </tr>

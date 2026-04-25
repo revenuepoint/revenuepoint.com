@@ -44,7 +44,7 @@ export function PlatformModuleSidebar({ items, selectedId, onSelect }: Props) {
               onClick={() => onSelect(item.id)}
               className={`group text-left rounded-lg border px-3 py-3 transition-colors ${
                 selected
-                  ? 'bg-white border-crimson/40 shadow-sm'
+                  ? 'bg-white border-navySoft/40 shadow-sm'
                   : 'bg-white/50 border-rule hover:bg-white hover:border-rule'
               }`}
               aria-current={selected ? 'true' : undefined}
@@ -53,7 +53,7 @@ export function PlatformModuleSidebar({ items, selectedId, onSelect }: Props) {
                 <span
                   className={`mt-0.5 inline-flex items-center justify-center h-7 w-7 rounded-md shrink-0 ${
                     selected
-                      ? 'bg-crimson text-white'
+                      ? 'bg-navySoft text-white'
                       : 'bg-cream text-navy border border-rule'
                   }`}
                   aria-hidden="true"
@@ -63,7 +63,7 @@ export function PlatformModuleSidebar({ items, selectedId, onSelect }: Props) {
                 <div className="min-w-0 flex-1">
                   <p
                     className={`text-sm font-bold leading-tight ${
-                      selected ? 'text-crimson' : 'text-navy'
+                      selected ? 'text-navySoft' : 'text-navy'
                     }`}
                   >
                     {item.name}
@@ -98,13 +98,13 @@ export function PlatformModuleSidebar({ items, selectedId, onSelect }: Props) {
               onClick={() => onSelect(item.id)}
               className={`shrink-0 snap-start flex items-center gap-2 rounded-full border px-3 py-2 text-xs font-semibold transition-colors ${
                 selected
-                  ? 'bg-white border-crimson/40 text-crimson shadow-sm'
+                  ? 'bg-white border-navySoft/40 text-navySoft shadow-sm'
                   : 'bg-white/50 border-rule text-navy'
               }`}
             >
               <span
                 className={`inline-flex items-center justify-center h-5 w-5 rounded ${
-                  selected ? 'bg-crimson text-white' : 'bg-cream text-navy'
+                  selected ? 'bg-navySoft text-white' : 'bg-cream text-navy'
                 }`}
                 aria-hidden="true"
               >

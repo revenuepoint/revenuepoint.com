@@ -192,7 +192,7 @@ export default function GatewayPage() {
                 className="bg-white border border-rule rounded-sm p-6 lg:p-7 flex flex-col"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-xs font-mono font-bold text-crimson tracking-widest">
+                  <span className="text-xs font-mono font-bold text-navySoft tracking-widest">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <div className="h-px flex-1 bg-rule" />
@@ -204,7 +204,7 @@ export default function GatewayPage() {
                 <ul className="space-y-2 mt-auto">
                   {step.bullets.map((b) => (
                     <li key={b} className="flex gap-2 text-sm text-ink leading-snug">
-                      <span className="text-crimson shrink-0 font-semibold">→</span>
+                      <span className="text-navySoft shrink-0 font-semibold">→</span>
                       <span>{b}</span>
                     </li>
                   ))}

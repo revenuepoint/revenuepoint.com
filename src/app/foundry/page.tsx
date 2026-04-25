@@ -264,7 +264,7 @@ export default function FoundryPage() {
                 className="relative bg-paper border border-ruleSoft p-6 flex flex-col"
               >
                 <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-rule" />
-                <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-crimson" />
+                <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-navySoft" />
                 <div className="mt-3"><Icon /></div>
                 <h3 className="font-serif text-[1.125rem] font-medium text-ink mb-3 leading-snug">
                   {title}
@@ -282,7 +282,7 @@ export default function FoundryPage() {
               { value: '0', label: 'BI tools that take the next action for you' },
             ].map((s) => (
               <div key={s.label} className="text-center">
-                <p className="font-mono text-[2rem] font-semibold tabular-nums text-crimson leading-none">{s.value}</p>
+                <p className="font-mono text-[2rem] font-semibold tabular-nums text-navySoft leading-none">{s.value}</p>
                 <p className="serif-italic text-base text-ink mt-3 leading-snug max-w-[28ch] mx-auto">{s.label}</p>
               </div>
             ))}
@@ -344,7 +344,7 @@ export default function FoundryPage() {
             ].map((step) => (
               <article key={step.title} className="bg-cream border border-ruleSoft p-6 lg:p-7 flex flex-col relative">
                 <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-rule" />
-                <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-crimson" />
+                <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-navySoft" />
                 <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-mute mt-3">
                   Layer {step.roman}
                 </p>
@@ -355,7 +355,7 @@ export default function FoundryPage() {
                 <ul className="space-y-2 mt-5 mt-auto">
                   {step.bullets.map((b) => (
                     <li key={b} className="flex gap-3 text-sm text-inkSoft leading-snug">
-                      <span className="text-crimson font-mono shrink-0" aria-hidden="true">→</span>
+                      <span className="text-navySoft font-mono shrink-0" aria-hidden="true">→</span>
                       <span>{b}</span>
                     </li>
                   ))}

@@ -81,11 +81,18 @@ h2 { line-height: 1.08; }
 h3 { line-height: 1.15; }
 h4 { line-height: 1.25; }
 
-/* Italic accent inside any heading uses Fraunces italic at the same size */
+/* Italic accent inside headings — h1 keeps crimson as the signature brand
+   moment; h2/h3/h4 use navySoft (mid-tone navy) so they read as visibly
+   blue on warm paper instead of collapsing into ink. */
 h1 em, h2 em, h3 em, h4 em {
   font-style: italic;
   font-weight: inherit;
+}
+h1 em {
   color: var(--crimson);
+}
+h2 em, h3 em, h4 em {
+  color: var(--navy-soft);
 }
 
 /* ----- Editorial utilities -------------------------------------------- */
@@ -107,7 +114,7 @@ h1 em, h2 em, h3 em, h4 em {
   display: inline-block;
   width: 22px;
   height: 1px;
-  background: var(--crimson);
+  background: var(--navy-soft);
 }
 
 /* Byline — eyebrow's heavier sibling, uses ink rule */

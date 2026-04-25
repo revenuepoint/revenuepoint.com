@@ -16,11 +16,11 @@ export function ServiceCard({ title, body, cta, badge, elevated, className = '' 
   return (
     <article
       className={`relative h-full bg-cream border flex flex-col p-6 lg:p-8 transition-shadow hover:shadow-hairline ${
-        elevated ? 'border-crimson' : 'border-ruleSoft'
+        elevated ? 'border-navySoft' : 'border-ruleSoft'
       } ${className}`}
     >
-      {/* Crimson accent bar — top, 32px */}
-      <span aria-hidden="true" className="absolute left-6 top-0 h-px w-8 bg-crimson" />
+      {/* Top accent bar — 32px, navySoft (visibly blue) under the rebalanced palette */}
+      <span aria-hidden="true" className="absolute left-6 top-0 h-px w-8 bg-navySoft" />
       <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-rule" />
       <div className="flex items-baseline gap-3 mt-3">
         <h3 className="font-serif text-[1.5rem] font-medium text-ink leading-tight">{title}</h3>

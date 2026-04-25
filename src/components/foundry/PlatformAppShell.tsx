@@ -179,7 +179,7 @@ export function PlatformAppShell({
                 aria-label={item.label}
                 className={`relative flex items-center justify-center py-2.5 transition-colors w-full ${
                   isActive
-                    ? 'bg-crimsonTint text-crimson border-l-2 border-crimson'
+                    ? 'bg-navySoft/10 text-navySoft border-l-2 border-navySoft'
                     : isSelectable
                       ? 'text-mute hover:text-navy hover:bg-white cursor-pointer'
                       : 'text-mute/50 cursor-default'
@@ -190,7 +190,7 @@ export function PlatformAppShell({
                 {item.badge != null && (
                   <span
                     className={`absolute top-1.5 right-2 h-1.5 w-1.5 rounded-full ${
-                      isActive ? 'bg-crimson animate-pulse' : 'bg-blue-500'
+                      isActive ? 'bg-navySoft animate-pulse' : 'bg-blue-500'
                     }`}
                   />
                 )}

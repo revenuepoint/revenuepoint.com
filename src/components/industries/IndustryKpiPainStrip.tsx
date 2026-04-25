@@ -9,8 +9,8 @@ export function IndustryKpiPainStrip({ kpis }: { kpis: PainKpi[] }) {
           {kpis.map((k) => (
             <div key={k.label} className="relative pt-6">
               <span className="absolute left-0 top-0 h-px w-full bg-rule" />
-              <span className="absolute left-0 top-0 h-px w-8 bg-crimson" />
-              <p className="font-mono text-[2rem] xl:text-[2.5rem] font-semibold leading-none text-crimson tabular-nums">
+              <span className="absolute left-0 top-0 h-px w-8 bg-navySoft" />
+              <p className="font-mono text-[2rem] xl:text-[2.5rem] font-semibold leading-none text-navySoft tabular-nums">
                 {k.stat}
               </p>
               <p className="serif-italic text-[1.0625rem] leading-snug text-ink mt-3 max-w-[26ch]">

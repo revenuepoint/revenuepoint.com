@@ -84,7 +84,7 @@ export default function NpspMiddlewarePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
             {npspComponents.map((c) => (
               <div key={c.title} className="border border-rule rounded-lg bg-white p-6 flex flex-col">
-                <div className="text-[10px] uppercase tracking-widest text-crimson font-semibold">
+                <div className="text-[10px] uppercase tracking-widest text-navySoft font-semibold">
                   {c.tag}
                 </div>
                 <div className="mt-2 text-lg font-bold text-navy">{c.title}</div>
@@ -228,7 +228,7 @@ export default function NpspMiddlewarePage() {
                 href={NPSP_GITHUB_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-sm border border-rule bg-white text-sm font-semibold text-navy hover:border-crimson transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-sm border border-rule bg-white text-sm font-semibold text-navy hover:border-navySoft transition-colors"
               >
                 <GithubIcon /> Or start free on GitHub
               </a>
@@ -240,7 +240,7 @@ export default function NpspMiddlewarePage() {
       {/* Why open source */}
       <section className="bg-cream border-y border-rule py-16 lg:py-24">
         <div className="max-w-3xl mx-auto px-4">
-          <p className="text-xs font-bold uppercase tracking-widest text-crimson mb-4">
+          <p className="text-xs font-bold uppercase tracking-widest text-navySoft mb-4">
             Why we open-sourced it
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-navy">

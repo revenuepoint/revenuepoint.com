@@ -15,7 +15,7 @@ export default function ThankYouPage() {
       <ThankYouTracker />
       <div className="max-w-2xl mx-auto px-6 lg:px-8 text-center">
         <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-mute justify-center inline-flex items-center gap-2">
-          <span className="h-px w-8 bg-crimson" /> Received · in queue
+          <span className="h-px w-8 bg-navySoft" /> Received · in queue
         </p>
         <h1 className="mt-6 text-d1 font-serif font-semibold text-ink">
           Thanks — we&rsquo;ll be in touch within <em>one business day</em>.

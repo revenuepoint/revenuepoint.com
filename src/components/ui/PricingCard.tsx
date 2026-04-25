@@ -25,7 +25,7 @@ export function PricingCard({
   return (
     <div
       className={`relative bg-cream border flex flex-col ${
-        highlight ? 'border-crimson lg:scale-[1.02] shadow-editorial' : 'border-ruleSoft'
+        highlight ? 'border-navySoft lg:scale-[1.02] shadow-editorial' : 'border-ruleSoft'
       }`}
     >
       {highlight && (
@@ -49,7 +49,7 @@ export function PricingCard({
         <ul className="space-y-3">
           {features.map((feature) => (
             <li key={feature} className="flex gap-3 text-sm text-ink leading-relaxed">
-              <span className="text-crimson font-mono shrink-0" aria-hidden="true">→</span>
+              <span className="text-navySoft font-mono shrink-0" aria-hidden="true">→</span>
               <span>{feature}</span>
             </li>
           ))}

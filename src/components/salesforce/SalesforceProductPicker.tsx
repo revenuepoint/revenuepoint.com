@@ -54,12 +54,12 @@ export function SalesforceProductPicker({ products }: SalesforceProductPickerPro
               className={`group flex items-stretch text-left rounded-sm shadow-sm border transition-colors ${
                 isActive
                   ? 'bg-navy text-white border-navy'
-                  : 'bg-white text-navy border-rule hover:border-crimson'
+                  : 'bg-white text-navy border-rule hover:border-navySoft'
               }`}
             >
               <span
                 className={`w-1 shrink-0 rounded-l-sm ${
-                  isActive ? 'bg-crimson' : 'bg-crimson/30 group-hover:bg-crimson'
+                  isActive ? 'bg-navySoft' : 'bg-navySoft/30 group-hover:bg-navySoft'
                 }`}
                 aria-hidden="true"
               />
@@ -81,13 +81,13 @@ export function SalesforceProductPicker({ products }: SalesforceProductPickerPro
         <p className="mt-4 text-base text-ink leading-relaxed">{active.overview}</p>
 
         <div className="mt-6">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-crimson mb-3">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-navySoft mb-3">
             What we do with it
           </p>
           <ul className="space-y-2.5">
             {active.whatWeDo.map((item) => (
               <li key={item} className="text-sm text-ink leading-relaxed flex gap-2">
-                <span className="text-crimson mt-0.5 shrink-0" aria-hidden="true">
+                <span className="text-navySoft mt-0.5 shrink-0" aria-hidden="true">
                   &bull;
                 </span>
                 {item}

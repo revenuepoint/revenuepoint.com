@@ -45,7 +45,7 @@ export default function GatewayUseCasesPage() {
                 className="relative bg-paper border border-ruleSoft p-6 flex flex-col"
               >
                 <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-rule" />
-                <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-crimson" />
+                <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-navySoft" />
                 <div className="flex items-center justify-between gap-3 mt-3 mb-3">
                   <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-mute">
                     Archetype {String(idx + 1).padStart(2, '0')}

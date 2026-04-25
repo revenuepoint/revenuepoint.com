@@ -19,14 +19,14 @@ export function LexComponentGallery({ components }: { components: LexComponentSp
           {components.map((c) => (
             <article key={c.id} className="border border-ruleSoft bg-cream p-5 lg:p-6 relative">
               <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-rule" />
-              <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-crimson" />
+              <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-navySoft" />
               <div className="flex items-start justify-between gap-3 mt-3 mb-4">
                 <div>
                   <h3 className="font-serif text-[1.0625rem] font-medium text-ink">{c.title}</h3>
                   <p className="text-xs text-inkSoft leading-snug mt-1">{c.blurb}</p>
                 </div>
                 <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-mute shrink-0 whitespace-nowrap">
-                  Pulls from: <span className="text-crimson">{c.source}</span>
+                  Pulls from: <span className="text-navySoft">{c.source}</span>
                 </p>
               </div>
               <ComponentBody body={c.body} />

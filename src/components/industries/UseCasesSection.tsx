@@ -15,8 +15,8 @@ export function UseCasesSection({ useCases }: { useCases: UseCase[] }) {
           {useCases.map((uc, idx) => (
             <article key={uc.title} className="relative bg-paper border border-ruleSoft p-6 lg:p-7 flex flex-col">
               <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-rule" />
-              <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-crimson" />
-              <p className="font-serif italic text-[1.5rem] text-crimson leading-none mt-3">
+              <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-navySoft" />
+              <p className="font-serif italic text-[1.5rem] text-navySoft leading-none mt-3">
                 {['i', 'ii', 'iii'][idx] ?? idx + 1}
               </p>
               <h3 className="mt-4 font-serif text-[1.25rem] font-medium text-ink leading-tight">
@@ -30,7 +30,7 @@ export function UseCasesSection({ useCases }: { useCases: UseCase[] }) {
                 <ol className="space-y-1.5 text-xs text-inkSoft leading-relaxed list-none">
                   {uc.flow.map((step, i) => (
                     <li key={i} className="flex gap-2">
-                      <span className="font-serif italic text-crimson shrink-0">
+                      <span className="font-serif italic text-navySoft shrink-0">
                         {['α', 'β', 'γ', 'δ', 'ε'][i] ?? i + 1}
                       </span>
                       <span>{step}</span>

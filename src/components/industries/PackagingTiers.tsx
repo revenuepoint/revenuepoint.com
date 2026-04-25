@@ -29,7 +29,7 @@ export function PackagingTiers({
               <div
                 key={t.name}
                 className={`relative border bg-cream p-6 lg:p-8 flex flex-col ${
-                  featured ? 'border-crimson lg:scale-[1.02] shadow-editorial' : 'border-ruleSoft'
+                  featured ? 'border-navySoft lg:scale-[1.02] shadow-editorial' : 'border-ruleSoft'
                 }`}
               >
                 {featured && (
@@ -47,7 +47,7 @@ export function PackagingTiers({
                 <ul className="mt-6 space-y-3 text-sm text-ink flex-1">
                   {t.includes.map((inc) => (
                     <li key={inc} className="flex gap-3 leading-relaxed">
-                      <span className="text-crimson font-mono shrink-0" aria-hidden="true">→</span>
+                      <span className="text-navySoft font-mono shrink-0" aria-hidden="true">→</span>
                       <span>{inc}</span>
                     </li>
                   ))}
@@ -56,7 +56,7 @@ export function PackagingTiers({
                   <Link
                     href={`/contact/?interest=${interestSlug}+${encodeURIComponent(t.name)}`}
                     className={`mt-7 inline-flex items-center gap-2 font-serif italic text-[15px] transition-colors ${
-                      featured ? 'text-crimson hover:text-crimsonDeep' : 'text-ink hover:text-crimson'
+                      featured ? 'text-crimson hover:text-crimsonDeep' : 'text-ink hover:text-navySoft'
                     }`}
                   >
                     Book a working session <span aria-hidden="true">→</span>
@@ -81,7 +81,7 @@ export function PackagingTiers({
             </Link>
             <Link
               href="/salesforce/"
-              className="font-serif italic text-ink hover:text-crimson transition-colors"
+              className="font-serif italic text-ink hover:text-navySoft transition-colors"
             >
               Meet our 60+ certified consultants →
             </Link>

@@ -24,7 +24,7 @@ export function AssessmentDomains() {
           {domainNames.map((name, i) => (
             <article key={name} className="relative border border-ruleSoft bg-cream p-5">
               <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-rule" />
-              <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-crimson" />
+              <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-navySoft" />
               <div className="flex items-baseline gap-3 mt-3">
                 <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-mute">
                   {String(i + 1).padStart(2, '0')}

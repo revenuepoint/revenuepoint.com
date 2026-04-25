@@ -82,7 +82,7 @@ function MetricNode({ data, selected }: NodeProps<Node<MetricNodeData>>) {
       }}
       className={`rounded-lg bg-white overflow-hidden shadow-sm transition-all flex flex-col cursor-pointer ${
         selected
-          ? 'border border-crimson ring-2 ring-crimson/30 shadow-md'
+          ? 'border border-navySoft ring-2 ring-navySoft/30 shadow-md'
           : 'border border-rule'
       }`}
     >

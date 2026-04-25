@@ -38,7 +38,7 @@ export function HealthCheckFaqs() {
     <section className="bg-cream border-t border-rule">
       <div className="max-w-3xl mx-auto px-4 py-16 lg:py-20">
         <div className="mb-10">
-          <p className="text-xs font-bold uppercase tracking-widest text-crimson mb-4">
+          <p className="text-xs font-bold uppercase tracking-widest text-navySoft mb-4">
             Common questions
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-navy">

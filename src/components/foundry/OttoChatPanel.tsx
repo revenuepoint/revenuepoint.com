@@ -106,8 +106,8 @@ function LineChartBlock({ spec }: { spec: LineChartSpec }) {
           })}
           {spec.goalValue != null && (
             <g>
-              <line x1={padL} x2={W - padR} y1={yFor(spec.goalValue)} y2={yFor(spec.goalValue)} stroke="#8B0A39" strokeDasharray="3 3" strokeWidth={1} opacity={0.6} />
-              <text x={W - padR - 4} y={yFor(spec.goalValue) - 3} fontSize={8} fill="#8B0A39" textAnchor="end">goal</text>
+              <line x1={padL} x2={W - padR} y1={yFor(spec.goalValue)} y2={yFor(spec.goalValue)} stroke="#2A3F58" strokeDasharray="3 3" strokeWidth={1} opacity={0.6} />
+              <text x={W - padR - 4} y={yFor(spec.goalValue) - 3} fontSize={8} fill="#2A3F58" textAnchor="end">goal</text>
             </g>
           )}
           {spec.series.map((s) => {

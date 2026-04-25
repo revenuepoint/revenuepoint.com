@@ -31,7 +31,7 @@ export function OttoChatSidebar({ items, selectedId, onSelect }: Props) {
               onClick={() => onSelect(item.id)}
               className={`group text-left rounded-lg border px-3 py-3 transition-colors ${
                 selected
-                  ? 'bg-white border-crimson/40 shadow-sm'
+                  ? 'bg-white border-navySoft/40 shadow-sm'
                   : 'bg-white/50 border-rule hover:bg-white hover:border-rule'
               }`}
               aria-current={selected ? 'true' : undefined}
@@ -47,7 +47,7 @@ export function OttoChatSidebar({ items, selectedId, onSelect }: Props) {
                 <div className="min-w-0 flex-1">
                   <p
                     className={`text-xs font-semibold leading-snug ${
-                      selected ? 'text-crimson' : 'text-navy'
+                      selected ? 'text-navySoft' : 'text-navy'
                     }`}
                   >
                     {item.sidebarTitle}
@@ -76,7 +76,7 @@ export function OttoChatSidebar({ items, selectedId, onSelect }: Props) {
               onClick={() => onSelect(item.id)}
               className={`shrink-0 snap-start flex items-center gap-2 rounded-full border px-3 py-2 text-xs font-medium transition-colors ${
                 selected
-                  ? 'bg-white border-crimson/40 text-crimson shadow-sm'
+                  ? 'bg-white border-navySoft/40 text-navySoft shadow-sm'
                   : 'bg-white/50 border-rule text-navy'
               }`}
             >

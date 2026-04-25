@@ -303,8 +303,8 @@ export function ViewExplorer() {
               onClick={() => setSelected(v.id)}
               className={`inline-flex items-center gap-2 px-3 py-2 rounded-sm border text-sm font-semibold transition-colors ${
                 active
-                  ? 'bg-crimson text-white border-crimson'
-                  : 'bg-white text-navy border-rule hover:border-crimson/40'
+                  ? 'bg-navySoft text-white border-navySoft'
+                  : 'bg-white text-navy border-rule hover:border-navySoft/40'
               }`}
               aria-pressed={active}
             >
@@ -318,13 +318,13 @@ export function ViewExplorer() {
       {/* Header strip with description + capabilities */}
       <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-4 lg:gap-6">
         <div className="border border-rule rounded-md bg-white p-5">
-          <p className="text-xs font-bold uppercase tracking-widest text-crimson mb-2">{view.eyebrow}</p>
+          <p className="text-xs font-bold uppercase tracking-widest text-navySoft mb-2">{view.eyebrow}</p>
           <h4 className="text-lg font-semibold text-navy mb-2">{view.label}</h4>
           <p className="text-sm text-ink leading-relaxed mb-4">{view.description}</p>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5">
             {view.capabilities.map((c) => (
               <li key={c} className="flex items-start gap-2 text-xs text-ink">
-                <span className="text-crimson font-semibold shrink-0 mt-0.5">→</span>
+                <span className="text-navySoft font-semibold shrink-0 mt-0.5">→</span>
                 <span>{c}</span>
               </li>
             ))}

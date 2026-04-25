@@ -100,13 +100,11 @@ export function EmailSignup({
       </form>
 
       <div className="mt-4 max-w-xl">
-        <div className="inline-block bg-white border border-rule p-3">
-          <div
-            className="g-recaptcha"
-            data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-            data-theme="light"
-          />
-        </div>
+        <div
+          className="g-recaptcha"
+          data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+          data-theme="light"
+        />
       </div>
     </div>
   );

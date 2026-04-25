@@ -361,7 +361,7 @@ export function RecordPageMock({
                 <p className="text-sm font-medium text-ink font-serif">{c.title}</p>
                 <p className="text-xs text-inkSoft leading-snug mt-1">{c.callout.description}</p>
                 <p className="text-[10px] uppercase tracking-widest text-mute mt-2">
-                  Source: <span className="text-crimson font-semibold">{c.source}</span>
+                  Source: <span className="text-navySoft font-semibold">{c.source}</span>
                 </p>
               </div>
             </div>

@@ -117,7 +117,7 @@ export function ConnectorFlow() {
                   className={`group inline-flex items-center gap-2 px-3 py-1.5 border text-[13px] transition-all ${
                     active
                       ? 'bg-ink text-paper border-ink shadow-hairline'
-                      : 'bg-paper text-ink border-rule hover:border-crimson'
+                      : 'bg-paper text-ink border-rule hover:border-navySoft'
                   }`}
                   aria-pressed={active}
                 >
@@ -223,11 +223,11 @@ function TraceTimeline({ selected, trace }: { selected: GatewayConnector; trace:
               <span
                 aria-hidden="true"
                 className={`relative z-10 mt-0 h-5 w-5 rounded-full border-2 shrink-0 ${
-                  stage.endpoint ? 'bg-crimson border-crimson' : 'bg-paper border-ink'
+                  stage.endpoint ? 'bg-navySoft border-navySoft' : 'bg-paper border-ink'
                 }`}
               >
                 {i === stages.length - 1 && (
-                  <span className="absolute inset-0 rounded-full bg-crimson/30 animate-ping" />
+                  <span className="absolute inset-0 rounded-full bg-navySoft/30 animate-ping" />
                 )}
               </span>
               <div className="md:mt-3 min-w-0">
@@ -292,7 +292,7 @@ function PanelFrame({
   return (
     <article className="relative border border-ruleSoft bg-paper">
       <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-rule" />
-      <span aria-hidden="true" className="absolute left-0 top-0 h-px w-10 bg-crimson" />
+      <span aria-hidden="true" className="absolute left-0 top-0 h-px w-10 bg-navySoft" />
       <div className="p-5 lg:p-6">
         <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-mute mt-3 mb-2">
           {layer}
@@ -341,10 +341,10 @@ function ResolverPanel({ trace }: { trace: Trace }) {
           <span className="text-navy">decode</span>(token)
         </p>
         <p>
-          → tenant: <span className="text-crimson">&apos;{trace.tenant}&apos;</span>
+          → tenant: <span className="text-navySoft">&apos;{trace.tenant}&apos;</span>
         </p>
         <p>
-          → role:&nbsp;&nbsp;&nbsp;<span className="text-crimson">&apos;manager&apos;</span>
+          → role:&nbsp;&nbsp;&nbsp;<span className="text-navySoft">&apos;manager&apos;</span>
         </p>
         <p>→ exp:&nbsp;&nbsp;&nbsp;&nbsp;+14d</p>
       </CodePane>
@@ -369,15 +369,15 @@ function RulesPanel({ selected, trace }: { selected: GatewayConnector; trace: Tr
       <CodePane>
         <p className="text-mute">// rule.ts</p>
         <p>
-          tenant === <span className="text-crimson">&apos;{trace.tenant}&apos;</span>
+          tenant === <span className="text-navySoft">&apos;{trace.tenant}&apos;</span>
         </p>
         <p>
-          &nbsp;&amp;&amp; obj === <span className="text-crimson">&apos;{obj}&apos;</span>
+          &nbsp;&amp;&amp; obj === <span className="text-navySoft">&apos;{obj}&apos;</span>
         </p>
         <p>
           &nbsp;&amp;&amp; fields.read([
-          <span className="text-crimson">&apos;name&apos;</span>,{' '}
-          <span className="text-crimson">&apos;amount&apos;</span>])
+          <span className="text-navySoft">&apos;name&apos;</span>,{' '}
+          <span className="text-navySoft">&apos;amount&apos;</span>])
         </p>
       </CodePane>
 

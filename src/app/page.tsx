@@ -29,7 +29,7 @@ export default function Home() {
             href="https://github.com/revenuepoint"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 hover:text-crimson transition-colors"
+            className="inline-flex items-center gap-2 hover:text-navySoft transition-colors"
           >
             <svg
               className="h-3.5 w-3.5 shrink-0"
@@ -65,7 +65,7 @@ export default function Home() {
                   key={stat.label}
                   className="grid grid-cols-[auto_1fr] gap-x-6 py-6 first:pt-0 last:pb-0 items-baseline"
                 >
-                  <span className="font-mono text-[2.25rem] font-semibold text-crimson tabular-nums leading-none whitespace-nowrap">
+                  <span className="font-mono text-[2.25rem] font-semibold text-navySoft tabular-nums leading-none whitespace-nowrap">
                     {stat.value}
                   </span>
                   <p className="serif-italic text-[1.0625rem] text-ink leading-snug">{stat.label}</p>
@@ -78,16 +78,17 @@ export default function Home() {
 
       {/* Trust bar */}
       <LogoStrip
-        heading="Trusted by leading organizations"
+        heading="Trusted by leading organizations and nonprofits"
         logos={[
-          { name: 'Kinetik', src: '/img/clients/logo-kinetik.png', height: 32 },
-          { name: 'Luster', src: '/img/clients/logo-luster.png', height: 36 },
-          { name: 'Omya', src: '/img/clients/logo-omya.png', height: 36 },
+          { name: 'Kinetik', src: '/img/clients/logo-kinetik.png', height: 30 },
+          { name: 'Luster', src: '/img/clients/logo-luster.png', height: 32 },
+          { name: 'Omya', src: '/img/clients/logo-omya.png', height: 32 },
           { name: 'Melio', src: '/img/clients/logo-melio.png', height: 26 },
-          { name: 'inewsource', src: '/img/clients/logo-inewsource.png', height: 24 },
+          { name: 'Green Line Ingredients', src: '/img/clients/logo-green-line-ingredients.png', height: 28 },
+          { name: 'inewsource', src: '/img/clients/logo-inewsource.png', height: 26 },
           { name: 'VTDigger', src: '/img/clients/logo-vtdigger.png', height: 28 },
-          { name: 'The Current', src: '/img/clients/logo-the-current.png', height: 36 },
-          { name: 'Mississippi Today', src: '/img/clients/logo-mississippi-today.png', height: 24 },
+          { name: 'The Current', src: '/img/clients/logo-the-current.png', height: 26 },
+          { name: 'Mississippi Today', src: '/img/clients/logo-mississippi-today.png', height: 26 },
         ]}
       />
 
@@ -235,7 +236,7 @@ export default function Home() {
                 },
               ].map((item) => (
                 <div key={item.title}>
-                  <p className="font-serif italic text-[1.5rem] text-crimson leading-none">{item.num}</p>
+                  <p className="font-serif italic text-[1.5rem] text-navySoft leading-none">{item.num}</p>
                   <h3 className="mt-4 font-serif text-[1.25rem] text-ink leading-tight font-medium">
                     {item.title}
                   </h3>

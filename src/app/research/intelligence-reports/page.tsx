@@ -48,7 +48,7 @@ export default function IntelligenceReportsPage() {
                 className="relative bg-paper border border-ruleSoft p-6 flex flex-col"
               >
                 <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-rule" />
-                <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-crimson" />
+                <span aria-hidden="true" className="absolute left-0 top-0 h-px w-8 bg-navySoft" />
                 <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-mute mt-3 mb-2">
                   {String(idx + 1).padStart(2, '0')}
                 </p>
@@ -157,7 +157,7 @@ export default function IntelligenceReportsPage() {
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
           <div className="border border-ruleSoft bg-paper p-8 lg:p-12 relative">
             <span aria-hidden="true" className="absolute left-0 top-0 h-px w-full bg-rule" />
-            <span aria-hidden="true" className="absolute left-0 top-0 h-px w-12 bg-crimson" />
+            <span aria-hidden="true" className="absolute left-0 top-0 h-px w-12 bg-navySoft" />
             <p className="eyebrow mt-3 mb-4">Included in Foundry</p>
             <h2 className="text-d2 font-serif font-medium text-ink leading-tight mb-6">
               Prism reports the <em>inside</em>. Intelligence Reports research the <em>outside</em>.

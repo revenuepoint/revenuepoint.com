@@ -76,8 +76,8 @@ function LineChart({ series, goalPct }: { series: { name: string; color: string;
           </g>
         );
       })}
-      <line x1={padL} x2={W - padR} y1={goalY} y2={goalY} stroke="#8B0A39" strokeDasharray="3 3" strokeWidth={1} opacity={0.6} />
-      <text x={W - padR - 4} y={goalY - 3} fontSize={8} fill="#8B0A39" textAnchor="end">goal</text>
+      <line x1={padL} x2={W - padR} y1={goalY} y2={goalY} stroke="#2A3F58" strokeDasharray="3 3" strokeWidth={1} opacity={0.6} />
+      <text x={W - padR - 4} y={goalY - 3} fontSize={8} fill="#2A3F58" textAnchor="end">goal</text>
       {series.map((s) => {
         const points = s.values.map((v, i) => `${padL + i * step},${padT + (H - padT - padB) * (1 - (v - min) / range)}`).join(' ');
         return <polyline key={s.name} points={points} fill="none" stroke={s.color} strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" />;
@@ -144,7 +144,7 @@ function HorizontalBars({ bars, max, goal, unit, goalLabel }: {
                 style={{ width: `${pct}%`, opacity: 0.75 }}
               />
               <div
-                className="absolute top-0 bottom-0 border-l border-crimson"
+                className="absolute top-0 bottom-0 border-l border-navySoft"
                 style={{ left: `${(goal / max) * 100}%` }}
               />
             </div>
@@ -153,7 +153,7 @@ function HorizontalBars({ bars, max, goal, unit, goalLabel }: {
         );
       })}
       <p className="text-[10px] text-mute mt-1">
-        <span className="inline-block h-2 w-0.5 bg-crimson mr-1 align-middle" /> {goalLabel}
+        <span className="inline-block h-2 w-0.5 bg-navySoft mr-1 align-middle" /> {goalLabel}
       </p>
     </div>
   );
@@ -172,7 +172,7 @@ export function DashboardPreview() {
         </div>
         <div className="flex items-center gap-1.5">
           <span className="text-[10px] px-2 py-1 rounded border border-rule text-mute">7d</span>
-          <span className="text-[10px] px-2 py-1 rounded border border-crimson/40 bg-crimsonTint text-crimson font-semibold">30d</span>
+          <span className="text-[10px] px-2 py-1 rounded border border-navySoft/40 bg-navySoft/10 text-navySoft font-semibold">30d</span>
           <span className="text-[10px] px-2 py-1 rounded border border-rule text-mute">YTD</span>
           <span className="ml-2 text-[10px] px-2 py-1 rounded border border-rule bg-white text-ink">Export PDF</span>
         </div>

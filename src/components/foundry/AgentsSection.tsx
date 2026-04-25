@@ -19,7 +19,7 @@ export function AgentsSection() {
       </div>
 
       <div className="mt-12">
-        <p className="text-xs font-bold uppercase tracking-widest text-crimson mb-4">
+        <p className="text-xs font-bold uppercase tracking-widest text-navySoft mb-4">
           Home Feed — what those agents produced this morning
         </p>
         <HomeFeedStream items={feedItems} />
