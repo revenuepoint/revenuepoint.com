@@ -3,7 +3,7 @@ import { PRICING } from '@/data/research/intelligenceReports';
 
 export function IntelligenceReportsPricingCard() {
   return (
-    <section className="bg-paper py-section">
+    <section className="bg-snow py-section">
       <div className="max-w-3xl mx-auto px-6 lg:px-8">
         <div className="mb-10">
           <p className="eyebrow mb-4">Hourly setup. Token costs at cost.</p>

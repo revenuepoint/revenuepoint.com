@@ -72,7 +72,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       className={`${fraunces.variable} ${GeistSans.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="bg-paper text-ink antialiased font-sans">
+      <body className="bg-snow text-ink antialiased font-sans">
         <Telemetry />
         <Navbar />
         <main className="pt-[63px] lg:pt-[75px]">{children}</main>

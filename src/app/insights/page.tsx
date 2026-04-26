@@ -16,7 +16,7 @@ export default function InsightsIndex() {
 
   return (
     <>
-      <section className="relative bg-paper border-b border-rule overflow-hidden">
+      <section className="relative bg-snow border-b border-rule overflow-hidden">
         <span
           aria-hidden="true"
           className="pointer-events-none select-none absolute right-[-0.05em] top-[-0.15em] font-serif italic font-light text-ink leading-[0.86] whitespace-nowrap"
@@ -35,7 +35,7 @@ export default function InsightsIndex() {
         </div>
       </section>
 
-      <section className="bg-paper py-12 lg:py-16">
+      <section className="bg-snow py-12 lg:py-16">
         <div className="max-w-editorial mx-auto px-6 lg:px-8">
           {featured && (
             <div className="mb-12">

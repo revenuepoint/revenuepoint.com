@@ -101,7 +101,7 @@ export default function GatewayUseCasesPage() {
       </section>
 
       {/* Custom prompt */}
-      <section className="bg-paper py-section">
+      <section className="bg-snow py-section">
         <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
           <p className="eyebrow justify-center mb-4">Yours doesn&rsquo;t fit?</p>
           <h2 className="text-d2 font-serif font-medium text-ink">

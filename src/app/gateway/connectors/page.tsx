@@ -122,7 +122,7 @@ export default function GatewayConnectorsPage() {
       />
 
       {/* Shipped connectors */}
-      <section className="bg-paper py-section">
+      <section className="bg-snow py-section">
         <div className="max-w-editorial mx-auto px-6 lg:px-8">
           <SectionHeader
             eyebrow="Shipped"
@@ -164,7 +164,7 @@ export default function GatewayConnectorsPage() {
       </section>
 
       {/* Build your own */}
-      <section className="bg-paper py-section">
+      <section className="bg-snow py-section">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <p className="eyebrow mb-4">Build your own</p>
           <h2 className="text-d2 font-serif font-medium text-ink leading-tight">

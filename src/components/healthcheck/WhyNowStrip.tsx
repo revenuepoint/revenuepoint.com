@@ -19,7 +19,7 @@ const tiles = [
 
 export function WhyNowStrip() {
   return (
-    <section className="bg-paper">
+    <section className="bg-snow">
       <div className="max-w-editorial mx-auto px-6 lg:px-8 py-12 lg:py-16">
         <div className="max-w-3xl mb-10">
           <p className="eyebrow mb-4">Why now</p>

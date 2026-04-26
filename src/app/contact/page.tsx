@@ -14,7 +14,7 @@ export const metadata = buildMetadata({
 
 export default function ContactPage() {
   return (
-    <section className="bg-paper py-section">
+    <section className="bg-snow py-section">
       <div className="max-w-editorial mx-auto px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-12 lg:gap-16">
           {/* Left — contact details */}

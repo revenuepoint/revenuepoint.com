@@ -48,7 +48,7 @@ export default function SecurityPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-paper overflow-hidden border-b border-rule">
+      <section className="relative bg-snow overflow-hidden border-b border-rule">
         <div className="relative max-w-editorial mx-auto px-6 lg:px-8 pt-20 lg:pt-32 pb-16 lg:pb-20">
           <p className="byline mb-5">Security · Responsible disclosure</p>
           <h1 className="text-d0 font-serif font-semibold text-ink leading-tight">
@@ -85,7 +85,7 @@ export default function SecurityPage() {
       </section>
 
       {/* Body */}
-      <section className="bg-paper py-section">
+      <section className="bg-snow py-section">
         <div className="max-w-narrow mx-auto px-6 lg:px-8 space-y-12 text-base text-inkSoft leading-[1.7]">
           {/* How to report */}
           <div>

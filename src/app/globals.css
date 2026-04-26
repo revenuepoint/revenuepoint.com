@@ -13,6 +13,7 @@
   /* Editorial colour tokens — keep in sync with tailwind.config.ts */
   --ink: #1A1612;
   --ink-soft: #2D261E;
+  --snow: #FCFAF6;
   --paper: #F4EFE6;
   --cream: #FAF6EC;
   --bone: #E8E2D5;
@@ -50,7 +51,7 @@ html {
 }
 
 body {
-  background: var(--paper);
+  background: var(--snow);
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -43,7 +43,7 @@ export default function SalesforceManagedServicesPricingPage() {
   return (
     <>
       {/* Header */}
-      <section className="bg-paper py-section">
+      <section className="bg-snow py-section">
         <div className="max-w-editorial mx-auto px-6 lg:px-8">
           <SectionHeader
             eyebrow="Salesforce · Managed services pricing"
@@ -114,7 +114,7 @@ export default function SalesforceManagedServicesPricingPage() {
       </section>
 
       {/* Lead Form */}
-      <section className="bg-paper py-section">
+      <section className="bg-snow py-section">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <SectionHeader heading="Ready to get started?" eyebrow="Get in touch" />
           <LeadForm interest="Salesforce" />

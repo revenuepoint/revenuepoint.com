@@ -8,7 +8,7 @@ export const metadata = buildMetadata({
 
 export default function TermsPage() {
   return (
-    <section className="bg-paper py-section">
+    <section className="bg-snow py-section">
       <div className="max-w-narrow mx-auto px-6 lg:px-8">
         <p className="eyebrow mb-5">Legal · Master services agreement</p>
         <h1 className="text-d1 font-serif font-medium text-ink mb-8">

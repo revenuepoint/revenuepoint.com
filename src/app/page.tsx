@@ -100,7 +100,7 @@ export default function Home() {
       />
 
       {/* The work — context for the pillars below */}
-      <section className="bg-paper border-b border-rule">
+      <section className="bg-snow border-b border-rule">
         <div className="max-w-editorial mx-auto px-6 lg:px-8 py-16 lg:py-20">
           <Eyebrow>The work</Eyebrow>
           <div className="mt-3 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-baseline">
@@ -117,7 +117,7 @@ export default function Home() {
       </section>
 
       {/* Service Pillars */}
-      <section className="bg-paper py-section">
+      <section className="bg-snow py-section">
         <div className="max-w-editorial mx-auto px-6 lg:px-8">
           <SectionHeader
             eyebrow="What we do"
@@ -308,7 +308,7 @@ export default function Home() {
       </section>
 
       {/* How we work */}
-      <section className="bg-paper py-section">
+      <section className="bg-snow py-section">
         <div className="max-w-editorial mx-auto px-6 lg:px-8">
           <SectionHeader
             eyebrow="How we work"

@@ -10,7 +10,7 @@ export function PackagingTiers({
 }) {
   const interestSlug = navLabel ? encodeURIComponent(navLabel) : '';
   return (
-    <section className="bg-paper">
+    <section className="bg-snow">
       <div className="max-w-editorial mx-auto px-6 lg:px-8 py-section">
         <div className="max-w-3xl mb-12">
           <p className="eyebrow mb-4">How we package the work</p>

@@ -296,7 +296,7 @@ export default function FoundryPage() {
       </section>
 
       {/* How Foundry Works */}
-      <section className="bg-paper py-section">
+      <section className="bg-snow py-section">
         <div className="max-w-editorial mx-auto px-6 lg:px-8">
           <SectionHeader
             eyebrow="Three layers"
@@ -624,7 +624,7 @@ export default function FoundryPage() {
       </section>
 
       {/* How It Works */}
-      <section className="bg-paper py-section">
+      <section className="bg-snow py-section">
         <div className="max-w-editorial mx-auto px-6 lg:px-8">
           <SectionHeader
             eyebrow="Engagement"

@@ -39,7 +39,7 @@ export default function GatewayPricingPage() {
       />
 
       {/* Pricing card */}
-      <section className="bg-paper py-section">
+      <section className="bg-snow py-section">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <SectionHeader eyebrow="Managed tier" heading="One price. One stack." align="left" />
           <div className="mt-8 border border-crimson bg-crimsonTint p-10 text-center relative">
@@ -103,7 +103,7 @@ export default function GatewayPricingPage() {
       </section>
 
       {/* Volume pricing note */}
-      <section className="bg-paper py-section">
+      <section className="bg-snow py-section">
         <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
           <p className="eyebrow justify-center mb-4">Multi-tenant volume</p>
           <h2 className="text-d2 font-serif font-medium text-ink">

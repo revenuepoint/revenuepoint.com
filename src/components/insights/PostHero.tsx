@@ -4,7 +4,7 @@ import { Tag } from './Tag';
 
 export function PostHero({ meta }: { meta: PostMeta }) {
   return (
-    <header className="relative bg-paper border-b border-rule pt-20 pb-12 lg:pt-28 lg:pb-16 overflow-hidden">
+    <header className="relative bg-snow border-b border-rule pt-20 pb-12 lg:pt-28 lg:pb-16 overflow-hidden">
       <span
         aria-hidden="true"
         className="pointer-events-none select-none absolute right-[-0.05em] top-[-0.15em] font-serif italic font-light text-ink leading-[0.86] whitespace-nowrap"

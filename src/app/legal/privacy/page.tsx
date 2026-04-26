@@ -8,7 +8,7 @@ export const metadata = buildMetadata({
 
 export default function PrivacyPolicyPage() {
   return (
-    <section className="bg-paper py-section">
+    <section className="bg-snow py-section">
       <div className="max-w-narrow mx-auto px-6 lg:px-8">
         <p className="eyebrow mb-5">Legal · Privacy</p>
         <h1 className="text-d1 font-serif font-medium text-ink mb-8">RevenuePoint privacy policy.</h1>

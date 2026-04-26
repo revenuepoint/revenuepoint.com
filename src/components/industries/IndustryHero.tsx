@@ -3,7 +3,7 @@ import type { IndustryPageContent } from '@/types/industry';
 
 export function IndustryHero({ content }: { content: IndustryPageContent }) {
   return (
-    <section className="relative bg-paper overflow-hidden">
+    <section className="relative bg-snow overflow-hidden">
       <div className="relative max-w-editorial mx-auto px-6 lg:px-8 pt-16 lg:pt-28 pb-16 lg:pb-24">
         <div className="max-w-4xl">
           <p className="byline mb-5">{content.hero.eyebrow}</p>

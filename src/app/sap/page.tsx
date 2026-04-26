@@ -180,7 +180,7 @@ export default function SAPPage() {
       </section>
 
       {/* Who it's for */}
-      <section className="bg-paper py-section">
+      <section className="bg-snow py-section">
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
           <SectionHeader
             eyebrow="Who it's for"

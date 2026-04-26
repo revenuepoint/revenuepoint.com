@@ -4,7 +4,7 @@ import { HERO_BODY, HERO_HEADING } from '@/data/research/intelligenceReports';
 
 export function IntelligenceReportsHero() {
   return (
-    <section className="relative bg-paper overflow-hidden">
+    <section className="relative bg-snow overflow-hidden">
       <div className="relative max-w-editorial mx-auto px-6 lg:px-8 pt-16 lg:pt-28 pb-16 lg:pb-24">
         <div className="lg:grid lg:grid-cols-12 lg:gap-12 lg:items-start">
           <div className="lg:col-span-7">

@@ -9,7 +9,7 @@ export function AssessmentDomains() {
   const map = Object.fromEntries(content.domainBlurbs.map((b) => [b.name, b.blurb]));
 
   return (
-    <section className="bg-paper">
+    <section className="bg-snow">
       <div className="max-w-editorial mx-auto px-6 lg:px-8 py-section">
         <div className="max-w-3xl mb-12">
           <p className="eyebrow mb-4">The twelve domains we assess</p>

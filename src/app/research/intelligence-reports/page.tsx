@@ -63,7 +63,7 @@ export default function IntelligenceReportsPage() {
       </section>
 
       {/* How it works */}
-      <section className="bg-paper py-section border-b border-ruleSoft">
+      <section className="bg-snow py-section border-b border-ruleSoft">
         <div className="max-w-editorial mx-auto px-6 lg:px-8">
           <SectionHeader
             eyebrow="End-to-end pipeline"
@@ -106,7 +106,7 @@ export default function IntelligenceReportsPage() {
       </section>
 
       {/* Enrichment sources */}
-      <section className="bg-paper border-b border-ruleSoft py-section">
+      <section className="bg-snow border-b border-ruleSoft py-section">
         <div className="max-w-editorial mx-auto px-6 lg:px-8">
           <SectionHeader
             eyebrow="Enrichment sources"
@@ -202,7 +202,7 @@ export default function IntelligenceReportsPage() {
       </section>
 
       {/* Lead form */}
-      <section className="bg-paper py-section">
+      <section className="bg-snow py-section">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <SectionHeader
             eyebrow="Get in touch"

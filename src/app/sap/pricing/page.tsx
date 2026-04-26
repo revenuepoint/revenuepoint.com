@@ -20,7 +20,7 @@ const intakeItems = [
 export default function SAPPricingPage() {
   return (
     <>
-      <section className="bg-paper py-section">
+      <section className="bg-snow py-section">
         <div className="max-w-narrow mx-auto px-6 lg:px-8 text-center">
           <SectionHeader
             eyebrow="SAP · Pricing"

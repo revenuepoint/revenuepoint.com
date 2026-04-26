@@ -57,7 +57,7 @@ export default function FoundryPricingPage() {
   return (
     <>
       {/* Header */}
-      <section className="relative bg-paper py-section overflow-hidden">
+      <section className="relative bg-snow py-section overflow-hidden">
         <div className="relative max-w-editorial mx-auto px-6 lg:px-8">
           <SectionHeader
             eyebrow="Foundry · Pricing"
@@ -153,7 +153,7 @@ export default function FoundryPricingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-paper py-section">
+      <section className="bg-snow py-section">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <SectionHeader eyebrow="Frequently asked" heading="Before you sign." align="left" />
           <FAQAccordion items={faqItems} />

@@ -33,7 +33,7 @@ export function HeroSection({
 }: HeroSectionProps) {
   return (
     <section
-      className="relative bg-paper overflow-hidden"
+      className="relative bg-snow overflow-hidden"
       data-issue={issue}
       style={issue ? undefined : undefined}
     >

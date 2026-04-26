@@ -94,7 +94,7 @@ export default function BrandPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-paper overflow-hidden border-b border-rule">
+      <section className="relative bg-snow overflow-hidden border-b border-rule">
         <div className="relative max-w-editorial mx-auto px-6 lg:px-8 pt-20 lg:pt-32 pb-16 lg:pb-20">
           <Eyebrow>Brand guide · 2026</Eyebrow>
           <h1 className="mt-5 text-d0 font-serif font-semibold text-ink">
