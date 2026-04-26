@@ -81,6 +81,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           src="https://www.google.com/recaptcha/api.js"
           strategy="lazyOnload"
         />
+        {/* Microsoft Customer Connect / Copilot Studio chat widget.
+            init.js reads environmentId + region attrs literally — not data-*.
+            Customization (theme, avatar, greeting, position) is configured
+            in the Customer Connect / Copilot Studio admin portal, not here. */}
+        <Script
+          id="chatbot"
+          src="https://res.public.onecdn.static.microsoft/customerconnect/v1/7dttl/init.js"
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+          {...({
+            environmentId: '22d4560e-cd69-e06a-b9eb-b4838ab0111b',
+            region: 'unitedstates',
+          } as Record<string, string>)}
+        />
         {GA_ENABLED && (
           <>
             <Script
