@@ -12,15 +12,17 @@ export const metadata = buildMetadata({
 });
 
 const PALETTE = [
-  { role: 'Page surface', token: 'paper', hex: '#F4EFE6', rgb: '244 · 239 · 230', use: 'Default page background.' },
-  { role: 'Card surface', token: 'cream', hex: '#FAF6EC', rgb: '250 · 246 · 236', use: 'Lifted cards, footers, secondary surfaces.' },
-  { role: 'Mid neutral', token: 'bone', hex: '#E8E2D5', rgb: '232 · 226 · 213', use: 'Section breaks where cream is too close to paper.' },
+  { role: 'Main page bg', token: 'snow', hex: '#FCFAF6', rgb: '252 · 250 · 246', use: 'Default page surface for main content sections and heroes.' },
+  { role: 'Accent surface', token: 'paper', hex: '#F4EFE6', rgb: '244 · 239 · 230', use: 'Footer, logo strip, CTA banners, and other deliberate warm accent strips.' },
+  { role: 'Card surface', token: 'cream', hex: '#FAF6EC', rgb: '250 · 246 · 236', use: 'Lifted cards, alternating section stripes, secondary surfaces.' },
+  { role: 'Mid neutral', token: 'bone', hex: '#E8E2D5', rgb: '232 · 226 · 213', use: 'Section breaks where cream is too close to the surrounding surface.' },
   { role: 'Hairline rule', token: 'rule', hex: '#C4BCA8', rgb: '196 · 188 · 168', use: 'Section dividers, table borders, card edges.' },
   { role: 'Soft hairline', token: 'ruleSoft', hex: '#DCD4C0', rgb: '220 · 212 · 192', use: 'Lighter rules between adjacent components.' },
   { role: 'Mute label', token: 'mute', hex: '#7A6F5C', rgb: '122 · 111 · 92', use: 'Eyebrow and mono labels, secondary text.' },
   { role: 'Soft mute', token: 'muteSoft', hex: '#A09683', rgb: '160 · 150 · 131', use: 'Disabled state, subdued attribution.' },
-  { role: 'Primary text', token: 'ink', hex: '#1A1612', rgb: '26 · 22 · 18', use: 'Body copy, headings, navigation.' },
+  { role: 'Soft dark', token: 'inkMid', hex: '#4A4239', rgb: '74 · 66 · 57', use: 'Wordmark on light surfaces and any quiet emphasis that sits between mute and ink.' },
   { role: 'Soft ink', token: 'inkSoft', hex: '#2D261E', rgb: '45 · 38 · 30', use: 'Long-form body where pure ink reads heavy.' },
+  { role: 'Primary text', token: 'ink', hex: '#1A1612', rgb: '26 · 22 · 18', use: 'Body copy, headings, navigation.' },
 ];
 
 const ACCENTS = [
@@ -50,8 +52,10 @@ const TYPE_RAMP = [
 ];
 
 const ACCESSIBILITY = [
+  { fg: 'ink', fgHex: '#1A1612', bg: 'snow', bgHex: '#FCFAF6', ratio: '15.6:1', pass: 'AAA' },
   { fg: 'ink', fgHex: '#1A1612', bg: 'paper', bgHex: '#F4EFE6', ratio: '14.6:1', pass: 'AAA' },
   { fg: 'ink', fgHex: '#1A1612', bg: 'cream', bgHex: '#FAF6EC', ratio: '15.2:1', pass: 'AAA' },
+  { fg: 'inkMid', fgHex: '#4A4239', bg: 'snow', bgHex: '#FCFAF6', ratio: '8.7:1', pass: 'AAA' },
   { fg: 'inkSoft', fgHex: '#2D261E', bg: 'paper', bgHex: '#F4EFE6', ratio: '11.8:1', pass: 'AAA' },
   { fg: 'mute', fgHex: '#7A6F5C', bg: 'paper', bgHex: '#F4EFE6', ratio: '4.6:1', pass: 'AA body' },
   { fg: 'crimson', fgHex: '#8B0A39', bg: 'paper', bgHex: '#F4EFE6', ratio: '7.7:1', pass: 'AAA' },

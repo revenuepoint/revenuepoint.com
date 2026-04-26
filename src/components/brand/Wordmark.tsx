@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 type Size = 'sm' | 'md' | 'lg';
-type Tone = 'crimson' | 'ink' | 'paper';
+type Tone = 'crimson' | 'ink' | 'paper' | 'navySoft' | 'inkMid';
 
 const SIZE_CLASS: Record<Size, string> = {
   sm: 'text-[18px]',
@@ -13,6 +13,8 @@ const TONE_CLASS: Record<Tone, string> = {
   crimson: 'text-crimson',
   ink: 'text-ink',
   paper: 'text-paper',
+  navySoft: 'text-navySoft',
+  inkMid: 'text-inkMid',
 };
 
 type Props = {

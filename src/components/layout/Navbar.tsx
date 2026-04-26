@@ -64,7 +64,7 @@ export function Navbar() {
         {/* Primary nav */}
         <nav className="max-w-editorial mx-auto px-6 lg:px-8 flex items-center justify-between h-[60px] lg:h-[72px]">
           <span className="inline-block">
-            <Wordmark size="md" tone="crimson" />
+            <Wordmark size="md" tone="inkMid" className="!text-[21px]" />
           </span>
 
           {/* Desktop Nav */}
@@ -139,7 +139,7 @@ export function Navbar() {
                   page: typeof window !== 'undefined' ? window.location.pathname : undefined,
                 })
               }
-              className="border border-crimson text-crimson font-serif italic text-[14px] px-5 py-1.5 hover:bg-crimsonTint transition-colors"
+              className="border border-crimson text-crimson font-serif italic text-[14px] px-5 py-1.5 hover:bg-crimson hover:text-paper transition-colors"
             >
               Schedule a call
             </a>
@@ -389,7 +389,7 @@ export function Navbar() {
                   page: typeof window !== 'undefined' ? window.location.pathname : undefined,
                 })
               }
-              className="block text-center border border-crimson text-crimson font-serif italic text-[15px] px-6 py-3 hover:bg-crimsonTint transition-colors mt-8"
+              className="block text-center border border-crimson text-crimson font-serif italic text-[15px] px-6 py-3 hover:bg-crimson hover:text-paper transition-colors mt-8"
             >
               Schedule a call
             </a>

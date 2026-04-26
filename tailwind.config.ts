@@ -24,6 +24,7 @@ const config: Config = {
         // Ink + paper
         ink: '#1A1612',
         inkSoft: '#2D261E',
+        inkMid: '#4A4239',
         snow: '#FCFAF6',
         paper: '#F4EFE6',
         cream: '#FAF6EC',
