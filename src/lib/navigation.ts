@@ -24,7 +24,7 @@ export const navItems: NavItem[] = [
     href: '/salesforce/',
     groups: [
       {
-        heading: 'Customer Relationship Management',
+        heading: 'CRM',
         links: [
           { label: 'Salesforce Consulting', href: '/salesforce/' },
           { label: 'Salesforce Implementations', href: '/salesforce/implementations/' },
@@ -71,7 +71,7 @@ export const navItems: NavItem[] = [
     children: [
       { label: 'Platform Overview', href: '/foundry/' },
       { label: 'Pricing', href: '/foundry/pricing/' },
-      { label: 'Request a Demo', href: '/contact/?interest=Foundry' },
+      { label: 'Schedule a 30-minute demo', href: '/contact/?interest=Foundry' },
     ],
   },
   {
@@ -83,7 +83,7 @@ export const navItems: NavItem[] = [
       { label: 'Use Cases', href: '/gateway/use-cases/' },
       { label: 'Connectors', href: '/gateway/connectors/' },
       { label: 'Pricing', href: '/gateway/pricing/' },
-      { label: 'Request a Demo', href: '/contact/?interest=Gateway' },
+      { label: 'Schedule a Gateway demo', href: '/contact/?interest=Gateway' },
     ],
   },
   {

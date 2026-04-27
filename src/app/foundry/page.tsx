@@ -210,7 +210,7 @@ export default function FoundryPage() {
     <>
       {/* Hero */}
       <HeroSection
-        byline="RevenuePoint Foundry"
+        byline="Foundry · Fully managed data orchestration"
         heading={
           <>
             Your data, connected. Agents that <em>take action</em>. Fully managed.
@@ -469,7 +469,7 @@ export default function FoundryPage() {
           <SectionHeader
             eyebrow="AGENTS"
             heading="Your morning briefing. Automatically."
-            body="Foundry agents watch your systems overnight, process inbound work, run scheduled reports, and respond to events in seconds. By the time your team logs in, the Home Feed already has the answers."
+            body="Foundry agents watch your systems continuously, process inbound work, run scheduled reports, and respond to events in seconds. By the time your team logs in, the Home Feed already has the answers — every action logged, every change reversible."
             align="center"
           />
           <AgentTypeStrip />
@@ -540,7 +540,7 @@ export default function FoundryPage() {
           <SectionHeader
             eyebrow="OTTO"
             heading="Ask Otto anything."
-            body="Otto is your AI analyst, plugged into every business object in Blueprint. It reasons, cites, renders — and proposes the next action. Pick a prompt to see it run."
+            body="Otto is your AI analyst, plugged into every business object in Blueprint. Reasons, cites, renders — and proposes the next best action, scoped and reviewer-approved before it executes. Pick a prompt to see it run."
             align="center"
           />
           <ProductViewport
@@ -651,11 +651,11 @@ export default function FoundryPage() {
         eyebrow="Schedule a working session"
         heading={
           <>
-            Ready to see Foundry <em>in action</em>?
+            See Foundry connected to <em>systems like yours</em>.
           </>
         }
-        body="Schedule a personalized demo. We'll show you what Foundry looks like connected to systems just like yours."
-        cta={{ label: 'Schedule a demo', href: SCHEDULE_URL }}
+        body="Schedule a 30-minute demo. We'll show you Foundry connected to systems like the ones your business runs on, with sample data the buyer at your role would actually look at."
+        cta={{ label: 'Schedule a 30-minute demo', href: SCHEDULE_URL }}
       />
     </>
   );

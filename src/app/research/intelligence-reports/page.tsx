@@ -168,7 +168,7 @@ export default function IntelligenceReportsPage() {
                   Foundry Prism
                 </p>
                 <p className="text-sm text-inkSoft leading-relaxed">
-                  Templated, scheduled, internal-data reports written overnight from your warehouse. Best for operational reporting at a regular cadence.
+                  Templated, internal-data reports generated on demand from your warehouse. Best for operational reporting on the cadence you set.
                 </p>
               </div>
               <div>
@@ -205,13 +205,13 @@ export default function IntelligenceReportsPage() {
       <section className="bg-snow py-section">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <SectionHeader
-            eyebrow="Get in touch"
+            eyebrow="Commission a report"
             heading={
               <>
                 Tell us what you need to know — <em>about whom</em>.
               </>
             }
-            body="A scoping call confirms fit, sources, cadence, and timeline. We will price the engagement before any work begins."
+            body="A scoping call confirms fit, sources, cadence, and timeline. We price the engagement before any work begins — fixed fee per report, starting at $6,800."
             align="left"
           />
           <LeadForm interest="Intelligence Reports" id="lead-form" />

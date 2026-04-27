@@ -50,9 +50,9 @@ export default function Home() {
                 Built on a decade of implementing and managing enterprise systems end-to-end.
               </p>
               <p className="text-[0.875rem] text-inkSoft leading-relaxed">
-                Our broad range of experience across CRM, ERP, accounting, data infrastructure,
-                and AI allows us to connect systems to drive faster decisions and reduce manual
-                reconciliation and busywork.
+                A decade of implementing and managing the systems growing businesses run on —
+                Salesforce, SAP, accounting platforms, data infrastructure, and the AI layer
+                that connects them.
               </p>
             </div>
             <ul className="divide-y divide-rule">
@@ -319,7 +319,7 @@ export default function Home() {
               </>
             }
             align="left"
-            body="A repeatable four-step engagement model, our wide range of experience across enterprise platforms, and an agentic-assisted delivery process allow us to deliver results in as little as half the typical implementation timeline."
+            body="A repeatable four-step engagement model, 60+ Salesforce certifications across every cloud you might run on, and an AI-assisted delivery process that compresses the work — not the testing — into half the typical implementation timeline."
           />
           <StepList
             steps={[
@@ -333,7 +333,7 @@ export default function Home() {
                 number: 2,
                 title: 'Implementation',
                 description:
-                  'Certified admins configure and deploy to industry best practices, built around your actual processes.',
+                  'Certified admins configure and deploy to the published platform best practices for your industry — Salesforce CRM patterns, SAP MRP and posting-period rules, Foundry semantic-layer conventions — built around your actual processes.',
               },
               {
                 number: 3,
@@ -357,12 +357,8 @@ export default function Home() {
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <SectionHeader
             eyebrow="Get in touch"
-            heading={
-              <>
-                Ready to find out if we&rsquo;re a <em>good fit</em>?
-              </>
-            }
-            body="We review every submission personally and respond within one business day. Tell us about your business and what you're trying to solve."
+            heading="Schedule a 30-minute scoping call."
+            body="We review every submission personally and respond within one business day. Tell us what you're trying to solve, and we'll come back with a path forward — or tell you we're not the right partner for it."
             align="left"
           />
           <LeadForm interest="General" />

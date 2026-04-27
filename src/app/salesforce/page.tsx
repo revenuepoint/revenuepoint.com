@@ -29,8 +29,8 @@ const foundryPillars = [
   },
   {
     eyebrow: '03 · Act',
-    headline: 'Agents watch, decide, and execute.',
-    body: 'Agents and Otto take action across Salesforce and the rest of your stack — fully auditable, fully managed.',
+    headline: 'Agents propose. Reviewers approve. Foundry executes.',
+    body: 'Agents and Otto propose plans across Salesforce and the rest of your stack — every action logged, attributed, reversible, and only on reviewer approval. Fully managed by RevenuePoint.',
   },
 ];
 
@@ -89,9 +89,13 @@ export default function SalesforcePage() {
       <section className="bg-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4">
           <SectionHeader
-            eyebrow="Industries we know"
-            heading="Ten industries. Ten clean record pages."
-            body="Salesforce looks different in a specialty pharmacy than it does in a distributor or a nonprofit. We build Lightning record pages that work the way your industry actually runs."
+            eyebrow="Industries we configure to"
+            heading={
+              <>
+                Ten industries. <em>Ten Lightning record pages</em>.
+              </>
+            }
+            body="Salesforce looks different in a specialty pharmacy than it does in a distributor or a nonprofit. We build Lightning record pages — the right custom components, the integrations to the systems you already use, and the layout the user actually needs — for the way your industry runs."
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {industryPageList.map((industry) => (
@@ -142,7 +146,7 @@ export default function SalesforcePage() {
               Foundry sits on top of a <em className="text-crimson">clean</em> Salesforce.
             </h2>
             <p className="mt-4 text-lede leading-[1.65] text-paper/80 max-w-prose">
-              Once your Salesforce is clean, Foundry connects the rest of your stack — ERP, accounting, telephony, marketing — and delivers live dashboards, AI reports, and agents that take action. Fully managed by RevenuePoint.
+              Once your Salesforce is clean, Foundry connects the rest of your stack — ERP, accounting, telephony, marketing — into your single source of truth, fully managed by RevenuePoint. Live dashboards. AI analysis on demand. Agents that propose, get approved, and execute across your systems.
             </p>
           </div>
 

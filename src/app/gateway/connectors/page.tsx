@@ -116,7 +116,7 @@ export default function GatewayConnectorsPage() {
         }
         body="Salesforce and SAP ship today. NetSuite, Microsoft Dynamics, and QuickBooks are on the roadmap. The Custom REST/GraphQL adapter covers everything else with an API. Each connector is a typed adapter; auth, retries, and per-tenant secrets are handled in one place."
         ctas={[
-          { label: 'Schedule a walkthrough', href: SCHEDULE_URL, variant: 'primary' },
+          { label: 'Schedule a Gateway demo', href: SCHEDULE_URL, variant: 'primary' },
           { label: 'Back to Gateway', href: '/gateway/', variant: 'secondary' },
         ]}
       />
@@ -171,7 +171,7 @@ export default function GatewayConnectorsPage() {
             Custom connectors are a <em>2–4 week</em> build.
           </h2>
           <p className="mt-5 text-base leading-[1.65] text-inkSoft max-w-prose">
-            Every connector implements the same interface. RevenuePoint engineers build the named connector; once shipped, it becomes part of the Gateway product so other customers can use it (without touching your tenants or your data).
+            Every connector implements the same interface. RevenuePoint engineers build the new connector; once shipped, it becomes part of the Gateway product — available to every customer without touching your tenants or your data.
           </p>
           <pre className="mt-6 border border-rule bg-ink text-paper p-5 text-[12.5px] font-mono leading-relaxed overflow-x-auto whitespace-pre">
 {`export interface GatewayConnector<T = unknown> {

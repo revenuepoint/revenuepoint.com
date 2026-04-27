@@ -43,7 +43,7 @@ export default function SAPPricingPage() {
               ))}
             </ol>
             <div className="mt-8">
-              <Button href="/contact/?interest=SAP">Get a custom quote</Button>
+              <Button href="/contact/?interest=SAP">Schedule an SAP scoping call</Button>
             </div>
           </div>
         </div>
@@ -51,7 +51,7 @@ export default function SAPPricingPage() {
 
       <section className="bg-cream border-t border-ruleSoft py-section">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <SectionHeader heading="Tell us about your SAP requirements." />
+          <SectionHeader heading="Tell us about your SAP environment — modules, users, integrations." />
           <LeadForm interest="SAP" />
         </div>
       </section>

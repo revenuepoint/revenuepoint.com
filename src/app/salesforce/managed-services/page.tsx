@@ -28,13 +28,13 @@ const foundryPillars = [
   },
   {
     eyebrow: '02 · Illuminate',
-    headline: 'Live dashboards. Overnight AI analysis.',
-    body: 'Lens dashboards for every role and Prism reports written overnight so leadership has answers by 8 AM.',
+    headline: 'Live dashboards. AI analysis on demand.',
+    body: 'Lens dashboards for every role and Prism reports on demand — leadership gets the answers when they ask, not on a schedule the warehouse decides.',
   },
   {
     eyebrow: '03 · Act',
-    headline: 'Agents watch, decide, and execute.',
-    body: 'Agents and Otto take action across Salesforce and the rest of your stack — fully auditable, fully managed.',
+    headline: 'Agents propose. Reviewers approve. Foundry executes.',
+    body: 'Agents and Otto propose plans across Salesforce and the rest of your stack — every action logged, attributed, reversible, and only on reviewer approval. Fully managed by RevenuePoint.',
   },
 ];
 
@@ -207,7 +207,7 @@ export default function SalesforceManagedServicesPage() {
               Foundry sits on top of a <em className="text-crimson">clean</em> Salesforce.
             </h2>
             <p className="mt-4 text-lede leading-[1.65] text-paper/80 max-w-prose">
-              Once your Salesforce stays clean — month after month — Foundry connects the rest of your stack and delivers live dashboards, AI reports, and agents that take action. Fully managed by RevenuePoint.
+              Once your Salesforce stays clean — month after month — Foundry connects the rest of your stack and delivers live dashboards, AI analysis on demand, and agents that propose, get approved, and execute across your systems. Fully managed by RevenuePoint.
             </p>
           </div>
 

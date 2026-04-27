@@ -116,7 +116,7 @@ export const consultingProducts: ConsultingProduct[] = [
     id: 'administration',
     name: 'Salesforce Administration',
     overview:
-      'Most organizations implement Salesforce correctly and then let it drift. A named RevenuePoint administrator prevents that. We audit, optimize, and evolve your instance month to month. Fully managed by RevenuePoint.',
+      'Most organizations implement Salesforce correctly and then let it drift. Fully managed by RevenuePoint prevents that — your single point of contact and a project manager audit, optimize, and evolve your instance month to month, with a team that knows your org behind them.',
     whatWeDo: [
       'User provisioning, permissions, and license management',
       'Release readiness and three-times-yearly platform upgrades',

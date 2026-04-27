@@ -123,13 +123,13 @@ const foundryPillars = [
   },
   {
     eyebrow: '02 · Illuminate',
-    headline: 'Live dashboards. Overnight AI analysis.',
-    body: 'Lens dashboards for every role and Prism reports written overnight so leadership has answers by 8 AM.',
+    headline: 'Live dashboards. AI analysis on demand.',
+    body: 'Lens dashboards for every role and Prism reports on demand — leadership gets the answers when they ask, not on a schedule the warehouse decides.',
   },
   {
     eyebrow: '03 · Act',
-    headline: 'Agents watch, decide, and execute.',
-    body: 'Agents and Otto take action across SAP and the rest of your stack — fully auditable, fully managed.',
+    headline: 'Agents propose. Reviewers approve. Foundry executes.',
+    body: 'Agents and Otto propose plans across SAP and the rest of your stack — every action logged, attributed, reversible, and only on reviewer approval. Fully managed by RevenuePoint.',
   },
 ];
 
@@ -172,7 +172,7 @@ export default function SAPPage() {
         <div className="max-w-7xl mx-auto px-4">
           <SectionHeader
             eyebrow="How it works"
-            heading="Named team. Hours each month. Two-week sprints. Month-to-month."
+            heading="Single point of contact. Hours each month. Two-week sprints. Month-to-month."
             body="The engagement model is boring on purpose. You should know who is doing your work, how many hours you have, when the next change is going out, and that you can walk away if the work is not landing."
           />
           <StepList steps={engagementSteps} />

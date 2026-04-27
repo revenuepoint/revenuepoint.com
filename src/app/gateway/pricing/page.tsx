@@ -33,7 +33,7 @@ export default function GatewayPricingPage() {
         body="Per-tenant, per-month pricing. Hosting, magic-link auth, the connector to your CRM or ERP, per-tenant theming, audit log, and your single point of contact at RevenuePoint are all included. No surprise consumption bills. No per-seat add-ons."
         sidenote="No surprise consumption bills · no per-seat add-ons."
         ctas={[
-          { label: 'Schedule a walkthrough', href: SCHEDULE_URL, variant: 'primary' },
+          { label: 'Schedule a Gateway demo', href: SCHEDULE_URL, variant: 'primary' },
           { label: 'Back to Gateway', href: '/gateway/', variant: 'secondary' },
         ]}
       />
@@ -63,7 +63,7 @@ export default function GatewayPricingPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 border border-crimson text-crimson font-serif italic text-[15px] px-5 py-2 hover:bg-paper transition-colors"
               >
-                Schedule a walkthrough <span aria-hidden="true">→</span>
+                Schedule a Gateway demo <span aria-hidden="true">→</span>
               </a>
               <Link
                 href="/gateway/"

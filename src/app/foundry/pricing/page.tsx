@@ -66,7 +66,7 @@ export default function FoundryPricingPage() {
                 Simple, predictable pricing. <em>No surprises</em>.
               </>
             }
-            body="Flat monthly managed service pricing. No usage fees, no per-seat charges, no consumption bills. You always know what Foundry costs."
+            body="Flat monthly managed-service pricing. No usage fees, no per-seat charges. You always know what Foundry costs next month."
             align="left"
           />
 
@@ -125,9 +125,9 @@ export default function FoundryPricingPage() {
           <div className="max-w-3xl mx-auto mt-10 text-center">
             <p className="text-sm text-ink leading-relaxed">
               One-time implementation fee of{' '}
-              <span className="font-semibold text-navy">$8,000–$60,000</span> depending on source
-              system count and data complexity. Scoped during a paid discovery engagement before you
-              commit to a monthly plan.
+              <span className="font-semibold text-navy">$8,000–$60,000</span> — scoped to your
+              source-system count and data complexity during a paid discovery engagement, before
+              you commit to a monthly plan.
             </p>
           </div>
         </div>

@@ -93,7 +93,7 @@ export default function GatewayPage() {
     <TenantProvider>
       {/* 1 — Hero */}
       <HeroSection
-        byline="RevenuePoint Gateway"
+        byline="Gateway · Multi-tenant portals"
         heading={
           <>
             Multi-tenant portals. Connected to your CRM and ERP. <em>Fully managed</em>.
@@ -102,7 +102,7 @@ export default function GatewayPage() {
         body="Gateway gives every customer, partner, dealer, or location their own branded portal — wired into your CRM, ERP, and accounting. Magic-link login, code-defined access rules, tenant-level data isolation. Fully managed by RevenuePoint."
         sidenote="Magic-link auth · code-defined rules · tenant-level isolation."
         ctas={[
-          { label: 'Schedule a walkthrough', href: SCHEDULE_URL, variant: 'primary' },
+          { label: 'Schedule a Gateway demo', href: SCHEDULE_URL, variant: 'primary' },
           { label: 'View pricing', href: '/gateway/pricing/', variant: 'secondary' },
         ]}
         rightSlot={<TenantSwitcherHero />}
@@ -224,8 +224,12 @@ export default function GatewayPage() {
         <div className="max-w-7xl mx-auto px-4">
           <SectionHeader
             eyebrow="TENANTS"
-            heading="Each tenant, isolated by design. Each tenant, branded their way."
-            body="Pick a tenant. Watch the subdomain change, the connection swap, the access rule rewrite, the brand color follow. One Gateway deployment, every tenant on its own everything."
+            heading={
+              <>
+                Six portals. <em>One framework</em>.
+              </>
+            }
+            body="Pick a tenant. Watch the subdomain change, the connection swap, the access rule rewrite, the brand color follow. Each tenant, isolated by design. Each tenant, branded their way. One Gateway deployment, every tenant on its own everything."
             align="center"
             light
           />
@@ -339,7 +343,7 @@ export default function GatewayPage() {
         <div className="max-w-7xl mx-auto px-4">
           <SectionHeader
             heading="The portal layer for companies that outgrew Salesforce Sites."
-            body="Most portal options are tied to one CRM, share data underneath, or take six months to build. Gateway is the only one fully managed, multi-tenant by design, and not locked to a single source system."
+            body="Most portal options are tied to one CRM, share data underneath, or take six months to build. Gateway is fully managed by RevenuePoint, multi-tenant by design, connects to every CRM and ERP you run on, and ships under flat per-tenant pricing."
           />
           <ComparisonTable
             headers={[

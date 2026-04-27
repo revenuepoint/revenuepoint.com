@@ -130,7 +130,7 @@ export default function SalesforceTrainingPage() {
         <div className="max-w-3xl mx-auto px-4">
           <SectionHeader
             heading="Tell us about your Salesforce training and Playbook needs"
-            body="We will confirm fit, scope the engagement, and send a statement of work."
+            body="We confirm fit, scope the engagement, and send a statement of work — typically within two business days."
           />
           <LeadForm interest="Salesforce Training" id="lead-form" />
         </div>
