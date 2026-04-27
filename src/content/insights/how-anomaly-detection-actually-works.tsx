@@ -12,10 +12,10 @@ const meta = {
     'How anomaly detection actually works: the methods behind an alert you can trust',
   excerpt:
     'Static thresholds don’t survive contact with real business metrics — the data has trend, seasonality, and noise. Here are the three algorithm families that do the actual work, and how we choose between them.',
-  date: '2025-11-18',
+  date: '2026-02-24',
   author: {
     name: 'Thomas Jones',
-    role: 'Founder, RevenuePoint',
+    role: 'Managing Director, RevenuePoint',
     avatarInitials: 'TJ',
   },
   tags: ['Anomaly Detection', 'Monitoring', 'POV'],

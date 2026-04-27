@@ -12,10 +12,10 @@ const meta = {
     'How to do AI reporting right: the multi-step pipeline behind a number you can trust',
   excerpt:
     'Plain-English questions are easy for a model to answer. The hard part is building the pipeline around the model so the answer is actually correct — and defensible. Here’s the step-by-step approach we use.',
-  date: '2025-10-07',
+  date: '2026-03-31',
   author: {
     name: 'Thomas Jones',
-    role: 'Founder, RevenuePoint',
+    role: 'Managing Director, RevenuePoint',
     avatarInitials: 'TJ',
   },
   tags: ['AI', 'Reporting', 'POV'],

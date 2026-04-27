@@ -12,10 +12,10 @@ const meta = {
     "The semantic layer: where 'revenue' gets defined exactly once (and why AI can't work reliably without it)",
   excerpt:
     'Five teams. Five definitions of “revenue.” Five different numbers in five different reports. The semantic layer is the layer that fixes this — and the reason an AI on top of your warehouse goes from confidently wrong to defensibly right.',
-  date: '2026-04-26',
+  date: '2025-11-18',
   author: {
     name: 'Thomas Jones',
-    role: 'Founder, RevenuePoint',
+    role: 'Managing Director, RevenuePoint',
     avatarInitials: 'TJ',
   },
   tags: ['Semantic Layer', 'AI', 'POV'],
