@@ -286,13 +286,18 @@ h2 em, h3 em, h4 em {
 .rp-marquee-track {
   display: flex !important;
   align-items: center;
-  gap: 37px; /* matches desktop gap-x-[37px] for cross-breakpoint feel */
+  gap: 56px;
   width: max-content !important;
   min-width: max-content;
-  animation: rp-marquee 25s linear infinite !important;
-  animation-duration: 25s !important;
+  animation: rp-marquee 35s linear infinite !important;
+  animation-duration: 35s !important;
   animation-iteration-count: infinite !important;
   will-change: transform;
+}
+@media (min-width: 1024px) {
+  .rp-marquee-track {
+    gap: 88px;
+  }
 }
 @media (hover: hover) {
   .rp-marquee-track:hover {

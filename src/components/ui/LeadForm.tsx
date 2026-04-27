@@ -193,7 +193,7 @@ export function LeadForm({ interest, id }: LeadFormProps) {
         type="submit"
         className="md:col-span-2 inline-flex items-center justify-center gap-2 border border-crimson text-crimson font-serif italic text-[15px] py-3 px-8 hover:bg-crimsonTint transition-colors"
       >
-        Send to RevenuePoint <span aria-hidden="true">→</span>
+        Schedule a call <span aria-hidden="true">→</span>
       </button>
     </form>
   );

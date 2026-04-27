@@ -79,7 +79,7 @@ export function Footer() {
                   team@revenuepoint.com
                 </a>
               </p>
-              <p className="mt-3">
+              <p className="!mt-6">
                 <a
                   href="https://github.com/revenuepoint"
                   target="_blank"
