@@ -2,7 +2,7 @@
 
 > **Status board.** This issue is the canonical tracker. The body is updated as phases progress; check task boxes for shipped deliverables. Working artifacts live in [`brand/site-alignment/`](https://github.com/revenuepoint/revenuepoint.com/tree/main/brand/site-alignment) in this repo. Original brief preserved at the bottom of this issue.
 
-**Last updated:** 2026-04-26 — Phase 1 complete; Phase 2 (TSX implementation) ready.
+**Last updated:** 2026-04-26 — Phase 2 PR 1 (P0 wave) **open in [#13](https://github.com/revenuepoint/revenuepoint.com/pull/13)**; awaiting visual QA + founder cold-read.
 **Output dir:** `brand/site-alignment/` in `revenuepoint.com`.
 **Voice spec:** `tmp/voice-and-tone-system/` (relocates to `brand/` in Phase 4) — see [revenuepoint/playbook#10](https://github.com/revenuepoint/playbook/issues/10).
 **Plan:** `/.claude/plans/consider-this-entire-website-ticklish-pumpkin.md` (locally, not committed).
@@ -44,14 +44,12 @@
 - [x] `implementation-checklist.md` — ~115 changes catalogued. Roughly 50 P0 · 55 P1 · 10 P2. ID convention: `HOME-01` / `MICRO-CTA-03` / `SOL-MFG-01` / `FNDY-PR-02`. Sorted by priority then page order.
 - [x] Self-check on rewrites — applied voice-fidelity grader rubric mentally to every change block; rationale cites a specific lexicon / voice-and-tone / messaging-framework / context-playbook section. *No `[VERIFY]` placeholders are open going into Phase 2 except the two Phase-0 survivors* (uptime SLA scope, Otto cadence — both flagged in the audit).
 
-### Phase 2 — Implementation ⏳ ready to start
+### Phase 2 — Implementation ⏳ in flight
 
-Phase 1 complete — implementation can begin.
-
-- [ ] **PR 1 — P0 wave.** Apply every P0 change. Top-of-funnel hero copy, primary CTAs, flagship-page headlines.
-- [ ] **PR 2 — P1 wave.** Sub-pages, pricing, microcopy global changes, banned-term sweep across all in-scope marketing pages.
+- [x] **PR 1 — P0 wave** — [#13](https://github.com/revenuepoint/revenuepoint.com/pull/13). 39 files · 169 insertions · 156 deletions. ~52 P0 changes applied per `implementation-checklist.md`. TypeScript typecheck clean; regex banlist clean across in-scope `src/` surfaces; awaiting founder cold-read + visual QA + merge.
+- [ ] **PR 2 — P1 wave.** Sub-pages and pricing: section headlines, body copy on top-funnel pages, mechanics inconsistencies, *Schedule a walkthrough* → *Schedule a Gateway demo* convergence (10+ locations), microcopy (lead-form submit, nav CRM acronym, *Request a Demo* in dropdowns).
 - [ ] **PR 3 — P2 wave.** Tightening on edges, footer, alt text, 404, thank-you, insights index, brand sample text.
-- [ ] After each PR: regex banlist clean (`rg -P -f tmp/voice-and-tone-system/.banned-phrases.txt src/`), grader sweep on a 3–5 page sample, visual QA in `bun run dev`, type check + lint.
+- [ ] After each PR: regex banlist clean (`rg -P -f tmp/voice-and-tone-system/.banned-phrases.txt src/`), grader sweep on a 3–5 page sample, visual QA in `npm run dev`, type check + build.
 
 ### Phase 3 — End-to-end verification 📋 queued
 
