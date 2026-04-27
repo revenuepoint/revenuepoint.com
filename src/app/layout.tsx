@@ -25,7 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 const SITE_URL = 'https://revenuepoint.com';
-const DEFAULT_TITLE = 'RevenuePoint — CRM + ERP + Agentic Orchestration';
+const DEFAULT_TITLE = 'RevenuePoint — CRM + ERP + AI Orchestration';
 const DEFAULT_DESCRIPTION =
   'Your operating systems, fully managed. Five platforms — CRM, ERP, data and AI, customer portals, AI research — implementation, management, and intelligence end-to-end.';
 
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
         url: '/og.png',
         width: 1200,
         height: 630,
-        alt: 'RevenuePoint — CRM + ERP + Agentic Orchestration',
+        alt: 'RevenuePoint — CRM + ERP + AI Orchestration',
       },
     ],
   },
