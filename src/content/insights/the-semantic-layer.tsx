@@ -150,6 +150,22 @@ function Body() {
           </li>
         </ul>
 
+        <h2>The principle underneath: canonicalization</h2>
+        <p>
+          The semantic layer is, more precisely, the{' '}
+          <strong>canonical</strong> layer — the place where every
+          business term has exactly one official version. Where entity
+          resolution makes the <em>record</em> canonical (one Acme,
+          Inc., not three), the semantic layer makes the{' '}
+          <em>definition</em> canonical (one &ldquo;active
+          customer,&rdquo; not five). Both are flavors of the same
+          discipline: pick THE version, write it down, route every
+          consumer through it. A warehouse without canonical records
+          and canonical definitions is a warehouse that has the data
+          but can&apos;t be trusted to answer a question the same way
+          twice.
+        </p>
+
         <h2>The anatomy of a metric definition</h2>
         <p>
           The thing all of this collapses into is a small, version-
