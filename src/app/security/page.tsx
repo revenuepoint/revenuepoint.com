@@ -128,7 +128,7 @@ export default function SecurityPage() {
               <dd className="font-mono text-[12.5px] tabular-nums text-ink break-all">{FINGERPRINT}</dd>
               <dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-mute">Identity</dt>
               <dd className="text-ink">
-                Thomas Jones &lt;<span className="font-mono">thomas@revenuepoint.com</span>&gt;
+                RevenuePoint Security &lt;<span className="font-mono">security@revenuepoint.com</span>&gt;
               </dd>
               <dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-mute">Mirror</dt>
               <dd>
