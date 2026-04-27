@@ -57,7 +57,7 @@ export function Navbar() {
       <div className="fixed top-0 left-0 right-0 z-[60] h-[3px] bg-crimson" />
 
       <header
-        className={`fixed top-[3px] left-0 right-0 z-50 bg-paper transition-shadow duration-200 border-b border-ruleSoft ${
+        className={`fixed top-[3px] left-0 right-0 z-50 bg-snow transition-shadow duration-200 border-b border-ruleSoft ${
           scrolled ? 'shadow-hairline' : ''
         }`}
       >
