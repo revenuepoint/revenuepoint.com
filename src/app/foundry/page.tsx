@@ -602,7 +602,7 @@ export default function FoundryPage() {
                 The only platform that orchestrates the <em>full loop</em>.
               </>
             }
-            body="No other platform in this category manages pipeline, warehouse, intelligence, agents, and action execution as a single service. ThoughtSpot costs $140,000/year and still requires a data engineering team to run it. Foundry starts at $2,500/month — fully managed by RevenuePoint."
+            body="No other platform in this category manages pipeline, warehouse, intelligence, agents, and action execution as a single service. ThoughtSpot lists at $140,000 a year and still requires a data engineering team to run it. Foundry starts at $2,500 a month — fully managed by RevenuePoint."
             align="left"
           />
           <ComparisonTable

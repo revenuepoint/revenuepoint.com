@@ -127,7 +127,7 @@ export default function Home() {
               </>
             }
             align="left"
-            body="Implementation in weeks. Operations under a single engagement. No long-term contract. The same model on every line."
+            body="Two-week sprints to ship the work. Operations under a single engagement. No long-term contract. The same model on every line."
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:auto-rows-fr">
             <ServiceCard

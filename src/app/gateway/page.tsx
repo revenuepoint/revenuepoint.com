@@ -374,7 +374,13 @@ export default function GatewayPage() {
       {/* 11 — Implementation */}
       <section className="bg-cream py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4">
-          <SectionHeader heading="Live in 4 weeks. Here's how." />
+          <SectionHeader
+            heading={
+              <>
+                <em>Four-week</em> go-live. Here&rsquo;s how.
+              </>
+            }
+          />
           <StepList
             steps={[
               {
