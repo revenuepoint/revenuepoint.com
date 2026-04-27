@@ -29,7 +29,7 @@ const ACCENTS = [
   { role: 'Brand · locked', token: 'crimson', hex: '#8B0A39', rgb: '139 · 10 · 57', use: 'Italic accents, primary CTAs, signature mark.' },
   { role: 'Crimson hover', token: 'crimsonDeep', hex: '#6B0829', rgb: '107 · 8 · 41', use: 'Hover state for crimson surfaces only.' },
   { role: 'Crimson wash', token: 'crimsonTint', hex: '#F2E0E5', rgb: '242 · 224 · 229', use: 'Backgrounds for accent rows or feature columns.' },
-  { role: 'Supporting · locked', token: 'navy', hex: '#0F1A2B', rgb: '15 · 26 · 43', use: 'Sole secondary brand colour. Verified / on-track signal.' },
+  { role: 'Supporting · locked', token: 'navy', hex: '#0F1A2B', rgb: '15 · 26 · 43', use: 'Sole secondary brand color. Verified / on-track signal.' },
   { role: 'Navy mid', token: 'navySoft', hex: '#2A3F58', rgb: '42 · 63 · 88', use: 'Chart fills, on-track delta indicators.' },
   { role: 'Navy wash', token: 'navyTint', hex: '#DDE3EA', rgb: '221 · 227 · 234', use: 'Light wash for badges and quiet panels.' },
 ];
@@ -69,11 +69,11 @@ const ACCESSIBILITY = [
 const DO_DONT = [
   {
     surface: 'The wordmark',
-    do: 'Use the wordmark as supplied — Fraunces 600, tight tracking, crimson on light, paper on dark.',
-    dont: 'Recolour, italicise, add an icon, swap fonts, set in all-caps, condense, or apply effects.',
+    do: 'Use the wordmark as supplied — Fraunces 700, tight tracking, crimson on light, paper on dark.',
+    dont: 'Recolor, italicise, add an icon, swap fonts, set in all-caps, condense, or apply effects.',
   },
   {
-    surface: 'Colour pairings',
+    surface: 'Color pairings',
     do: 'Pair crimson and navy on warm ivory or cream. Use navy for verified / on-track signals.',
     dont: 'Add green anywhere in the system, or swap navy for any other secondary accent.',
   },
@@ -134,7 +134,7 @@ export default function BrandPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
             <p className="text-base leading-[1.65] text-inkSoft max-w-prose">
-              RevenuePoint is a text-only wordmark. It is set in Fraunces 600 with tight tracking; there is no
+              RevenuePoint is a text-only wordmark. It is set in Fraunces 700 with tight tracking; there is no
               icon and no italic accent. Use it crimson on light surfaces and paper on dark surfaces. Maintain
               clear space of at least one half cap-height around the mark.
             </p>
@@ -186,10 +186,10 @@ export default function BrandPage() {
         </div>
       </Section>
 
-      {/* §02 Colour */}
-      <Section index="02" title="Colour" eyebrow="Section 02 · Palette" alt>
+      {/* §02 Color */}
+      <Section index="02" title="Color" eyebrow="Section 02 · Palette" alt>
         <p className="text-base leading-[1.65] text-inkSoft max-w-prose mb-12">
-          Crimson and navy are the only locked brand colours. Everything else in the palette is a neutral or a
+          Crimson and navy are the only locked brand colors. Everything else in the palette is a neutral or a
           signal — they earn their place by serving the work, not by competing for attention. There is no green
           in this system; verified or on-track states use navy.
         </p>

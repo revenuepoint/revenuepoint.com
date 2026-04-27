@@ -32,7 +32,7 @@ export function Wordmark({
   href = '/',
   className = '',
 }: Props) {
-  const classes = `font-serif font-semibold tracking-[-0.02em] leading-none ${SIZE_CLASS[size]} ${TONE_CLASS[tone]} ${className}`;
+  const classes = `font-serif font-bold tracking-[-0.02em] leading-none ${SIZE_CLASS[size]} ${TONE_CLASS[tone]} ${className}`;
 
   if (asLink) {
     return (
