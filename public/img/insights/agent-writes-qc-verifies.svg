@@ -1,75 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet" role="img" aria-label="An agent writes a report; a QC stage verifies it through severity, confidence, and status checks; a named analyst signs off">
-  <rect width="1600" height="900" fill="#F4EFE6"/>
-  <text x="1560" y="820" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="300" font-size="780" fill="#1A1612" fill-opacity="0.045" text-anchor="end">Q</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Cover: AI can produce a confident briefing in thirty seconds. Most are wrong in ways that take a day to find.">
+  <rect width="1600" height="1000" fill="#1A1612"/>
 
-  <g font-family="Georgia, 'Times New Roman', serif" fill="#1A1612">
-    <text x="120" y="120" font-size="22" letter-spacing="6" font-weight="700">INSIGHTS · VII</text>
-    <line x1="120" y1="148" x2="280" y2="148" stroke="#C4BCA8" stroke-width="1"/>
+  <text x="120" y="1140" font-family="Fraunces, 'Iowan Old Style', 'Apple Garamond', Georgia, serif" font-style="italic" font-weight="300" font-size="600" fill="#A4391E" fill-opacity="0.32" text-anchor="start">verified.</text>
+
+  <line x1="120" y1="148" x2="142" y2="148" stroke="#A4391E" stroke-width="1"/>
+  <text x="158" y="155" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace" font-size="20" letter-spacing="3.2" font-weight="500" fill="#F4EFE6" fill-opacity="0.7">INSIGHTS · VII</text>
+
+  <g font-family="Fraunces, 'Iowan Old Style', 'Apple Garamond', Georgia, serif" font-style="italic" font-weight="400" fill="#F4EFE6">
+    <text x="120" y="320" font-size="76">AI can produce a confident</text>
+    <text x="120" y="415" font-size="76">briefing in thirty seconds. Most</text>
+    <text x="120" y="510" font-size="76">are wrong in ways that take a day.</text>
   </g>
-
-  <!-- source feeding agent -->
-  <g font-family="Georgia, 'Times New Roman', serif" font-style="italic">
-    <text x="170" y="378" font-size="20" fill="#1A1612" text-anchor="middle">Sources</text>
-    <line x1="220" y1="370" x2="380" y2="370" stroke="#1A1612" stroke-width="1"/>
-    <polygon points="370,364 382,370 370,376" fill="#1A1612" stroke="none"/>
-  </g>
-
-  <!-- agent node -->
-  <g font-family="Georgia, 'Times New Roman', serif">
-    <rect x="380" y="290" width="280" height="160" fill="#FAF6EC" stroke="#1A1612" stroke-width="1.5"/>
-    <text x="520" y="334" font-size="14" letter-spacing="4" font-weight="700" fill="#8B0A39" text-anchor="middle">01</text>
-    <text x="520" y="385" font-size="36" font-style="italic" fill="#1A1612" text-anchor="middle">Agent</text>
-    <text x="520" y="420" font-size="20" font-style="italic" fill="#2D261E" text-anchor="middle">writes</text>
-  </g>
-
-  <!-- agent → QC arrow -->
-  <g stroke="#1A1612" stroke-width="1.5" fill="none">
-    <line x1="660" y1="370" x2="780" y2="370"/>
-    <polygon points="770,364 782,370 770,376" fill="#1A1612" stroke="none"/>
-  </g>
-
-  <!-- QC node -->
-  <g font-family="Georgia, 'Times New Roman', serif">
-    <rect x="780" y="290" width="280" height="160" fill="#8B0A39"/>
-    <text x="920" y="334" font-size="14" letter-spacing="4" font-weight="700" fill="#F4EFE6" text-anchor="middle">02</text>
-    <text x="920" y="385" font-size="36" font-style="italic" fill="#F4EFE6" text-anchor="middle">QC</text>
-    <text x="920" y="420" font-size="20" font-style="italic" fill="#F4EFE6" fill-opacity="0.85" text-anchor="middle">verifies</text>
-  </g>
-
-  <!-- three checks beneath QC -->
-  <g font-family="Georgia, 'Times New Roman', serif">
-    <line x1="780" y1="500" x2="1060" y2="500" stroke="#C4BCA8" stroke-width="1"/>
-    <text x="920" y="540" font-size="22" font-style="italic" fill="#1A1612" text-anchor="middle">severity</text>
-    <line x1="780" y1="560" x2="1060" y2="560" stroke="#C4BCA8" stroke-width="1"/>
-    <text x="920" y="600" font-size="22" font-style="italic" fill="#1A1612" text-anchor="middle">confidence</text>
-    <line x1="780" y1="620" x2="1060" y2="620" stroke="#C4BCA8" stroke-width="1"/>
-    <text x="920" y="660" font-size="22" font-style="italic" fill="#1A1612" text-anchor="middle">status</text>
-    <line x1="780" y1="680" x2="1060" y2="680" stroke="#C4BCA8" stroke-width="1"/>
-  </g>
-
-  <!-- QC → analyst arrow -->
-  <g stroke="#1A1612" stroke-width="1.5" fill="none">
-    <line x1="1060" y1="370" x2="1180" y2="370"/>
-    <polygon points="1170,364 1182,370 1170,376" fill="#1A1612" stroke="none"/>
-  </g>
-
-  <!-- named analyst block -->
-  <g font-family="Georgia, 'Times New Roman', serif">
-    <rect x="1180" y="290" width="280" height="160" fill="#FAF6EC" stroke="#1A1612" stroke-width="1.5"/>
-    <text x="1320" y="334" font-size="14" letter-spacing="4" font-weight="700" fill="#8B0A39" text-anchor="middle">03</text>
-    <text x="1320" y="385" font-size="28" font-style="italic" fill="#1A1612" text-anchor="middle">Named analyst</text>
-    <text x="1320" y="418" font-size="18" font-style="italic" fill="#2D261E" text-anchor="middle">signs</text>
-  </g>
-
-  <!-- signature line under analyst -->
-  <line x1="1200" y1="480" x2="1440" y2="480" stroke="#1A1612" stroke-width="1"/>
-  <text x="1320" y="504" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="16" fill="#2D261E" text-anchor="middle">accountable for accuracy</text>
-
-  <!-- to delivered report -->
-  <line x1="1320" y1="520" x2="1320" y2="600" stroke="#1A1612" stroke-width="1"/>
-  <polygon points="1314,592 1320,604 1326,592" fill="#1A1612" stroke="none"/>
-  <text x="1320" y="640" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="22" fill="#1A1612" text-anchor="middle">Report</text>
-
-  <line x1="120" y1="780" x2="1480" y2="780" stroke="#C4BCA8" stroke-width="1"/>
-  <text x="120" y="820" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="22" fill="#2D261E">Agent writes. QC verifies. A named human signs the work.</text>
 </svg>

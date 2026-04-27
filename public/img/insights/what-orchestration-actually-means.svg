@@ -1,53 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Three labeled stages: Agent proposes, Human approves, System executes">
-  <rect width="1600" height="900" fill="#F4EFE6"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Cover: Agents propose, humans approve, systems execute. The approval step is what makes it safe.">
+  <rect width="1600" height="1000" fill="#0F1A2B"/>
 
-  <!-- giant background mark -->
-  <text x="1560" y="820" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="300" font-size="780" fill="#1A1612" fill-opacity="0.045" text-anchor="end">O</text>
+  <!-- giant background watermark concept word — bleeds off right and bottom -->
+  <text x="120" y="1140" font-family="Fraunces, 'Iowan Old Style', 'Apple Garamond', Georgia, serif" font-style="italic" font-weight="300" font-size="600" fill="#F4EFE6" fill-opacity="0.10" text-anchor="start">propose.</text>
 
-  <!-- top eyebrow -->
-  <g font-family="Georgia, 'Times New Roman', serif" fill="#1A1612">
-    <text x="120" y="120" font-size="22" letter-spacing="6" font-weight="700">INSIGHTS · I</text>
-    <line x1="120" y1="148" x2="280" y2="148" stroke="#C4BCA8" stroke-width="1"/>
+  <!-- eyebrow -->
+  <line x1="120" y1="148" x2="142" y2="148" stroke="#F4EFE6" stroke-opacity="0.5" stroke-width="1"/>
+  <text x="158" y="155" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace" font-size="20" letter-spacing="3.2" font-weight="500" fill="#F4EFE6" fill-opacity="0.75">INSIGHTS · I</text>
+
+  <!-- deck -->
+  <g font-family="Fraunces, 'Iowan Old Style', 'Apple Garamond', Georgia, serif" font-style="italic" font-weight="400" fill="#F4EFE6">
+    <text x="120" y="320" font-size="76">Agents propose. Humans approve.</text>
+    <text x="120" y="415" font-size="76">Systems execute. The approval</text>
+    <text x="120" y="510" font-size="76">step is what makes it safe.</text>
   </g>
-
-  <!-- three stages -->
-  <g font-family="Georgia, 'Times New Roman', serif">
-    <!-- box 1 -->
-    <rect x="200" y="380" width="320" height="180" fill="#FAF6EC" stroke="#1A1612" stroke-width="1.5"/>
-    <text x="360" y="430" font-size="16" letter-spacing="4" font-weight="700" fill="#8B0A39" text-anchor="middle">01</text>
-    <text x="360" y="478" font-size="36" font-style="italic" font-weight="500" fill="#1A1612" text-anchor="middle">Agent</text>
-    <text x="360" y="520" font-size="36" font-style="italic" font-weight="500" fill="#1A1612" text-anchor="middle">proposes</text>
-
-    <!-- box 2 -->
-    <rect x="640" y="380" width="320" height="180" fill="#FAF6EC" stroke="#1A1612" stroke-width="1.5"/>
-    <text x="800" y="430" font-size="16" letter-spacing="4" font-weight="700" fill="#8B0A39" text-anchor="middle">02</text>
-    <text x="800" y="478" font-size="36" font-style="italic" font-weight="500" fill="#1A1612" text-anchor="middle">Human</text>
-    <text x="800" y="520" font-size="36" font-style="italic" font-weight="500" fill="#1A1612" text-anchor="middle">approves</text>
-
-    <!-- box 3 -->
-    <rect x="1080" y="380" width="320" height="180" fill="#FAF6EC" stroke="#1A1612" stroke-width="1.5"/>
-    <text x="1240" y="430" font-size="16" letter-spacing="4" font-weight="700" fill="#8B0A39" text-anchor="middle">03</text>
-    <text x="1240" y="478" font-size="36" font-style="italic" font-weight="500" fill="#1A1612" text-anchor="middle">System</text>
-    <text x="1240" y="520" font-size="36" font-style="italic" font-weight="500" fill="#1A1612" text-anchor="middle">executes</text>
-  </g>
-
-  <!-- connectors -->
-  <g stroke="#1A1612" stroke-width="1.5" fill="none">
-    <line x1="520" y1="470" x2="640" y2="470"/>
-    <polygon points="630,464 642,470 630,476" fill="#1A1612" stroke="none"/>
-    <line x1="960" y1="470" x2="1080" y2="470"/>
-    <polygon points="1070,464 1082,470 1070,476" fill="#1A1612" stroke="none"/>
-  </g>
-
-  <!-- key glyph between approves and executes -->
-  <g transform="translate(1010,455) rotate(-25)" fill="none" stroke="#8B0A39" stroke-width="2">
-    <circle cx="0" cy="0" r="10"/>
-    <line x1="10" y1="0" x2="40" y2="0"/>
-    <line x1="32" y1="0" x2="32" y2="-7"/>
-    <line x1="38" y1="0" x2="38" y2="-7"/>
-  </g>
-
-  <!-- bottom rule + footnote -->
-  <line x1="120" y1="780" x2="1480" y2="780" stroke="#C4BCA8" stroke-width="1"/>
-  <text x="120" y="820" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="22" fill="#2D261E">Orchestration: agents propose, humans approve, systems execute.</text>
 </svg>

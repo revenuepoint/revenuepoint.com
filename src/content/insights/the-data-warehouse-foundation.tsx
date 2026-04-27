@@ -12,7 +12,7 @@ const meta = {
     'The data warehouse: why every other layer of your business depends on it',
   excerpt:
     'Dashboards, automations, agents, and AI chat all collapse on top of the same thing: a warehouse that has your business’s data in one place, defined the same way, and kept safe. Here’s what that actually buys you.',
-  date: '2026-04-24',
+  date: '2025-08-26',
   author: {
     name: 'Thomas Jones',
     role: 'Founder, RevenuePoint',

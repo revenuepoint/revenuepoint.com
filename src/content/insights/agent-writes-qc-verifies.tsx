@@ -12,7 +12,7 @@ const meta = {
     'Agent writes, QC verifies: the codes and checks behind a research report you can defend',
   excerpt:
     'AI can produce a confident-sounding briefing on any subject in thirty seconds. Most of them are wrong in ways that take an analyst a day to find. Here’s the QC pipeline we run — every check, every code, every gate — that makes the difference between a report that ships and a report that comes back.',
-  date: '2026-04-25',
+  date: '2026-03-31',
   author: {
     name: 'Thomas Jones',
     role: 'Founder, RevenuePoint',
@@ -390,6 +390,14 @@ function Body() {
             </p>
           </>
         }
+      />
+
+      <Figure
+        src="/img/insights/agent-qc-pipeline.svg"
+        alt="The Agent-and-QC pipeline: source feeds the Agent which writes; the QC stage verifies severity, confidence, and status; a named analyst signs and the report ships"
+        caption="The pipeline shape, end to end. The agent writes; QC re-reads; a named human signs the cover page."
+        width={1600}
+        height={900}
       />
 
       <Prose>

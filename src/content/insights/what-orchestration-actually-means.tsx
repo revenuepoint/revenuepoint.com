@@ -12,7 +12,7 @@ const meta = {
     "What orchestration actually means (and why it's the safe way to let AI act on your business)",
   excerpt:
     'A plain-English walkthrough of how AI agents, tools, and systems of record fit together — and why the human approval step is the whole reason this approach is safe.',
-  date: '2026-04-19',
+  date: '2025-07-15',
   author: {
     name: 'Thomas Jones',
     role: 'Founder, RevenuePoint',

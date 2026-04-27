@@ -12,7 +12,7 @@ const meta = {
     'How anomaly detection actually works: the methods behind an alert you can trust',
   excerpt:
     'Static thresholds don’t survive contact with real business metrics — the data has trend, seasonality, and noise. Here are the three algorithm families that do the actual work, and how we choose between them.',
-  date: '2026-04-24',
+  date: '2025-11-18',
   author: {
     name: 'Thomas Jones',
     role: 'Founder, RevenuePoint',
@@ -343,6 +343,14 @@ function Body() {
         caption="The same series, decomposed. Trend and seasonality explain most of the motion; anomalies live in the residual. The dashed band is the noise envelope."
         width={800}
         height={400}
+      />
+
+      <Figure
+        src="/img/insights/anomaly-band-envelope.svg"
+        alt="A time series with an expected band envelope; one residual point sits high above the band and is highlighted as the anomaly"
+        caption="The same series, viewed against its expected band. The point lifted above the envelope is what every detector in the ensemble is, in its own way, trying to catch."
+        width={1600}
+        height={900}
       />
 
       <Callout variant="warning" title="Common mistakes">

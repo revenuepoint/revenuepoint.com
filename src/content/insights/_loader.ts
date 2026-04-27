@@ -5,9 +5,11 @@ import { post as howAnomalyDetectionActuallyWorks } from './how-anomaly-detectio
 import { post as howDataGetsIntoYourWarehouse } from './how-data-gets-into-your-warehouse';
 import { post as howToDoAiReportingRight } from './how-to-do-ai-reporting-right';
 import { post as theDataWarehouseFoundation } from './the-data-warehouse-foundation';
+import { post as theSemanticLayer } from './the-semantic-layer';
 import { post as whatOrchestrationActuallyMeans } from './what-orchestration-actually-means';
 
 export const posts: Post[] = [
+  theSemanticLayer,
   agentWritesQcVerifies,
   entityResolution,
   howDataGetsIntoYourWarehouse,

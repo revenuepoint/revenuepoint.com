@@ -12,7 +12,7 @@ const meta = {
     'Entity resolution: why your CRM thinks you have three customers when you have one',
   excerpt:
     'Every business above a certain age has the same hidden bug: the same customer appears two or three times across systems, just different enough to look like separate records. Here’s what that costs you, and the disciplined way to fix it in the warehouse layer.',
-  date: '2026-04-24',
+  date: '2026-01-13',
   author: {
     name: 'Thomas Jones',
     role: 'Founder, RevenuePoint',

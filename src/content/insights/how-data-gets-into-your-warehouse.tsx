@@ -12,7 +12,7 @@ const meta = {
     'How data actually gets into your warehouse: batch, CDC, webhooks — and the DAGs that keep it all honest',
   excerpt:
     'Every warehouse is only as trustworthy as the pipelines feeding it. Here are the three patterns that move data from source systems into the warehouse, the tradeoffs between them, and how we use DAGs to orchestrate the whole thing — including moves between environments.',
-  date: '2026-04-24',
+  date: '2026-02-24',
   author: {
     name: 'Thomas Jones',
     role: 'Founder, RevenuePoint',

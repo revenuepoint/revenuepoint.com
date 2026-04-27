@@ -1,85 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Sources flow through three patterns into a DAG, then to dev, staging, and prod warehouses">
-  <rect width="1600" height="900" fill="#F4EFE6"/>
-  <text x="1560" y="820" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="300" font-size="780" fill="#1A1612" fill-opacity="0.045" text-anchor="end">D</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Cover: Three patterns move data into the warehouse. The DAG is what keeps them honest.">
+  <rect width="1600" height="1000" fill="#2A3F58"/>
 
-  <g font-family="Georgia, 'Times New Roman', serif" fill="#1A1612">
-    <text x="120" y="120" font-size="22" letter-spacing="6" font-weight="700">INSIGHTS · VI</text>
-    <line x1="120" y1="148" x2="280" y2="148" stroke="#C4BCA8" stroke-width="1"/>
+  <text x="120" y="1140" font-family="Fraunces, 'Iowan Old Style', 'Apple Garamond', Georgia, serif" font-style="italic" font-weight="300" font-size="600" fill="#F4EFE6" fill-opacity="0.11" text-anchor="start">flow.</text>
+
+  <line x1="120" y1="148" x2="142" y2="148" stroke="#F4EFE6" stroke-opacity="0.55" stroke-width="1"/>
+  <text x="158" y="155" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace" font-size="20" letter-spacing="3.2" font-weight="500" fill="#F4EFE6" fill-opacity="0.8">INSIGHTS · VI</text>
+
+  <g font-family="Fraunces, 'Iowan Old Style', 'Apple Garamond', Georgia, serif" font-style="italic" font-weight="400" fill="#F4EFE6">
+    <text x="120" y="320" font-size="76">Three patterns move data</text>
+    <text x="120" y="415" font-size="76">into the warehouse. The DAG</text>
+    <text x="120" y="510" font-size="76">is what keeps them honest.</text>
   </g>
-
-  <!-- left: source labels -->
-  <g font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="22" fill="#1A1612" text-anchor="end">
-    <text x="240" y="280">CRM</text>
-    <text x="240" y="380">ERP</text>
-    <text x="240" y="480">Support</text>
-    <text x="240" y="580">SaaS</text>
-  </g>
-
-  <!-- three lanes: Batch / CDC / Webhooks -->
-  <g font-family="Georgia, 'Times New Roman', serif">
-    <rect x="320" y="240" width="220" height="60" fill="#FAF6EC" stroke="#1A1612" stroke-width="1.2"/>
-    <text x="430" y="280" font-size="22" font-style="italic" fill="#1A1612" text-anchor="middle">Batch</text>
-
-    <rect x="320" y="370" width="220" height="60" fill="#FAF6EC" stroke="#1A1612" stroke-width="1.2"/>
-    <text x="430" y="410" font-size="22" font-style="italic" fill="#1A1612" text-anchor="middle">CDC</text>
-
-    <rect x="320" y="500" width="220" height="60" fill="#FAF6EC" stroke="#1A1612" stroke-width="1.2"/>
-    <text x="430" y="540" font-size="22" font-style="italic" fill="#1A1612" text-anchor="middle">Webhooks</text>
-  </g>
-
-  <!-- source-to-lane lines -->
-  <g stroke="#1A1612" stroke-width="1" fill="none">
-    <path d="M260 270 C 290 270, 300 270, 320 270"/>
-    <path d="M260 370 C 290 370, 300 400, 320 400"/>
-    <path d="M260 470 C 290 470, 300 530, 320 530"/>
-    <path d="M260 570 C 290 570, 300 530, 320 530"/>
-  </g>
-
-  <!-- lanes-to-DAG lines -->
-  <g stroke="#1A1612" stroke-width="1" fill="none">
-    <path d="M540 270 C 620 270, 660 410, 740 410"/>
-    <path d="M540 400 L 740 410"/>
-    <path d="M540 530 C 620 530, 660 410, 740 410"/>
-  </g>
-
-  <!-- DAG node -->
-  <g>
-    <rect x="740" y="340" width="180" height="160" fill="#8B0A39"/>
-    <text x="830" y="404" font-family="Georgia, 'Times New Roman', serif" font-size="14" letter-spacing="4" font-weight="700" fill="#F4EFE6" text-anchor="middle">DAG</text>
-    <text x="830" y="450" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-style="italic" fill="#F4EFE6" text-anchor="middle">orchestrate</text>
-  </g>
-
-  <!-- DAG-to-environments lines -->
-  <g stroke="#1A1612" stroke-width="1" fill="none">
-    <path d="M920 380 C 1020 380, 1080 290, 1180 290"/>
-    <path d="M920 420 L 1180 420"/>
-    <path d="M920 460 C 1020 460, 1080 550, 1180 550"/>
-  </g>
-
-  <!-- right: environments -->
-  <g font-family="Georgia, 'Times New Roman', serif">
-    <rect x="1180" y="250" width="240" height="80" fill="#FAF6EC" stroke="#1A1612" stroke-width="1.2"/>
-    <text x="1300" y="280" font-size="14" letter-spacing="4" font-weight="700" fill="#8B0A39" text-anchor="middle">DEV</text>
-    <text x="1300" y="310" font-size="22" font-style="italic" fill="#1A1612" text-anchor="middle">warehouse</text>
-
-    <rect x="1180" y="380" width="240" height="80" fill="#FAF6EC" stroke="#1A1612" stroke-width="1.2"/>
-    <text x="1300" y="410" font-size="14" letter-spacing="4" font-weight="700" fill="#8B0A39" text-anchor="middle">STAGING</text>
-    <text x="1300" y="440" font-size="22" font-style="italic" fill="#1A1612" text-anchor="middle">warehouse</text>
-
-    <rect x="1180" y="510" width="240" height="80" fill="#FAF6EC" stroke="#1A1612" stroke-width="1.2"/>
-    <text x="1300" y="540" font-size="14" letter-spacing="4" font-weight="700" fill="#8B0A39" text-anchor="middle">PROD</text>
-    <text x="1300" y="570" font-size="22" font-style="italic" fill="#1A1612" text-anchor="middle">warehouse</text>
-  </g>
-
-  <!-- promotion arrows between envs -->
-  <g stroke="#1A1612" stroke-width="1" stroke-dasharray="4 4" fill="none">
-    <line x1="1440" y1="330" x2="1440" y2="380"/>
-    <polygon points="1434,372 1440,384 1446,372" fill="#1A1612" stroke="none"/>
-    <line x1="1440" y1="460" x2="1440" y2="510"/>
-    <polygon points="1434,502 1440,514 1446,502" fill="#1A1612" stroke="none"/>
-  </g>
-  <text x="1460" y="490" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="16" fill="#2D261E">promote</text>
-
-  <line x1="120" y1="780" x2="1480" y2="780" stroke="#C4BCA8" stroke-width="1"/>
-  <text x="120" y="820" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="22" fill="#2D261E">Match the pattern. Orchestrate the DAG. Promote the same code through environments.</text>
 </svg>

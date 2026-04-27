@@ -1,44 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Time series with a noise band and one anomalous point lifted above the band">
-  <rect width="1600" height="900" fill="#F4EFE6"/>
-  <text x="1560" y="820" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="300" font-size="780" fill="#1A1612" fill-opacity="0.045" text-anchor="end">A</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Cover: Static thresholds don't survive real business metrics. Trend, seasonality, and noise demand more.">
+  <rect width="1600" height="1000" fill="#A4391E"/>
 
-  <g font-family="Georgia, 'Times New Roman', serif" fill="#1A1612">
-    <text x="120" y="120" font-size="22" letter-spacing="6" font-weight="700">INSIGHTS · IV</text>
-    <line x1="120" y1="148" x2="280" y2="148" stroke="#C4BCA8" stroke-width="1"/>
+  <text x="120" y="1140" font-family="Fraunces, 'Iowan Old Style', 'Apple Garamond', Georgia, serif" font-style="italic" font-weight="300" font-size="600" fill="#F4EFE6" fill-opacity="0.11" text-anchor="start">outlier.</text>
+
+  <line x1="120" y1="148" x2="142" y2="148" stroke="#F4EFE6" stroke-opacity="0.55" stroke-width="1"/>
+  <text x="158" y="155" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace" font-size="20" letter-spacing="3.2" font-weight="500" fill="#F4EFE6" fill-opacity="0.8">INSIGHTS · IV</text>
+
+  <g font-family="Fraunces, 'Iowan Old Style', 'Apple Garamond', Georgia, serif" font-style="italic" font-weight="400" fill="#F4EFE6">
+    <text x="120" y="320" font-size="76">Static thresholds don&#8217;t survive</text>
+    <text x="120" y="415" font-size="76">real business metrics — trend,</text>
+    <text x="120" y="510" font-size="76">seasonality, and noise demand more.</text>
   </g>
-
-  <!-- chart frame -->
-  <g>
-    <!-- horizontal baseline -->
-    <line x1="200" y1="500" x2="1400" y2="500" stroke="#C4BCA8" stroke-width="1"/>
-    <line x1="200" y1="350" x2="1400" y2="350" stroke="#DCD4C0" stroke-width="1" stroke-dasharray="4 5"/>
-    <line x1="200" y1="650" x2="1400" y2="650" stroke="#DCD4C0" stroke-width="1" stroke-dasharray="4 5"/>
-
-    <!-- band envelope -->
-    <path d="M200 410 C 400 400, 600 420, 800 405 S 1200 415, 1400 410
-             L 1400 590 C 1200 580, 1000 600, 800 588 S 400 605, 200 595 Z"
-          fill="#1A1612" fill-opacity="0.04" stroke="none"/>
-
-    <!-- series line -->
-    <path d="M200 510 L 280 488 L 360 520 L 440 495 L 520 540 L 600 500 L 680 460 L 760 530 L 840 472 L 920 540 L 1000 488 L 1080 510 L 1160 290 L 1240 502 L 1320 520 L 1400 498"
-          fill="none" stroke="#1A1612" stroke-width="2"/>
-
-    <!-- highlighted anomaly point -->
-    <circle cx="1160" cy="290" r="11" fill="#8B0A39"/>
-    <circle cx="1160" cy="290" r="22" fill="none" stroke="#8B0A39" stroke-width="1"/>
-
-    <!-- anomaly label -->
-    <line x1="1160" y1="278" x2="1160" y2="220" stroke="#8B0A39" stroke-width="1"/>
-    <text x="1160" y="200" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="28" fill="#8B0A39" text-anchor="middle">anomaly</text>
-  </g>
-
-  <!-- side legend -->
-  <g font-family="Georgia, 'Times New Roman', serif" font-size="18" fill="#2D261E">
-    <text x="200" y="700" font-style="italic">— observed</text>
-    <text x="380" y="700" font-style="italic" fill="#8B0A39">— flagged</text>
-    <text x="540" y="700" font-style="italic">— expected band</text>
-  </g>
-
-  <line x1="120" y1="780" x2="1480" y2="780" stroke="#C4BCA8" stroke-width="1"/>
-  <text x="120" y="820" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="22" fill="#2D261E">A real anomaly is a point the noise alone can't explain.</text>
 </svg>
