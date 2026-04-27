@@ -19,7 +19,7 @@ const faqs = [
   {
     question: 'What happens after the 60-minute debrief?',
     answer:
-      'You own the report. Most clients convert into a Fix-It Sprint (90 days, fixed fee, close the top criticals), a Managed Services retainer (one named administrator), or a Rebuild program when a bigger overhaul is warranted. A smaller number decide to execute internally. None of those paths are a requirement of the Health Check.',
+      'You own the report. Most clients convert into a Fix-It Sprint (90 days, fixed fee, close the top criticals), a Managed Services retainer (your single point of contact and a project manager), or a Rebuild program when a bigger overhaul is warranted. A smaller number decide to execute internally. None of those paths is a requirement of the Health Check.',
   },
   {
     question: 'How is this different from Salesforce Optimizer or HubSpot Operations Hub reports?',

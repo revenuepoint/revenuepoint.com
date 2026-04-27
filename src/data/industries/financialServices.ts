@@ -26,7 +26,7 @@ export const financialServices: IndustryPageContent = {
     },
     {
       stat: '23%',
-      label: 'of policies lapse preventably at mid-market P&C agencies.',
+      label: 'of policies lapse preventably at growing-business P&C agencies.',
       source: 'Insurance ops benchmark',
     },
     {

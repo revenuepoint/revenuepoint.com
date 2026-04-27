@@ -11,12 +11,12 @@ export const manufacturing: IndustryPageContent = {
   hero: {
     eyebrow: 'Industries · Manufacturing',
     headline: 'Your CRM and your ERP should agree.',
-    sub: 'RevenuePoint builds a clean Salesforce instance for mid-market discrete and process manufacturers — with live SAP or NetSuite data, Sales Agreement actuals, production status, and quality holds on one record page. Fully managed by RevenuePoint.',
+    sub: 'RevenuePoint builds a clean Salesforce instance for growing-business discrete and process manufacturers — with live SAP or NetSuite data, Sales Agreement actuals, production status, and quality holds on one record page. Fully managed by RevenuePoint.',
   },
   painKpis: [
     {
       stat: '76%',
-      label: 'of mid-market manufacturers reconcile ERP shipments against CRM forecasts in spreadsheets every month.',
+      label: 'of growing-business manufacturers reconcile ERP shipments against CRM forecasts in spreadsheets every month.',
       source: 'RevenuePoint client discovery, 2024–26',
     },
     {
@@ -316,7 +316,7 @@ export const manufacturing: IndustryPageContent = {
     stat: '76%',
     sourceNote: 'Mid-market manufacturers — RevenuePoint discovery, 2024–26',
     problem:
-      'Three in four mid-market manufacturers still reconcile ERP shipments against CRM forecasts in spreadsheets every month. The Sales Agreement is signed in SAP; the pipeline lives in Salesforce; nobody believes either number on the board deck.',
+      'Three in four growing-business manufacturers still reconcile ERP shipments against CRM forecasts in spreadsheets every month. The Sales Agreement is signed in SAP; the pipeline lives in Salesforce; nobody believes either number on the board deck.',
     fix: 'We build one Sales Agreement actuals-vs-plan component on the Account record, fed live from SAP. Foundry watches variance and surfaces the accounts drifting off plan before the monthly review.',
     outcome: 'Sellers and finance look at the same number. Variance gets caught in week two, not month three.',
   },
@@ -340,7 +340,7 @@ export const manufacturing: IndustryPageContent = {
     {
       question: 'Can Foundry sit on top of this?',
       answer:
-        'Yes. Foundry reads the same SAP and Salesforce data that powers the record page, then delivers live dashboards, AI analysis, and agents that execute back into both systems. Foundry is fully managed by RevenuePoint — the same named team that runs your Salesforce.',
+        'Yes. Foundry reads the same SAP and Salesforce data that powers the record page, then delivers live dashboards, AI analysis on demand, and agents that propose, get approved, and execute across both systems. Foundry is fully managed by RevenuePoint — the same RevenuePoint team that runs your Salesforce.',
     },
     {
       question: 'How long before the record page is live?',

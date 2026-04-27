@@ -100,7 +100,7 @@ export function SalesforceProductPicker({ products }: SalesforceProductPickerPro
           href="#lead-form"
           className="mt-8 text-sm font-semibold text-crimson hover:text-crimsonDeep transition-colors inline-flex items-center gap-1 self-start"
         >
-          Get started <span aria-hidden="true">&rarr;</span>
+          Schedule a Salesforce scoping call <span aria-hidden="true">&rarr;</span>
         </Link>
       </div>
     </div>

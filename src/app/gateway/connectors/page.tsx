@@ -191,7 +191,7 @@ export default function GatewayConnectorsPage() {
       <CTABanner
         heading="Need a connector we don't list?"
         body="Tell us the system. We'll scope a 2–4 week build, or fit your case onto the Custom REST/GraphQL adapter if it's covered there."
-        cta={{ label: 'Talk to us →', href: '/contact/?interest=Gateway' }}
+        cta={{ label: 'Schedule a Gateway scoping call', href: '/contact/?interest=Gateway' }}
       />
     </>
   );

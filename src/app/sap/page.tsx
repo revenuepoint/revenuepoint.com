@@ -10,7 +10,7 @@ import { LeadForm } from '@/components/ui/LeadForm';
 export const metadata = buildMetadata({
   title: 'SAP Managed Services',
   description:
-    'A named SAP consultant and project manager. Two-week sprints. Inventory, financial close, end-user support, workflow tuning — fully managed by RevenuePoint, across SAP Business One and S/4HANA.',
+    'Your single point of contact at RevenuePoint and a project manager — two-week sprints across SAP Business One and S/4HANA. Inventory, financial close, end-user support, workflow tuning, fully managed by RevenuePoint.',
   path: '/sap/',
 });
 
@@ -25,7 +25,7 @@ const activities = [
   },
   {
     title: 'End-User Support',
-    body: 'Login and authorization issues, "how do I do X in SAP", training questions, document recovery. Your users open tickets directly with a named consultant who already knows your config.',
+    body: 'Login and authorization issues, "how do I do X in SAP", training questions, document recovery. Your users open tickets directly with the senior consultant who runs your engagement and already knows your config.',
   },
   {
     title: 'Workflow Iteration',
@@ -44,9 +44,9 @@ const activities = [
 const engagementSteps = [
   {
     number: 1,
-    title: 'A named team',
+    title: 'Your single point of contact',
     description:
-      'One dedicated SAP consultant and one dedicated project manager — your single point of contact. The same people every sprint.',
+      'Your SAP consultant and a project manager — your single point of contact, with a team that knows your operation. The same engagement runs every sprint.',
   },
   {
     number: 2,
@@ -143,12 +143,12 @@ export default function SAPPage() {
             Your outsourced <em>SAP admin team</em>. Business One and S/4HANA, fully managed.
           </>
         }
-        body="A named consultant and project manager. A block of hours each month. Two-week sprints to ship the work. Inventory, financial close, end-user support, workflow tuning — everything an in-house SAP admin would do, sized to a smaller team that doesn't need a full-time hire."
+        body="Your single point of contact and a project manager. A block of hours each month. Two-week sprints to ship the work. Inventory, financial close, end-user support, workflow tuning — everything an in-house SAP admin would do, sized to the team that doesn't need a full-time hire yet."
         ctas={[
-          { label: 'Start a managed services engagement', href: '#lead-form', variant: 'primary' },
+          { label: 'Schedule an SAP scoping call', href: '#lead-form', variant: 'primary' },
           { label: 'See pricing', href: '/sap/pricing/', variant: 'secondary' },
         ]}
-        sidenote="Business One + S/4HANA · Two-week sprints · Month-to-month · Named consultant + PM."
+        sidenote="Business One + S/4HANA · Two-week sprints · Month-to-month · Single point of contact + PM."
       />
 
       {/* What's included */}
@@ -157,7 +157,7 @@ export default function SAPPage() {
           <SectionHeader
             eyebrow="What's included"
             heading="Everything an in-house SAP admin would do"
-            body="Managed services is not a rotating help-desk queue. It is a named team running an agreed block of hours each month against the backlog of work your SAP instance actually needs."
+            body="Managed services is not a rotating help-desk queue. It is one team — your single point of contact and a project manager — running an agreed block of hours each month against the backlog of work your SAP instance actually needs."
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {activities.map((activity) => (

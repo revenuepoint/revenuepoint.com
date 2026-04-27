@@ -7,7 +7,7 @@ const tiers = [
   {
     name: 'Managed Services',
     duration: 'Monthly retainer',
-    outcome: 'One named administrator keeps the instance clean as the business changes.',
+    outcome: 'Your single point of contact keeps the instance clean as the business changes.',
   },
   {
     name: 'Rebuild',

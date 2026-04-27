@@ -7,7 +7,7 @@ export const distribution: IndustryPageContent = {
   navLabel: 'Distribution & 3PL',
   metaTitle: 'Salesforce for Distribution & 3PL',
   metaDescription:
-    'Clean Salesforce for mid-market distributors and 3PLs — ERP-synced inventory, shipment tracking, margin-by-account, and claims console on one Lightning record page.',
+    'Clean Salesforce for growing-business distributors and 3PLs — ERP-synced inventory, shipment tracking, margin-by-account, and claims console on one Lightning record page.',
   hero: {
     eyebrow: 'Industries · Distribution & 3PL',
     headline: 'Sell from one screen. Not six.',
@@ -26,7 +26,7 @@ export const distribution: IndustryPageContent = {
     },
     {
       stat: '47 days',
-      label: 'average DSO at mid-market distributors — two weeks beyond terms.',
+      label: 'average DSO at growing-business distributors — two weeks beyond terms.',
       source: 'NACM benchmark',
     },
     {
@@ -290,7 +290,7 @@ export const distribution: IndustryPageContent = {
     stat: '3–5%',
     sourceNote: 'Distribution backorder leakage benchmark',
     problem:
-      'Three to five percent of annual revenue at mid-market distributors leaks through backorder that the CRM never sees. Reps promise dates the warehouse cannot hit; customers place the next order somewhere else.',
+      'Three to five percent of annual revenue at growing-business distributors leaks through backorder that the CRM never sees. Reps promise dates the warehouse cannot hit; customers place the next order somewhere else.',
     fix: 'We sync multi-warehouse inventory and open POs into the Account record, install a backorder watcher, and let Foundry surface the accounts whose order velocity is dropping before the rep notices.',
     outcome: 'Reps quote dates the warehouse can actually hit. Backorder velocity becomes a weekly conversation, not a quarterly surprise.',
   },
@@ -299,7 +299,7 @@ export const distribution: IndustryPageContent = {
     {
       question: 'We run SAP Business One — is that a good fit?',
       answer:
-        'Yes. SAP B1 is one of the paths we run most often in mid-market distribution. We maintain the integration layer so SAP stays the system of record for inventory and AR, and Salesforce stays where your reps work.',
+        'Yes. SAP B1 is one of the paths we run most often in growing-business distribution. We maintain the integration layer so SAP stays the system of record for inventory and AR, and Salesforce stays where your reps work.',
     },
     {
       question: 'Do you support 3PL operations specifically?',

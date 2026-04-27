@@ -41,12 +41,12 @@ const SIGNALS = [
 ];
 
 const TYPE_RAMP = [
-  { token: 'd0', size: '48–88px', weight: '600', use: 'Hero h1', sample: 'The technology partner mid-market businesses trust.' },
+  { token: 'd0', size: '48–88px', weight: '600', use: 'Hero h1', sample: 'The technology partner growing businesses run on.' },
   { token: 'd1', size: '36–56px', weight: '500', use: 'Section h2', sample: 'Connect. Illuminate. Act.' },
-  { token: 'd2', size: '24–32px', weight: '500', use: 'Block h3', sample: 'Live in 6 weeks. Here’s how.' },
-  { token: 'd3', size: '20px', weight: '500', use: 'Sub-block h4', sample: 'Named administrator' },
+  { token: 'd2', size: '24–32px', weight: '500', use: 'Block h3', sample: 'Two-week sprints, milestone-paced.' },
+  { token: 'd3', size: '20px', weight: '500', use: 'Sub-block h4', sample: 'Single point of contact' },
   { token: 'lede', size: '17px', weight: '400', use: 'Lede / dek', sample: 'A four-step engagement model. The same path every time.' },
-  { token: 'body', size: '16px', weight: '400', use: 'Body — max 64ch', sample: 'Most consulting firms implement software and disappear.' },
+  { token: 'body', size: '16px', weight: '400', use: 'Body — max 64ch', sample: 'Five platforms, one partner, end-to-end.' },
   { token: 'sm', size: '14px', weight: '400', use: 'Small body, captions', sample: 'Foundry connects every system into a single warehouse.' },
   { token: 'mu', size: '11px · 0.16em', weight: '500', use: 'Eyebrow + mono micro labels', sample: 'BRAND GUIDE · 2026' },
 ];

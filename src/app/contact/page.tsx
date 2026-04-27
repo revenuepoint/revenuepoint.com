@@ -8,7 +8,7 @@ import { SCHEDULE_URL } from '@/lib/links';
 export const metadata = buildMetadata({
   title: 'Contact',
   description:
-    'Get in touch. We respond within one business day and only take engagements where we can deliver measurable ROI.',
+    'Get in touch. We respond within one business day and scope every engagement around real value — discovery happens before the contract.',
   path: '/contact/',
 });
 
@@ -21,12 +21,8 @@ export default function ContactPage() {
           <div className="mb-12 lg:mb-0 lg:col-span-5">
             <SectionHeader
               eyebrow="Get in touch"
-              heading={
-                <>
-                  Let&rsquo;s find out if we&rsquo;re a <em>good fit</em>.
-                </>
-              }
-              body="We respond to every submission within one business day. We're selective about the engagements we take on — not to be difficult, but because we only work with clients where we're confident we can deliver results."
+              heading="Schedule a 30-minute scoping call."
+              body="We respond to every submission within one business day. We scope every engagement around real value — discovery happens before the contract, and the engagements we take on get the team's full attention because the scope is right and the path is clear."
               align="left"
             />
             <div className="space-y-4 text-sm text-inkSoft border-t border-rule pt-6 mt-2">

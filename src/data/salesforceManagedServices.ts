@@ -15,7 +15,7 @@ export const managedServicesActivities: ManagedServicesActivity[] = [
   },
   {
     title: 'End-User Support',
-    body: 'Your users open tickets with us directly. Login and permission issues, "how do I do X in Salesforce", one-off training questions — handled by a named admin who already knows your org.',
+    body: 'Your users open tickets with us directly. Login and permission issues, "how do I do X in Salesforce", one-off training questions — handled by the senior admin who runs your engagement and already knows your org.',
   },
   {
     title: 'Reports, Dashboards & Data Pulls',
@@ -48,9 +48,9 @@ export type ManagedServicesEngagementStep = {
 export const engagementSteps: ManagedServicesEngagementStep[] = [
   {
     number: 1,
-    title: 'A named team',
+    title: 'Your single point of contact',
     description:
-      'One dedicated Salesforce administrator and one dedicated project manager — your single point of contact. No shared queues, no offshore routing, no rotating faces.',
+      'Your Salesforce administrator and a project manager — your single point of contact, with a team that knows your org. No shared queues.',
   },
   {
     number: 2,

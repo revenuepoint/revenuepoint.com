@@ -6,7 +6,7 @@ import { buildMetadata } from '@/lib/metadata';
 export const metadata = buildMetadata({
   title: 'Industries',
   description:
-    'Clean Salesforce environments for ten industries. A clean Lightning record page, named integrations, and fully managed by RevenuePoint.',
+    'Clean Salesforce environments for ten industries — a clean Lightning record page, the integrations to the systems you already run on, and fully managed by RevenuePoint.',
   path: '/solutions/',
 });
 
@@ -17,7 +17,7 @@ export default function IndustriesIndex() {
         variant="navy"
         eyebrow="Industries"
         heading="Clean Salesforce. Ten industries. One record."
-        body="We build Lightning record pages that work the way each industry actually runs — with the right custom components, named integrations to the systems you already use, and fully managed by RevenuePoint."
+        body="We build Lightning record pages that work the way each industry actually runs — with the right custom components, the integrations to the systems you already run on, and fully managed by RevenuePoint."
       />
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-4 py-16 lg:py-20">

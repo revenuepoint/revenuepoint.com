@@ -31,7 +31,7 @@ export function NpspMiddlewareSection() {
           </h2>
           <p className="mt-4 text-base leading-relaxed text-ink">
             <span className="font-semibold text-navy">NPSP Middleware</span> is our open-source
-            donate form, member portal, and events platform — syncing directly into Salesforce
+            donor-facing checkout, member portal, and events platform — syncing directly into Salesforce
             NPSP. Self-host it for free, or let us run it end-to-end.
           </p>
         </div>
@@ -86,7 +86,7 @@ export function NpspMiddlewareSection() {
             </div>
             <p className="mt-4 text-sm text-ink leading-relaxed">
               Clone the repo, deploy to your own Heroku / Render / bare-metal. You get the full
-              donate form, member portal, events, and Salesforce sync. No license fees. No
+              donor-facing checkout, member portal, events, and Salesforce sync. No license fees. No
               vendor lock-in.
             </p>
             <ul className="mt-5 space-y-2 text-sm text-ink flex-1">
@@ -121,7 +121,7 @@ export function NpspMiddlewareSection() {
             </div>
             <p className="mt-4 text-sm text-ink leading-relaxed">
               We host it, monitor it, upgrade it, and bolt on a premium integration stack the
-              open-source version does not ship. Built for newsrooms who need their donate form
+              open-source version does not ship. Built for newsrooms who need their donor-facing checkout
               to stay up and keep getting better.
             </p>
             <ul className="mt-5 space-y-2 text-sm text-ink flex-1">

@@ -181,7 +181,7 @@ function FormView() {
           className="text-xs px-3 py-1.5 rounded-sm font-semibold text-white"
           style={{ background: tenant.primaryColor }}
         >
-          Submit
+          Send
         </span>
       </div>
     </div>

@@ -1,7 +1,7 @@
 const tiles = [
   {
     title: 'Workflow Rules retire December 2025',
-    body: 'Salesforce is ending Workflow Rules and Process Builder. Most mid-market orgs still have dozens live — unmigrated automations become forced rush work at a premium.',
+    body: 'Salesforce is ending Workflow Rules and Process Builder. Most growing-business orgs still have dozens live — unmigrated automations become forced rush work at a premium.',
   },
   {
     title: 'Agentforce and Copilot need clean data',

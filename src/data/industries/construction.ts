@@ -16,7 +16,7 @@ export const construction: IndustryPageContent = {
   painKpis: [
     {
       stat: '3–7%',
-      label: 'of project revenue sits in unbilled change orders on mid-market builds.',
+      label: 'of project revenue sits in unbilled change orders on growing-business builds.',
       source: 'FMI construction benchmark',
     },
     {
@@ -289,7 +289,7 @@ export const construction: IndustryPageContent = {
     stat: '3–7%',
     sourceNote: 'FMI unbilled change order benchmark',
     problem:
-      'Three to seven percent of project revenue at mid-market builders sits in unbilled change orders. Signatures happen in the field, the CO never makes it into a pay app, and the money walks.',
+      'Three to seven percent of project revenue at growing-business builders sits in unbilled change orders. Signatures happen in the field, the CO never makes it into a pay app, and the money walks.',
     fix: 'We capture every change order the day it is raised, route it through DocuSign, and tie it to the pay app automatically. Foundry reports on unbilled CO aging by project every week.',
     outcome: 'Signed work gets billed. Margin leakage from unbilled COs goes down.',
   },

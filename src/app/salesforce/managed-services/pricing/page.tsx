@@ -6,12 +6,12 @@ import { LeadForm } from '@/components/ui/LeadForm';
 export const metadata = buildMetadata({
   title: 'Salesforce Managed Services Pricing',
   description:
-    'White-glove Salesforce administration from $2,400/month. Dedicated administrator and project manager. No long-term contracts.',
+    'Salesforce administration from your single point of contact and a project manager. From $2,400/month. No long-term contracts.',
   path: '/salesforce/managed-services/pricing/',
 });
 
 const salesCloudFeatures = [
-  '1 dedicated Salesforce administrator + 1 dedicated project manager',
+  'Your single point of contact at RevenuePoint + a project manager',
   'Quarterly Salesforce audit',
   'Access to training and workshops',
   'Custom objects, business process automation, and workflow configuration',
@@ -52,7 +52,7 @@ export default function SalesforceManagedServicesPricingPage() {
                 Flexible pricing for teams of <em>any size</em>.
               </>
             }
-            body="White-glove Salesforce administration from dedicated administrators and project managers — your single point of contact for everything Salesforce. No shared queues, no offshore routing."
+            body="Salesforce administration from your single point of contact and a project manager — the team that knows your org. Two-week sprints, backlog you prioritize, work delivered transparently. No shared queues. From $2,400/month."
             align="left"
           />
 
@@ -64,7 +64,7 @@ export default function SalesforceManagedServicesPricingPage() {
               period="month (quarterly)"
               description="$2,880/month on monthly billing. 25 hours per month. Covers Salesforce Sales Cloud, single instance."
               features={salesCloudFeatures}
-              cta={{ label: 'Get Started', href: '/contact/?interest=Salesforce' }}
+              cta={{ label: 'Get a managed services proposal', href: '/contact/?interest=Salesforce' }}
             />
             <PricingCard
               name="Full Stack Administration"
@@ -73,7 +73,7 @@ export default function SalesforceManagedServicesPricingPage() {
               description="$4,800/month on monthly billing. 25 hours per month. Everything in Sales Cloud Administration, plus the full product suite."
               features={fullStackFeatures}
               highlight
-              cta={{ label: 'Get Started', href: '/contact/?interest=Salesforce' }}
+              cta={{ label: 'Get a managed services proposal', href: '/contact/?interest=Salesforce' }}
             />
             <PricingCard
               name="Custom Plan"
@@ -84,7 +84,7 @@ export default function SalesforceManagedServicesPricingPage() {
                 'Custom hours and scope',
                 'Dedicated team configuration',
               ]}
-              cta={{ label: 'Contact Us', href: '/contact/?interest=Salesforce' }}
+              cta={{ label: 'Schedule a custom-plan scoping call', href: '/contact/?interest=Salesforce' }}
             />
           </div>
 

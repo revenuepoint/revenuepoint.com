@@ -44,7 +44,7 @@ const faqItems = [
   {
     question: 'Does Foundry replace our existing BI tool?',
     answer:
-      "For most mid-market clients, yes. Foundry replaces the need for Power BI, Tableau, or Domo — plus eliminates the internal engineering those tools require. If you have existing dashboards you want to preserve, we discuss that during discovery.",
+      "For most growing-business clients, yes. Foundry replaces Power BI, Tableau, or Domo — and the internal engineering those tools require to run. If you have existing dashboards worth preserving, we discuss that during discovery.",
   },
   {
     question: 'Is our data secure?',
@@ -85,7 +85,7 @@ export default function FoundryPricingPage() {
                 'Blueprint: Business object map (up to 8 objects)',
                 'Monthly data health review call + email support',
               ]}
-              cta={{ label: 'Get Started', href: '/contact/?interest=Foundry+Core' }}
+              cta={{ label: 'Schedule a Foundry scoping call', href: '/contact/?interest=Foundry+Core' }}
             />
             <PricingCard
               name="Intelligence"
@@ -102,7 +102,7 @@ export default function FoundryPricingPage() {
                 'Bi-weekly review call + priority support',
               ]}
               highlight
-              cta={{ label: 'Get Started', href: '/contact/?interest=Foundry+Intelligence' }}
+              cta={{ label: 'Schedule a Foundry scoping call', href: '/contact/?interest=Foundry+Intelligence' }}
             />
             <PricingCard
               name="Enterprise"
@@ -117,7 +117,7 @@ export default function FoundryPricingPage() {
                 'Up to 8 source systems',
                 'Dedicated Slack + weekly strategy calls + 4-hour SLA',
               ]}
-              cta={{ label: 'Contact Us', href: '/contact/?interest=Foundry+Enterprise' }}
+              cta={{ label: 'Schedule a Foundry scoping call', href: '/contact/?interest=Foundry+Enterprise' }}
             />
           </div>
 
@@ -162,9 +162,13 @@ export default function FoundryPricingPage() {
 
       {/* Demo CTA */}
       <CTABanner
-        heading="Ready to see Foundry in action?"
-        body="Schedule a personalized demo. We'll show you what Foundry looks like connected to systems just like yours."
-        cta={{ label: 'Schedule a Demo →', href: SCHEDULE_URL }}
+        heading={
+          <>
+            See Foundry connected to <em>systems like yours</em>.
+          </>
+        }
+        body="Schedule a 30-minute demo. We'll show you Foundry connected to systems like the ones your business runs on, with sample data the buyer at your role would actually look at."
+        cta={{ label: 'Schedule a 30-minute demo', href: SCHEDULE_URL }}
       />
     </>
   );

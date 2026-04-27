@@ -21,7 +21,7 @@ export const healthcare: IndustryPageContent = {
     },
     {
       stat: '18%',
-      label: 'average first-pass claim denial rate at mid-market groups.',
+      label: 'average first-pass claim denial rate at growing-business groups.',
       source: 'Revenue cycle benchmark',
     },
     {
