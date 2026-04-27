@@ -1,10 +1,26 @@
 # Foundry Brand Messaging Framework
 **RevenuePoint — April 2026**
-**Version 1.0 — For internal use and marketing team reference**
+**Version 1.0 — Deprecated as of 2026-04-26. Reference material only.**
 
 ---
 
-> **How to use this document**
+> **⚠ Superseded.** This framework has been replaced by the company-wide voice and tone system at `tmp/voice-and-tone-system/`. For voice attributes, lexicon, brand positioning, and Foundry product positioning, read those docs. They are canonical. This document is preserved as reference material and will be archived after the new system completes Phase 3.
+>
+> **For voice, mechanics, and lexicon:** see `tmp/voice-and-tone-system/voice-and-tone.md` and `tmp/voice-and-tone-system/lexicon.md`.
+> **For Foundry product positioning, pillars, and per-persona messaging:** see the Foundry section of `tmp/voice-and-tone-system/brand-positioning.md`.
+>
+> Notable shifts in the new system (this doc has not been updated to reflect them):
+> - **"midmarket" / "mid-market" is banned.** Substitute "growing businesses," size markers ($10M-$250M), or industry-specific framings.
+> - **Promise pillars tightened to four** (named accountability, fully managed, no long-term contracts, end-to-end). ROI-conditional engagement is a value claim, not a pillar.
+> - **Category framing for the firm:** "Implementation. Management. *Intelligence*." (operator-led technology services). Foundry-specific category claim ("fully managed data orchestration and AI platform") unchanged.
+
+---
+
+> **Original framing (preserved).** Below is the original framework as written. Do not write to this document going forward; it is reference only.
+
+---
+
+> **How to use this document** *(original — superseded)*
 > This framework is the authoritative reference for all Foundry marketing — from homepage hero copy to sales battle cards to LinkedIn posts. Before writing anything Foundry-related, read Section 3 (Voice) and Section 4 (Pillars). Everything else is reference material you pull from as needed. If a piece of copy you've written doesn't pass the "Pillar Test" (does it reinforce at least one of the five pillars without violating the voice guide?), rewrite it.
 
 ---
