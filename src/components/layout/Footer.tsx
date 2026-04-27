@@ -66,6 +66,7 @@ export function Footer() {
               RevenuePoint implements, operates, and adds intelligence to the CRM, ERP, and AI orchestration growing businesses run on.
             </p>
             <address className="mt-8 not-italic font-mono text-xs text-mute leading-relaxed space-y-1">
+              <p className="text-ink">Three World Financial Center</p>
               <p className="text-ink">200 Vesey Street, 24th Floor</p>
               <p className="text-ink">New York, NY 10281</p>
               <p className="mt-3">
