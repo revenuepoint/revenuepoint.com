@@ -30,7 +30,7 @@ export default function GatewayUseCasesPage() {
         }
         body="The portals our customers run on Gateway today. Each archetype is a different audience and a different access rule — but all built on the same Gateway deployment, the same connector model, the same managed stack."
         ctas={[
-          { label: 'Schedule a walkthrough', href: SCHEDULE_URL, variant: 'primary' },
+          { label: 'Schedule a Gateway demo', href: SCHEDULE_URL, variant: 'primary' },
           { label: 'Back to Gateway', href: '/gateway/', variant: 'secondary' },
         ]}
       />
@@ -114,9 +114,9 @@ export default function GatewayUseCasesPage() {
       </section>
 
       <CTABanner
-        heading="Talk through your tenant model with an architect."
-        body="Thirty minutes. We sketch the access rule, name the connectors, list the views, and quote a path to live."
-        cta={{ label: 'Schedule a walkthrough →', href: SCHEDULE_URL }}
+        heading="Sketch your tenant model with a Gateway architect."
+        body="Thirty minutes. We name the access rule, list the connectors and views, and quote a path to live."
+        cta={{ label: 'Schedule a Gateway demo', href: SCHEDULE_URL }}
       />
     </>
   );

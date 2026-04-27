@@ -142,13 +142,13 @@ const foundryPillars = [
   },
   {
     eyebrow: '02 · Illuminate',
-    headline: 'Live dashboards. Overnight AI analysis.',
-    body: 'Lens dashboards for every role and Prism reports written overnight so leadership has answers by 8 AM.',
+    headline: 'Live dashboards. AI analysis on demand.',
+    body: 'Lens dashboards for every role and Prism reports on demand — leadership gets the answers when they ask, not on a schedule the warehouse decides.',
   },
   {
     eyebrow: '03 · Act',
-    headline: 'Agents watch, decide, and execute.',
-    body: 'Agents and Otto take action across Salesforce and the rest of your stack — fully auditable, fully managed.',
+    headline: 'Agents propose. Reviewers approve. Foundry executes.',
+    body: 'Agents and Otto propose plans across Salesforce and the rest of your stack — every action logged, attributed, reversible, and only on reviewer approval. Fully managed by RevenuePoint.',
   },
 ];
 
@@ -386,9 +386,10 @@ export default function SalesforceImplementationsPage() {
             </h2>
             <p className="mt-4 text-base leading-relaxed text-gray-300">
               A good implementation gives you a clean foundation. Foundry is what comes next —
-              connecting the rest of your stack (ERP, accounting, telephony, marketing), delivering
-              live dashboards and overnight AI reports, and running agents that take action across
-              every system. Fully managed by RevenuePoint.
+              connecting the rest of your stack (ERP, accounting, telephony, marketing) into your
+              single source of truth, fully managed by RevenuePoint, and delivering live
+              dashboards, AI analysis on demand, and agents that propose, get approved, and
+              execute across your systems.
             </p>
           </div>
 

@@ -80,9 +80,9 @@ export default function SalesforceManagedServicesPricingPage() {
               price="Custom"
               description="For organizations with unique needs. Get in touch and we'll scope a plan specific to your instance."
               features={[
-                'Tailored to your specific Salesforce instance',
+                'Tailored to your Salesforce instance',
                 'Custom hours and scope',
-                'Dedicated team configuration',
+                'Team scaled to your requirements — your single point of contact stays constant',
               ]}
               cta={{ label: 'Schedule a custom-plan scoping call', href: '/contact/?interest=Salesforce' }}
             />

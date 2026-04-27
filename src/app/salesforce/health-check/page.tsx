@@ -39,9 +39,9 @@ export default function CrmHealthCheckPage() {
       <section id="request" className="bg-white border-t border-rule">
         <div className="max-w-3xl mx-auto px-4 py-16 lg:py-20">
           <SectionHeader
-            eyebrow="Start with a 30-minute scoping call"
+            eyebrow="Schedule a health check"
             heading="Request a CRM Health Check"
-            body="Tell us a bit about your stack. We will confirm fit, scope the assessment, and send a statement of work."
+            body="Tell us about your stack. We confirm fit, scope the assessment, and send a statement of work."
           />
           <LeadForm interest="CRM Health Check" />
         </div>

@@ -59,7 +59,7 @@ export function PackagingTiers({
                       featured ? 'text-crimson hover:text-crimsonDeep' : 'text-ink hover:text-navySoft'
                     }`}
                   >
-                    Book a working session <span aria-hidden="true">→</span>
+                    Schedule a Salesforce scoping call <span aria-hidden="true">→</span>
                   </Link>
                 )}
               </div>

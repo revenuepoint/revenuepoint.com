@@ -140,7 +140,7 @@ export function NpspMiddlewareSection() {
                 href={NPSP_CONTACT_HREF}
                 className="inline-flex items-center px-5 py-2.5 rounded-sm bg-crimson text-white text-sm font-semibold hover:bg-crimsonDeep transition-colors"
               >
-                Schedule a walkthrough →
+                Schedule a newsroom consultation →
               </Link>
               <Link
                 href="/npsp-middleware/"

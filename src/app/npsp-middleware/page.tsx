@@ -223,7 +223,7 @@ export default function NpspMiddlewarePage() {
                 href={NPSP_CONTACT_HREF}
                 className="inline-flex items-center px-6 py-3 rounded-sm bg-crimson text-white text-sm font-semibold hover:bg-crimsonDeep transition-colors"
               >
-                Schedule a walkthrough →
+                Schedule a newsroom consultation →
               </Link>
               <a
                 href={NPSP_GITHUB_URL}
@@ -274,7 +274,7 @@ export default function NpspMiddlewarePage() {
       <CTABanner
         heading="Ready to see it running?"
         body="Thirty minutes with a RevenuePoint architect. We walk the donor-facing checkout, the member portal, the Salesforce sync — and scope a managed rollout if it fits."
-        cta={{ label: 'Schedule a walkthrough →', href: SCHEDULE_URL }}
+        cta={{ label: 'Schedule a newsroom consultation', href: SCHEDULE_URL }}
       />
 
       {/* Lead form */}
