@@ -15,7 +15,7 @@ const meta = {
   date: '2025-07-15',
   author: {
     name: 'Thomas Jones',
-    role: 'Founder, RevenuePoint',
+    role: 'Managing Director, RevenuePoint',
     avatarInitials: 'TJ',
   },
   tags: ['Orchestration', 'AI', 'POV'],

@@ -6,7 +6,7 @@ import { EmailSignup } from '@/components/ui/EmailSignup';
 export const metadata = buildMetadata({
   title: 'Insights',
   description:
-    'Notes on orchestration, mid-market operations, and the work we do inside our customers\' systems.',
+    'Notes on orchestration, growing-business operations, and the work we do inside our customers\' systems.',
   path: '/insights/',
 });
 
@@ -30,7 +30,7 @@ export default function InsightsIndex() {
             Notes on <em>orchestration</em>.
           </h1>
           <p className="mt-6 text-lede text-inkSoft leading-[1.65] max-w-prose">
-            Essays on mid-market operations, the systems gap, and how we&rsquo;re closing it at RevenuePoint — from the people doing the work.
+            Essays on growing-business operations, the systems gap, and how we&rsquo;re closing it at RevenuePoint — from the people doing the work.
           </p>
         </div>
       </section>

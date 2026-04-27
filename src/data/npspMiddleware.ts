@@ -42,7 +42,7 @@ export type NpspFaqItem = {
 /* -------------------------- Baked-in features (both tiers) -------------------------- */
 export const npspFeatures: NpspFeature[] = [
   {
-    title: '3-step donate form',
+    title: '3-step donor-facing checkout',
     body: 'Amount → Info → Payment, with one-time / monthly / annual frequency, Apple Pay, Google Pay, ACH, tribute gifts, cover-fees math, and URL-param pre-fill (UTM + campaign + amount).',
   },
   {
@@ -87,11 +87,11 @@ export const npspPremiumStack: NpspPremiumCapability[] = [
   },
   {
     name: 'Session replay',
-    body: 'Every donate-form session is captured so we can diagnose drop-offs frame-by-frame and push fixes without you filing a ticket.',
+    body: 'Every checkout session is captured so we can diagnose drop-offs frame-by-frame and push fixes without you filing a ticket.',
   },
   {
     name: 'Frustration counter',
-    body: 'Rage-clicks and dead-clicks are flagged per session. When a donate-form element trips repeated frustration, we fix it.',
+    body: 'Rage-clicks and dead-clicks are flagged per session. When a checkout element trips repeated frustration, we fix it.',
   },
   {
     name: 'Stripe Smart Retries + Account Updater',
@@ -121,7 +121,7 @@ export const npspPremiumStack: NpspPremiumCapability[] = [
 
 /* ------------------------------ Open-source vs Managed matrix --------------------- */
 export const npspMatrix: NpspMatrixRow[] = [
-  { label: 'Donate form + member portal + events', openSource: true, managed: true },
+  { label: 'Donor-facing checkout + member portal + events', openSource: true, managed: true },
   { label: 'Stripe / PayPal / Salesforce / SendGrid / Subtext / Eventbrite', openSource: true, managed: true },
   { label: 'Plugin architecture + plugin API', openSource: true, managed: true },
   { label: 'Self-host on your own infra (Heroku / Render / bare metal)', openSource: true, managed: false },
@@ -130,19 +130,22 @@ export const npspMatrix: NpspMatrixRow[] = [
   { label: 'Datadog RUM + APM + logs', openSource: false, managed: true },
   { label: 'Session replay + frustration counter', openSource: false, managed: true },
   { label: 'Stripe Smart Retries + Account Updater (dunning)', openSource: false, managed: true },
+  { label: 'AI-suggested ask amounts on the checkout', openSource: false, managed: true },
+  { label: 'Recurring-donor retention (AI-timed retries + lapse prediction)', openSource: false, managed: true },
+  { label: 'Donor-segment outreach prompts', openSource: false, managed: true },
   { label: 'WordPress reader de-anonymization', openSource: false, managed: true },
   { label: 'Story-to-gift attribution', openSource: false, managed: true },
   { label: 'Foundry connection for alerts + agents', openSource: false, managed: true },
   { label: '501(c)(3) tax-receipt automation', openSource: false, managed: true },
   { label: 'AI-drafted quarterly impact emails', openSource: false, managed: true },
-  { label: 'White-glove onboarding + NPSP data migration', openSource: false, managed: true },
+  { label: 'Hands-on onboarding + NPSP data migration', openSource: false, managed: true },
 ];
 
 /* ------------------------------ Components showcase (standalone page) -------------- */
 export const npspComponents: { title: string; body: string; tag: string }[] = [
   {
     tag: 'Donor-facing',
-    title: '3-step donate form',
+    title: '3-step donor-facing checkout',
     body: 'Inline progress, sticky summary rail, one-tap Apple/Google Pay, tribute gifts, cover-fees, UTM capture, URL pre-fill for amount / frequency / campaign.',
   },
   {
@@ -192,11 +195,11 @@ export const npspFaq: NpspFaqItem[] = [
   {
     question: 'Is there an SLA on the free self-hosted version?',
     answer:
-      'No. The open-source build is provided as-is under AGPL-3.0. The 99.9% uptime SLA, on-call support, Datadog observability, and session replay are managed-tier only. If uptime matters for your donate form, choose the managed tier.',
+      'No. The open-source build is provided as-is under AGPL-3.0. The 99.9% uptime SLA, on-call support, Datadog observability, and session replay are managed-tier only. If uptime matters for your donor-facing checkout, choose the managed tier.',
   },
   {
     question: 'How is the "per newsroom / year" price structured?',
     answer:
-      'One tenant per newsroom. $6,000 covers hosting, operations, the full premium stack, upgrades, and a named RevenuePoint administrator. Multiple newsrooms under one parent organization are quoted as additional tenants.',
+      'One tenant per newsroom. $6,000 covers hosting, operations, the full premium stack, upgrades, and your single point of contact at RevenuePoint. Multiple newsrooms under one parent organization are quoted as additional tenants.',
   },
 ];

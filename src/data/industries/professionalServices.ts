@@ -26,7 +26,7 @@ export const professionalServices: IndustryPageContent = {
     },
     {
       stat: '14 days',
-      label: 'average days-to-bill at mid-market firms — a month of WIP on the books.',
+      label: 'average days-to-bill at growing-business firms — a month of WIP on the books.',
       source: 'PS ops discovery',
     },
     {

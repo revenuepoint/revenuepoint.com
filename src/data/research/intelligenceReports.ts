@@ -96,7 +96,7 @@ export const PIPELINE_STEPS: PipelineStep[] = [
     number: 4,
     title: 'Generate, QA, deliver',
     description:
-      'Agentic synthesis writes the report. A named analyst reviews before delivery. You receive a branded PDF and the structured data behind it.',
+      'AI-driven synthesis writes the report. A senior analyst reviews and source-verifies before delivery. You receive a branded PDF and the structured data behind it.',
   },
 ];
 

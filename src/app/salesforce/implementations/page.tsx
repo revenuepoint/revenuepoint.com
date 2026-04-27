@@ -165,7 +165,7 @@ export default function SalesforceImplementationsPage() {
         body="Every Salesforce implementation we run is fixed-fee, time-boxed, and delivered against a documented scope — whether it is a greenfield Sales Cloud build, a migration off HubSpot or Dynamics, or a re-implementation of an org that never got configured right. Discovery, build, UAT, training, go-live, hypercare. Then fully managed by RevenuePoint."
         sidenote="Fixed-fee · time-boxed · documented scope · then fully managed."
         ctas={[
-          { label: 'Scope an implementation', href: '#lead-form', variant: 'primary' },
+          { label: 'Schedule a Salesforce scoping call', href: '#lead-form', variant: 'primary' },
           { label: 'See typical pricing', href: '#pricing', variant: 'secondary' },
         ]}
         rightSlot={
@@ -251,7 +251,7 @@ export default function SalesforceImplementationsPage() {
               price="Custom"
               description="250+ users, multi-entity, or complex multi-cloud."
               features={enterpriseFeatures}
-              cta={{ label: 'Talk to us', href: '#lead-form' }}
+              cta={{ label: 'Schedule an Enterprise scoping call', href: '#lead-form' }}
             />
           </div>
 
@@ -356,10 +356,10 @@ export default function SalesforceImplementationsPage() {
                 Managed Administration
               </div>
               <h3 className="mt-2 text-lg font-semibold text-navy">
-                Ongoing admin, dedicated team, no long-term contract.
+                Ongoing admin, your single point of contact, no long-term contract.
               </h3>
               <p className="mt-3 text-sm text-ink leading-relaxed">
-                A dedicated Salesforce administrator and project manager running your org — audits,
+                Your single point of contact at RevenuePoint and a project manager running your org — audits,
                 automations, data hygiene, training, and third-party integration support. Sales
                 Cloud Administration from $2,400/month; Full Stack from $4,000/month.
               </p>

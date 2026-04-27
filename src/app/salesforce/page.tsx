@@ -24,8 +24,8 @@ const foundryPillars = [
   },
   {
     eyebrow: '02 · Illuminate',
-    headline: 'Live dashboards. Overnight AI analysis.',
-    body: 'Lens dashboards for every role and Prism reports written overnight so leadership has answers by 8 AM.',
+    headline: 'Live dashboards. AI analysis on demand.',
+    body: 'Lens dashboards for every role and Prism reports on demand — leadership gets the answers when they ask, not on a schedule the warehouse decides.',
   },
   {
     eyebrow: '03 · Act',
@@ -46,8 +46,8 @@ export default function SalesforcePage() {
         }
         body="Our consultants hold over 60 Salesforce certifications and have implemented Salesforce for teams of 10 to global rollouts of hundreds of users. We specialize in implementations that stick — configured to your process, trained to your team, supported beyond go-live."
         ctas={[
-          { label: 'Schedule a call', href: SCHEDULE_URL, variant: 'primary' },
-          { label: 'See pricing', href: '/salesforce/managed-services/pricing/', variant: 'secondary' },
+          { label: 'Schedule a Salesforce scoping call', href: SCHEDULE_URL, variant: 'primary' },
+          { label: 'See managed-services pricing', href: '/salesforce/managed-services/pricing/', variant: 'secondary' },
         ]}
         sidenote="60+ Salesforce certifications · Sales · Service · CPQ · Marketing · Experience · NPSP."
       />
@@ -66,7 +66,7 @@ export default function SalesforcePage() {
                 key={activity.title}
                 title={activity.title}
                 body={activity.body}
-                cta={activity.cta ?? { label: 'Get started', href: '#lead-form' }}
+                cta={activity.cta ?? { label: 'Schedule a Salesforce scoping call', href: '#lead-form' }}
               />
             ))}
           </div>

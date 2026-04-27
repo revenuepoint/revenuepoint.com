@@ -395,7 +395,7 @@ export default function GatewayPage() {
                 number: 4,
                 title: 'Evolve',
                 description:
-                  'New tenants, new views, new connectors — your named administrator handles change requests. Monthly reviews; quarterly roadmap conversations.',
+                  'New tenants, new views, new connectors — your single point of contact handles change requests. Monthly reviews; quarterly roadmap conversations.',
               },
             ]}
           />
@@ -404,9 +404,13 @@ export default function GatewayPage() {
 
       {/* 12 — Final CTA */}
       <CTABanner
-        heading="Ready to see Gateway running?"
-        body="Thirty minutes with a RevenuePoint architect. We walk through a working tenant, scope your tenant model, and quote a path to live."
-        cta={{ label: 'Schedule a walkthrough →', href: SCHEDULE_URL }}
+        heading={
+          <>
+            See Gateway running with <em>your</em> connectors.
+          </>
+        }
+        body="Thirty minutes with a RevenuePoint architect. We walk through a working tenant — connected to your CRM and ERP — scope your tenant model, and quote a path to live."
+        cta={{ label: 'Schedule a Gateway demo', href: SCHEDULE_URL }}
       />
     </TenantProvider>
   );

@@ -35,7 +35,7 @@ export const industries: Industry[] = [
       { value: '94%', label: 'action auto-approval rate' },
     ],
     caseStory:
-      'A mid-market fasteners manufacturer (2 plants, $48M revenue) recovered $214K in Q1 alone from OEE-driven line changeovers surfaced by Foundry agents.',
+      'A growing-business fasteners manufacturer (2 plants, $48M revenue) recovered $214K in Q1 alone from OEE-driven line changeovers surfaced by Foundry agents.',
   },
   {
     id: 'pharmacy',

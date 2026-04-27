@@ -18,7 +18,7 @@ export function PackagingTiers({
             <em>Fully managed</em> by RevenuePoint. Three tiers.
           </h2>
           <p className="mt-4 text-lede leading-[1.65] text-inkSoft max-w-prose">
-            Flat monthly pricing. One named administrator. We keep the instance clean as your business changes.
+            Flat monthly pricing. Your single point of contact at RevenuePoint. We keep the instance clean as your business changes.
           </p>
         </div>
 

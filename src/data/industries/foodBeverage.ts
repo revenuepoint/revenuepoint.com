@@ -16,7 +16,7 @@ export const foodBeverage: IndustryPageContent = {
   painKpis: [
     {
       stat: '67%',
-      label: 'of mid-market CPG brands cannot attribute trade lift to a specific promotion.',
+      label: 'of growing-business CPG brands cannot attribute trade lift to a specific promotion.',
       source: 'CPG trade spend benchmark',
     },
     {
@@ -289,7 +289,7 @@ export const foodBeverage: IndustryPageContent = {
     stat: '67%',
     sourceNote: 'CPG trade spend attribution benchmark',
     problem:
-      'Two-thirds of mid-market CPG brands cannot attribute trade lift to a specific promotion. Trade spend — the second-biggest line on the P&L — gets approved on feel, not measured on outcome.',
+      'Two-thirds of growing-business CPG brands cannot attribute trade lift to a specific promotion. Trade spend — the second-biggest line on the P&L — gets approved on feel, not measured on outcome.',
     fix: 'We capture promotion design in Trade_Promotion__c, then let Foundry match depletion against a baseline to measure lift. ROI reports fire per promo without analyst pulls.',
     outcome: 'Trade spend becomes a measured investment. Decisions about renewing, cutting, or scaling each program get made with numbers.',
   },

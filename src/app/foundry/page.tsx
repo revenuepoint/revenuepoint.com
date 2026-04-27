@@ -25,7 +25,7 @@ import { SCHEDULE_URL } from '@/lib/links';
 export const metadata = buildMetadata({
   title: 'Foundry',
   description:
-    'The only fully managed data and AI platform for mid-market. Dashboards, AI agents, automated workflows — starting at $2,500/month.',
+    'The fully managed data orchestration and AI platform for growing businesses. Dashboards, agents, automated workflows — fully managed by RevenuePoint, starting at $2,500/month.',
   path: '/foundry/',
 });
 
@@ -216,12 +216,12 @@ export default function FoundryPage() {
             Your data, connected. Agents that <em>take action</em>. Fully managed.
           </>
         }
-        body="Foundry connects your CRM, ERP, accounting — and every other system your business already runs on — into one orchestrated platform. Live dashboards for every role. AI reports written overnight. Agents that watch, decide, and act across your systems. Otto, your AI analyst, answers in plain English. Fully managed by RevenuePoint."
+        body="Foundry connects your CRM, ERP, accounting — and every other system your business already runs on — into your single source of truth, fully managed by RevenuePoint. Live dashboards for every role. AI analysis on demand. Agents that propose, get approved, and execute across your systems — every action logged, attributed, reversible. Otto, your AI analyst, answers in plain English. Fully managed by RevenuePoint."
         ctas={[
-          { label: 'Schedule a demo', href: SCHEDULE_URL, variant: 'primary' },
+          { label: 'Schedule a 30-minute demo', href: SCHEDULE_URL, variant: 'primary' },
           { label: 'View pricing', href: '/foundry/pricing/', variant: 'secondary' },
         ]}
-        sidenote="Live in 6 weeks · Named admin and PM · No data engineers required."
+        sidenote="Two-week sprints, milestone-paced · Your single point of contact at RevenuePoint · Foundry comes with the data team."
         rightSlot={<div className="lg:mt-16"><HeroAgentMockup /></div>}
       />
 
@@ -327,7 +327,7 @@ export default function FoundryPage() {
                 promise: 'Analyze and visualize across every system at once.',
                 bullets: [
                   'Live dashboards and metric trees for every role',
-                  'AI-written analysis delivered overnight — specific numbers, clear next steps',
+                  'AI analysis on demand — specific numbers, clear next steps',
                   'Cross-system trends and anomalies no single tool sees',
                 ],
               },
@@ -558,13 +558,13 @@ export default function FoundryPage() {
         <div className="max-w-7xl mx-auto px-4">
           <SectionHeader
             eyebrow="PRISM"
-            heading="AI-generated reports. Written overnight, ready by 8 AM."
-            body="Pick a report template. Prism pulls the data, analyzes, writes the narrative, and renders the charts — delivered to your inbox as PDF. 30+ templates spanning Finance, Sales, Operations, Production, Supply Chain, and more."
+            heading="AI-generated reports. On demand, ready when you ask."
+            body="Pick a report template. Prism pulls the data, analyzes, writes the narrative, and renders the charts — delivered to your inbox as PDF. 30+ templates across Finance, Sales, Operations, Production, and Supply Chain."
             align="center"
           />
           <ProductViewport
             figureNumber="Fig. 08"
-            caption="Prism — overnight AI reports, by template"
+            caption="Prism — on-demand AI reports, by template"
             attribution="30+ templates · Finance · Sales · Ops · Production · Supply Chain"
           >
             <PrismExplorer />
@@ -630,7 +630,7 @@ export default function FoundryPage() {
             eyebrow="Engagement"
             heading={
               <>
-                Live in <em>6 weeks</em>. Here&rsquo;s how.
+                Two-week sprints. Live in <em>4 to 8 weeks</em>. Here&rsquo;s how.
               </>
             }
             align="left"
@@ -640,7 +640,7 @@ export default function FoundryPage() {
               { number: 1, title: 'Discover', description: 'Before the contract, we learn your systems, goals, and data sources. No scope surprises — we quote based on what\'s actually there.' },
               { number: 2, title: 'Build', description: 'We connect your sources, map your business objects in Blueprint, and configure dashboards, reports, and your initial agent library. You provide context; we do the work.' },
               { number: 3, title: 'Launch', description: 'Your team gets Foundry Portal access. We walk through every capability live. From this point forward, RevenuePoint manages everything.' },
-              { number: 4, title: 'Evolve', description: 'A named administrator and PM handle ongoing improvements — new dashboards, new agents, monthly review calls. Foundry grows as your business does.' },
+              { number: 4, title: 'Evolve', description: 'Your single point of contact and a project manager handle ongoing improvements — new dashboards, new agents, monthly review calls. Foundry grows as your business does.' },
             ]}
           />
         </div>

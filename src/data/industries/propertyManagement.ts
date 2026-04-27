@@ -21,7 +21,7 @@ export const propertyManagement: IndustryPageContent = {
     },
     {
       stat: '30 days',
-      label: 'typical renewal visibility at mid-market PMs — too late to save the lease.',
+      label: 'typical renewal visibility at growing-business PMs — too late to save the lease.',
       source: 'RevenuePoint discovery',
     },
     {
@@ -183,7 +183,7 @@ export const propertyManagement: IndustryPageContent = {
       'The property management platform (Yardi, AppFolio, RealPage) stays authoritative for ledger and accounting. Salesforce is where leasing, renewals, maintenance, and owner communication happen.',
     systems: [
       { name: 'Yardi', category: 'PM platform', role: 'Ledger, accounting, rent roll, unit data.' },
-      { name: 'AppFolio', category: 'PM platform', role: 'Ledger + work-order feeds for mid-market PMs.' },
+      { name: 'AppFolio', category: 'PM platform', role: 'Ledger + work-order feeds for growing-business PMs.' },
       { name: 'RealPage', category: 'PM platform', role: 'Enterprise PM platform path.' },
       { name: 'Buildium', category: 'PM platform', role: 'Smaller-portfolio alternative.' },
       { name: 'Stripe', category: 'Payments', role: 'Rent, deposits, and application fees.' },
@@ -289,7 +289,7 @@ export const propertyManagement: IndustryPageContent = {
     stat: '22%',
     sourceNote: 'NAA turnover benchmark',
     problem:
-      'About 22% of resident turnover at mid-market PMs could be prevented with earlier renewal visibility. Most PMs do not see expirations beyond 30 days — which is after residents have already decided.',
+      'About 22% of resident turnover at growing-business PMs could be prevented with earlier renewal visibility. Most PMs do not see expirations beyond 30 days — which is after residents have already decided.',
     fix: 'We sync lease expirations 120 days out, score each for renewal risk, and fire DocuSign packets plus staff outreach at 60 and 30 days. Foundry surfaces the portfolio-level pipeline every Monday.',
     outcome: 'Renewal visibility extends to 90 days. Preventable turnover turns into saved leases and steadier NOI.',
   },

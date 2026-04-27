@@ -19,7 +19,7 @@ import {
 export const metadata = buildMetadata({
   title: 'Intelligence Reports',
   description:
-    'Bespoke intelligence reports built from public records, enrichment APIs, and your own systems. Citation-backed, named-analyst reviewed, fully managed by RevenuePoint. Starting at $6,800.',
+    'Bespoke intelligence reports built from public records, enrichment APIs, and your own systems. Citation-backed, reviewed by a senior analyst, fully managed by RevenuePoint. Starting at $6,800.',
   path: '/research/intelligence-reports/',
 });
 
@@ -72,7 +72,7 @@ export default function IntelligenceReportsPage() {
                 Aggregate. Enrich. Verify. <em>Generate</em>.
               </>
             }
-            body="A named research analyst orchestrates the pipeline through the RevenuePoint AI Research Platform. You see findings, not raw data."
+            body="A senior research analyst orchestrates the pipeline through the RevenuePoint AI Research Platform. You see findings, not raw data."
             align="left"
           />
           <StepList steps={PIPELINE_STEPS} />
@@ -133,7 +133,7 @@ export default function IntelligenceReportsPage() {
             A report you can put in front of a <em className="text-crimson">board</em>.
           </h2>
           <p className="mt-5 text-lede leading-[1.65] text-paper/80 max-w-prose">
-            Six commitments that hold across every engagement. The pipeline is auditable end-to-end and reviewed by a named analyst before delivery.
+            Six commitments that hold across every engagement. The pipeline is auditable end-to-end and source-verified by a senior analyst before delivery.
           </p>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {QA_COMMITMENTS.map((commitment, idx) => (

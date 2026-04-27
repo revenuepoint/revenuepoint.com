@@ -22,7 +22,7 @@ import { SCHEDULE_URL } from '@/lib/links';
 export const metadata = buildMetadata({
   title: 'NPSP Middleware',
   description:
-    'A donate form, member portal, and events platform that syncs into Salesforce NPSP. Open source (AGPL-3.0) or fully managed by RevenuePoint at $6,000 per newsroom / year.',
+    'A donor-facing checkout, member portal, and events platform that syncs into Salesforce NPSP. Open source (AGPL-3.0) or fully managed by RevenuePoint at $6,000 per newsroom / year.',
   path: '/npsp-middleware/',
 });
 
@@ -64,11 +64,11 @@ export default function NpspMiddlewarePage() {
             Open-source donor experience for <em>Salesforce NPSP</em>.
           </>
         }
-        body="A modern donate form, member portal, and events platform — syncing into NPSP. Host it yourself under AGPL-3.0. Or let RevenuePoint run it end-to-end with observability, dunning, and a managed premium stack."
+        body="A donor-facing checkout, member portal, and events platform that syncs into Salesforce NPSP. Open source under AGPL-3.0 — host it yourself. Or fully managed by RevenuePoint, end-to-end, with observability, dunning, AI-suggested ask amounts, and the premium integration stack."
         sidenote="AGPL-3.0 · self-host or fully managed."
         ctas={[
           { label: 'View on GitHub', href: NPSP_GITHUB_URL, variant: 'primary' },
-          { label: 'Talk to us', href: NPSP_CONTACT_HREF, variant: 'secondary' },
+          { label: 'Schedule a newsroom consultation', href: NPSP_CONTACT_HREF, variant: 'secondary' },
         ]}
       />
 
@@ -144,7 +144,7 @@ export default function NpspMiddlewarePage() {
           <SectionHeader
             eyebrow="Open source vs Managed"
             heading="Two tiers. Same core. Different lift."
-            body="Self-host when you have engineering capacity. Choose managed when donate-form uptime and premium integrations matter more than running infrastructure."
+            body="Self-host when you have engineering capacity. Choose managed when donor-facing-checkout uptime and premium integrations matter more than running infrastructure."
             align="left"
           />
           <div className="mt-10 border border-rule rounded-lg bg-white shadow-sm overflow-hidden">
@@ -185,7 +185,7 @@ export default function NpspMiddlewarePage() {
               What {NPSP_MANAGED_PRICE} {NPSP_MANAGED_PERIOD} gets you.
             </h2>
             <p className="mt-4 text-base leading-relaxed text-gray-300">
-              The middleware runs itself — but the operational lift of keeping a donate form up,
+              The middleware runs itself — but the operational lift of keeping a donor-facing checkout up,
               tuned, and recovering failed charges is real. We absorb it.
             </p>
           </div>
@@ -214,8 +214,9 @@ export default function NpspMiddlewarePage() {
             <div className="mt-1 text-sm text-mute">{NPSP_MANAGED_PERIOD}</div>
             <p className="mt-5 text-sm text-ink leading-relaxed max-w-xl mx-auto">
               Includes hosting, 99.9% uptime SLA, Datadog observability, session replay, Stripe
-              Smart Retries, the full premium integration stack, upgrades, security patching, and
-              a named RevenuePoint administrator. Billed annually.
+              Smart Retries, AI-suggested ask amounts, recurring-donor retention, the full premium
+              integration stack, upgrades, security patching, and your single point of contact at
+              RevenuePoint. Billed annually.
             </p>
             <div className="mt-6 flex flex-wrap gap-3 justify-center">
               <Link
@@ -248,13 +249,13 @@ export default function NpspMiddlewarePage() {
           </h2>
           <p className="mt-6 text-base text-ink leading-relaxed">
             Nonprofit newsrooms already pay for NPSP, Stripe, a CRM administrator, and an email
-            platform. They should not also pay a license fee for the donate form itself. So we
+            platform. They should not also pay a license fee for the checkout itself. So we
             published it under AGPL-3.0 — fork it, run it, modify it.
           </p>
           <p className="mt-4 text-base text-ink leading-relaxed">
             RevenuePoint charges for the operational lift: hosting, monitoring, premium
-            integrations, dunning, and a named administrator who owns the donate-form experience
-            end-to-end. You decide which side of that line you want to be on.
+            integrations, dunning, and your single point of contact who owns the donor-facing
+            checkout end-to-end. You decide which side of that line you want to be on.
           </p>
         </div>
       </section>
@@ -272,7 +273,7 @@ export default function NpspMiddlewarePage() {
       {/* CTA banner */}
       <CTABanner
         heading="Ready to see it running?"
-        body="Thirty minutes with a RevenuePoint architect. We walk the donate form, the member portal, the Salesforce sync — and scope a managed rollout if it fits."
+        body="Thirty minutes with a RevenuePoint architect. We walk the donor-facing checkout, the member portal, the Salesforce sync — and scope a managed rollout if it fits."
         cta={{ label: 'Schedule a walkthrough →', href: SCHEDULE_URL }}
       />
 

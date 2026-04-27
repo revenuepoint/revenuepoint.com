@@ -16,7 +16,7 @@ import {
 export const metadata = buildMetadata({
   title: 'Salesforce Managed Services',
   description:
-    'A named Salesforce administrator and project manager. 25 hours per month on two-week sprints. Configurations, bug fixes, reports, end-user support — everything an in-house admin would do, fully managed by RevenuePoint.',
+    'Your single point of contact at RevenuePoint and a project manager. 25 hours per month on two-week sprints. Configurations, bug fixes, reports, end-user support — everything an in-house Salesforce admin would do, fully managed by RevenuePoint.',
   path: '/salesforce/managed-services/',
 });
 
@@ -48,12 +48,12 @@ export default function SalesforceManagedServicesPage() {
             Your outsourced <em>Salesforce admin team</em>. Fully managed by RevenuePoint.
           </>
         }
-        body="A named administrator and project manager. A block of hours every month. Two-week sprints to ship the work. Configurations, automations, integrations, end-user support, data pulls — everything an in-house Salesforce admin would do, without the hire."
+        body="Your single point of contact and a project manager. A block of hours every month. Two-week sprints to ship the work. Configurations, automations, integrations, end-user support, data pulls — everything an in-house Salesforce admin would do, without the hire."
         ctas={[
-          { label: 'Start a managed services engagement', href: '#lead-form', variant: 'primary' },
+          { label: 'Get a managed services proposal', href: '#lead-form', variant: 'primary' },
           { label: 'See pricing', href: '/salesforce/managed-services/pricing/', variant: 'secondary' },
         ]}
-        sidenote="Named admin + PM · 25 hours/month · Two-week sprints · Month-to-month."
+        sidenote="Single point of contact + PM · 25 hours/month · Two-week sprints · Month-to-month."
       />
 
       {/* What's included */}
@@ -62,7 +62,7 @@ export default function SalesforceManagedServicesPage() {
           <SectionHeader
             eyebrow="What's included"
             heading="Everything an in-house Salesforce admin would do"
-            body="Managed services is not a rotating help-desk queue. It is a named team running an agreed block of hours each month against the backlog of work your Salesforce instance actually needs."
+            body="Managed services is not a rotating help-desk queue. It is one team — your single point of contact and a project manager — running an agreed block of hours each month against the backlog of work your Salesforce instance actually needs."
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {managedServicesActivities.map((activity) => (
@@ -82,7 +82,7 @@ export default function SalesforceManagedServicesPage() {
         <div className="max-w-7xl mx-auto px-4">
           <SectionHeader
             eyebrow="How it works"
-            heading="Named team. Hours per month. Two-week sprints. Month-to-month."
+            heading="Single point of contact. Hours per month. Two-week sprints. Month-to-month."
             body="The engagement model is boring on purpose. You should know who is doing your work, how many hours you have, when the next release is going out, and that you can walk away if the work is not landing."
           />
           <StepList steps={engagementSteps} />

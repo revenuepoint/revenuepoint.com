@@ -16,7 +16,7 @@ import { SCHEDULE_URL } from '@/lib/links';
 export const metadata = buildMetadata({
   title: 'Gateway Pricing',
   description:
-    'Gateway is priced per active tenant per month. Hosting, magic-link auth, connector, theming, audit log, and a named administrator are all included. Fully managed by RevenuePoint.',
+    'Gateway is priced per active tenant per month — $3,500 per tenant / month, fully managed by RevenuePoint. Hosting, magic-link auth, the connector, theming, audit log, and your single point of contact are all included.',
   path: '/gateway/pricing/',
 });
 
@@ -30,7 +30,7 @@ export default function GatewayPricingPage() {
             One price. Every tenant. <em>Fully managed</em>.
           </>
         }
-        body="Per-tenant, per-month pricing. Hosting, magic-link auth, the connector to your CRM or ERP, per-tenant theming, audit log, and a named RevenuePoint administrator are all included. No surprise consumption bills. No per-seat add-ons."
+        body="Per-tenant, per-month pricing. Hosting, magic-link auth, the connector to your CRM or ERP, per-tenant theming, audit log, and your single point of contact at RevenuePoint are all included. No surprise consumption bills. No per-seat add-ons."
         sidenote="No surprise consumption bills · no per-seat add-ons."
         ctas={[
           { label: 'Schedule a walkthrough', href: SCHEDULE_URL, variant: 'primary' },
@@ -54,7 +54,7 @@ export default function GatewayPricingPage() {
               {GATEWAY_PRICE_PERIOD}
             </p>
             <p className="mt-6 text-sm text-inkSoft leading-relaxed max-w-xl mx-auto">
-              Hosting, magic-link auth via SendGrid, the connector to your CRM or ERP, tenant configuration in code, per-tenant theming, audit log, observability, upgrades, and a named RevenuePoint administrator. Billed monthly. Volume pricing kicks in past five active tenants.
+              Hosting, magic-link auth via SendGrid, the connector to your CRM or ERP, tenant configuration in code, per-tenant theming, audit log, observability, upgrades, and your single point of contact at RevenuePoint. Billed monthly. Volume pricing kicks in past five active tenants.
             </p>
             <div className="mt-8 flex flex-wrap gap-3 justify-center">
               <a
@@ -132,9 +132,13 @@ export default function GatewayPricingPage() {
       </section>
 
       <CTABanner
-        heading="Want to see Gateway with your data?"
-        body="Bring an example tenant: a customer segment, a partner network, a dealer footprint. We mock it in front of you and quote a path to live."
-        cta={{ label: 'Schedule a walkthrough →', href: SCHEDULE_URL }}
+        heading={
+          <>
+            See Gateway with <em>your</em> data.
+          </>
+        }
+        body="Bring an example tenant — a customer segment, a partner network, a dealer footprint. We mock it in front of you and quote a path to live."
+        cta={{ label: 'Schedule a Gateway demo', href: SCHEDULE_URL }}
       />
     </>
   );

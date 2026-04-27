@@ -221,7 +221,7 @@ export function SecuritySection() {
             Enterprise-grade security, built in from day one.
           </h2>
           <p className="mt-5 text-base lg:text-lg leading-relaxed text-gray-300">
-            Foundry was built for mid-market companies that handle sensitive customer,
+            Foundry was built for growing businesses that handle sensitive customer,
             financial, and regulated data. Every tenant is isolated, every byte is
             encrypted, every control is audited. We operate to the standard your
             largest customers require — without asking you to write a single line of

@@ -63,7 +63,7 @@ export function Footer() {
           <div className="md:col-span-4">
             <Wordmark size="md" tone="crimson" />
             <p className="mt-5 text-[0.9375rem] leading-relaxed text-inkSoft max-w-prose">
-              Fully managed pipelines that turn data into action — across CRM, ERP, accounting, data infrastructure, and AI.
+              RevenuePoint implements, operates, and adds intelligence to the CRM, ERP, and AI orchestration growing businesses run on.
             </p>
             <address className="mt-8 not-italic font-mono text-xs text-mute leading-relaxed space-y-1">
               <p className="text-ink">200 Vesey Street, 24th Floor</p>

@@ -23,7 +23,7 @@ export const consultingActivities: ConsultingActivity[] = [
   },
   {
     title: 'Managed Administration',
-    body: 'A named RevenuePoint administrator keeps your instance clean, evolving, and audited month to month. Fully managed by RevenuePoint.',
+    body: 'Your single point of contact at RevenuePoint keeps your instance clean, evolving, and audited month to month. Fully managed by RevenuePoint.',
   },
   {
     title: 'Training & Adoption',
